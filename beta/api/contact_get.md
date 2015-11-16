@@ -2,13 +2,17 @@
 
 Retrieve the properties and relationships of contact object.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes** is required to execute this API: 
+*Contacts.Read; Contacts.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /users/<objectId>/contacts/<id>
-GET /drive/root/createdByUser/contacts/<id>
-GET /drive/root/lastModifiedByUser/contacts/<id>
+GET /me/contacts/<id>
+GET /users/<id>/contacts/<id>
+GET /users/<userPrincipalName>/contacts/<id>
+GET /me/contactfolders/<contactFolderId>/contacts/<id>
+GET /users/<id>/contactfolders/<contactFolderId>/contacts/<id>
+GET /users/<userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
@@ -30,7 +34,7 @@ Here is an example of the request.
   "name": "get_contact"
 }-->
 ```http
-GET https://graph.microsoft.com/v1.0/me/contacts/<id>
+GET https://graph.microsoft.com/beta/me/contacts/<id>
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.

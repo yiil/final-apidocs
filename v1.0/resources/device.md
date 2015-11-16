@@ -1,16 +1,16 @@
 # device resource type
 
-Represents a device registered in the directory. Inherits from [DirectoryObject](directoryobject.md).
+Represents a device registered in the directory. Inherits from [directoryObject](directoryobject.md).
 
 ### Methods
 
 | Method       | Return Type  |Description|
 |:---------------|:--------|:----------|
 |[Get device](../api/device_get.md) | [device](device.md) |Read properties and relationships of device object.|
-|[Create registeredOwner](../api/device_post_registeredowners.md) |[DirectoryObject](directoryobject.md)| Add a user as a new owner of the device by posting to the registeredOwners navigation property.|
-|[List registeredOwners](../api/device_list_registeredowners.md) |[DirectoryObject](directoryobject.md) collection| Get the users that are registered owners of the device from the registeredOwners navigation property.|
-|[Create registeredUser](../api/device_post_registeredusers.md) |[DirectoryObject](directoryobject.md)| Add a registered user for the device by posting to the registeredUsers navigation property.|
-|[List registeredUsers](../api/device_list_registeredusers.md) |[DirectoryObject](directoryobject.md) collection| Get the registered users of the device from the registeredUsers navigation property.|
+|[Create registeredOwner](../api/device_post_registeredowners.md) |[directoryObject](directoryobject.md)| Add a user as a new owner of the device by posting to the registeredOwners navigation property.|
+|[List registeredOwners](../api/device_list_registeredowners.md) |[directoryObject](directoryobject.md) collection| Get the users that are registered owners of the device from the registeredOwners navigation property.|
+|[Create registeredUser](../api/device_post_registeredusers.md) |[directoryObject](directoryobject.md)| Add a registered user for the device by posting to the registeredUsers navigation property.|
+|[List registeredUsers](../api/device_list_registeredusers.md) |[directoryObject](directoryobject.md) collection| Get the registered users of the device from the registeredUsers navigation property.|
 |[Update](../api/device_update.md) | [device](device.md)  |Update the properties of the device object. |
 |[Delete](../api/device_delete.md) | None |Delete the device object. |
 
@@ -20,7 +20,7 @@ Represents a device registered in the directory. Inherits from [DirectoryObject]
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |accountEnabled|Boolean| **true** if the account is enabled; otherwise, **false**. |
-|alternativeSecurityIds|[AlternativeSecurityId](alternativesecurityid.md) collection| The **any** operator is required for filter expressions on multi-valued properties. Not nullable.           |
+|alternativeSecurityIds|[alternativeSecurityId](alternativesecurityid.md) collection| The **any** operator is required for filter expressions on multi-valued properties. Not nullable.           |
 |approximateLastSignInDateTime|DateTimeOffset|            The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
 |deviceId|Guid|            |
 |deviceMetadata|String||
@@ -34,13 +34,13 @@ Represents a device registered in the directory. Inherits from [DirectoryObject]
 |isCompliant|Boolean|**true** if the device complies with Mobile Device Management (MDM) policies; otherwise, **false**.|
 |isManaged|Boolean|**true** if the device is managed by a Mobile Device Management (MDM) app such as Intune; otherwise, **false**.|
 |onPremisesLastSyncDateTime|DateTimeOffset|The last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|id|String|The unique identifier for the device. Inherited from [DirectoryObject](directoryobject.md). Key, Not nullable. Read-only.|
+|id|String|The unique identifier for the device. Inherited from [directoryObject](directoryobject.md). Key, Not nullable. Read-only.|
 
 ### Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|registeredOwners|[DirectoryObject](directoryobject.md) collection|Users that are registered owners of the device. Read-only. Nullable.|
-|registeredUsers|[DirectoryObject](directoryobject.md) collection|Users that are registered users of the device. Read-only. Nullable.|
+|registeredOwners|[directoryObject](directoryobject.md) collection|Users that are registered owners of the device. Read-only. Nullable.|
+|registeredUsers|[directoryObject](directoryobject.md) collection|Users that are registered users of the device. Read-only. Nullable.|
 
 
 

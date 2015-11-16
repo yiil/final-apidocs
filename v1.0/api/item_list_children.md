@@ -1,7 +1,7 @@
 # List children
 
 Items with the folder resource may contain one or more child items. This API
-lists the contents of the item's `children` collection using either the item ID or path to the item.
+lists the contents of a drive or item's `children` collection using either the root folder, item ID or path.
 
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
@@ -10,6 +10,7 @@ One of the following **scopes** is required to execute this API:
 
 ### HTTP request
 ```http
+GET /drive/root/children
 GET /drive/items/{item-id}/children
 GET /drive/root:/{item-path}:/children
 ```

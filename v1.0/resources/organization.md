@@ -12,7 +12,7 @@ Represents an Azure Active Directory tenant. Only the read and update operations
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|assignedPlans|[AssignedPlan](assignedplan.md) collection|The collection of service plans associated with the tenant. Not nullable.            |
+|assignedPlans|[assignedPlan](assignedplan.md) collection|The collection of service plans associated with the tenant. Not nullable.            |
 |city|String|            |
 |companyLastDirSyncTime|DateTimeOffset|The time and date at which the tenant was last synced with the on-premise directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
 |country|String|            |
@@ -21,7 +21,7 @@ Represents an Azure Active Directory tenant. Only the read and update operations
 |dirSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default).|
 |displayName|String|The display name for the tenant.|
 |marketingNotificationEmails|String collection| Not nullable.            |
-|objectId|String|The unique identifier for the tenant. Inherited from [DirectoryObject](directoryobject.md). Key. Not nullable. Read-only.|
+|objectId|String|The unique identifier for the tenant. Inherited from [directoryObject](directoryobject.md). Key. Not nullable. Read-only.|
 |objectType|String|A string that identifies the object type. For tenants the value is always “Company”. |
 |postalCode|String|            |
 |preferredLanguage|String|            |

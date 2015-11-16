@@ -1,6 +1,6 @@
 # licenseUnitsDetail resource type
 
-The **prepaidUnits** property of the [SubscribedSku](subscribedsku.md) entity is of type **licenseUnitsDetail**.
+The **prepaidUnits** property of the [subscribedSku](subscribedsku.md) entity is of type **licenseUnitsDetail**.
 
 ### Properties
 | Property	   | Type	|Description|

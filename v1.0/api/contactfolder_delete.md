@@ -7,8 +7,6 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /users/<id>/contactFolders/<id>
-DELETE /drive/root/createdByUser/contactFolders/<id>
-DELETE /drive/root/lastModifiedByUser/contactFolders/<id>
 
 ```
 ### Request headers

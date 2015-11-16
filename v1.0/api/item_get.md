@@ -22,7 +22,7 @@ This method supports the [OData Query Parameters](http://graph.microsoft.io/docs
 | Name            | Value | Description         |
 |:----------------|:------|:------------------------|
 | if-none-match | String  | If this request header is included and the eTag (or cTag) provided matches the current tag on the file, an `HTTP 304 Not Modified` response is returned. |
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 
 ### Request body

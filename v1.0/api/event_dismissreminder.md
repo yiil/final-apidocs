@@ -14,7 +14,7 @@ POST /users/<id>/calendarView/<id>/Microsoft.Graph.dismissReminder
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 

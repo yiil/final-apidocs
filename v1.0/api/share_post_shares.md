@@ -13,7 +13,7 @@ POST /shares
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 
 

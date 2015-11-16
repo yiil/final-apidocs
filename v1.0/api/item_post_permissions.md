@@ -18,7 +18,7 @@ POST /drives/<id>/root/permissions
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of the [permission](../resources/permission.md) object.

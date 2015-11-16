@@ -20,7 +20,7 @@ POST /drives/<id>/root/Microsoft.Graph.invite
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 
 ### Request body

@@ -14,7 +14,7 @@ POST /drive/root/lastModifiedByUser/messages/<id>/Microsoft.Graph.createReply
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 

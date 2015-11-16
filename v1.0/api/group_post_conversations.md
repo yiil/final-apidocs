@@ -11,7 +11,7 @@ POST /groups/<objectId>/conversations
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [Conversation](../resources/conversation.md) object.

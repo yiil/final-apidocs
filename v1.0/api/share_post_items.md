@@ -13,7 +13,7 @@ POST /shares/<id>/items
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 
 

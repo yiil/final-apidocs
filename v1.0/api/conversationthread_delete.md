@@ -14,7 +14,7 @@ DELETE /users/<id>/joinedGroups/<objectId>/threads/<id>
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 Do not supply a request body for this method.

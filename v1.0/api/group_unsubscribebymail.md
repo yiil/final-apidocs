@@ -11,7 +11,7 @@ POST /groups/<objectId>/Microsoft.Graph.unsubscribeByMail
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 

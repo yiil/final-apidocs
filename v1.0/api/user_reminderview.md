@@ -13,7 +13,7 @@ POST /users/<userPrincipalName>/Microsoft.Graph.reminderView(startDateTime=start
 ### Request headers
 | Header       | Value|
 |:-----------|:------|:----------|
-| Authorization  | Bearer %token%  |
+| Authorization  | Bearer <token>. Required.  |
 | Content-Type  | application/json  |
 
 ### Request body

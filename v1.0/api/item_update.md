@@ -19,7 +19,7 @@ PATCH /drive/root:/{item-path}
 | Name       | Type | Description                                                                                                                                                         |
 |:-----------|:------|:-------------------------|
 | if-match | String  | If this request header is included and the eTag (or cTag) provided does not match the current eTag on the folder, a `412 Precondition Failed` response is returned. |
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be

@@ -25,7 +25,7 @@ GET /drives/<id>/root/permissions
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
 | if-none-match  | string  | If this request header is included and the etag provided matches the current etag on the item, an `HTTP 304 Not Modified` response is returned.|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

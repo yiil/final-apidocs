@@ -14,7 +14,7 @@ POST /drive/root/lastModifiedByUser/mailFolders/<id>/childFolders
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [MailFolder](../resources/mailfolder.md) object.

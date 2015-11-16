@@ -12,7 +12,7 @@ POST /users/<userPrincipalName>/Microsoft.Graph.sendMail
 ### Request headers
 | Header       | Value |
 |:---------------|:--------|
-| Authorization  | Bearer %token%  |
+| Authorization  | Bearer <token>. Required.  |
 | Content-Type  | application/json  |
 
 ### Request body

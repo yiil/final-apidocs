@@ -17,7 +17,7 @@ POST /users/<userPrincipalName>/contactFolders/<contactFolderId>/contacts
 ### Request headers
 | Header       | Value |
 |:---------------|:--------|
-| Authorization  | Bearer %token%  |
+| Authorization  | Bearer <token>. Required.  |
 | Content-Type  | application/json  |
 
 ### Request body

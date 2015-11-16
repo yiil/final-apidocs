@@ -21,7 +21,7 @@ DELETE /drive/root:/{item-path}
 | Name       | Type  | Description                                                                                                                                                                                       |
 |:-----------|:------|:----------------------|
 | if-match | String  | If this request header is included and the eTag (or cTag) provided does not match the current tag on the item, a `412 Precondition Failed` response is returned and the item will not be deleted. |
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 
 ### Request body

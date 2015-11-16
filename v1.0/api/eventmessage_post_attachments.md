@@ -12,7 +12,7 @@ One of the following **scopes** is required to execute this API:
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [Attachment](../resources/attachment.md) object.

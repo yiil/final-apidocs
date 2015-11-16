@@ -14,7 +14,7 @@ POST /drive/root/lastModifiedByUser/messages/<id>/attachments
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [Attachment](../resources/attachment.md) object.

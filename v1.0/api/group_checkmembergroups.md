@@ -11,7 +11,7 @@ POST /groups/<objectId>/Microsoft.Graph.checkMemberGroups
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| Authorization  | string  | Bearer %token% |
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, provide a JSON object with the following parameters.

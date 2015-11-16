@@ -16,18 +16,20 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "height": 1024,
-  "id": "String-value (identifier)",
-  "width": 1024
+  "cameraMake": "string",
+  "cameraModel": "string",
+  "exposureDenominator": 1024,
+  "exposureNumerator": 1024,
+  "fNumber": 1024,
+  "focalLength": 1024,
+  "iso": 1024,
+  "takenDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"}
 }
 
 ```
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|height|Int32||
-|id|String| Read-only.|
-|width|Int32||
 
 ### Relationships
 None

@@ -14,7 +14,7 @@ POST /drive/root/lastModifiedByUser/calendarGroups
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [CalendarGroup](../resources/calendargroup.md) object.
@@ -31,18 +31,25 @@ Here is an example of the request.
   "name": "create_calendargroup_from_user"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>
+POST https://graph.microsoft.com/v1.0/me/calendarGroups
+Content-type: application/json
+Content-length: 90
+
+{
+  "name": "name-value",
+  "classId": "classId-value",
+  "changeKey": "changeKey-value"
+}
 ```
-In the request body, supply a JSON representation of [CalendarGroup](../resources/calendargroup.md) object.
+In the request body, supply a JSON representation of [calendarGroup](../resources/calendargroup.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.calendargroup"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
 Content-length: 110
 

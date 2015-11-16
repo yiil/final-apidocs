@@ -16,15 +16,10 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "calendars": [
-    {
-      "@odata.type": "microsoft.graph.calendar"
-    }
-  ],
-  "changeKey": "String-value",
-  "classId": "Guid-value",
-  "id": "String-value (identifier)",
-  "name": "String-value"
+  "changeKey": "string",
+  "classId": "guid",
+  "id": "string (identifier)",
+  "name": "string"
 }
 
 ```

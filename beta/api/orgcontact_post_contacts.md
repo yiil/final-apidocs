@@ -12,7 +12,7 @@ POST /buckets
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [OrgContact](../resources/orgcontact.md) object.
@@ -26,59 +26,49 @@ If successful, this method returns `201, Created` response code and [OrgContact]
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_orgcontact_from_buckets"
+  "name": "create_orgcontact_from_contacts"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/buckets
+POST https://graph.microsoft.com/v1.0/contacts
+Content-type: application/json
+Content-length: 260
+
+{
+  "orgContact": {
+    "businessPhones": [
+      "businessPhones-value"
+    ],
+    "city": "city-value",
+    "companyName": "companyName-value",
+    "country": "country-value",
+    "department": "department-value",
+    "displayName": "displayName-value"
+  }
+}
 ```
-In the request body, supply a JSON representation of [OrgContact](../resources/orgcontact.md) object.
+In the request body, supply a JSON representation of [orgContact](../resources/orgcontact.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.orgcontact"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 1097
+Content-length: 260
 
 {
-  "city": "city-value",
-  "country": "country-value",
-  "department": "department-value",
-  "dirSyncEnabled": true,
-  "displayName": "displayName-value",
-  "facsimileTelephoneNumber": "facsimileTelephoneNumber-value",
-  "givenName": "givenName-value",
-  "jobTitle": "jobTitle-value",
-  "lastDirSyncTime": "datetime-value",
-  "mail": "mail-value",
-  "mailNickname": "mailNickname-value",
-  "mobile": "mobile-value",
-  "physicalDeliveryOfficeName": "physicalDeliveryOfficeName-value",
-  "postalCode": "postalCode-value",
-  "provisioningErrors": [
-    {
-      "errorDetail": "errorDetail-value",
-      "resolved": true,
-      "service": "service-value",
-      "timestamp": "datetime-value"
-    }
-  ],
-  "proxyAddresses": [
-    "proxyAddresses-value"
-  ],
-  "sipProxyAddress": "sipProxyAddress-value",
-  "state": "state-value",
-  "streetAddress": "streetAddress-value",
-  "surname": "surname-value",
-  "telephoneNumber": "telephoneNumber-value",
-  "thumbnailPhoto": "thumbnailPhoto-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "orgContact": {
+    "businessPhones": [
+      "businessPhones-value"
+    ],
+    "city": "city-value",
+    "companyName": "companyName-value",
+    "country": "country-value",
+    "department": "department-value",
+    "displayName": "displayName-value"
+  }
 }
 ```
 

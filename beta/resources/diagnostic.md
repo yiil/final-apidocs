@@ -16,8 +16,8 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "message": "String-value",
-  "url": "String-value"
+  "message": "string",
+  "url": "string"
 }
 
 ```

@@ -12,7 +12,7 @@ POST /directoryRoles
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [DirectoryRoleTemplate](../resources/directoryroletemplate.md) object.
@@ -26,30 +26,38 @@ If successful, this method returns `201, Created` response code and [DirectoryRo
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_directoryroletemplate_from_directoryroles"
+  "name": "create_directoryroletemplate_from_directoryroletemplates"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/directoryRoles
+POST https://graph.microsoft.com/v1.0/directoryRoleTemplates
+Content-type: application/json
+Content-length: 115
+
+{
+  "directoryRoleTemplate": {
+    "description": "description-value",
+    "displayName": "displayName-value"
+  }
+}
 ```
-In the request body, supply a JSON representation of [DirectoryRoleTemplate](../resources/directoryroletemplate.md) object.
+In the request body, supply a JSON representation of [directoryRoleTemplate](../resources/directoryroletemplate.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.directoryroletemplate"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 187
+Content-length: 137
 
 {
-  "description": "description-value",
-  "displayName": "displayName-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "directoryRoleTemplate": {
+    "description": "description-value",
+    "displayName": "displayName-value",
+    "id": "id-value"
+  }
 }
 ```
 

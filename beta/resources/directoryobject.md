@@ -1,6 +1,7 @@
 # directoryObject resource type
 
-Represents an Azure Active Directory object. The **DirectoryObject** type is the base type for most of the other directory entity types.
+Represents an Azure Active Directory object. The **DirectoryObject** type is the base type for most of the other directory entity types.
+
 
 ### JSON representation
 
@@ -16,18 +17,14 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "deletionTimestamp": "String (timestamp)",
-  "objectId": "String-value (identifier)",
-  "objectType": "String-value"
+  "id": "string (identifier)"
 }
 
 ```
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|deletionTimestamp|DateTimeOffset|The time at which the directory object was deleted. It only applies to those directory objects which can be restored. Currently it is only supported for deleted [Application] objects; all other entities return **null** for this property.                            **Notes**: Requires version 1.5 or newer.            The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|objectId|String|A Guid that is the unique identifier for the object; for example, 12345678-9abc-def0-1234-56789abcde.                            **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
-|objectType|String|A string that identifies the object type. For example, for groups the value is always “Group”.|
+|id|String|A Guid that is the unique identifier for the object; for example, 12345678-9abc-def0-1234-56789abcde.                            **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
 
 ### Relationships
 None

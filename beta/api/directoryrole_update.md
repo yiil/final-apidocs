@@ -8,22 +8,18 @@ The following **scopes** are required to execute this API:
 ```http
 PATCH /directoryRoles/<objectId>
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|deletionTimestamp|DateTimeOffset||
 |description|String|The description for the directory role.|
 |displayName|String|The display name for the directory role. |
-|isSystem|Boolean|                **true** if the role is a system role; otherwise, **false**.            |
-|objectType|String|A string that identifies the object type. For directory roles the value is always “DirectoryRole”. Inherited from [DirectoryObject].                            **Note**: In versions prior to 1.5, the value will be “Role”.            |
-|roleDisabled|Boolean|                **true** if the directory role is disabled; otherwise, **false**.            |
 |roleTemplateId|String|                The **objectId** of the [DirectoryRoleTemplate] that this role is based on.                                        **Notes**: In versions prior to version 1.5, the property is read only. In version 1.5 and later, the property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only.            |
 
 ### Response
@@ -36,42 +32,32 @@ Here is an example of the request.
   "name": "update_directoryrole"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/directoryRoles/<objectId>
+PATCH https://graph.microsoft.com/v1.0/directoryRoles/<id>
 Content-type: application/json
-Content-length: 275
+Content-length: 122
 
 {
   "description": "description-value",
   "displayName": "displayName-value",
-  "isSystem": true,
-  "roleDisabled": true,
-  "roleTemplateId": "roleTemplateId-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "roleTemplateId": "roleTemplateId-value"
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.directoryrole"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 275
+Content-length: 142
 
 {
   "description": "description-value",
   "displayName": "displayName-value",
-  "isSystem": true,
-  "roleDisabled": true,
   "roleTemplateId": "roleTemplateId-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "id": "id-value"
 }
 ```
 

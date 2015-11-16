@@ -16,22 +16,14 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "emailAddress": {
-    "@odata.type": "microsoft.graph.emailaddress"
-  },
-  "status": {
-    "@odata.type": "microsoft.graph.responsestatus"
-  },
-  "type": "String-value"
+  "status": {"@odata.type": "microsoft.graph.responseStatus"}
 }
 
 ```
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|emailAddress|[EmailAddress](emailaddress.md)|The name and email address of the attendee.|
 |status|[ResponseStatus](responsestatus.md)|The response (none, accepted, declined, etc.) and time.|
-|type|String|The attendee type: Required = 0, Optional = 1, Resource = 2. Possible values are: `Required`, `Optional`, `Resource`.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

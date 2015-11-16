@@ -16,12 +16,8 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "end": {
-    "@odata.type": "microsoft.graph.timestamp"
-  },
-  "start": {
-    "@odata.type": "microsoft.graph.timestamp"
-  }
+  "end": {"@odata.type": "microsoft.graph.timeStamp"},
+  "start": {"@odata.type": "microsoft.graph.timeStamp"}
 }
 
 ```

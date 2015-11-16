@@ -12,7 +12,7 @@ POST /servicePrincipals
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [share](../resources/share.md) object.
@@ -26,21 +26,40 @@ If successful, this method returns `201, Created` response code and [share](../r
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_share_from_serviceprincipals"
+  "name": "create_share_from_shares"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/servicePrincipals
+POST https://graph.microsoft.com/v1.0/shares
+Content-type: application/json
+Content-length: 310
+
+{
+  "name": "name-value",
+  "owner": {
+    "application": {
+      "displayName": "displayName-value",
+      "id": "id-value"
+    },
+    "device": {
+      "displayName": "displayName-value",
+      "id": "id-value"
+    },
+    "user": {
+      "displayName": "displayName-value",
+      "id": "id-value"
+    }
+  }
+}
 ```
 In the request body, supply a JSON representation of [share](../resources/share.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.share"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
 Content-length: 330
 

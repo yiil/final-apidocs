@@ -10,10 +10,10 @@ PATCH /users/<objectId>/appRoleAssignments/<objectId>
 PATCH /servicePrincipals/<objectId>/appRoleAssignedTo
 PATCH /groups/<objectId>/appRoleAssignments/<objectId>
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
@@ -21,9 +21,7 @@ In the request body, supply the values for relevant fields that should be update
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |creationTimestamp|DateTimeOffset|The time when the grant was created.|
-|deletionTimestamp|DateTimeOffset||
 |id|Guid|The role id that was assigned to the principal.  This role must be declared by the target resource application **resourceId** in its **appRoles** property. Where the resource does not declare any permissions, a default id (zero GUID) must be specified.                            **Notes**: not nullable.            |
-|objectType|String|A string that identifies the object type. For application role assignments the value is always “AppRoleAssignment”. Inherited from [DirectoryObject].|
 |principalDisplayName|String|The display name of the principal that was granted the access.|
 |principalId|Guid|The unique identifier (**objectId**) for the principal being granted the access.                            **Notes**: required.            |
 |principalType|String|The type of principal.  This can either be "User", "Group" or "ServicePrincipal".|
@@ -40,34 +38,28 @@ Here is an example of the request.
   "name": "update_approleassignment"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/users/<objectId>/appRoleAssignments/<objectId>
+PATCH https://graph.microsoft.com/v1.0/appRoleAssignments/<id>
 Content-type: application/json
-Content-length: 398
+Content-length: 233
 
 {
   "creationTimestamp": "datetime-value",
-  "id": "id-value",
   "principalDisplayName": "principalDisplayName-value",
   "principalId": "principalId-value",
   "principalType": "principalType-value",
-  "resourceDisplayName": "resourceDisplayName-value",
-  "resourceId": "resourceId-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "resourceDisplayName": "resourceDisplayName-value"
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.approleassignment"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 398
+Content-length: 253
 
 {
   "creationTimestamp": "datetime-value",
@@ -75,11 +67,7 @@ Content-length: 398
   "principalDisplayName": "principalDisplayName-value",
   "principalId": "principalId-value",
   "principalType": "principalType-value",
-  "resourceDisplayName": "resourceDisplayName-value",
-  "resourceId": "resourceId-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "resourceDisplayName": "resourceDisplayName-value"
 }
 ```
 

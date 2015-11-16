@@ -10,10 +10,10 @@ PATCH /users/<objectId>/contactFolders/<id>
 PATCH /drive/root/createdByUser/contactFolders/<id>
 PATCH /drive/root/lastModifiedByUser/contactFolders/<id>
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
@@ -33,25 +33,23 @@ Here is an example of the request.
   "name": "update_contactfolder"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/users/<objectId>/contactFolders/<id>
+PATCH https://graph.microsoft.com/v1.0/me/contactFolders/<id>
 Content-type: application/json
-Content-length: 104
+Content-length: 84
 
 {
   "parentFolderId": "parentFolderId-value",
-  "displayName": "displayName-value",
-  "id": "id-value"
+  "displayName": "displayName-value"
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.contactfolder"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 104
 

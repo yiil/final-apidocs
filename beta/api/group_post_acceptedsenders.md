@@ -14,7 +14,7 @@ POST /drive/root/createdByUser/joinedGroups/<objectId>/acceptedSenders
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [DirectoryObject](../resources/directoryobject.md) object.
@@ -31,25 +31,31 @@ Here is an example of the request.
   "name": "create_directoryobject_from_group"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/groups/<objectId>
+POST https://graph.microsoft.com/v1.0/groups/<id>/acceptedSenders
+Content-type: application/json
+Content-length: 30
+
+{
+  "directoryObject": {
+  }
+}
 ```
-In the request body, supply a JSON representation of [DirectoryObject](../resources/directoryobject.md) object.
+In the request body, supply a JSON representation of [directoryObject](../resources/directoryobject.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.directoryobject"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 111
+Content-length: 51
 
 {
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "directoryObject": {
+    "id": "id-value"
+  }
 }
 ```
 

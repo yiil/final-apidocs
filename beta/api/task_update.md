@@ -45,35 +45,38 @@ Here is an example of the request.
   "name": "update_task"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/tasks/<id>
+PATCH https://graph.microsoft.com/v1.0/tasks/<id>
 Content-type: application/json
-Content-length: 663
-If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
+Content-length: 192
 
 {
+  "createdBy": "createdBy-value",
   "assignedTo": "assignedTo-value",
+  "planId": "planId-value",
   "bucketId": "bucketId-value",
   "title": "title-value",
-  "orderHint": "orderHint-value",
-  "assigneePriority": "assigneePriority-value",
-  "percentComplete": 99,
-  "startDateTime": "datetime-value",
-  "dueDateTime": "datetime-value",
-  "previewType": "previewType-value",
-  "appliedCategories": {
-  },
-  "conversationThreadId": "conversationThreadId-value",
+  "orderHint": "orderHint-value"
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.task"
 } -->
 ```http
-HTTP/1.1 204 No Content
+Content-type: application/json
+Content-length: 192
+
+{
+  "createdBy": "createdBy-value",
+  "assignedTo": "assignedTo-value",
+  "planId": "planId-value",
+  "bucketId": "bucketId-value",
+  "title": "title-value",
+  "orderHint": "orderHint-value"
+}
 ```
 To get the updated object, use the `Prefer` header. See Request Headers above.
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

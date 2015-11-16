@@ -12,7 +12,7 @@ POST /siteCollections
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [SubscribedSku](../resources/subscribedsku.md) object.
@@ -26,28 +26,16 @@ If successful, this method returns `201, Created` response code and [SubscribedS
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_subscribedsku_from_sitecollections"
+  "name": "create_subscribedsku_from_subscribedskus"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/siteCollections
-```
-In the request body, supply a JSON representation of [SubscribedSku](../resources/subscribedsku.md) object.
-##### Response
-Here is an example of the response.
-<!-- {
-  "blockType": "response",
-  "truncated": false,
-  "@odata.type": "microsoft.graph.subscribedsku"
-} -->
-```http
-HTTP/1.1 201 Created
+POST https://graph.microsoft.com/v1.0/subscribedSkus
 Content-type: application/json
-Content-length: 388
+Content-length: 408
 
 {
   "capabilityStatus": "capabilityStatus-value",
   "consumedUnits": 99,
-  "objectId": "objectId-value",
   "prepaidUnits": {
     "enabled": 99,
     "suspended": 99,
@@ -56,11 +44,44 @@ Content-length: 388
   "servicePlans": [
     {
       "servicePlanId": "servicePlanId-value",
-      "servicePlanName": "servicePlanName-value"
+      "servicePlanName": "servicePlanName-value",
+      "provisioningStatus": "provisioningStatus-value",
+      "appliesTo": "appliesTo-value"
     }
   ],
-  "skuId": "skuId-value",
-  "skuPartNumber": "skuPartNumber-value"
+  "skuId": "skuId-value"
+}
+```
+In the request body, supply a JSON representation of [subscribedSku](../resources/subscribedsku.md) object.
+##### Response
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.subscribedsku"
+} -->
+```http
+Content-type: application/json
+Content-length: 428
+
+{
+  "capabilityStatus": "capabilityStatus-value",
+  "consumedUnits": 99,
+  "id": "id-value",
+  "prepaidUnits": {
+    "enabled": 99,
+    "suspended": 99,
+    "warning": 99
+  },
+  "servicePlans": [
+    {
+      "servicePlanId": "servicePlanId-value",
+      "servicePlanName": "servicePlanName-value",
+      "provisioningStatus": "provisioningStatus-value",
+      "appliesTo": "appliesTo-value"
+    }
+  ],
+  "skuId": "skuId-value"
 }
 ```
 

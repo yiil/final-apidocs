@@ -16,14 +16,14 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "contentBytes": "Binary-value",
-  "contentId": "String-value",
-  "contentLocation": "String-value",
-  "contentType": "String-value",
-  "id": "String-value (identifier)",
+  "contentBytes": "binary",
+  "contentId": "string",
+  "contentLocation": "string",
+  "contentType": "string",
+  "id": "string (identifier)",
   "isInline": true,
-  "lastModifiedDateTime": "String (timestamp)",
-  "name": "String-value",
+  "lastModifiedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "name": "string",
   "size": 1024
 }
 

@@ -16,18 +16,16 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "altitude": 1024,
-  "latitude": 1024,
-  "longitude": 1024
+  "address": {"@odata.type": "microsoft.graph.physicalAddress"},
+  "coordinates": {"@odata.type": "microsoft.graph.outlookGeoCoordinates"},
+  "displayName": "string",
+  "locationEmailAddress": "string"
 }
 
 ```
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|altitude|Double||
-|latitude|Double||
-|longitude|Double||
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

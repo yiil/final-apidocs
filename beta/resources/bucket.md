@@ -16,15 +16,10 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "id": "String-value (identifier)",
-  "name": "String-value",
-  "orderHint": "String-value",
-  "planId": "String-value",
-  "tasks": [
-    {
-      "@odata.type": "microsoft.graph.task"
-    }
-  ]
+  "id": "string (identifier)",
+  "name": "string",
+  "orderHint": "string",
+  "planId": "string"
 }
 
 ```

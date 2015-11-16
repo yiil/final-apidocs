@@ -1,6 +1,11 @@
 # drive resource type
 
-The Drive resource represents a drive in OneDrive. It provides information about the owner of the drive, total and available storage space, and exposes a collection of all the [Items][item-resource] contained within the drive.  
+The Drive resource represents a drive in OneDrive.
+ It provides information about the owner of the drive, total and available
+ storage space, and exposes a collection of all the [Items][item-resource] contained
+ within the drive.
+ 
+ 
 
 ### JSON representation
 
@@ -19,32 +24,10 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "driveType": "String-value",
-  "id": "String-value (identifier)",
-  "items": [
-    {
-      "@odata.type": "microsoft.graph.item"
-    }
-  ],
-  "owner": {
-    "@odata.type": "microsoft.graph.identityset"
-  },
-  "quota": {
-    "@odata.type": "microsoft.graph.quota"
-  },
-  "root": {
-    "@odata.type": "microsoft.graph.item"
-  },
-  "shared": [
-    {
-      "@odata.type": "microsoft.graph.item"
-    }
-  ],
-  "special": [
-    {
-      "@odata.type": "microsoft.graph.item"
-    }
-  ]
+  "driveType": "string",
+  "id": "string (identifier)",
+  "owner": {"@odata.type": "microsoft.graph.identitySet"},
+  "quota": {"@odata.type": "microsoft.graph.quota"}
 }
 
 ```

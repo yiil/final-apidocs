@@ -14,7 +14,7 @@ POST /drive/root/createdByUser/joinedGroups/<objectId>/conversations/<id>/thread
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [ConversationThread](../resources/conversationthread.md) object.
@@ -31,20 +31,9 @@ Here is an example of the request.
   "name": "create_conversationthread_from_conversation"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/groups/<objectId>/conversations/<id>
-```
-In the request body, supply a JSON representation of [ConversationThread](../resources/conversationthread.md) object.
-##### Response
-Here is an example of the response.
-<!-- {
-  "blockType": "response",
-  "truncated": false,
-  "@odata.type": "microsoft.graph.conversationthread"
-} -->
-```http
-HTTP/1.1 201 Created
+POST https://graph.microsoft.com/v1.0/groups/<id>/conversations/<id>/threads
 Content-type: application/json
-Content-length: 489
+Content-length: 419
 
 {
   "toRecipients": [
@@ -68,10 +57,44 @@ Content-length: 489
         "address": "address-value"
       }
     }
+  ]
+}
+```
+In the request body, supply a JSON representation of [conversationThread](../resources/conversationthread.md) object.
+##### Response
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.conversationthread"
+} -->
+```http
+Content-type: application/json
+Content-length: 419
+
+{
+  "toRecipients": [
+    {
+      "emailAddress": {
+        "name": "name-value",
+        "address": "address-value"
+      }
+    }
   ],
-  "preview": "preview-value",
-  "isLocked": true,
-  "id": "id-value"
+  "topic": "topic-value",
+  "hasAttachments": true,
+  "lastDeliveredDateTime": "datetime-value",
+  "uniqueSenders": [
+    "uniqueSenders-value"
+  ],
+  "ccRecipients": [
+    {
+      "emailAddress": {
+        "name": "name-value",
+        "address": "address-value"
+      }
+    }
+  ]
 }
 ```
 

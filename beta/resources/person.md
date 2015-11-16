@@ -16,23 +16,15 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "companyName": "String-value",
-  "displayName": "String-value",
-  "emailAddresses": [
-    {
-      "@odata.type": "microsoft.graph.email"
-    }
-  ],
-  "givenName": "String-value",
-  "id": "String-value (identifier)",
-  "officeLocation": "String-value",
-  "sources": [
-    {
-      "@odata.type": "microsoft.graph.persondatasource"
-    }
-  ],
-  "surname": "String-value",
-  "title": "String-value"
+  "companyName": "string",
+  "displayName": "string",
+  "emailAddresses": [{"@odata.type": "microsoft.graph.email"}],
+  "givenName": "string",
+  "id": "string (identifier)",
+  "officeLocation": "string",
+  "sources": [{"@odata.type": "microsoft.graph.personDataSource"}],
+  "surname": "string",
+  "title": "string"
 }
 
 ```

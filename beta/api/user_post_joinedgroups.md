@@ -14,7 +14,7 @@ POST /drive/root/lastModifiedByUser/joinedGroups
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [Group](../resources/group.md) object.
@@ -31,59 +31,46 @@ Here is an example of the request.
   "name": "create_group_from_user"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>
+POST https://graph.microsoft.com/v1.0/me/joinedGroups
+Content-type: application/json
+Content-length: 244
+
+{
+  "group": {
+    "description": "description-value",
+    "displayName": "displayName-value",
+    "groupTypes": [
+      "groupTypes-value"
+    ],
+    "mail": "mail-value",
+    "mailEnabled": true,
+    "mailNickname": "mailNickname-value"
+  }
+}
 ```
-In the request body, supply a JSON representation of [Group](../resources/group.md) object.
+In the request body, supply a JSON representation of [group](../resources/group.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.group"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 1009
+Content-length: 244
 
 {
-  "description": "description-value",
-  "dirSyncEnabled": true,
-  "displayName": "displayName-value",
-  "creationOptions": [
-    "creationOptions-value"
-  ],
-  "groupTypes": [
-    "groupTypes-value"
-  ],
-  "isPublic": true,
-  "lastDirSyncTime": "datetime-value",
-  "mail": "mail-value",
-  "mailNickname": "mailNickname-value",
-  "mailEnabled": true,
-  "onPremisesSecurityIdentifier": "onPremisesSecurityIdentifier-value",
-  "provisioningErrors": [
-    {
-      "errorDetail": "errorDetail-value",
-      "resolved": true,
-      "service": "service-value",
-      "timestamp": "datetime-value"
-    }
-  ],
-  "proxyAddresses": [
-    "proxyAddresses-value"
-  ],
-  "securityEnabled": true,
-  "accessType": "accessType-value",
-  "allowExternalSenders": true,
-  "autoSubscribeNewMembers": true,
-  "emailAddress": "emailAddress-value",
-  "isFavorite": true,
-  "isSubscribedByMail": true,
-  "unseenCount": 99,
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "group": {
+    "description": "description-value",
+    "displayName": "displayName-value",
+    "groupTypes": [
+      "groupTypes-value"
+    ],
+    "mail": "mail-value",
+    "mailEnabled": true,
+    "mailNickname": "mailNickname-value"
+  }
 }
 ```
 

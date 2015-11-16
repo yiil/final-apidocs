@@ -14,7 +14,7 @@ POST /drive/root/lastModifiedByUser/mailFolders/<id>/Microsoft.Graph.copy
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, provide a JSON object with the following parameters.
@@ -35,7 +35,7 @@ Here is an example of the request.
   "name": "mailfolder_copy"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>/mailFolders/<id>/Microsoft.Graph.copy
+POST https://graph.microsoft.com/v1.0/me/mailFolders/<id>/copy
 Content-type: application/json
 Content-length: 44
 
@@ -45,14 +45,13 @@ Content-length: 44
 ```
 
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.mailfolder"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 179
 

@@ -14,7 +14,7 @@ POST /drive/root/lastModifiedByUser/inferenceClassification/overrides
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [InferenceClassificationOverride](../resources/inferenceclassificationoverride.md) object.
@@ -31,23 +31,34 @@ Here is an example of the request.
   "name": "create_inferenceclassificationoverride_from_inferenceclassification"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>/inferenceClassification
+POST https://graph.microsoft.com/v1.0/me/inferenceClassification/overrides
+Content-type: application/json
+Content-length: 113
+
+{
+  "classifyAs": {
+  },
+  "senderEmailAddress": {
+    "name": "name-value",
+    "address": "address-value"
+  }
+}
 ```
-In the request body, supply a JSON representation of [InferenceClassificationOverride](../resources/inferenceclassificationoverride.md) object.
+In the request body, supply a JSON representation of [inferenceClassificationOverride](../resources/inferenceclassificationoverride.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.inferenceclassificationoverride"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 146
+Content-length: 133
 
 {
-  "classifyAs": "classifyAs-value",
+  "classifyAs": {
+  },
   "senderEmailAddress": {
     "name": "name-value",
     "address": "address-value"

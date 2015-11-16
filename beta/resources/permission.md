@@ -16,23 +16,13 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "grantedTo": {
-    "@odata.type": "microsoft.graph.identityset"
-  },
-  "id": "String-value (identifier)",
-  "inheritedFrom": {
-    "@odata.type": "microsoft.graph.itemreference"
-  },
-  "invitation": {
-    "@odata.type": "microsoft.graph.sharinginvitation"
-  },
-  "link": {
-    "@odata.type": "microsoft.graph.sharinglink"
-  },
-  "roles": [
-    "String-value"
-  ],
-  "shareId": "String-value"
+  "grantedTo": {"@odata.type": "microsoft.graph.identitySet"},
+  "id": "string (identifier)",
+  "inheritedFrom": {"@odata.type": "microsoft.graph.itemReference"},
+  "invitation": {"@odata.type": "microsoft.graph.sharingInvitation"},
+  "link": {"@odata.type": "microsoft.graph.sharingLink"},
+  "roles": ["string"],
+  "shareId": "string"
 }
 
 ```

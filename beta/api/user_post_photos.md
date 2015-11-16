@@ -14,7 +14,7 @@ POST /drive/root/lastModifiedByUser/photos
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [Photo](../resources/photo.md) object.
@@ -28,21 +28,27 @@ If successful, this method returns `201, Created` response code and [Photo](../r
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_photo_from_user"
+  "name": "create_profilephoto_from_user"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>
+POST https://graph.microsoft.com/v1.0/me/photos
+Content-type: application/json
+Content-length: 33
+
+{
+  "height": 99,
+  "width": 99
+}
 ```
-In the request body, supply a JSON representation of [Photo](../resources/photo.md) object.
+In the request body, supply a JSON representation of [profilePhoto](../resources/profilephoto.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
-  "@odata.type": "microsoft.graph.photo"
+  "truncated": true,
+  "@odata.type": "microsoft.graph.profilephoto"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
 Content-length: 53
 

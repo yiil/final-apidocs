@@ -9,15 +9,12 @@ The following **scopes** are required to execute this API:
 GET /applications
 ```
 ### Optional query parameters
-|Name|Value|Description|
-|:---------------|:--------|:-------|
-|$orderby|string|Comma-separated list of properties that are used to sort the order of items in the response collection.|
-|$top|int|The number of items to return in a result set.|
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 Do not supply a request body for this method.
@@ -31,24 +28,35 @@ Here is an example of the request.
   "name": "get_applications"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/applications
+GET https://graph.microsoft.com/v1.0/applications
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.application",
   "isCollection": true
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 2499
+Content-length: 781
 
 {
   "value": [
     {
+      "addIns": [
+        {
+          "id": "id-value",
+          "type": "type-value",
+          "properties": [
+            {
+              "key": "key-value",
+              "value": "value-value"
+            }
+          ]
+        }
+      ],
       "appId": "appId-value",
       "appRoles": [
         {
@@ -59,76 +67,13 @@ Content-length: 2499
           "displayName": "displayName-value",
           "id": "id-value",
           "isEnabled": true,
+          "origin": "origin-value",
           "value": "value-value"
         }
       ],
-      "availableToOtherTenants": true,
+      "availableToOtherOrganizations": true,
       "displayName": "displayName-value",
-      "errorUrl": "errorUrl-value",
-      "groupMembershipClaims": "groupMembershipClaims-value",
-      "homepage": "homepage-value",
-      "identifierUris": [
-        "identifierUris-value"
-      ],
-      "keyCredentials": [
-        {
-          "customKeyIdentifier": "customKeyIdentifier-value",
-          "endDate": "datetime-value",
-          "keyId": "keyId-value",
-          "startDate": "datetime-value",
-          "type": "type-value",
-          "usage": "usage-value",
-          "value": "value-value"
-        }
-      ],
-      "knownClientApplications": [
-        "knownClientApplications-value"
-      ],
-      "mainLogo": "mainLogo-value",
-      "logoutUrl": "logoutUrl-value",
-      "oauth2AllowImplicitFlow": true,
-      "oauth2AllowUrlPathMatching": true,
-      "oauth2Permissions": [
-        {
-          "adminConsentDescription": "adminConsentDescription-value",
-          "adminConsentDisplayName": "adminConsentDisplayName-value",
-          "id": "id-value",
-          "isEnabled": true,
-          "type": "type-value",
-          "userConsentDescription": "userConsentDescription-value",
-          "userConsentDisplayName": "userConsentDisplayName-value",
-          "value": "value-value"
-        }
-      ],
-      "oauth2RequirePostResponse": true,
-      "passwordCredentials": [
-        {
-          "customKeyIdentifier": "customKeyIdentifier-value",
-          "endDate": "datetime-value",
-          "keyId": "keyId-value",
-          "startDate": "datetime-value",
-          "value": "value-value"
-        }
-      ],
-      "publicClient": true,
-      "replyUrls": [
-        "replyUrls-value"
-      ],
-      "requiredResourceAccess": [
-        {
-          "resourceAppId": "resourceAppId-value",
-          "resourceAccess": [
-            {
-              "id": "id-value",
-              "type": "type-value"
-            }
-          ]
-        }
-      ],
-      "samlMetadataUrl": "samlMetadataUrl-value",
-      "objectType": "objectType-value",
-      "objectId": "objectId-value",
-      "deletionTimestamp": "datetime-value"
+      "errorUrl": "errorUrl-value"
     }
   ]
 }

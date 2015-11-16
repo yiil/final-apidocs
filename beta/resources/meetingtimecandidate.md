@@ -16,21 +16,11 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "attendeeAvailability": [
-    {
-      "@odata.type": "microsoft.graph.attendeeavailability"
-    }
-  ],
+  "attendeeAvailability": [{"@odata.type": "microsoft.graph.attendeeAvailability"}],
   "confidence": 1024,
-  "locations": [
-    {
-      "@odata.type": "microsoft.graph.location"
-    }
-  ],
-  "meetingTimeSlot": {
-    "@odata.type": "microsoft.graph.timeslot"
-  },
-  "organizerAvailability": "String-value",
+  "locations": [{"@odata.type": "microsoft.graph.location"}],
+  "meetingTimeSlot": {"@odata.type": "microsoft.graph.timeSlot"},
+  "organizerAvailability": {"@odata.type": "microsoft.graph.freeBusyStatus"},
   "score": 1024
 }
 

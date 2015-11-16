@@ -1,6 +1,7 @@
 # application resource type
 
-Represents an application. Any application that outsources authentication to Azure AD must be registered in a directory. This involves telling Azure AD about your application, including the URL where it's located, the URL to send replies after authentication, the URI to identify your application, and more.  For more information, see [Basics of Registering an Application in Azure AD](https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-scenarios/#basics-of-registering-an-application-in-azure-ad). Inherits from [DirectoryObject].
+Represents an application. Any application that outsources authentication to Azure AD must be registered in a directory. This involves telling Azure AD about your application, including the URL where it's located, the URL to send replies after authentication, the URI to identify your application, and more.  For more information, see [Basics of Registering an Application in Azure AD](https://azure.microsoft.com/en-us/documentation/articles/active-directory-authentication-scenarios/#basics-of-registering-an-application-in-azure-ad). Inherits from [DirectoryObject].
+
 
 ### JSON representation
 
@@ -18,69 +19,30 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "appId": "String-value",
-  "appRoles": [
-    {
-      "@odata.type": "microsoft.graph.approle"
-    }
-  ],
-  "availableToOtherTenants": true,
-  "createdOnBehalfOf": {
-    "@odata.type": "microsoft.graph.directoryobject"
-  },
-  "deletionTimestamp": "String (timestamp)",
-  "displayName": "String-value",
-  "errorUrl": "String-value",
-  "extensionProperties": [
-    {
-      "@odata.type": "microsoft.graph.extensionproperty"
-    }
-  ],
-  "groupMembershipClaims": "String-value",
-  "homepage": "String-value",
-  "identifierUris": [
-    "String-value"
-  ],
-  "keyCredentials": [
-    {
-      "@odata.type": "microsoft.graph.keycredential"
-    }
-  ],
-  "knownClientApplications": [
-    "Guid-value"
-  ],
-  "logoutUrl": "String-value",
-  "mainLogo": "Stream-value",
+  "addIns": [{"@odata.type": "microsoft.graph.addIn"}],
+  "appId": "string",
+  "appRoles": [{"@odata.type": "microsoft.graph.appRole"}],
+  "availableToOtherOrganizations": true,
+  "displayName": "string",
+  "errorUrl": "string",
+  "groupMembershipClaims": "string",
+  "homepage": "string",
+  "id": "string (identifier)",
+  "identifierUris": ["string"],
+  "keyCredentials": [{"@odata.type": "microsoft.graph.keyCredential"}],
+  "knownClientApplications": ["guid"],
+  "logoutUrl": "string",
+  "mainLogo": "stream",
   "oauth2AllowImplicitFlow": true,
   "oauth2AllowUrlPathMatching": true,
-  "oauth2Permissions": [
-    {
-      "@odata.type": "microsoft.graph.oauth2permission"
-    }
-  ],
+  "oauth2Permissions": [{"@odata.type": "microsoft.graph.oAuth2Permission"}],
   "oauth2RequirePostResponse": true,
-  "objectId": "String-value (identifier)",
-  "objectType": "String-value",
-  "owners": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "passwordCredentials": [
-    {
-      "@odata.type": "microsoft.graph.passwordcredential"
-    }
-  ],
+  "passwordCredentials": [{"@odata.type": "microsoft.graph.passwordCredential"}],
   "publicClient": true,
-  "replyUrls": [
-    "String-value"
-  ],
-  "requiredResourceAccess": [
-    {
-      "@odata.type": "microsoft.graph.requiredresourceaccess"
-    }
-  ],
-  "samlMetadataUrl": "String-value"
+  "recordConsentConditions": "string",
+  "replyUrls": ["string"],
+  "requiredResourceAccess": [{"@odata.type": "microsoft.graph.requiredResourceAccess"}],
+  "samlMetadataUrl": "string"
 }
 
 ```
@@ -89,8 +51,7 @@ Here is a JSON representation of the resource
 |:---------------|:--------|:----------|
 |appId|String|The unique identifier for the application.|
 |appRoles|[AppRole](approle.md) collection|The collection of application roles that an application may declare. These roles can be assigned to users, groups or service principals.                              **Notes**: Requires version 1.5, not nullable.|
-|availableToOtherTenants|Boolean|                **true** if the application is shared with other tenants; otherwise, **false**.|
-|deletionTimestamp|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
+|availableToOtherOrganizations|Boolean|                **true** if the application is shared with other tenants; otherwise, **false**.|
 |displayName|String|The display name for the application.|
 |errorUrl|String|                              |
 |groupMembershipClaims|String|A bitmask that configures the "groups" claim issued in a user or OAuth 2.0 access token that the application expects. The bitmask values are: 0: None, 1: Security groups and Azure AD roles, 2: Reserved, and 4: Reserved. Setting the bitmask to 7 will get all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of.                              **Notes**: Requires version 1.5.|
@@ -104,8 +65,7 @@ Here is a JSON representation of the resource
 |oauth2AllowUrlPathMatching|Boolean|Specifies whether, as part of OAuth 2.0 token requests, Azure AD will allow path matching of the redirect URI against the application's **replyUrls**. The default is **false**.                              **Notes**: Requires version 1.5, not nullable.|
 |oauth2Permissions|[OAuth2Permission](oauth2permission.md) collection|The collection of OAuth 2.0 permission scopes that the web API (resource) application exposes to client applications. These permission scopes may be granted to client applications during consent.                              **Notes**: Requires version 1.5, not nullable.|
 |oauth2RequirePostResponse|Boolean||
-|objectId|String|The unique identifier for the application. Inherited from [DirectoryObject].                              **Notes: **                **key**, immutable, not nullable, unique Read-only.|
-|objectType|String|A string that identifies the object type. For applications the value is always "Application". Inherited from [DirectoryObject].|
+|id|String|The unique identifier for the application. Inherited from [DirectoryObject].                              **Notes: **                **key**, immutable, not nullable, unique Read-only.|
 |passwordCredentials|[PasswordCredential](passwordcredential.md) collection|The collection of password credentials associated with the application.                              **Notes:** not nullable|
 |publicClient|Boolean|Specifies whether this application is a public client (such as an installed application running on a mobile device).  Default is **false**.|
 |replyUrls|String collection|Specifies the URLs that user tokens are sent to for sign in, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to.                              **Notes:** not nullable|

@@ -29,23 +29,12 @@ If successful, this method returns `201, Created` response code and [task](../re
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_task_from_subscribedskus"
+  "name": "create_task_from_tasks"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/tasks
-```
-In the request body, supply a JSON representation of [task](../resources/task.md) object.
-##### Response
-Here is an example of the response.
-<!-- {
-  "blockType": "response",
-  "truncated": false,
-  "@odata.type": "microsoft.graph.task"
-} -->
-```http
-HTTP/1.1 201 Created
+POST https://graph.microsoft.com/v1.0/tasks
 Content-type: application/json
-Content-length: 663
+Content-length: 192
 
 {
   "createdBy": "createdBy-value",
@@ -53,21 +42,28 @@ Content-length: 663
   "planId": "planId-value",
   "bucketId": "bucketId-value",
   "title": "title-value",
-  "orderHint": "orderHint-value",
-  "assigneePriority": "assigneePriority-value",
-  "percentComplete": 99,
-  "startDateTime": "datetime-value",
-  "assignedDateTime": "datetime-value",
-  "createdDateTime": "datetime-value",
-  "assignedBy": "assignedBy-value",
-  "dueDateTime": "datetime-value",
-  "hasDescription": true,
-  "previewType": "previewType-value",
-  "completedDateTime": "datetime-value",
-  "appliedCategories": {
-  },
-  "conversationThreadId": "conversationThreadId-value",
-  "id": "id-value"
+  "orderHint": "orderHint-value"
+}
+```
+In the request body, supply a JSON representation of [task](../resources/task.md) object.
+##### Response
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.task"
+} -->
+```http
+Content-type: application/json
+Content-length: 192
+
+{
+  "createdBy": "createdBy-value",
+  "assignedTo": "assignedTo-value",
+  "planId": "planId-value",
+  "bucketId": "bucketId-value",
+  "title": "title-value",
+  "orderHint": "orderHint-value"
 }
 ```
 

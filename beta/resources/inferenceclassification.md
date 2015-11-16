@@ -16,12 +16,7 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "id": "String-value (identifier)",
-  "overrides": [
-    {
-      "@odata.type": "microsoft.graph.inferenceclassificationoverride"
-    }
-  ]
+  "id": "string (identifier)"
 }
 
 ```

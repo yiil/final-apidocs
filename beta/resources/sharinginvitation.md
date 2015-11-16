@@ -16,8 +16,8 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "email": "String-value",
-  "redeemedBy": "String-value",
+  "email": "string",
+  "redeemedBy": "string",
   "signInRequired": true
 }
 

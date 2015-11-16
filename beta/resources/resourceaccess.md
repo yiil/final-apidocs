@@ -1,6 +1,7 @@
 # resourceAccess resource type
 
-Specifies an OAuth 2.0 permission scope or an app role that an application requires. The **resourceAccess** property of the [RequiredResourceAccess] type is a collection of **ResourceAccess**.
+Specifies an OAuth 2.0 permission scope or an app role that an application requires. The **resourceAccess** property of the [RequiredResourceAccess] type is a collection of **ResourceAccess**.
+
 
 ### JSON representation
 
@@ -16,8 +17,8 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "id": "Guid-value",
-  "type": "String-value"
+  "id": "guid",
+  "type": "string"
 }
 
 ```

@@ -16,10 +16,10 @@ Here is a JSON representation of the resource, which is sent in the body of the 
 
 ```json
 {
-  "action": "String-value",
-  "content": "String-value",
-  "position": "String-value",
-  "target": "String-value"
+  "action": {"@odata.type": "microsoft.graph.patchActionType"},
+  "content": "string",
+  "position": {"@odata.type": "microsoft.graph.patchInsertPosition"},
+  "target": "string"
 }
 
 ```

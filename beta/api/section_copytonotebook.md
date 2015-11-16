@@ -39,25 +39,33 @@ Here is an example of the request.
   "name": "section_copytonotebook"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>/notes/sections/<id>/Microsoft.Graph.copyToNotebook
-Content-Type: application/json
-Content-Length: 56
+POST https://graph.microsoft.com/v1.0/me/notes/sections/<id>/copyToNotebook
+Content-type: application/json
+Content-length: 84
 
 {
   "id": "id-value",
+  "groupId": "groupId-value",
   "renameAs": "renameAs-value"
 }
 ```
 
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
-  "@odata.type": "microsoft.graph.copysectionmodel"
+  "truncated": true,
+  "@odata.type": "microsoft.graph.copystatusmodel"
 } -->
 ```http
-HTTP/1.1 202 Accepted
+Content-type: application/json
+Content-length: 89
+
+{
+  "id": "id-value",
+  "status": "status-value",
+  "createdDateTime": "datetime-value"
+}
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

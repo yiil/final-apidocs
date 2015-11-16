@@ -18,19 +18,9 @@ Here is a JSON representation of the resource
 ```json
 {
   "childFolderCount": 1024,
-  "childFolders": [
-    {
-      "@odata.type": "microsoft.graph.mailfolder"
-    }
-  ],
-  "displayName": "String-value",
-  "id": "String-value (identifier)",
-  "messages": [
-    {
-      "@odata.type": "microsoft.graph.message"
-    }
-  ],
-  "parentFolderId": "String-value",
+  "displayName": "string",
+  "id": "string (identifier)",
+  "parentFolderId": "string",
   "totalItemCount": 1024,
   "unreadItemCount": 1024
 }

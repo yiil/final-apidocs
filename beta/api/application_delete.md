@@ -12,7 +12,7 @@ DELETE /applications/<objectId>
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 Do not supply a request body for this method.
@@ -29,16 +29,15 @@ Here is an example of the request.
   "name": "delete_application"
 }-->
 ```http
-DELETE https://graph.microsoft.com/beta/applications/<objectId>
+DELETE https://graph.microsoft.com/v1.0/applications/<id>
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false
+  "truncated": true
 } -->
 ```http
-HTTP/1.1 204 No Content
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

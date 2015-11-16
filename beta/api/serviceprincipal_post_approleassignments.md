@@ -12,7 +12,7 @@ POST /servicePrincipals/<objectId>/appRoleAssignments
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [AppRoleAssignment](../resources/approleassignment.md) object.
@@ -29,20 +29,29 @@ Here is an example of the request.
   "name": "create_approleassignment_from_serviceprincipal"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/servicePrincipals/<objectId>
+POST https://graph.microsoft.com/v1.0/servicePrincipals/<id>/appRoleAssignments
+Content-type: application/json
+Content-length: 233
+
+{
+  "creationTimestamp": "datetime-value",
+  "principalDisplayName": "principalDisplayName-value",
+  "principalId": "principalId-value",
+  "principalType": "principalType-value",
+  "resourceDisplayName": "resourceDisplayName-value"
+}
 ```
-In the request body, supply a JSON representation of [AppRoleAssignment](../resources/approleassignment.md) object.
+In the request body, supply a JSON representation of [appRoleAssignment](../resources/approleassignment.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.approleassignment"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 398
+Content-length: 253
 
 {
   "creationTimestamp": "datetime-value",
@@ -50,11 +59,7 @@ Content-length: 398
   "principalDisplayName": "principalDisplayName-value",
   "principalId": "principalId-value",
   "principalType": "principalType-value",
-  "resourceDisplayName": "resourceDisplayName-value",
-  "resourceId": "resourceId-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "resourceDisplayName": "resourceDisplayName-value"
 }
 ```
 

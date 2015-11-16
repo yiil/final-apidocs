@@ -1,6 +1,7 @@
 # verifiedDomain resource type
 
-Specifies a domain for a tenant. The **verifiedDomains** property of the [TenantDetail] entity is a collection of **VerifiedDomain**.
+Specifies a domain for a tenant. The **verifiedDomains** property of the [TenantDetail] entity is a collection of **VerifiedDomain**.
+
 
 ### JSON representation
 
@@ -16,12 +17,11 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "capabilities": "String-value",
-  "default": true,
-  "id": "String-value",
-  "initial": true,
-  "name": "String-value",
-  "type": "String-value"
+  "capabilities": "string",
+  "isDefault": true,
+  "isInitial": true,
+  "name": "string",
+  "type": "string"
 }
 
 ```
@@ -29,9 +29,8 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |capabilities|String|For example, “Email”, “OfficeCommunicationsOnline”.|
-|default|Boolean|                **true** if this is the default domain associated with the tenant; otherwise, **false**.            |
-|id|String|For example, “00057FFE80187238”.|
-|initial|Boolean|            |
+|isDefault|Boolean|                **true** if this is the default domain associated with the tenant; otherwise, **false**.            |
+|isInitial|Boolean|            |
 |name|String|The domain name; for example, “contoso.onmicrosoft.com”|
 |type|String|For example, “Managed”.|
 

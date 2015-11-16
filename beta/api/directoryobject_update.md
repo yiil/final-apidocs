@@ -10,18 +10,16 @@ PATCH /users/<objectId>/manager
 PATCH /directoryObjects/<objectId>
 PATCH /contacts/<objectId>/manager
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|deletionTimestamp|DateTimeOffset|The time at which the directory object was deleted. It only applies to those directory objects which can be restored. Currently it is only supported for deleted [Application] objects; all other entities return **null** for this property.                            **Notes**: Requires version 1.5 or newer.            |
-|objectType|String|A string that identifies the object type. For example, for groups the value is always “Group”.|
 
 ### Response
 If successful, this method returns a `200 OK` response code and updated [directoryObject](../resources/directoryobject.md) object in the response body.

@@ -16,10 +16,8 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "owner": {
-    "@odata.type": "microsoft.graph.identityset"
-  },
-  "scope": "String-value"
+  "owner": {"@odata.type": "microsoft.graph.identitySet"},
+  "scope": "string"
 }
 
 ```

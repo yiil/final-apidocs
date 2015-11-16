@@ -18,30 +18,12 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "String-value":
-  {
-    "alias": "String-value",
-    "lastModifiedBy": "String-value",
-    "lastModifiedDateTime": "String(timestamp)",
-    "previewPriority": "String-value",
-    "type": "String-value"
-  }
 }
+
 ```
 
 ```json
-// Example
-
 {
-  "https%3A//contoso%2Esharepoint%2Ecom/teams/agile/documents/AnnualReport%2Epptx":
-  {
-    "@odata.type": "microsoft.graph.externalReference", // required in PATCH requests to edit the references on a task
-    "alias": "Agile Team Annual Report",
-    "lastModifiedBy": "1e9955d2-6acd-45bf-86d3-b546fdc795eb",
-    "lastModifiedDateTime": "2015-09-21T17:45:12.039Z",
-    "previewPriority": "0009005756397228702",
-    "type": "PowerPoint"
-  }
 }
 
 ```

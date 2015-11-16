@@ -13,7 +13,7 @@ GET /plans/<id>/details
 
 ```
 ### Optional query parameters
-None
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
@@ -32,19 +32,18 @@ Here is an example of the request.
   "name": "get_plandetails"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/plans/<id>/details
+GET https://graph.microsoft.com/v1.0/plans/<id>/details
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.plandetails"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 381
+Content-length: 305
 
 {
   "sharedWith": {
@@ -53,9 +52,7 @@ Content-length: 381
   "category1Description": "category1Description-value",
   "category2Description": "category2Description-value",
   "category3Description": "category3Description-value",
-  "category4Description": "category4Description-value",
-  "category5Description": "category5Description-value",
-  "id": "id-value"
+  "category4Description": "category4Description-value"
 }
 ```
 

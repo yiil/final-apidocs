@@ -16,8 +16,8 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "crc32Hash": "String-value",
-  "sha1Hash": "String-value"
+  "crc32Hash": "string",
+  "sha1Hash": "string"
 }
 
 ```

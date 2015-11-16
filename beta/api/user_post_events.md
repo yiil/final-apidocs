@@ -14,7 +14,7 @@ POST /drive/root/lastModifiedByUser/events
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [Event](../resources/event.md) object.
@@ -31,107 +31,46 @@ Here is an example of the request.
   "name": "create_event_from_user"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>
-```
-In the request body, supply a JSON representation of [Event](../resources/event.md) object.
-##### Response
-Here is an example of the response.
-<!-- {
-  "blockType": "response",
-  "truncated": false,
-  "@odata.type": "microsoft.graph.event"
-} -->
-```http
-HTTP/1.1 201 Created
+POST https://graph.microsoft.com/v1.0/me/events
 Content-type: application/json
-Content-length: 2036
+Content-length: 285
 
 {
   "originalStartTimeZone": "originalStartTimeZone-value",
   "originalEndTimeZone": "originalEndTimeZone-value",
   "responseStatus": {
-    "response": "response-value",
+    "response": {
+    },
     "time": "datetime-value"
   },
   "iCalUId": "iCalUId-value",
   "reminderMinutesBeforeStart": 99,
-  "isReminderOn": true,
-  "hasAttachments": true,
-  "subject": "subject-value",
-  "body": {
-    "contentType": "contentType-value",
-    "content": "content-value"
-  },
-  "bodyPreview": "bodyPreview-value",
-  "importance": "importance-value",
-  "sensitivity": "sensitivity-value",
-  "start": {
-    "dateTime": "dateTime-value",
-    "timeZone": "timeZone-value"
-  },
-  "originalStart": "datetime-value",
-  "end": {
-    "dateTime": "dateTime-value",
-    "timeZone": "timeZone-value"
-  },
-  "location": {
-    "altitude": 99,
-    "latitude": 99,
-    "longitude": 99
-  },
-  "isAllDay": true,
-  "isCancelled": true,
-  "isOrganizer": true,
-  "recurrence": {
-    "pattern": {
-      "type": "type-value",
-      "interval": 99,
-      "month": 99,
-      "dayOfMonth": 99,
-      "daysOfWeek": [
-        "daysOfWeek-value"
-      ],
-      "firstDayOfWeek": "firstDayOfWeek-value",
-      "index": "index-value"
+  "isReminderOn": true
+}
+```
+In the request body, supply a JSON representation of [event](../resources/event.md) object.
+##### Response
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.event"
+} -->
+```http
+Content-type: application/json
+Content-length: 285
+
+{
+  "originalStartTimeZone": "originalStartTimeZone-value",
+  "originalEndTimeZone": "originalEndTimeZone-value",
+  "responseStatus": {
+    "response": {
     },
-    "range": {
-      "type": "type-value",
-      "startDate": "startDate-value",
-      "endDate": "endDate-value",
-      "numberOfOccurrences": 99
-    }
+    "time": "datetime-value"
   },
-  "responseRequested": true,
-  "seriesMasterId": "seriesMasterId-value",
-  "showAs": "showAs-value",
-  "type": "type-value",
-  "attendees": [
-    {
-      "status": {
-        "response": "response-value",
-        "time": "datetime-value"
-      },
-      "type": "type-value",
-      "emailAddress": {
-        "name": "name-value",
-        "address": "address-value"
-      }
-    }
-  ],
-  "organizer": {
-    "emailAddress": {
-      "name": "name-value",
-      "address": "address-value"
-    }
-  },
-  "webLink": "webLink-value",
-  "createdDateTime": "datetime-value",
-  "lastModifiedDateTime": "datetime-value",
-  "changeKey": "changeKey-value",
-  "categories": [
-    "categories-value"
-  ],
-  "id": "id-value"
+  "iCalUId": "iCalUId-value",
+  "reminderMinutesBeforeStart": 99,
+  "isReminderOn": true
 }
 ```
 

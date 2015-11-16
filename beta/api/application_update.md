@@ -8,10 +8,10 @@ The following **scopes** are required to execute this API:
 ```http
 PATCH /applications/<objectId>
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
@@ -20,8 +20,7 @@ In the request body, supply the values for relevant fields that should be update
 |:---------------|:--------|:----------|
 |appId|String|The unique identifier for the application.|
 |appRoles|AppRole|The collection of application roles that an application may declare. These roles can be assigned to users, groups or service principals.                              **Notes**: Requires version 1.5, not nullable.|
-|availableToOtherTenants|Boolean|                **true** if the application is shared with other tenants; otherwise, **false**.|
-|deletionTimestamp|DateTimeOffset||
+|availableToOtherOrganizations|Boolean|                **true** if the application is shared with other tenants; otherwise, **false**.|
 |displayName|String|The display name for the application.|
 |errorUrl|String|                              |
 |groupMembershipClaims|String|A bitmask that configures the "groups" claim issued in a user or OAuth 2.0 access token that the application expects. The bitmask values are: 0: None, 1: Security groups and Azure AD roles, 2: Reserved, and 4: Reserved. Setting the bitmask to 7 will get all of the security groups, distribution groups, and Azure AD directory roles that the signed-in user is a member of.                              **Notes**: Requires version 1.5.|
@@ -35,7 +34,6 @@ In the request body, supply the values for relevant fields that should be update
 |oauth2AllowUrlPathMatching|Boolean|Specifies whether, as part of OAuth 2.0 token requests, Azure AD will allow path matching of the redirect URI against the application's **replyUrls**. The default is **false**.                              **Notes**: Requires version 1.5, not nullable.|
 |oauth2Permissions|OAuth2Permission|The collection of OAuth 2.0 permission scopes that the web API (resource) application exposes to client applications. These permission scopes may be granted to client applications during consent.                              **Notes**: Requires version 1.5, not nullable.|
 |oauth2RequirePostResponse|Boolean||
-|objectType|String|A string that identifies the object type. For applications the value is always "Application". Inherited from [DirectoryObject].|
 |passwordCredentials|PasswordCredential|The collection of password credentials associated with the application.                              **Notes:** not nullable|
 |publicClient|Boolean|Specifies whether this application is a public client (such as an installed application running on a mobile device).  Default is **false**.|
 |replyUrls|String|Specifies the URLs that user tokens are sent to for sign in, or the redirect URIs that OAuth 2.0 authorization codes and access tokens are sent to.                              **Notes:** not nullable|
@@ -52,11 +50,23 @@ Here is an example of the request.
   "name": "update_application"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/applications/<objectId>
+PATCH https://graph.microsoft.com/v1.0/applications/<id>
 Content-type: application/json
-Content-length: 2150
+Content-length: 636
 
 {
+  "addIns": [
+    {
+      "id": "id-value",
+      "type": "type-value",
+      "properties": [
+        {
+          "key": "key-value",
+          "value": "value-value"
+        }
+      ]
+    }
+  ],
   "appId": "appId-value",
   "appRoles": [
     {
@@ -67,91 +77,39 @@ Content-length: 2150
       "displayName": "displayName-value",
       "id": "id-value",
       "isEnabled": true,
+      "origin": "origin-value",
       "value": "value-value"
     }
   ],
-  "availableToOtherTenants": true,
+  "availableToOtherOrganizations": true,
   "displayName": "displayName-value",
-  "errorUrl": "errorUrl-value",
-  "groupMembershipClaims": "groupMembershipClaims-value",
-  "homepage": "homepage-value",
-  "identifierUris": [
-    "identifierUris-value"
-  ],
-  "keyCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "type": "type-value",
-      "usage": "usage-value",
-      "value": "value-value"
-    }
-  ],
-  "knownClientApplications": [
-    "knownClientApplications-value"
-  ],
-  "mainLogo": "mainLogo-value",
-  "logoutUrl": "logoutUrl-value",
-  "oauth2AllowImplicitFlow": true,
-  "oauth2AllowUrlPathMatching": true,
-  "oauth2Permissions": [
-    {
-      "adminConsentDescription": "adminConsentDescription-value",
-      "adminConsentDisplayName": "adminConsentDisplayName-value",
-      "id": "id-value",
-      "isEnabled": true,
-      "type": "type-value",
-      "userConsentDescription": "userConsentDescription-value",
-      "userConsentDisplayName": "userConsentDisplayName-value",
-      "value": "value-value"
-    }
-  ],
-  "oauth2RequirePostResponse": true,
-  "passwordCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "value": "value-value"
-    }
-  ],
-  "publicClient": true,
-  "replyUrls": [
-    "replyUrls-value"
-  ],
-  "requiredResourceAccess": [
-    {
-      "resourceAppId": "resourceAppId-value",
-      "resourceAccess": [
-        {
-          "id": "id-value",
-          "type": "type-value"
-        }
-      ]
-    }
-  ],
-  "samlMetadataUrl": "samlMetadataUrl-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "errorUrl": "errorUrl-value"
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.application"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 2150
+Content-length: 636
 
 {
+  "addIns": [
+    {
+      "id": "id-value",
+      "type": "type-value",
+      "properties": [
+        {
+          "key": "key-value",
+          "value": "value-value"
+        }
+      ]
+    }
+  ],
   "appId": "appId-value",
   "appRoles": [
     {
@@ -162,76 +120,13 @@ Content-length: 2150
       "displayName": "displayName-value",
       "id": "id-value",
       "isEnabled": true,
+      "origin": "origin-value",
       "value": "value-value"
     }
   ],
-  "availableToOtherTenants": true,
+  "availableToOtherOrganizations": true,
   "displayName": "displayName-value",
-  "errorUrl": "errorUrl-value",
-  "groupMembershipClaims": "groupMembershipClaims-value",
-  "homepage": "homepage-value",
-  "identifierUris": [
-    "identifierUris-value"
-  ],
-  "keyCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "type": "type-value",
-      "usage": "usage-value",
-      "value": "value-value"
-    }
-  ],
-  "knownClientApplications": [
-    "knownClientApplications-value"
-  ],
-  "mainLogo": "mainLogo-value",
-  "logoutUrl": "logoutUrl-value",
-  "oauth2AllowImplicitFlow": true,
-  "oauth2AllowUrlPathMatching": true,
-  "oauth2Permissions": [
-    {
-      "adminConsentDescription": "adminConsentDescription-value",
-      "adminConsentDisplayName": "adminConsentDisplayName-value",
-      "id": "id-value",
-      "isEnabled": true,
-      "type": "type-value",
-      "userConsentDescription": "userConsentDescription-value",
-      "userConsentDisplayName": "userConsentDisplayName-value",
-      "value": "value-value"
-    }
-  ],
-  "oauth2RequirePostResponse": true,
-  "passwordCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "value": "value-value"
-    }
-  ],
-  "publicClient": true,
-  "replyUrls": [
-    "replyUrls-value"
-  ],
-  "requiredResourceAccess": [
-    {
-      "resourceAppId": "resourceAppId-value",
-      "resourceAccess": [
-        {
-          "id": "id-value",
-          "type": "type-value"
-        }
-      ]
-    }
-  ],
-  "samlMetadataUrl": "samlMetadataUrl-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "errorUrl": "errorUrl-value"
 }
 ```
 

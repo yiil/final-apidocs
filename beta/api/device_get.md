@@ -9,11 +9,12 @@ The following **scopes** are required to execute this API:
 GET /devices/<objectId>
 ```
 ### Optional query parameters
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 Do not supply a request body for this method.
@@ -27,19 +28,18 @@ Here is an example of the request.
   "name": "get_device"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/devices/<objectId>
+GET https://graph.microsoft.com/v1.0/devices/<id>
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.device"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 732
+Content-length: 322
 
 {
   "accountEnabled": true,
@@ -50,22 +50,10 @@ Content-length: 732
       "key": "key-value"
     }
   ],
-  "approximateLastLogonTimestamp": "datetime-value",
+  "approximateLastSignInDateTime": "datetime-value",
   "deviceId": "deviceId-value",
   "deviceMetadata": "deviceMetadata-value",
-  "deviceObjectVersion": 99,
-  "deviceOSType": "deviceOSType-value",
-  "deviceOSVersion": "deviceOSVersion-value",
-  "devicePhysicalIds": [
-    "devicePhysicalIds-value"
-  ],
-  "deviceTrustType": "deviceTrustType-value",
-  "dirSyncEnabled": true,
-  "displayName": "displayName-value",
-  "lastDirSyncTime": "datetime-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "deviceVersion": 99
 }
 ```
 

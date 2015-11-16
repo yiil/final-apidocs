@@ -16,16 +16,14 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "category0Description": "String-value",
-  "category1Description": "String-value",
-  "category2Description": "String-value",
-  "category3Description": "String-value",
-  "category4Description": "String-value",
-  "category5Description": "String-value",
-  "id": "String-value (identifier)",
-  "sharedWith": {
-    "@odata.type": "microsoft.graph.useridcollection"
-  }
+  "category0Description": "string",
+  "category1Description": "string",
+  "category2Description": "string",
+  "category3Description": "string",
+  "category4Description": "string",
+  "category5Description": "string",
+  "id": "string (identifier)",
+  "sharedWith": {"@odata.type": "microsoft.graph.userIdCollection"}
 }
 
 ```

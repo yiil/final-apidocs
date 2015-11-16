@@ -18,44 +18,19 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "attachments": [
-    {
-      "@odata.type": "microsoft.graph.attachment"
-    }
-  ],
-  "body": {
-    "@odata.type": "microsoft.graph.itembody"
-  },
-  "categories": [
-    "String-value"
-  ],
-  "changeKey": "String-value",
-  "conversationId": "String-value",
-  "conversationThreadId": "String-value",
-  "createdDateTime": "String (timestamp)",
-  "extensions": [
-    {
-      "@odata.type": "microsoft.graph.extension"
-    }
-  ],
-  "from": {
-    "@odata.type": "microsoft.graph.recipient"
-  },
+  "body": {"@odata.type": "microsoft.graph.itemBody"},
+  "categories": ["string"],
+  "changeKey": "string",
+  "conversationId": "string",
+  "conversationThreadId": "string",
+  "createdDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "from": {"@odata.type": "microsoft.graph.recipient"},
   "hasAttachments": true,
-  "id": "String-value (identifier)",
-  "inReplyTo": {
-    "@odata.type": "microsoft.graph.post"
-  },
-  "lastModifiedDateTime": "String (timestamp)",
-  "newParticipants": [
-    {
-      "@odata.type": "microsoft.graph.recipient"
-    }
-  ],
-  "receivedDateTime": "String (timestamp)",
-  "sender": {
-    "@odata.type": "microsoft.graph.recipient"
-  }
+  "id": "string (identifier)",
+  "lastModifiedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "newParticipants": [{"@odata.type": "microsoft.graph.recipient"}],
+  "receivedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "sender": {"@odata.type": "microsoft.graph.recipient"}
 }
 
 ```

@@ -24,22 +24,31 @@ Do not supply a request body for this method.
 If successful, this method returns a `200 OK` response code and the image or file binary data in the response body. 
 ### Example
 ##### Request
-Here is an example of the request. Using the `content` endpoint for the resource is the same as using `$value`. 
+Here is an example of the request.
 <!-- {
   "blockType": "request",
   "name": "get_resource"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/users/<objectId>/notes/resources/<id>/content
-Authorization: Bearer <token>
+GET https://graph.microsoft.com/v1.0/me/notes/resources/<id>
 ```
-Note: Images won't render directly in a browser because they require authorization to retrieve them, like the rest of the page content.
-
 ##### Response
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.resource"
+} -->
 ```http
-HTTP/1.1 200 OK
+Content-type: application/json
+Content-length: 112
 
-...binary data...
+{
+  "id": "id-value",
+  "self": "self-value",
+  "content": "content-value",
+  "contentUrl": "contentUrl-value"
+}
 ```
 <!-- {
   "blockType": "response",

@@ -14,7 +14,7 @@ POST /drive/root/createdByUser/joinedGroups/<objectId>/Microsoft.Graph.checkMemb
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, provide a JSON object with the following parameters.
@@ -35,7 +35,7 @@ Here is an example of the request.
   "name": "group_checkmembergroups"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/groups/<objectId>/Microsoft.Graph.checkMemberGroups
+POST https://graph.microsoft.com/v1.0/groups/<id>/checkMemberGroups
 Content-type: application/json
 Content-length: 44
 
@@ -47,21 +47,20 @@ Content-length: 44
 ```
 
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "string",
   "isCollection": true
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 39
 
 {
   "value": [
-    "String-value"
+    "string-value"
   ]
 }
 ```

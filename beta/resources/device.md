@@ -1,6 +1,7 @@
 # device resource type
 
-Represents a device registered in the directory. Inherits from [DirectoryObject].
+Represents a device registered in the directory. Inherits from [DirectoryObject].
+
 
 ### JSON representation
 
@@ -18,37 +19,21 @@ Here is a JSON representation of the resource
 ```json
 {
   "accountEnabled": true,
-  "alternativeSecurityIds": [
-    {
-      "@odata.type": "microsoft.graph.alternativesecurityid"
-    }
-  ],
-  "approximateLastLogonTimestamp": "String (timestamp)",
-  "deletionTimestamp": "String (timestamp)",
-  "deviceId": "Guid-value",
-  "deviceMetadata": "String-value",
-  "deviceOSType": "String-value",
-  "deviceOSVersion": "String-value",
-  "deviceObjectVersion": 1024,
-  "devicePhysicalIds": [
-    "String-value"
-  ],
-  "deviceTrustType": "String-value",
-  "dirSyncEnabled": true,
-  "displayName": "String-value",
-  "lastDirSyncTime": "String (timestamp)",
-  "objectId": "String-value (identifier)",
-  "objectType": "String-value",
-  "registeredOwners": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "registeredUsers": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ]
+  "alternativeSecurityIds": [{"@odata.type": "microsoft.graph.alternativeSecurityId"}],
+  "approximateLastSignInDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "deviceId": "string",
+  "deviceMetadata": "string",
+  "deviceVersion": 1024,
+  "displayName": "string",
+  "id": "string (identifier)",
+  "isCompliant": true,
+  "isManaged": true,
+  "onPremisesLastSyncDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "onPremisesSyncEnabled": true,
+  "operatingSystem": "string",
+  "operatingSystemVersion": "string",
+  "physicalIds": ["string"],
+  "trustType": "string"
 }
 
 ```
@@ -57,20 +42,18 @@ Here is a JSON representation of the resource
 |:---------------|:--------|:----------|
 |accountEnabled|Boolean|            |
 |alternativeSecurityIds|[AlternativeSecurityId](alternativesecurityid.md) collection|                **Notes:** not nullable, the **any** operator is required for filter expressions on multi-valued properties; for more information, see [Supported Queries, Filters, and Paging Options](https://msdn.microsoft.com/library/azure/dn727074.aspx).            |
-|approximateLastLogonTimestamp|DateTimeOffset|            The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|deletionTimestamp|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
+|approximateLastSignInDateTime|DateTimeOffset|            The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
 |deviceId|Guid|            |
 |deviceMetadata|String||
-|deviceOSType|String|The type of operating system on the device.|
-|deviceOSVersion|String|The version of the operating system on the device|
-|deviceObjectVersion|Int32|            |
-|devicePhysicalIds|String collection|                **Notes:** not nullable            |
-|deviceTrustType|String||
-|dirSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default).|
+|operatingSystem|String|The type of operating system on the device.|
+|operatingSystemVersion|String|The version of the operating system on the device|
+|deviceVersion|Int32|            |
+|physicalIds|String collection|                **Notes:** not nullable            |
+|trustType|String||
+|onPremisesSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default).|
 |displayName|String|The display name for the device.|
-|lastDirSyncTime|DateTimeOffset|The last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|objectId|String|The unique identifier for the device. Inherited from [DirectoryObject].                            **Notes: key**, immutable, not nullable, unique             Read-only.|
-|objectType|String|A string that identifies the object type. For devices the value is always “Device”. Inherited from [DirectoryObject]|
+|onPremisesLastSyncDateTime|DateTimeOffset|The last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
+|id|String|The unique identifier for the device. Inherited from [DirectoryObject].                            **Notes: key**, immutable, not nullable, unique             Read-only.|
 
 ### Relationships
 | Relationship | Type	|Description|

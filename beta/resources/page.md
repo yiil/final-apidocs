@@ -17,23 +17,17 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "content": "Stream-value",
-  "contentUrl": "String-value",
-  "createdByAppId": "String-value",
-  "createdTime": "String (timestamp)",
-  "id": "String-value (identifier)",
-  "lastModifiedTime": "String (timestamp)",
-  "links": {
-    "@odata.type": "microsoft.graph.pagelinks"
-  },
-  "parentNotebook": {
-    "@odata.type": "microsoft.graph.notebook"
-  },
-  "parentSection": {
-    "@odata.type": "microsoft.graph.section"
-  },
-  "self": "String-value",
-  "title": "String-value"
+  "content": "stream",
+  "contentUrl": "string",
+  "createdByAppId": "string",
+  "createdTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "id": "string (identifier)",
+  "lastModifiedTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "level": 1024,
+  "links": {"@odata.type": "microsoft.graph.pageLinks"},
+  "order": 1024,
+  "self": "string",
+  "title": "string"
 }
 
 ```

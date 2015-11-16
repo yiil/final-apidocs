@@ -9,11 +9,12 @@ The following **scopes** are required to execute this API:
 GET /servicePrincipals/<objectId>
 ```
 ### Optional query parameters
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 Do not supply a request body for this method.
@@ -27,89 +28,37 @@ Here is an example of the request.
   "name": "get_serviceprincipal"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/servicePrincipals/<objectId>
+GET https://graph.microsoft.com/v1.0/servicePrincipals/<id>
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.serviceprincipal"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 1942
+Content-length: 391
 
 {
   "accountEnabled": true,
+  "addIns": [
+    {
+      "id": "id-value",
+      "type": "type-value",
+      "properties": [
+        {
+          "key": "key-value",
+          "value": "value-value"
+        }
+      ]
+    }
+  ],
   "appDisplayName": "appDisplayName-value",
   "appId": "appId-value",
-  "appOwnerTenantId": "appOwnerTenantId-value",
-  "appRoleAssignmentRequired": true,
-  "appRoles": [
-    {
-      "allowedMemberTypes": [
-        "allowedMemberTypes-value"
-      ],
-      "description": "description-value",
-      "displayName": "displayName-value",
-      "id": "id-value",
-      "isEnabled": true,
-      "value": "value-value"
-    }
-  ],
-  "displayName": "displayName-value",
-  "errorUrl": "errorUrl-value",
-  "homepage": "homepage-value",
-  "keyCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "type": "type-value",
-      "usage": "usage-value",
-      "value": "value-value"
-    }
-  ],
-  "logoutUrl": "logoutUrl-value",
-  "oauth2Permissions": [
-    {
-      "adminConsentDescription": "adminConsentDescription-value",
-      "adminConsentDisplayName": "adminConsentDisplayName-value",
-      "id": "id-value",
-      "isEnabled": true,
-      "type": "type-value",
-      "userConsentDescription": "userConsentDescription-value",
-      "userConsentDisplayName": "userConsentDisplayName-value",
-      "value": "value-value"
-    }
-  ],
-  "passwordCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "value": "value-value"
-    }
-  ],
-  "preferredTokenSigningKeyThumbprint": "preferredTokenSigningKeyThumbprint-value",
-  "publisherName": "publisherName-value",
-  "replyUrls": [
-    "replyUrls-value"
-  ],
-  "samlMetadataUrl": "samlMetadataUrl-value",
-  "servicePrincipalNames": [
-    "servicePrincipalNames-value"
-  ],
-  "tags": [
-    "tags-value"
-  ],
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "appOwnerOrganizationId": "appOwnerOrganizationId-value",
+  "appRoleAssignmentRequired": true
 }
 ```
 

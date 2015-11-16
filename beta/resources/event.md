@@ -19,76 +19,38 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "attachments": [
-    {
-      "@odata.type": "microsoft.graph.attachment"
-    }
-  ],
-  "attendees": [
-    {
-      "@odata.type": "microsoft.graph.attendee"
-    }
-  ],
-  "body": {
-    "@odata.type": "microsoft.graph.itembody"
-  },
-  "bodyPreview": "String-value",
-  "calendar": {
-    "@odata.type": "microsoft.graph.calendar"
-  },
-  "categories": [
-    "String-value"
-  ],
-  "changeKey": "String-value",
-  "createdDateTime": "String (timestamp)",
-  "end": {
-    "@odata.type": "microsoft.graph.datetimetimezone"
-  },
-  "extensions": [
-    {
-      "@odata.type": "microsoft.graph.extension"
-    }
-  ],
+  "attendees": [{"@odata.type": "microsoft.graph.attendee"}],
+  "body": {"@odata.type": "microsoft.graph.itemBody"},
+  "bodyPreview": "string",
+  "categories": ["string"],
+  "changeKey": "string",
+  "createdDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "end": {"@odata.type": "microsoft.graph.dateTimeTimeZone"},
   "hasAttachments": true,
-  "iCalUId": "String-value",
-  "id": "String-value (identifier)",
-  "importance": "String-value",
-  "instances": [
-    {
-      "@odata.type": "microsoft.graph.event"
-    }
-  ],
+  "iCalUId": "string",
+  "id": "string (identifier)",
+  "importance": {"@odata.type": "microsoft.graph.importance"},
   "isAllDay": true,
   "isCancelled": true,
   "isOrganizer": true,
   "isReminderOn": true,
-  "lastModifiedDateTime": "String (timestamp)",
-  "location": {
-    "@odata.type": "microsoft.graph.location"
-  },
-  "organizer": {
-    "@odata.type": "microsoft.graph.recipient"
-  },
-  "originalEndTimeZone": "String-value",
-  "originalStart": "String (timestamp)",
-  "originalStartTimeZone": "String-value",
-  "recurrence": {
-    "@odata.type": "microsoft.graph.patternedrecurrence"
-  },
+  "lastModifiedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "location": {"@odata.type": "microsoft.graph.location"},
+  "organizer": {"@odata.type": "microsoft.graph.recipient"},
+  "originalEndTimeZone": "string",
+  "originalStart": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "originalStartTimeZone": "string",
+  "recurrence": {"@odata.type": "microsoft.graph.patternedRecurrence"},
   "reminderMinutesBeforeStart": 1024,
   "responseRequested": true,
-  "responseStatus": {
-    "@odata.type": "microsoft.graph.responsestatus"
-  },
-  "sensitivity": "String-value",
-  "seriesMasterId": "String-value",
-  "showAs": "String-value",
-  "start": {
-    "@odata.type": "microsoft.graph.datetimetimezone"
-  },
-  "subject": "String-value",
-  "type": "String-value",
-  "webLink": "String-value"
+  "responseStatus": {"@odata.type": "microsoft.graph.responseStatus"},
+  "sensitivity": {"@odata.type": "microsoft.graph.sensitivity"},
+  "seriesMasterId": "string",
+  "showAs": {"@odata.type": "microsoft.graph.freeBusyStatus"},
+  "start": {"@odata.type": "microsoft.graph.dateTimeTimeZone"},
+  "subject": "string",
+  "type": {"@odata.type": "microsoft.graph.eventType"},
+  "webLink": "string"
 }
 
 ```

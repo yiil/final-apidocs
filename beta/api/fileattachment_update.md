@@ -8,10 +8,10 @@ The following **scopes** are required to execute this API:
 ```http
 
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
@@ -39,7 +39,7 @@ Here is an example of the request.
 ```http
 
 Content-type: application/json
-Content-length: 282
+Content-length: 228
 
 {
   "contentId": "contentId-value",
@@ -47,23 +47,19 @@ Content-length: 282
   "contentBytes": "contentBytes-value",
   "lastModifiedDateTime": "datetime-value",
   "name": "name-value",
-  "contentType": "contentType-value",
-  "size": 99,
-  "isInline": true,
-  "id": "id-value"
+  "contentType": "contentType-value"
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.fileattachment"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 282
+Content-length: 228
 
 {
   "contentId": "contentId-value",
@@ -71,10 +67,7 @@ Content-length: 282
   "contentBytes": "contentBytes-value",
   "lastModifiedDateTime": "datetime-value",
   "name": "name-value",
-  "contentType": "contentType-value",
-  "size": 99,
-  "isInline": true,
-  "id": "id-value"
+  "contentType": "contentType-value"
 }
 ```
 

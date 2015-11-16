@@ -16,10 +16,10 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "alias": "String-value",
-  "email": "String-value",
-  "objectId": "String-value",
-  "permissionIdentityType": "String-value"
+  "alias": "string",
+  "email": "string",
+  "objectId": "string",
+  "permissionIdentityType": "string"
 }
 
 ```

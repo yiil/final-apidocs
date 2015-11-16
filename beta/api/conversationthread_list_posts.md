@@ -11,21 +11,12 @@ GET /groups/<objectId>/conversations/<id>/threads/<id>/posts
 GET /users/<objectId>/joinedGroups/<objectId>/threads/<id>/posts
 ```
 ### Optional query parameters
-|Name|Value|Description|
-|:---------------|:--------|:-------|
-|$count|none|The count of related entities can be requested by specifying the $count query option.|
-|$expand|string|Comma-separated list of relationships to expand and include in the response. See relationships table of [Post](../resources/post.md) for supported names. |
-|$filter|string|Filter string that lets you filter the response based on a set of criteria.|
-|$orderby|string|Comma-separated list of properties that are used to sort the order of items in the response collection.|
-|$select|string|Comma-separated list of properties to include in the response.|
-|$skip|int|The number of items to skip in a result set.|
-|$skipToken|string|Paging token that is used to get the next set of results.|
-|$top|int|The number of items to return in a result set.|
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 Do not supply a request body for this method.
@@ -39,26 +30,26 @@ Here is an example of the request.
   "name": "get_posts"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/groups/<objectId>/threads/<id>/posts
+GET https://graph.microsoft.com/v1.0/groups/<id>/threads/<id>/posts
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.post",
   "isCollection": true
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 959
+Content-length: 523
 
 {
   "value": [
     {
       "body": {
-        "contentType": "contentType-value",
+        "contentType": {
+        },
         "content": "content-value"
       },
       "receivedDateTime": "datetime-value",
@@ -75,23 +66,7 @@ Content-length: 959
           "address": "address-value"
         }
       },
-      "conversationThreadId": "conversationThreadId-value",
-      "newParticipants": [
-        {
-          "emailAddress": {
-            "name": "name-value",
-            "address": "address-value"
-          }
-        }
-      ],
-      "conversationId": "conversationId-value",
-      "createdDateTime": "datetime-value",
-      "lastModifiedDateTime": "datetime-value",
-      "changeKey": "changeKey-value",
-      "categories": [
-        "categories-value"
-      ],
-      "id": "id-value"
+      "conversationThreadId": "conversationThreadId-value"
     }
   ]
 }

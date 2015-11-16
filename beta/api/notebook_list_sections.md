@@ -13,15 +13,7 @@ GET /users/<objectId>/notes/notebooks/<id>/sections
 GET /groups/<objectId>/notes/notebooks/<id>/sections
 ```
 ### Optional query parameters
-|Name|Value|Description|
-|:---------------|:--------|:-------|
-|$count|none|The count of related entities.|
-|$expand|string|Comma-separated list of relationships to expand and include in the response. The default response expands `parentNotebook` and `parentSectionGroup` and selects their `id`, `name`, and `self` properties. Valid values for sections are `parentNotebook` and `parentSectionGroup`. |
-|$filter|string|Filter string that lets you filter the response based on a set of criteria.|
-|$orderby|string|Comma-separated list of properties that are used to sort the order of items in the response collection. The default is `name asc`.|
-|$select|string|Comma-separated list of properties to include in the response.|
-|$skip|int|The number of items to skip in a result set.|
-|$top|int|The number of items to return in a result set.|
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
@@ -41,23 +33,19 @@ Here is an example of the request.
   "name": "get_sections"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/users/<objectId>/notes/notebooks/<id>/sections
-Authorization: Bearer <token>
-Accept: application/json
+GET https://graph.microsoft.com/v1.0/me/notes/notebooks/<id>/sections
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.section",
   "isCollection": true
 } -->
 ```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 341
-...
+Content-type: application/json
+Content-length: 345
 
 {
   "value": [
@@ -66,21 +54,13 @@ Content-Length: 341
       "pagesUrl": "pagesUrl-value",
       "name": "name-value",
       "createdBy": "createdBy-value",
-      "lastModifiedBy": "lastModifiedBy-value",
-      "lastModifiedTime": "datetime-value",
-      "id": "id-value",
-      "self": "self-value",
-      "createdTime": "datetime-value",
-      "parentSectionGroup": {
-        "id": "parentSectionGroup-id-value",
-        "name": "parentSectionGroup-name-value",
-        "self": "parentSectionGroup-self-value"
+      "createdByIdentity": {
+        "user": {
+          "id": "id-value",
+          "displayName": "displayName-value"
+        }
       },
-      "parentNotebook": {
-        "id": "parentNotebook-id-value",
-        "name": "nparentNotebook-name-value",
-        "self": "parentNotebook-self-value"
-      }
+      "lastModifiedBy": "lastModifiedBy-value"
     }
   ]
 }

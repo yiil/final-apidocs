@@ -18,7 +18,7 @@ Here is a JSON representation of the resource
 {
   "deleted": 1024,
   "remaining": 1024,
-  "state": "String-value",
+  "state": "string",
   "total": 1024,
   "used": 1024
 }

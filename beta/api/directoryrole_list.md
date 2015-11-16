@@ -9,14 +9,12 @@ The following **scopes** are required to execute this API:
 GET /directoryRoles
 ```
 ### Optional query parameters
-|Name|Value|Description|
-|:---------------|:--------|:-------|
-|$orderby|string|Comma-separated list of properties that are used to sort the order of items in the response collection.|
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 Do not supply a request body for this method.
@@ -30,32 +28,27 @@ Here is an example of the request.
   "name": "get_directoryroles"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/directoryRoles
+GET https://graph.microsoft.com/v1.0/directoryRoles
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.directoryrole",
   "isCollection": true
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 336
+Content-length: 187
 
 {
   "value": [
     {
       "description": "description-value",
       "displayName": "displayName-value",
-      "isSystem": true,
-      "roleDisabled": true,
       "roleTemplateId": "roleTemplateId-value",
-      "objectType": "objectType-value",
-      "objectId": "objectId-value",
-      "deletionTimestamp": "datetime-value"
+      "id": "id-value"
     }
   ]
 }

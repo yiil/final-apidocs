@@ -17,18 +17,11 @@ Here is a JSON representation of the resource
 ```json
 {
   "hasAttachments": true,
-  "id": "String-value (identifier)",
-  "lastDeliveredDateTime": "String (timestamp)",
-  "preview": "String-value",
-  "threads": [
-    {
-      "@odata.type": "microsoft.graph.conversationthread"
-    }
-  ],
-  "topic": "String-value",
-  "uniqueSenders": [
-    "String-value"
-  ]
+  "id": "string (identifier)",
+  "lastDeliveredDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "preview": "string",
+  "topic": "string",
+  "uniqueSenders": ["string"]
 }
 
 ```

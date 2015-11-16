@@ -29,21 +29,28 @@ If successful, this method returns `201, Created` response code and [plan](../re
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_plan_from_oauth2permissiongrants"
+  "name": "create_plan_from_plans"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/plans
+POST https://graph.microsoft.com/v1.0/plans
+Content-type: application/json
+Content-length: 88
+
+{
+  "createdBy": "createdBy-value",
+  "owner": "owner-value",
+  "title": "title-value"
+}
 ```
 In the request body, supply a JSON representation of [plan](../resources/plan.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.plan"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
 Content-length: 108
 

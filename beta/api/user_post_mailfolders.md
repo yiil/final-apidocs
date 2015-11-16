@@ -14,7 +14,7 @@ POST /drive/root/lastModifiedByUser/mailFolders
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [MailFolder](../resources/mailfolder.md) object.
@@ -31,18 +31,27 @@ Here is an example of the request.
   "name": "create_mailfolder_from_user"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>
+POST https://graph.microsoft.com/v1.0/me/mailFolders
+Content-type: application/json
+Content-length: 159
+
+{
+  "displayName": "displayName-value",
+  "parentFolderId": "parentFolderId-value",
+  "childFolderCount": 99,
+  "unreadItemCount": 99,
+  "totalItemCount": 99
+}
 ```
-In the request body, supply a JSON representation of [MailFolder](../resources/mailfolder.md) object.
+In the request body, supply a JSON representation of [mailFolder](../resources/mailfolder.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.mailfolder"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
 Content-length: 179
 

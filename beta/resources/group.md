@@ -33,115 +33,25 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "acceptedSenders": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "accessType": "String-value",
+  "accessType": {"@odata.type": "microsoft.graph.groupAccessType"},
   "allowExternalSenders": true,
-  "appRoleAssignments": [
-    {
-      "@odata.type": "microsoft.graph.approleassignment"
-    }
-  ],
   "autoSubscribeNewMembers": true,
-  "calendar": {
-    "@odata.type": "microsoft.graph.calendar"
-  },
-  "calendarView": [
-    {
-      "@odata.type": "microsoft.graph.event"
-    }
-  ],
-  "conversations": [
-    {
-      "@odata.type": "microsoft.graph.conversation"
-    }
-  ],
-  "createdOnBehalfOf": {
-    "@odata.type": "microsoft.graph.directoryobject"
-  },
-  "creationOptions": [
-    "String-value"
-  ],
-  "deletionTimestamp": "String (timestamp)",
-  "description": "String-value",
-  "dirSyncEnabled": true,
-  "displayName": "String-value",
-  "drive": {
-    "@odata.type": "microsoft.graph.drive"
-  },
-  "emailAddress": "String-value",
-  "events": [
-    {
-      "@odata.type": "microsoft.graph.event"
-    }
-  ],
-  "groupTypes": [
-    "String-value"
-  ],
+  "description": "string",
+  "displayName": "string",
+  "groupTypes": ["string"],
+  "id": "string (identifier)",
   "isFavorite": true,
-  "isPublic": true,
   "isSubscribedByMail": true,
-  "lastDirSyncTime": "String (timestamp)",
-  "mail": "String-value",
+  "mail": "string",
   "mailEnabled": true,
-  "mailNickname": "String-value",
-  "memberOf": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "members": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "notes": {
-    "@odata.type": "microsoft.graph.notes"
-  },
-  "objectId": "String-value (identifier)",
-  "objectType": "String-value",
-  "onPremisesSecurityIdentifier": "String-value",
-  "owners": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "photo": {
-    "@odata.type": "microsoft.graph.photo"
-  },
-  "photos": [
-    {
-      "@odata.type": "microsoft.graph.photo"
-    }
-  ],
-  "plans": [
-    {
-      "@odata.type": "microsoft.graph.plan"
-    }
-  ],
-  "provisioningErrors": [
-    {
-      "@odata.type": "microsoft.graph.provisioningerror"
-    }
-  ],
-  "proxyAddresses": [
-    "String-value"
-  ],
-  "rejectedSenders": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
+  "mailNickname": "string",
+  "onPremisesLastSyncDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "onPremisesSecurityIdentifier": "string",
+  "onPremisesSyncEnabled": true,
+  "proxyAddresses": ["string"],
   "securityEnabled": true,
-  "threads": [
-    {
-      "@odata.type": "microsoft.graph.conversationthread"
-    }
-  ],
-  "unseenCount": 1024
+  "unseenCount": 1024,
+  "visibility": "string"
 }
 
 ```
@@ -151,24 +61,19 @@ Here is a JSON representation of the resource
 |accessType|String| Possible values are: `None`, `Private`, `Secret`, `Public`.|
 |allowExternalSenders|Boolean||
 |autoSubscribeNewMembers|Boolean||
-|creationOptions|String collection||
-|deletionTimestamp|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
 |description|String|An optional description for the group. An optional description for the group.|
-|dirSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default). **true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default).|
+|onPremisesSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default). **true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default).|
 |displayName|String|The display name for the group. This property is required when a group is created and it cannot be cleared during updates.  The display name for the group. This property is required when a group is created and it cannot be cleared during updates. |
-|emailAddress|String||
 |groupTypes|String collection||
 |isFavorite|Boolean||
-|isPublic|Boolean||
+|visibility|Boolean||
 |isSubscribedByMail|Boolean||
-|lastDirSyncTime|DateTimeOffset|Indicates the last time at which the object was synced with the on-premises directory. Indicates the last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
+|onPremisesLastSyncDateTime|DateTimeOffset|Indicates the last time at which the object was synced with the on-premises directory. Indicates the last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
 |mail|String|The SMTP address for the group, for example, "serviceadmins@contoso.onmicrosoft.com". The SMTP address for the group, for example, "serviceadmins@contoso.onmicrosoft.com".|
 |mailEnabled|Boolean|Specifies whether the group is mail-enabled. If the **securityEnabled** property is also **true**, the group is a mail-enabled security group; otherwise, the group is a Microsoft Exchange distribution group. Only (pure) security groups can be created using Azure AD Graph. For this reason, the property must be set **false** when creating a group and it cannot be updated using Azure AD Graph. Specifies whether the group is mail-enabled. If the **securityEnabled** property is also **true**, the group is a mail-enabled security group; otherwise, the group is a Microsoft Exchange distribution group. Only (pure) security groups can be created using Azure AD Graph. For this reason, the property must be set **false** when creating a group and it cannot be updated using Azure AD Graph.|
 |mailNickname|String|The mail alias for the group. This property must be specified when a group is created. The mail alias for the group. This property must be specified when a group is created.|
-|objectId|String|The unique identifier for the group. Inherited from [DirectoryObject].                            **Notes**: **key**, immutable, not nullable, unique.             The unique identifier for the group. Inherited from [DirectoryObject].                            **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
-|objectType|String|A string that identifies the object type. For groups the value is always “Group”. Inherited from [DirectoryObject]. A string that identifies the object type. For groups the value is always “Group”. Inherited from [DirectoryObject].|
+|id|String|The unique identifier for the group. Inherited from [DirectoryObject].                            **Notes**: **key**, immutable, not nullable, unique.             The unique identifier for the group. Inherited from [DirectoryObject].                            **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
 |onPremisesSecurityIdentifier|String|Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud.                            **Notes**: Requires version 1.5 or newer.             Contains the on-premises security identifier (SID) for the group that was synchronized from on-premises to the cloud.                            **Notes**: Requires version 1.5 or newer.            |
-|provisioningErrors|[ProvisioningError](provisioningerror.md) collection|A collection of error details that are preventing this group from being provisioned successfully.                            **Notes**: not nullable.             A collection of error details that are preventing this group from being provisioned successfully.                            **Notes**: not nullable.            |
 |proxyAddresses|String collection|                                        **Notes**: not nullable, the **any** operator is required for filter expressions on multi-valued properties; for more information, see [Supported Queries, Filters, and Paging Options](https://msdn.microsoft.com/library/azure/dn727074.aspx).                                                     **Notes**: not nullable, the **any** operator is required for filter expressions on multi-valued properties; for more information, see [Supported Queries, Filters, and Paging Options](https://msdn.microsoft.com/library/azure/dn727074.aspx).            |
 |securityEnabled|Boolean|Specifies whether the group is a security group. If the mailEnabled property is also true, the group is a mail-enabled security group; otherwise it is a security group. Only (pure) security groups can be created using Azure AD Graph. For this reason, the property must be set **true** when creating a group. Specifies whether the group is a security group. If the mailEnabled property is also true, the group is a mail-enabled security group; otherwise it is a security group. Only (pure) security groups can be created using Azure AD Graph. For this reason, the property must be set **true** when creating a group.|
 |unseenCount|Int32||
@@ -177,7 +82,6 @@ Here is a JSON representation of the resource
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |acceptedSenders|[DirectoryObject](directoryobject.md) collection| Read-only. Nullable.|
-|appRoleAssignments|[AppRoleAssignment](approleassignment.md) collection|Contains the set of applications that a group is assigned to.                            **Notes**: Requires version 1.5 or newer.             Contains the set of applications that a group is assigned to.                            **Notes**: Requires version 1.5 or newer.             Read-only. Nullable.|
 |calendar|[Calendar](calendar.md)| Read-only.|
 |calendarView|[Event](event.md) collection| Read-only. Nullable.|
 |conversations|[Conversation](conversation.md) collection| Read-only. Nullable.|

@@ -12,7 +12,7 @@ POST /applications/<objectId>/extensionProperties
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [ExtensionProperty](../resources/extensionproperty.md) object.
@@ -29,32 +29,45 @@ Here is an example of the request.
   "name": "create_extensionproperty_from_application"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/applications/<objectId>
+POST https://graph.microsoft.com/v1.0/applications/<id>/extensionProperties
+Content-type: application/json
+Content-length: 231
+
+{
+  "extensionProperty": {
+    "appDisplayName": "appDisplayName-value",
+    "name": "name-value",
+    "dataType": "dataType-value",
+    "isSyncedFromOnPremises": true,
+    "targetObjects": [
+      "targetObjects-value"
+    ]
+  }
+}
 ```
-In the request body, supply a JSON representation of [ExtensionProperty](../resources/extensionproperty.md) object.
+In the request body, supply a JSON representation of [extensionProperty](../resources/extensionproperty.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.extensionproperty"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 297
+Content-length: 253
 
 {
-  "appDisplayName": "appDisplayName-value",
-  "name": "name-value",
-  "dataType": "dataType-value",
-  "isSyncedFromOnPremises": true,
-  "targetObjects": [
-    "targetObjects-value"
-  ],
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "extensionProperty": {
+    "appDisplayName": "appDisplayName-value",
+    "name": "name-value",
+    "dataType": "dataType-value",
+    "isSyncedFromOnPremises": true,
+    "targetObjects": [
+      "targetObjects-value"
+    ],
+    "id": "id-value"
+  }
 }
 ```
 

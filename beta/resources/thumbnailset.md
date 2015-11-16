@@ -1,6 +1,9 @@
 # thumbnailSet resource type
 
-The ThumbnailSet type is a keyed collection of [Thumbnail](thumbnail.md) objects. It is used to represent a set of thumbnails associated with a single file on OneDrive.  
+The ThumbnailSet type is a keyed collection of [Thumbnail](thumbnail.md) objects.
+ It is used to represent a set of thumbnails associated with a single file on OneDrive.
+ 
+ 
 
 ### JSON representation
 
@@ -16,19 +19,11 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "id": "String-value (identifier)",
-  "large": {
-    "@odata.type": "microsoft.graph.thumbnail"
-  },
-  "medium": {
-    "@odata.type": "microsoft.graph.thumbnail"
-  },
-  "small": {
-    "@odata.type": "microsoft.graph.thumbnail"
-  },
-  "source": {
-    "@odata.type": "microsoft.graph.thumbnail"
-  }
+  "id": "string (identifier)",
+  "large": {"@odata.type": "microsoft.graph.thumbnail"},
+  "medium": {"@odata.type": "microsoft.graph.thumbnail"},
+  "small": {"@odata.type": "microsoft.graph.thumbnail"},
+  "source": {"@odata.type": "microsoft.graph.thumbnail"}
 }
 
 ```

@@ -29,37 +29,20 @@ If successful, this method returns a `201 Created` response code and the new [no
 
 ### Example
 ##### Request
-Here is an example of the request. 
+Here is an example of the request.
 <!-- {
   "blockType": "request",
   "name": "create_notebook_from_notes"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>/notes/notebooks
-Authorization: Bearer <token>
-Content-Type: application/json
-
-{
-  "name": "Notebook name"
-}
-```
-
-##### Response
-Here is an example of the response.
-<!-- {
-  "blockType": "response",
-  "truncated": false,
-  "@odata.type": "microsoft.graph.notebook"
-} -->
-```http
-HTTP/1.1 201 Created
-Content-Type: application/json
-Content-Length: 516
-...
+POST https://graph.microsoft.com/v1.0/me/notes/notebooks
+Content-type: application/json
+Content-length: 284
 
 {
   "isDefault": true,
-  "userRole": "userRole-value",
+  "userRole": {
+  },
   "isShared": true,
   "sectionsUrl": "sectionsUrl-value",
   "sectionGroupsUrl": "sectionGroupsUrl-value",
@@ -70,14 +53,36 @@ Content-Length: 516
     "oneNoteWebUrl": {
       "href": "href-value"
     }
+  }
+}
+```
+In the request body, supply a JSON representation of [notebook](../resources/notebook.md) object.
+##### Response
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.notebook"
+} -->
+```http
+Content-type: application/json
+Content-length: 284
+
+{
+  "isDefault": true,
+  "userRole": {
   },
-  "name": "name-value",
-  "createdBy": "createdBy-value",
-  "lastModifiedBy": "lastModifiedBy-value",
-  "lastModifiedTime": "datetime-value",
-  "id": "id-value",
-  "self": "self-value",
-  "createdTime": "datetime-value"
+  "isShared": true,
+  "sectionsUrl": "sectionsUrl-value",
+  "sectionGroupsUrl": "sectionGroupsUrl-value",
+  "links": {
+    "oneNoteClientUrl": {
+      "href": "href-value"
+    },
+    "oneNoteWebUrl": {
+      "href": "href-value"
+    }
+  }
 }
 ```
 

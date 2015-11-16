@@ -11,11 +11,12 @@ GET /users/<objectId>/oauth2PermissionGrants/<objectId>
 GET /drive/root/createdByUser/oauth2PermissionGrants/<objectId>
 ```
 ### Optional query parameters
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 Do not supply a request body for this method.
@@ -29,29 +30,26 @@ Here is an example of the request.
   "name": "get_oauth2permissiongrant"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/oauth2PermissionGrants/<objectId>
+GET https://graph.microsoft.com/v1.0/oauth2PermissionGrants/<id>
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.oauth2permissiongrant"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 271
+Content-length: 200
 
 {
   "clientId": "clientId-value",
   "consentType": "consentType-value",
   "expiryTime": "datetime-value",
-  "objectId": "objectId-value",
+  "id": "id-value",
   "principalId": "principalId-value",
-  "resourceId": "resourceId-value",
-  "scope": "scope-value",
-  "startTime": "datetime-value"
+  "resourceId": "resourceId-value"
 }
 ```
 

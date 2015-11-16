@@ -18,73 +18,34 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "attachments": [
-    {
-      "@odata.type": "microsoft.graph.attachment"
-    }
-  ],
-  "bccRecipients": [
-    {
-      "@odata.type": "microsoft.graph.recipient"
-    }
-  ],
-  "body": {
-    "@odata.type": "microsoft.graph.itembody"
-  },
-  "bodyPreview": "String-value",
-  "categories": [
-    "String-value"
-  ],
-  "ccRecipients": [
-    {
-      "@odata.type": "microsoft.graph.recipient"
-    }
-  ],
-  "changeKey": "String-value",
-  "conversationId": "String-value",
-  "createdDateTime": "String (timestamp)",
-  "event": {
-    "@odata.type": "microsoft.graph.event"
-  },
-  "extensions": [
-    {
-      "@odata.type": "microsoft.graph.extension"
-    }
-  ],
-  "from": {
-    "@odata.type": "microsoft.graph.recipient"
-  },
+  "bccRecipients": [{"@odata.type": "microsoft.graph.recipient"}],
+  "body": {"@odata.type": "microsoft.graph.itemBody"},
+  "bodyPreview": "string",
+  "categories": ["string"],
+  "ccRecipients": [{"@odata.type": "microsoft.graph.recipient"}],
+  "changeKey": "string",
+  "conversationId": "string",
+  "createdDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "from": {"@odata.type": "microsoft.graph.recipient"},
   "hasAttachments": true,
-  "id": "String-value (identifier)",
-  "importance": "String-value",
-  "inferenceClassification": "String-value",
+  "id": "string (identifier)",
+  "importance": {"@odata.type": "microsoft.graph.importance"},
+  "inferenceClassification": {"@odata.type": "microsoft.graph.inferenceClassificationType"},
   "isDeliveryReceiptRequested": true,
   "isDraft": true,
   "isRead": true,
   "isReadReceiptRequested": true,
-  "lastModifiedDateTime": "String (timestamp)",
-  "meetingMessageType": "String-value",
-  "parentFolderId": "String-value",
-  "receivedDateTime": "String (timestamp)",
-  "replyTo": [
-    {
-      "@odata.type": "microsoft.graph.recipient"
-    }
-  ],
-  "sender": {
-    "@odata.type": "microsoft.graph.recipient"
-  },
-  "sentDateTime": "String (timestamp)",
-  "subject": "String-value",
-  "toRecipients": [
-    {
-      "@odata.type": "microsoft.graph.recipient"
-    }
-  ],
-  "uniqueBody": {
-    "@odata.type": "microsoft.graph.itembody"
-  },
-  "webLink": "String-value"
+  "lastModifiedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "meetingMessageType": {"@odata.type": "microsoft.graph.meetingMessageType"},
+  "parentFolderId": "string",
+  "receivedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "replyTo": [{"@odata.type": "microsoft.graph.recipient"}],
+  "sender": {"@odata.type": "microsoft.graph.recipient"},
+  "sentDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "subject": "string",
+  "toRecipients": [{"@odata.type": "microsoft.graph.recipient"}],
+  "uniqueBody": {"@odata.type": "microsoft.graph.itemBody"},
+  "webLink": "string"
 }
 
 ```

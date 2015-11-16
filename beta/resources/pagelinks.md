@@ -16,12 +16,8 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "oneNoteClientUrl": {
-    "@odata.type": "microsoft.graph.externallink"
-  },
-  "oneNoteWebUrl": {
-    "@odata.type": "microsoft.graph.externallink"
-  }
+  "oneNoteClientUrl": {"@odata.type": "microsoft.graph.externalLink"},
+  "oneNoteWebUrl": {"@odata.type": "microsoft.graph.externalLink"}
 }
 
 ```

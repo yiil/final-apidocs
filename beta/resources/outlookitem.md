@@ -16,13 +16,11 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "categories": [
-    "String-value"
-  ],
-  "changeKey": "String-value",
-  "createdDateTime": "String (timestamp)",
-  "id": "String-value (identifier)",
-  "lastModifiedDateTime": "String (timestamp)"
+  "categories": ["string"],
+  "changeKey": "string",
+  "createdDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "id": "string (identifier)",
+  "lastModifiedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"}
 }
 
 ```

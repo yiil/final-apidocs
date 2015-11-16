@@ -16,10 +16,11 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "endDate": "String-value",
+  "endDate": "String (timestamp)",
   "numberOfOccurrences": 1024,
-  "startDate": "String-value",
-  "type": "String-value"
+  "recurrenceTimeZone": "string",
+  "startDate": "String (timestamp)",
+  "type": {"@odata.type": "microsoft.graph.recurrenceRangeType"}
 }
 
 ```

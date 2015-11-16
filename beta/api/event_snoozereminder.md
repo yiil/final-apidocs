@@ -14,7 +14,7 @@ POST /users/<objectId>/calendarView/<id>/Microsoft.Graph.snoozeReminder
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, provide a JSON object with the following parameters.
@@ -35,7 +35,7 @@ Here is an example of the request.
   "name": "event_snoozereminder"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>/events/<id>/Microsoft.Graph.snoozeReminder
+POST https://graph.microsoft.com/v1.0/me/events/<id>/snoozeReminder
 Content-type: application/json
 Content-length: 97
 
@@ -48,14 +48,13 @@ Content-length: 97
 ```
 
 ##### Response
-Here is an example of the response.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.none"
 } -->
 ```http
-HTTP/1.1 200 OK
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

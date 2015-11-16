@@ -29,21 +29,28 @@ If successful, this method returns `201, Created` response code and [bucket](../
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_bucket_from_applications"
+  "name": "create_bucket_from_buckets"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/buckets
+POST https://graph.microsoft.com/v1.0/buckets
+Content-type: application/json
+Content-length: 88
+
+{
+  "name": "name-value",
+  "planId": "planId-value",
+  "orderHint": "orderHint-value"
+}
 ```
 In the request body, supply a JSON representation of [bucket](../resources/bucket.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.bucket"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
 Content-length: 108
 

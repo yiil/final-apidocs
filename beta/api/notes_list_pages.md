@@ -13,16 +13,7 @@ GET /users/<objectId>/notes/pages
 GET /groups/<objectId>/notes/pages
 ```
 ### Optional query parameters
-|Name|Value|Description|
-|:---------------|:--------|:-------|
-|$search|string|Consumer only. The term or phrase to search for in the page title, page body, image alt text, and image OCR text. Search queries return results sorted by relevance.|
-|$count|none|The count of related entities to return in the result set.|
-|$expand|string|Comma-separated list of relationships to expand and include in the response. The default response expands `parentSection` and selects the section's `id`, `name`, and `self` properties. Valid values for pages are `parentNotebook` and `parentSection`.|
-|$filter|string|Filter string that lets you filter the response based on a set of criteria.|
-|$orderby|string|Comma-separated list of properties that are used to sort the order of items in the response collection. The default for pages is `lastModifiedTime desc`.|
-|$select|string|Comma-separated list of properties to include in the response.|
-|$skip|int|The number of items to skip in the result set.|
-|$top|int|The number of items to return in the result set. The default for pages is 20 and the maximum is 100. The default query returns an `@odata.nextLink` that you can use to page through the result set. |
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
@@ -42,23 +33,19 @@ Here is an example of the request.
   "name": "get_pages"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/users/<objectId>/notes/pages
-Authorization: Bearer <token>
-Accept: application/json
+GET https://graph.microsoft.com/v1.0/me/notes/pages
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.page",
   "isCollection": true
 } -->
 ```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 484
-...
+Content-type: application/json
+Content-length: 393
 
 {
   "value": [
@@ -75,15 +62,7 @@ Content-Length: 484
       },
       "contentUrl": "contentUrl-value",
       "content": "content-value",
-      "lastModifiedTime": "datetime-value",
-      "id": "id-value",
-      "self": "self-value",
-      "createdTime": "datetime-value",
-      "parentSection": {
-        "id": "parentSection-id-value",
-        "name": "parentSection-name-value",
-        "self": "parentSection-self-value"
-      }
+      "lastModifiedTime": "datetime-value"
     }
   ]
 }

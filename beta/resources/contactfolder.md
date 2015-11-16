@@ -17,19 +17,9 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "childFolders": [
-    {
-      "@odata.type": "microsoft.graph.contactfolder"
-    }
-  ],
-  "contacts": [
-    {
-      "@odata.type": "microsoft.graph.contact"
-    }
-  ],
-  "displayName": "String-value",
-  "id": "String-value (identifier)",
-  "parentFolderId": "String-value"
+  "displayName": "string",
+  "id": "string (identifier)",
+  "parentFolderId": "string"
 }
 
 ```

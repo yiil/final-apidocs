@@ -16,9 +16,7 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "accuracy": 1024,
   "altitude": 1024,
-  "altitudeAccuracy": 1024,
   "latitude": 1024,
   "longitude": 1024
 }
@@ -27,9 +25,7 @@ Here is a JSON representation of the resource
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|accuracy|Double|The accuracy of the sensor providing the latitude and longitude.|
 |altitude|Double|The altitude of the location.|
-|altitudeAccuracy|Double|The accuracy of the sensor providing the altitude.|
 |latitude|Double|The latitude of the location.|
 |longitude|Double|The longitude of the location.|
 

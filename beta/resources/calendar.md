@@ -17,20 +17,10 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "calendarView": [
-    {
-      "@odata.type": "microsoft.graph.event"
-    }
-  ],
-  "changeKey": "String-value",
-  "color": "String-value",
-  "events": [
-    {
-      "@odata.type": "microsoft.graph.event"
-    }
-  ],
-  "id": "String-value (identifier)",
-  "name": "String-value"
+  "changeKey": "string",
+  "color": {"@odata.type": "microsoft.graph.calendarColor"},
+  "id": "string (identifier)",
+  "name": "string"
 }
 
 ```

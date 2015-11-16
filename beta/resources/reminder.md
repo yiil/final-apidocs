@@ -16,22 +16,14 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "changeKey": "String-value",
-  "eventEndTime": {
-    "@odata.type": "microsoft.graph.datetimetimezone"
-  },
-  "eventId": "String-value",
-  "eventLocation": {
-    "@odata.type": "microsoft.graph.location"
-  },
-  "eventStartTime": {
-    "@odata.type": "microsoft.graph.datetimetimezone"
-  },
-  "eventSubject": "String-value",
-  "eventWebLink": "String-value",
-  "reminderFireTime": {
-    "@odata.type": "microsoft.graph.datetimetimezone"
-  }
+  "changeKey": "string",
+  "eventEndTime": {"@odata.type": "microsoft.graph.dateTimeTimeZone"},
+  "eventId": "string",
+  "eventLocation": {"@odata.type": "microsoft.graph.location"},
+  "eventStartTime": {"@odata.type": "microsoft.graph.dateTimeTimeZone"},
+  "eventSubject": "string",
+  "eventWebLink": "string",
+  "reminderFireTime": {"@odata.type": "microsoft.graph.dateTimeTimeZone"}
 }
 
 ```

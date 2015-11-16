@@ -10,10 +10,10 @@ PATCH /users/<objectId>/inferenceClassification/overrides/<id>
 PATCH /drive/root/createdByUser/inferenceClassification/overrides/<id>
 PATCH /drive/root/lastModifiedByUser/inferenceClassification/overrides/<id>
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
@@ -33,33 +33,33 @@ Here is an example of the request.
   "name": "update_inferenceclassificationoverride"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/users/<objectId>/inferenceClassification/overrides/<id>
+PATCH https://graph.microsoft.com/v1.0/me/inferenceClassification/overrides/<id>
 Content-type: application/json
-Content-length: 146
+Content-length: 113
 
 {
-  "classifyAs": "classifyAs-value",
+  "classifyAs": {
+  },
   "senderEmailAddress": {
     "name": "name-value",
     "address": "address-value"
-  },
-  "id": "id-value"
+  }
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.inferenceclassificationoverride"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 146
+Content-length: 133
 
 {
-  "classifyAs": "classifyAs-value",
+  "classifyAs": {
+  },
   "senderEmailAddress": {
     "name": "name-value",
     "address": "address-value"

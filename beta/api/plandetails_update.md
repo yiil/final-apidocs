@@ -42,10 +42,9 @@ Here is an example of the request.
   "name": "update_plandetails"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/plans/<id>/details
+PATCH https://graph.microsoft.com/v1.0/plans/<id>/details
 Content-type: application/json
-Content-length: 381
-If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
+Content-length: 305
 
 {
   "sharedWith": {
@@ -54,19 +53,29 @@ If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA
   "category1Description": "category1Description-value",
   "category2Description": "category2Description-value",
   "category3Description": "category3Description-value",
-  "category4Description": "category4Description-value",
-  "category5Description": "category5Description-value"
+  "category4Description": "category4Description-value"
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.plandetails"
 } -->
 ```http
-HTTP/1.1 204 No Content
+Content-type: application/json
+Content-length: 305
+
+{
+  "sharedWith": {
+  },
+  "category0Description": "category0Description-value",
+  "category1Description": "category1Description-value",
+  "category2Description": "category2Description-value",
+  "category3Description": "category3Description-value",
+  "category4Description": "category4Description-value"
+}
 ```
 To get the updated object, use the `Prefer` header. See Request Headers above.
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

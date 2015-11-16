@@ -18,26 +18,17 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "createdBy": "String-value",
-  "createdTime": "String (timestamp)",
-  "id": "String-value (identifier)",
+  "createdBy": "string",
+  "createdByIdentity": {"@odata.type": "microsoft.graph.oneNoteIdentitySet"},
+  "createdTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "id": "string (identifier)",
   "isDefault": true,
-  "lastModifiedBy": "String-value",
-  "lastModifiedTime": "String (timestamp)",
-  "name": "String-value",
-  "pages": [
-    {
-      "@odata.type": "microsoft.graph.page"
-    }
-  ],
-  "pagesUrl": "String-value",
-  "parentNotebook": {
-    "@odata.type": "microsoft.graph.notebook"
-  },
-  "parentSectionGroup": {
-    "@odata.type": "microsoft.graph.sectiongroup"
-  },
-  "self": "String-value"
+  "lastModifiedBy": "string",
+  "lastModifiedByIdentity": {"@odata.type": "microsoft.graph.oneNoteIdentitySet"},
+  "lastModifiedTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "name": "string",
+  "pagesUrl": "string",
+  "self": "string"
 }
 
 ```

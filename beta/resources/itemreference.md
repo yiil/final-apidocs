@@ -1,6 +1,10 @@
 # itemReference resource type
 
- The itemReference type groups data needed to reference a OneDrive item across the service into a single structure.   
+
+ The itemReference type groups data needed to reference a OneDrive item across the service into a single structure.
+ 
+ 
+ 
 
 ### JSON representation
 
@@ -16,9 +20,9 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "driveId": "String-value",
-  "id": "String-value",
-  "path": "String-value"
+  "driveId": "string",
+  "id": "string",
+  "path": "string"
 }
 
 ```

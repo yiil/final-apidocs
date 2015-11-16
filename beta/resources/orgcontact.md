@@ -18,50 +18,26 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "city": "String-value",
-  "country": "String-value",
-  "deletionTimestamp": "String (timestamp)",
-  "department": "String-value",
-  "dirSyncEnabled": true,
-  "directReports": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "displayName": "String-value",
-  "facsimileTelephoneNumber": "String-value",
-  "givenName": "String-value",
-  "jobTitle": "String-value",
-  "lastDirSyncTime": "String (timestamp)",
-  "mail": "String-value",
-  "mailNickname": "String-value",
-  "manager": {
-    "@odata.type": "microsoft.graph.directoryobject"
-  },
-  "memberOf": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "mobile": "String-value",
-  "objectId": "String-value (identifier)",
-  "objectType": "String-value",
-  "physicalDeliveryOfficeName": "String-value",
-  "postalCode": "String-value",
-  "provisioningErrors": [
-    {
-      "@odata.type": "microsoft.graph.provisioningerror"
-    }
-  ],
-  "proxyAddresses": [
-    "String-value"
-  ],
-  "sipProxyAddress": "String-value",
-  "state": "String-value",
-  "streetAddress": "String-value",
-  "surname": "String-value",
-  "telephoneNumber": "String-value",
-  "thumbnailPhoto": "Stream-value"
+  "businessPhones": ["string"],
+  "city": "string",
+  "companyName": "string",
+  "country": "string",
+  "department": "string",
+  "displayName": "string",
+  "givenName": "string",
+  "id": "string (identifier)",
+  "jobTitle": "string",
+  "mail": "string",
+  "mailNickname": "string",
+  "mobilePhone": "string",
+  "officeLocation": "string",
+  "onPremisesLastSyncDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "onPremisesSyncEnabled": true,
+  "postalCode": "string",
+  "proxyAddresses": ["string"],
+  "state": "string",
+  "streetAddress": "string",
+  "surname": "string"
 }
 
 ```
@@ -70,29 +46,23 @@ Here is a JSON representation of the resource
 |:---------------|:--------|:----------|
 |city|String||
 |country|String||
-|deletionTimestamp|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
 |department|String||
-|dirSyncEnabled|Boolean||
+|onPremisesSyncEnabled|Boolean||
 |displayName|String||
-|facsimileTelephoneNumber|String||
 |givenName|String||
 |jobTitle|String||
-|lastDirSyncTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
+|onPremisesLastSyncDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
 |mail|String||
 |mailNickname|String||
-|mobile|String||
-|objectId|String| Read-only.|
-|objectType|String||
-|physicalDeliveryOfficeName|String||
+|mobilePhone|String||
+|id|String| Read-only.|
+|officeLocation|String||
 |postalCode|String||
-|provisioningErrors|[ProvisioningError](provisioningerror.md) collection||
 |proxyAddresses|String collection||
-|sipProxyAddress|String||
 |state|String||
 |streetAddress|String||
 |surname|String||
-|telephoneNumber|String||
-|thumbnailPhoto|Stream||
+|businessPhones|String||
 
 ### Relationships
 | Relationship | Type	|Description|

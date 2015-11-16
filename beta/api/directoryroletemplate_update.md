@@ -8,20 +8,18 @@ The following **scopes** are required to execute this API:
 ```http
 PATCH /directoryRoleTemplates/<objectId>
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|deletionTimestamp|DateTimeOffset||
 |description|String|The description to set for the directory role.|
 |displayName|String|The display name to set for the directory role.|
-|objectType|String|A string that identifies the object type. For role templates the value is always “RoleTemplate”. Inherited from [DirectoryObject].|
 
 ### Response
 If successful, this method returns a `200 OK` response code and updated [directoryRoleTemplate](../resources/directoryroletemplate.md) object in the response body.
@@ -33,36 +31,30 @@ Here is an example of the request.
   "name": "update_directoryroletemplate"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/directoryRoleTemplates/<objectId>
+PATCH https://graph.microsoft.com/v1.0/directoryRoleTemplates/<id>
 Content-type: application/json
-Content-length: 187
+Content-length: 78
 
 {
   "description": "description-value",
-  "displayName": "displayName-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "displayName": "displayName-value"
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.directoryroletemplate"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 187
+Content-length: 98
 
 {
   "description": "description-value",
   "displayName": "displayName-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "id": "id-value"
 }
 ```
 

@@ -17,10 +17,10 @@ Here is a JSON representation of the resource
 ```json
 {
   "isChecked": true,
-  "lastModifiedBy": "String-value",
-  "lastModifiedDateTime": "String (timestamp)",
-  "orderHint": "String-value",
-  "title": "String-value"
+  "lastModifiedBy": "string",
+  "lastModifiedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "orderHint": "string",
+  "title": "string"
 }
 
 ```

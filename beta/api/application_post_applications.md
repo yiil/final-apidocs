@@ -12,7 +12,7 @@ The following **scopes** are required to execute this API:
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [Application](../resources/application.md) object.
@@ -26,105 +26,91 @@ If successful, this method returns `201, Created` response code and [Application
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_application_from_video"
+  "name": "create_application_from_applications"
 }-->
 ```http
+POST https://graph.microsoft.com/v1.0/applications
+Content-type: application/json
+Content-length: 717
 
+{
+  "application": {
+    "addIns": [
+      {
+        "id": "id-value",
+        "type": "type-value",
+        "properties": [
+          {
+            "key": "key-value",
+            "value": "value-value"
+          }
+        ]
+      }
+    ],
+    "appId": "appId-value",
+    "appRoles": [
+      {
+        "allowedMemberTypes": [
+          "allowedMemberTypes-value"
+        ],
+        "description": "description-value",
+        "displayName": "displayName-value",
+        "id": "id-value",
+        "isEnabled": true,
+        "origin": "origin-value",
+        "value": "value-value"
+      }
+    ],
+    "availableToOtherOrganizations": true,
+    "displayName": "displayName-value",
+    "errorUrl": "errorUrl-value"
+  }
+}
 ```
-In the request body, supply a JSON representation of [Application](../resources/application.md) object.
+In the request body, supply a JSON representation of [application](../resources/application.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.application"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 2150
+Content-length: 717
 
 {
-  "appId": "appId-value",
-  "appRoles": [
-    {
-      "allowedMemberTypes": [
-        "allowedMemberTypes-value"
-      ],
-      "description": "description-value",
-      "displayName": "displayName-value",
-      "id": "id-value",
-      "isEnabled": true,
-      "value": "value-value"
-    }
-  ],
-  "availableToOtherTenants": true,
-  "displayName": "displayName-value",
-  "errorUrl": "errorUrl-value",
-  "groupMembershipClaims": "groupMembershipClaims-value",
-  "homepage": "homepage-value",
-  "identifierUris": [
-    "identifierUris-value"
-  ],
-  "keyCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "type": "type-value",
-      "usage": "usage-value",
-      "value": "value-value"
-    }
-  ],
-  "knownClientApplications": [
-    "knownClientApplications-value"
-  ],
-  "mainLogo": "mainLogo-value",
-  "logoutUrl": "logoutUrl-value",
-  "oauth2AllowImplicitFlow": true,
-  "oauth2AllowUrlPathMatching": true,
-  "oauth2Permissions": [
-    {
-      "adminConsentDescription": "adminConsentDescription-value",
-      "adminConsentDisplayName": "adminConsentDisplayName-value",
-      "id": "id-value",
-      "isEnabled": true,
-      "type": "type-value",
-      "userConsentDescription": "userConsentDescription-value",
-      "userConsentDisplayName": "userConsentDisplayName-value",
-      "value": "value-value"
-    }
-  ],
-  "oauth2RequirePostResponse": true,
-  "passwordCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "value": "value-value"
-    }
-  ],
-  "publicClient": true,
-  "replyUrls": [
-    "replyUrls-value"
-  ],
-  "requiredResourceAccess": [
-    {
-      "resourceAppId": "resourceAppId-value",
-      "resourceAccess": [
-        {
-          "id": "id-value",
-          "type": "type-value"
-        }
-      ]
-    }
-  ],
-  "samlMetadataUrl": "samlMetadataUrl-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "application": {
+    "addIns": [
+      {
+        "id": "id-value",
+        "type": "type-value",
+        "properties": [
+          {
+            "key": "key-value",
+            "value": "value-value"
+          }
+        ]
+      }
+    ],
+    "appId": "appId-value",
+    "appRoles": [
+      {
+        "allowedMemberTypes": [
+          "allowedMemberTypes-value"
+        ],
+        "description": "description-value",
+        "displayName": "displayName-value",
+        "id": "id-value",
+        "isEnabled": true,
+        "origin": "origin-value",
+        "value": "value-value"
+      }
+    ],
+    "availableToOtherOrganizations": true,
+    "displayName": "displayName-value",
+    "errorUrl": "errorUrl-value"
+  }
 }
 ```
 

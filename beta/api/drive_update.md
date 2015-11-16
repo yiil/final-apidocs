@@ -10,10 +10,10 @@ PATCH /drive
 PATCH /drives/<id>
 PATCH /users/<objectId>/drive
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
@@ -34,12 +34,11 @@ Here is an example of the request.
   "name": "update_drive"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/drive
+PATCH https://graph.microsoft.com/v1.0/drive
 Content-type: application/json
-Content-length: 458
+Content-length: 438
 
 {
-  "id": "id-value",
   "driveType": "driveType-value",
   "owner": {
     "application": {
@@ -65,14 +64,13 @@ Content-length: 458
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.drive"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 458
 

@@ -8,10 +8,10 @@ The following **scopes** are required to execute this API:
 ```http
 PATCH /applications/<objectId>/extensionProperties/<objectId>
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
@@ -20,10 +20,8 @@ In the request body, supply the values for relevant fields that should be update
 |:---------------|:--------|:----------|
 |appDisplayName|String|            |
 |dataType|String|Specifies the type of the directory extension property being added.   Supported types are: Integer, LargeInteger, DateTime (must be specified in ISO 8601 - DateTime is stored in UTC), Binary, Boolean, and String.|
-|deletionTimestamp|DateTimeOffset||
 |isSyncedFromOnPremises|Boolean|Indicates whether the extension property is synced from the on premises directory.                            **Notes**: not nullable.            |
 |name|String|Specifies the display name for the directory extension property.                            **Notes**: not nullable.            |
-|objectType|String|A string that identifies the object type. For extension properties the value is always “ExtensionProperty”. Inherited from [DirectoryObject].|
 |targetObjects|String|The directory objects to which the directory extension property is being added.  Supported directory entities that can be extended are: “User”, “Group”, “TenantDetail”, “Device”, “Application” and “ServicePrincipal”                            **Notes**: not nullable.            |
 
 ### Response
@@ -36,9 +34,9 @@ Here is an example of the request.
   "name": "update_extensionproperty"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/applications/<objectId>/extensionProperties/<objectId>
+PATCH https://graph.microsoft.com/v1.0/applications/<id>/extensionProperties/<id>
 Content-type: application/json
-Content-length: 297
+Content-length: 188
 
 {
   "appDisplayName": "appDisplayName-value",
@@ -47,23 +45,19 @@ Content-length: 297
   "isSyncedFromOnPremises": true,
   "targetObjects": [
     "targetObjects-value"
-  ],
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  ]
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.extensionproperty"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 297
+Content-length: 208
 
 {
   "appDisplayName": "appDisplayName-value",
@@ -73,9 +67,7 @@ Content-length: 297
   "targetObjects": [
     "targetObjects-value"
   ],
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "id": "id-value"
 }
 ```
 

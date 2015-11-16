@@ -12,7 +12,7 @@ POST /groups
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [OAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object.
@@ -26,33 +26,40 @@ If successful, this method returns `201, Created` response code and [OAuth2Permi
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_oauth2permissiongrant_from_groups"
+  "name": "create_oauth2permissiongrant_from_oauth2permissiongrants"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/groups
-```
-In the request body, supply a JSON representation of [OAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object.
-##### Response
-Here is an example of the response.
-<!-- {
-  "blockType": "response",
-  "truncated": false,
-  "@odata.type": "microsoft.graph.oauth2permissiongrant"
-} -->
-```http
-HTTP/1.1 201 Created
+POST https://graph.microsoft.com/v1.0/oauth2PermissionGrants
 Content-type: application/json
-Content-length: 271
+Content-length: 180
 
 {
   "clientId": "clientId-value",
   "consentType": "consentType-value",
   "expiryTime": "datetime-value",
-  "objectId": "objectId-value",
   "principalId": "principalId-value",
-  "resourceId": "resourceId-value",
-  "scope": "scope-value",
-  "startTime": "datetime-value"
+  "resourceId": "resourceId-value"
+}
+```
+In the request body, supply a JSON representation of [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object.
+##### Response
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.oauth2permissiongrant"
+} -->
+```http
+Content-type: application/json
+Content-length: 200
+
+{
+  "clientId": "clientId-value",
+  "consentType": "consentType-value",
+  "expiryTime": "datetime-value",
+  "id": "id-value",
+  "principalId": "principalId-value",
+  "resourceId": "resourceId-value"
 }
 ```
 

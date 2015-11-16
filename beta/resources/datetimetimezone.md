@@ -16,8 +16,8 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "dateTime": "String-value",
-  "timeZone": "String-value"
+  "dateTime": "string",
+  "timeZone": "string"
 }
 
 ```

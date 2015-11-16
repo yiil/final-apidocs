@@ -11,15 +11,12 @@ GET /drive/root/createdByUser/joinedGroups
 GET /drive/root/lastModifiedByUser/joinedGroups
 ```
 ### Optional query parameters
-|Name|Value|Description|
-|:---------------|:--------|:-------|
-|$orderby|string|Comma-separated list of properties that are used to sort the order of items in the response collection.|
-|$top|int|The number of items to return in a result set.|
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 Do not supply a request body for this method.
@@ -33,61 +30,31 @@ Here is an example of the request.
   "name": "get_joinedgroups"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/users/<objectId>/joinedGroups
+GET https://graph.microsoft.com/v1.0/me/joinedGroups
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.group",
   "isCollection": true
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 1186
+Content-length: 272
 
 {
   "value": [
     {
       "description": "description-value",
-      "dirSyncEnabled": true,
       "displayName": "displayName-value",
-      "creationOptions": [
-        "creationOptions-value"
-      ],
       "groupTypes": [
         "groupTypes-value"
       ],
-      "isPublic": true,
-      "lastDirSyncTime": "datetime-value",
       "mail": "mail-value",
-      "mailNickname": "mailNickname-value",
       "mailEnabled": true,
-      "onPremisesSecurityIdentifier": "onPremisesSecurityIdentifier-value",
-      "provisioningErrors": [
-        {
-          "errorDetail": "errorDetail-value",
-          "resolved": true,
-          "service": "service-value",
-          "timestamp": "datetime-value"
-        }
-      ],
-      "proxyAddresses": [
-        "proxyAddresses-value"
-      ],
-      "securityEnabled": true,
-      "accessType": "accessType-value",
-      "allowExternalSenders": true,
-      "autoSubscribeNewMembers": true,
-      "emailAddress": "emailAddress-value",
-      "isFavorite": true,
-      "isSubscribedByMail": true,
-      "unseenCount": 99,
-      "objectType": "objectType-value",
-      "objectId": "objectId-value",
-      "deletionTimestamp": "datetime-value"
+      "mailNickname": "mailNickname-value"
     }
   ]
 }

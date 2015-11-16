@@ -19,39 +19,25 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "appliedCategories": {
-    "@odata.type": "microsoft.graph.appliedcategoriescollection"
-  },
-  "assignedBy": "String-value",
-  "assignedDateTime": "String (timestamp)",
-  "assignedTo": "String-value",
-  "assignedToTaskBoardFormat": {
-    "@odata.type": "microsoft.graph.taskboardtaskformat"
-  },
-  "assigneePriority": "String-value",
-  "bucketId": "String-value",
-  "bucketTaskBoardFormat": {
-    "@odata.type": "microsoft.graph.taskboardtaskformat"
-  },
-  "completedDateTime": "String (timestamp)",
-  "conversationThreadId": "String-value",
-  "createdBy": "String-value",
-  "createdDateTime": "String (timestamp)",
-  "details": {
-    "@odata.type": "microsoft.graph.taskdetails"
-  },
-  "dueDateTime": "String (timestamp)",
+  "appliedCategories": {"@odata.type": "microsoft.graph.appliedCategoriesCollection"},
+  "assignedBy": "string",
+  "assignedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "assignedTo": "string",
+  "assigneePriority": "string",
+  "bucketId": "string",
+  "completedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "conversationThreadId": "string",
+  "createdBy": "string",
+  "createdDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "dueDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
   "hasDescription": true,
-  "id": "String-value (identifier)",
-  "orderHint": "String-value",
+  "id": "string (identifier)",
+  "orderHint": "string",
   "percentComplete": 1024,
-  "planId": "String-value",
-  "previewType": "String-value",
-  "progressTaskBoardFormat": {
-    "@odata.type": "microsoft.graph.taskboardtaskformat"
-  },
-  "startDateTime": "String (timestamp)",
-  "title": "String-value"
+  "planId": "string",
+  "previewType": "String",
+  "startDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "title": "string"
 }
 
 ```

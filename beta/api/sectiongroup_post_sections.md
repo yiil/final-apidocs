@@ -35,38 +35,48 @@ Here is an example of the request.
   "name": "create_section_from_sectiongroup"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>/notes/sectionGroups/<id>/sections
-Authorization: Bearer <token>
-Content-Type: application/json
-
-{
-  "name": "Section name"
-}
-```
-
-##### Response
-Here is an example of the response.
-<!-- {
-  "blockType": "response",
-  "truncated": false,
-  "@odata.type": "microsoft.graph.section"
-} -->
-```http
-HTTP/1.1 201 Created
-Content-Type: application/json
-Content-Length: 276
-...
+POST https://graph.microsoft.com/v1.0/me/notes/sectionGroups/<id>/sections
+Content-type: application/json
+Content-length: 272
 
 {
   "isDefault": true,
   "pagesUrl": "pagesUrl-value",
   "name": "name-value",
   "createdBy": "createdBy-value",
-  "lastModifiedBy": "lastModifiedBy-value",
-  "lastModifiedTime": "datetime-value",
-  "id": "id-value",
-  "self": "self-value",
-  "createdTime": "datetime-value"
+  "createdByIdentity": {
+    "user": {
+      "id": "id-value",
+      "displayName": "displayName-value"
+    }
+  },
+  "lastModifiedBy": "lastModifiedBy-value"
+}
+```
+In the request body, supply a JSON representation of [section](../resources/section.md) object.
+##### Response
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.section"
+} -->
+```http
+Content-type: application/json
+Content-length: 272
+
+{
+  "isDefault": true,
+  "pagesUrl": "pagesUrl-value",
+  "name": "name-value",
+  "createdBy": "createdBy-value",
+  "createdByIdentity": {
+    "user": {
+      "id": "id-value",
+      "displayName": "displayName-value"
+    }
+  },
+  "lastModifiedBy": "lastModifiedBy-value"
 }
 ```
 

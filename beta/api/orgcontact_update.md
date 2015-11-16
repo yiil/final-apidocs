@@ -8,10 +8,10 @@ The following **scopes** are required to execute this API:
 ```http
 PATCH /contacts/<objectId>
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
@@ -20,28 +20,22 @@ In the request body, supply the values for relevant fields that should be update
 |:---------------|:--------|:----------|
 |city|String||
 |country|String||
-|deletionTimestamp|DateTimeOffset||
 |department|String||
-|dirSyncEnabled|Boolean||
+|onPremisesSyncEnabled|Boolean||
 |displayName|String||
-|facsimileTelephoneNumber|String||
 |givenName|String||
 |jobTitle|String||
-|lastDirSyncTime|DateTimeOffset||
+|onPremisesLastSyncDateTime|DateTimeOffset||
 |mail|String||
 |mailNickname|String||
-|mobile|String||
-|objectType|String||
-|physicalDeliveryOfficeName|String||
+|mobilePhone|String||
+|officeLocation|String||
 |postalCode|String||
-|provisioningErrors|ProvisioningError||
 |proxyAddresses|String||
-|sipProxyAddress|String||
 |state|String||
 |streetAddress|String||
 |surname|String||
-|telephoneNumber|String||
-|thumbnailPhoto|Stream||
+|businessPhones|String||
 
 ### Response
 If successful, this method returns a `200 OK` response code and updated [orgContact](../resources/orgcontact.md) object in the response body.
@@ -53,94 +47,41 @@ Here is an example of the request.
   "name": "update_orgcontact"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/contacts/<objectId>
+PATCH https://graph.microsoft.com/v1.0/contacts/<id>
 Content-type: application/json
-Content-length: 1097
+Content-length: 222
 
 {
+  "businessPhones": [
+    "businessPhones-value"
+  ],
   "city": "city-value",
+  "companyName": "companyName-value",
   "country": "country-value",
   "department": "department-value",
-  "dirSyncEnabled": true,
-  "displayName": "displayName-value",
-  "facsimileTelephoneNumber": "facsimileTelephoneNumber-value",
-  "givenName": "givenName-value",
-  "jobTitle": "jobTitle-value",
-  "lastDirSyncTime": "datetime-value",
-  "mail": "mail-value",
-  "mailNickname": "mailNickname-value",
-  "mobile": "mobile-value",
-  "physicalDeliveryOfficeName": "physicalDeliveryOfficeName-value",
-  "postalCode": "postalCode-value",
-  "provisioningErrors": [
-    {
-      "errorDetail": "errorDetail-value",
-      "resolved": true,
-      "service": "service-value",
-      "timestamp": "datetime-value"
-    }
-  ],
-  "proxyAddresses": [
-    "proxyAddresses-value"
-  ],
-  "sipProxyAddress": "sipProxyAddress-value",
-  "state": "state-value",
-  "streetAddress": "streetAddress-value",
-  "surname": "surname-value",
-  "telephoneNumber": "telephoneNumber-value",
-  "thumbnailPhoto": "thumbnailPhoto-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "displayName": "displayName-value"
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.orgcontact"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 1097
+Content-length: 222
 
 {
+  "businessPhones": [
+    "businessPhones-value"
+  ],
   "city": "city-value",
+  "companyName": "companyName-value",
   "country": "country-value",
   "department": "department-value",
-  "dirSyncEnabled": true,
-  "displayName": "displayName-value",
-  "facsimileTelephoneNumber": "facsimileTelephoneNumber-value",
-  "givenName": "givenName-value",
-  "jobTitle": "jobTitle-value",
-  "lastDirSyncTime": "datetime-value",
-  "mail": "mail-value",
-  "mailNickname": "mailNickname-value",
-  "mobile": "mobile-value",
-  "physicalDeliveryOfficeName": "physicalDeliveryOfficeName-value",
-  "postalCode": "postalCode-value",
-  "provisioningErrors": [
-    {
-      "errorDetail": "errorDetail-value",
-      "resolved": true,
-      "service": "service-value",
-      "timestamp": "datetime-value"
-    }
-  ],
-  "proxyAddresses": [
-    "proxyAddresses-value"
-  ],
-  "sipProxyAddress": "sipProxyAddress-value",
-  "state": "state-value",
-  "streetAddress": "streetAddress-value",
-  "surname": "surname-value",
-  "telephoneNumber": "telephoneNumber-value",
-  "thumbnailPhoto": "thumbnailPhoto-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "displayName": "displayName-value"
 }
 ```
 

@@ -1,6 +1,7 @@
 # contact resource type
 
-Represents an organizational contact. Inherits from [DirectoryObject].
+Represents an organizational contact. Inherits from [DirectoryObject].
+
 
 ### JSON representation
 
@@ -17,72 +18,44 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "assistantName": "String-value",
-  "birthday": "String (timestamp)",
-  "businessAddress": {
-    "@odata.type": "microsoft.graph.physicaladdress"
-  },
-  "businessHomePage": "String-value",
-  "businessPhones": [
-    "String-value"
-  ],
-  "categories": [
-    "String-value"
-  ],
-  "changeKey": "String-value",
-  "children": [
-    "String-value"
-  ],
-  "companyName": "String-value",
-  "createdDateTime": "String (timestamp)",
-  "department": "String-value",
-  "displayName": "String-value",
-  "emailAddresses": [
-    {
-      "@odata.type": "microsoft.graph.emailaddress"
-    }
-  ],
-  "extensions": [
-    {
-      "@odata.type": "microsoft.graph.extension"
-    }
-  ],
-  "fileAs": "String-value",
-  "generation": "String-value",
-  "givenName": "String-value",
-  "homeAddress": {
-    "@odata.type": "microsoft.graph.physicaladdress"
-  },
-  "homePhones": [
-    "String-value"
-  ],
-  "id": "String-value (identifier)",
-  "imAddresses": [
-    "String-value"
-  ],
-  "initials": "String-value",
-  "jobTitle": "String-value",
-  "lastModifiedDateTime": "String (timestamp)",
-  "manager": "String-value",
-  "middleName": "String-value",
-  "mobilePhone1": "String-value",
-  "nickName": "String-value",
-  "officeLocation": "String-value",
-  "otherAddress": {
-    "@odata.type": "microsoft.graph.physicaladdress"
-  },
-  "parentFolderId": "String-value",
-  "personalNotes": "String-value",
-  "photo": {
-    "@odata.type": "microsoft.graph.photo"
-  },
-  "profession": "String-value",
-  "spouseName": "String-value",
-  "surname": "String-value",
-  "title": "String-value",
-  "yomiCompanyName": "String-value",
-  "yomiGivenName": "String-value",
-  "yomiSurname": "String-value"
+  "assistantName": "string",
+  "birthday": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "businessAddress": {"@odata.type": "microsoft.graph.physicalAddress"},
+  "businessHomePage": "string",
+  "businessPhones": ["string"],
+  "categories": ["string"],
+  "changeKey": "string",
+  "children": ["string"],
+  "companyName": "string",
+  "createdDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "department": "string",
+  "displayName": "string",
+  "emailAddresses": [{"@odata.type": "microsoft.graph.emailAddress"}],
+  "fileAs": "string",
+  "generation": "string",
+  "givenName": "string",
+  "homeAddress": {"@odata.type": "microsoft.graph.physicalAddress"},
+  "homePhones": ["string"],
+  "id": "string (identifier)",
+  "imAddresses": ["string"],
+  "initials": "string",
+  "jobTitle": "string",
+  "lastModifiedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "manager": "string",
+  "middleName": "string",
+  "mobilePhone1": "string",
+  "nickName": "string",
+  "officeLocation": "string",
+  "otherAddress": {"@odata.type": "microsoft.graph.physicalAddress"},
+  "parentFolderId": "string",
+  "personalNotes": "string",
+  "profession": "string",
+  "spouseName": "string",
+  "surname": "string",
+  "title": "string",
+  "yomiCompanyName": "string",
+  "yomiGivenName": "string",
+  "yomiSurname": "string"
 }
 
 ```

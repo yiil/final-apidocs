@@ -10,10 +10,10 @@ PATCH /groups/<objectId>/conversations/<id>
 PATCH /users/<objectId>/joinedGroups/<objectId>/conversations/<id>
 PATCH /drive/root/createdByUser/joinedGroups/<objectId>/conversations/<id>
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
@@ -36,9 +36,9 @@ Here is an example of the request.
   "name": "update_conversation"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/groups/<objectId>/conversations/<id>
+PATCH https://graph.microsoft.com/v1.0/groups/<id>/conversations/<id>
 Content-type: application/json
-Content-length: 201
+Content-length: 181
 
 {
   "topic": "topic-value",
@@ -47,19 +47,17 @@ Content-length: 201
   "uniqueSenders": [
     "uniqueSenders-value"
   ],
-  "preview": "preview-value",
-  "id": "id-value"
+  "preview": "preview-value"
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.conversation"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 201
 

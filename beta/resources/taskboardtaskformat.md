@@ -16,9 +16,9 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "id": "String-value (identifier)",
-  "orderHint": "String-value",
-  "type": "String-value (identifier)"
+  "id": "string (identifier)",
+  "orderHint": "string",
+  "type": "String (identifier)"
 }
 
 ```

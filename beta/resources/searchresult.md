@@ -16,7 +16,7 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "onClickTelemetryUrl": "String-value"
+  "onClickTelemetryUrl": "string"
 }
 
 ```

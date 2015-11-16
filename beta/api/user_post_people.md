@@ -14,7 +14,7 @@ POST /drive/root/lastModifiedByUser/people
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [Person](../resources/person.md) object.
@@ -31,20 +31,9 @@ Here is an example of the request.
   "name": "create_person_from_user"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/users/<objectId>
-```
-In the request body, supply a JSON representation of [Person](../resources/person.md) object.
-##### Response
-Here is an example of the response.
-<!-- {
-  "blockType": "response",
-  "truncated": false,
-  "@odata.type": "microsoft.graph.person"
-} -->
-```http
-HTTP/1.1 201 Created
+POST https://graph.microsoft.com/v1.0/me/people
 Content-type: application/json
-Content-length: 363
+Content-length: 261
 
 {
   "sources": [
@@ -60,10 +49,36 @@ Content-length: 363
     {
       "address": "address-value"
     }
+  ]
+}
+```
+In the request body, supply a JSON representation of [person](../resources/person.md) object.
+##### Response
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.person"
+} -->
+```http
+Content-type: application/json
+Content-length: 261
+
+{
+  "sources": [
+    {
+      "type": "type-value"
+    }
   ],
-  "companyName": "companyName-value",
-  "officeLocation": "officeLocation-value",
-  "id": "id-value"
+  "displayName": "displayName-value",
+  "givenName": "givenName-value",
+  "surname": "surname-value",
+  "title": "title-value",
+  "emailAddresses": [
+    {
+      "address": "address-value"
+    }
+  ]
 }
 ```
 

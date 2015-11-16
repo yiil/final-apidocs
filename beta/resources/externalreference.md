@@ -16,11 +16,11 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "alias": "String-value",
-  "lastModifiedBy": "String-value",
-  "lastModifiedDateTime": "String (timestamp)",
-  "previewPriority": "String-value",
-  "type": "String-value"
+  "alias": "string",
+  "lastModifiedBy": "string",
+  "lastModifiedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "previewPriority": "string",
+  "type": "string"
 }
 
 ```

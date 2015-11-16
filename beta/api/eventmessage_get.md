@@ -9,16 +9,12 @@ The following **scopes** are required to execute this API:
 
 ```
 ### Optional query parameters
-|Name|Value|Description|
-|:---------------|:--------|:-------|
-|$count|none|The count of related entities can be requested by specifying the $count query option.|
-|$expand|string|Comma-separated list of relationships to expand and include in the response. See relationships table of [eventMessage](../resources/eventmessage.md) object for supported names. |
-|$select|string|Comma-separated list of properties to include in the response.|
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 Do not supply a request body for this method.
@@ -35,16 +31,15 @@ Here is an example of the request.
 
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.eventmessage"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 1660
+Content-length: 248
 
 {
   "receivedDateTime": "datetime-value",
@@ -52,75 +47,11 @@ Content-length: 1660
   "hasAttachments": true,
   "subject": "subject-value",
   "body": {
-    "contentType": "contentType-value",
+    "contentType": {
+    },
     "content": "content-value"
   },
-  "bodyPreview": "bodyPreview-value",
-  "importance": "importance-value",
-  "parentFolderId": "parentFolderId-value",
-  "sender": {
-    "emailAddress": {
-      "name": "name-value",
-      "address": "address-value"
-    }
-  },
-  "from": {
-    "emailAddress": {
-      "name": "name-value",
-      "address": "address-value"
-    }
-  },
-  "toRecipients": [
-    {
-      "emailAddress": {
-        "name": "name-value",
-        "address": "address-value"
-      }
-    }
-  ],
-  "ccRecipients": [
-    {
-      "emailAddress": {
-        "name": "name-value",
-        "address": "address-value"
-      }
-    }
-  ],
-  "bccRecipients": [
-    {
-      "emailAddress": {
-        "name": "name-value",
-        "address": "address-value"
-      }
-    }
-  ],
-  "replyTo": [
-    {
-      "emailAddress": {
-        "name": "name-value",
-        "address": "address-value"
-      }
-    }
-  ],
-  "conversationId": "conversationId-value",
-  "uniqueBody": {
-    "contentType": "contentType-value",
-    "content": "content-value"
-  },
-  "isDeliveryReceiptRequested": true,
-  "isReadReceiptRequested": true,
-  "isRead": true,
-  "isDraft": true,
-  "webLink": "webLink-value",
-  "inferenceClassification": "inferenceClassification-value",
-  "createdDateTime": "datetime-value",
-  "lastModifiedDateTime": "datetime-value",
-  "changeKey": "changeKey-value",
-  "categories": [
-    "categories-value"
-  ],
-  "id": "id-value",
-  "meetingMessageType": "meetingMessageType-value"
+  "bodyPreview": "bodyPreview-value"
 }
 ```
 

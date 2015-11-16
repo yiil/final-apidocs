@@ -21,32 +21,10 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "assignedToTaskBoard": {
-    "@odata.type": "microsoft.graph.plantaskboard"
-  },
-  "bucketTaskBoard": {
-    "@odata.type": "microsoft.graph.plantaskboard"
-  },
-  "buckets": [
-    {
-      "@odata.type": "microsoft.graph.bucket"
-    }
-  ],
-  "createdBy": "String-value",
-  "details": {
-    "@odata.type": "microsoft.graph.plandetails"
-  },
-  "id": "String-value (identifier)",
-  "owner": "String-value",
-  "progressTaskBoard": {
-    "@odata.type": "microsoft.graph.plantaskboard"
-  },
-  "tasks": [
-    {
-      "@odata.type": "microsoft.graph.task"
-    }
-  ],
-  "title": "String-value"
+  "createdBy": "string",
+  "id": "string (identifier)",
+  "owner": "string",
+  "title": "string"
 }
 
 ```

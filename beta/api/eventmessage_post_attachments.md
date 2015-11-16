@@ -12,7 +12,7 @@ The following **scopes** are required to execute this API:
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [Attachment](../resources/attachment.md) object.
@@ -30,17 +30,26 @@ Here is an example of the request.
 }-->
 ```http
 
+Content-type: application/json
+Content-length: 142
+
+{
+  "lastModifiedDateTime": "datetime-value",
+  "name": "name-value",
+  "contentType": "contentType-value",
+  "size": 99,
+  "isInline": true
+}
 ```
-In the request body, supply a JSON representation of [Attachment](../resources/attachment.md) object.
+In the request body, supply a JSON representation of [attachment](../resources/attachment.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.attachment"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
 Content-length: 162
 

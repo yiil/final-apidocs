@@ -17,31 +17,21 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "createdBy": "String-value",
-  "createdTime": "String (timestamp)",
-  "id": "String-value (identifier)",
+  "createdBy": "string",
+  "createdByIdentity": {"@odata.type": "microsoft.graph.oneNoteIdentitySet"},
+  "createdTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "id": "string (identifier)",
   "isDefault": true,
   "isShared": true,
-  "lastModifiedBy": "String-value",
-  "lastModifiedTime": "String (timestamp)",
-  "links": {
-    "@odata.type": "microsoft.graph.notebooklinks"
-  },
-  "name": "String-value",
-  "sectionGroups": [
-    {
-      "@odata.type": "microsoft.graph.sectiongroup"
-    }
-  ],
-  "sectionGroupsUrl": "String-value",
-  "sections": [
-    {
-      "@odata.type": "microsoft.graph.section"
-    }
-  ],
-  "sectionsUrl": "String-value",
-  "self": "String-value",
-  "userRole": "String-value"
+  "lastModifiedBy": "string",
+  "lastModifiedByIdentity": {"@odata.type": "microsoft.graph.oneNoteIdentitySet"},
+  "lastModifiedTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "links": {"@odata.type": "microsoft.graph.notebookLinks"},
+  "name": "string",
+  "sectionGroupsUrl": "string",
+  "sectionsUrl": "string",
+  "self": "string",
+  "userRole": {"@odata.type": "microsoft.graph.userRole"}
 }
 
 ```

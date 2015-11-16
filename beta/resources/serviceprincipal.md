@@ -1,6 +1,7 @@
 # servicePrincipal resource type
 
-Represents an instance of an application in a directory. Inherits from [DirectoryObject].
+Represents an instance of an application in a directory. Inherits from [DirectoryObject].
+
 
 ### JSON representation
 
@@ -24,85 +25,26 @@ Here is a JSON representation of the resource
 ```json
 {
   "accountEnabled": true,
-  "appDisplayName": "String-value",
-  "appId": "String-value",
-  "appOwnerTenantId": "Guid-value",
-  "appRoleAssignedTo": {
-    "@odata.type": "microsoft.graph.approleassignment"
-  },
+  "addIns": [{"@odata.type": "microsoft.graph.addIn"}],
+  "appDisplayName": "string",
+  "appId": "string",
+  "appOwnerOrganizationId": "guid",
   "appRoleAssignmentRequired": true,
-  "appRoleAssignments": [
-    {
-      "@odata.type": "microsoft.graph.approleassignment"
-    }
-  ],
-  "appRoles": [
-    {
-      "@odata.type": "microsoft.graph.approle"
-    }
-  ],
-  "createdObjects": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "createdOnBehalfOf": {
-    "@odata.type": "microsoft.graph.directoryobject"
-  },
-  "deletionTimestamp": "String (timestamp)",
-  "displayName": "String-value",
-  "errorUrl": "String-value",
-  "homepage": "String-value",
-  "keyCredentials": [
-    {
-      "@odata.type": "microsoft.graph.keycredential"
-    }
-  ],
-  "logoutUrl": "String-value",
-  "memberOf": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "oauth2PermissionGrants": [
-    {
-      "@odata.type": "microsoft.graph.oauth2permissiongrant"
-    }
-  ],
-  "oauth2Permissions": [
-    {
-      "@odata.type": "microsoft.graph.oauth2permission"
-    }
-  ],
-  "objectId": "String-value (identifier)",
-  "objectType": "String-value",
-  "ownedObjects": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "owners": [
-    {
-      "@odata.type": "microsoft.graph.directoryobject"
-    }
-  ],
-  "passwordCredentials": [
-    {
-      "@odata.type": "microsoft.graph.passwordcredential"
-    }
-  ],
-  "preferredTokenSigningKeyThumbprint": "String-value",
-  "publisherName": "String-value",
-  "replyUrls": [
-    "String-value"
-  ],
-  "samlMetadataUrl": "String-value",
-  "servicePrincipalNames": [
-    "String-value"
-  ],
-  "tags": [
-    "String-value"
-  ]
+  "appRoles": [{"@odata.type": "microsoft.graph.appRole"}],
+  "displayName": "string",
+  "errorUrl": "string",
+  "homepage": "string",
+  "id": "string (identifier)",
+  "keyCredentials": [{"@odata.type": "microsoft.graph.keyCredential"}],
+  "logoutUrl": "string",
+  "oauth2Permissions": [{"@odata.type": "microsoft.graph.oAuth2Permission"}],
+  "passwordCredentials": [{"@odata.type": "microsoft.graph.passwordCredential"}],
+  "preferredTokenSigningKeyThumbprint": "string",
+  "publisherName": "string",
+  "replyUrls": ["string"],
+  "samlMetadataUrl": "string",
+  "servicePrincipalNames": ["string"],
+  "tags": ["string"]
 }
 
 ```
@@ -112,18 +54,15 @@ Here is a JSON representation of the resource
 |accountEnabled|Boolean|                **true** if the service principal account is enabled; otherwise, **false**.            |
 |appDisplayName|String|The display name exposed by the associated application.|
 |appId|String|The unique identifier for the associated application (its **appId** property).|
-|appOwnerTenantId|Guid|            |
 |appRoleAssignmentRequired|Boolean|Specifies whether an **AppRoleAssignment** to a user or group is required before Azure AD will issue a user or access token to the application.                            **Notes**: Requires version 1.5 or newer, not nullable.            |
 |appRoles|[AppRole](approle.md) collection|The application roles exposed by the associated application. For more information see the **appRoles** property definition on the [Application] entity                            **Notes**: Requires version 1.5 or newer, not nullable.            |
-|deletionTimestamp|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
 |displayName|String|The display name for the service principal.|
 |errorUrl|String|            |
 |homepage|String|The URL to the homepage of the associated   application.|
 |keyCredentials|[KeyCredential](keycredential.md) collection|The collection of key credentials associated with the service principal.                            **Notes**: not nullable.            |
 |logoutUrl|String|            |
 |oauth2Permissions|[OAuth2Permission](oauth2permission.md) collection|The OAuth 2.0 permissions exposed by the associated application. For more information see the **oauth2Permissions** property definition on the [Application] entity.                            **Notes**: Requires version 1.5 or newer, not nullable.            |
-|objectId|String|The unique identifier for the service principal. Inherited from [DirectoryObject].                            **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
-|objectType|String|A string that identifies the object type. For service principals the value is always “ServicePrincipal”. Inherited from [DirectoryObject].|
+|id|String|The unique identifier for the service principal. Inherited from [DirectoryObject].                            **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
 |passwordCredentials|[PasswordCredential](passwordcredential.md) collection|The collection of password credentials associated with the service principal.                            **Notes**: not nullable.            |
 |preferredTokenSigningKeyThumbprint|String|Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.                            **Notes**: Requires version 1.5 or newer.            |
 |publisherName|String|The display name of the tenant in which the associated application is specified.|
@@ -138,7 +77,6 @@ Here is a JSON representation of the resource
 |appRoleAssignedTo|[AppRoleAssignment](approleassignment.md)|Principals (users, groups, and service principals) that are assigned to this service principal. Requires version 1.5 or newer. Read-only.|
 |appRoleAssignments|[AppRoleAssignment](approleassignment.md) collection|Applications that the service principal is assigned to. Requires version 1.5 or newer. Read-only. Nullable.|
 |createdObjects|[DirectoryObject](directoryobject.md) collection|Directory objects created by this service principal. Inherited from [DirectoryObject]. Requires version 2013-11-08 or newer. Read-only. Nullable.|
-|createdOnBehalfOf|[DirectoryObject](directoryobject.md)| Read-only.|
 |memberOf|[DirectoryObject](directoryobject.md) collection|Roles that this service principal is a member of. Inherited from [DirectoryObject].            HTTP Methods: GET Read-only. Nullable.|
 |oauth2PermissionGrants|[OAuth2PermissionGrant](oauth2permissiongrant.md) collection|User impersonation grants associated with this service principal. Requires version 1.5 or newer. Read-only. Nullable.|
 |ownedObjects|[DirectoryObject](directoryobject.md) collection|Directory objects that are owned by this service principal. Inherited from [DirectoryObject]. Requires version 2013-11-08 or newer. Read-only. Nullable.|

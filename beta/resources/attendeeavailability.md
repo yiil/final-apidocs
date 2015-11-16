@@ -16,10 +16,8 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "attendee": {
-    "@odata.type": "microsoft.graph.attendeebase"
-  },
-  "availability": "String-value"
+  "attendee": {"@odata.type": "microsoft.graph.attendeeBase"},
+  "availability": {"@odata.type": "microsoft.graph.freeBusyStatus"}
 }
 
 ```

@@ -14,7 +14,7 @@ POST /drives/<id>/root/Microsoft.Graph.delta(token=token-value)
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request URL, provide following query parameters with values.

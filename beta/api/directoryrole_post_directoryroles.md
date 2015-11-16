@@ -12,7 +12,7 @@ POST /directoryObjects
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [DirectoryRole](../resources/directoryrole.md) object.
@@ -26,33 +26,40 @@ If successful, this method returns `201, Created` response code and [DirectoryRo
 Here is an example of the request.
 <!-- {
   "blockType": "request",
-  "name": "create_directoryrole_from_directoryobjects"
+  "name": "create_directoryrole_from_directoryroles"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/directoryObjects
+POST https://graph.microsoft.com/v1.0/directoryRoles
+Content-type: application/json
+Content-length: 153
+
+{
+  "directoryRole": {
+    "description": "description-value",
+    "displayName": "displayName-value",
+    "roleTemplateId": "roleTemplateId-value"
+  }
+}
 ```
-In the request body, supply a JSON representation of [DirectoryRole](../resources/directoryrole.md) object.
+In the request body, supply a JSON representation of [directoryRole](../resources/directoryrole.md) object.
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.directoryrole"
 } -->
 ```http
-HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 275
+Content-length: 175
 
 {
-  "description": "description-value",
-  "displayName": "displayName-value",
-  "isSystem": true,
-  "roleDisabled": true,
-  "roleTemplateId": "roleTemplateId-value",
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "directoryRole": {
+    "description": "description-value",
+    "displayName": "displayName-value",
+    "roleTemplateId": "roleTemplateId-value",
+    "id": "id-value"
+  }
 }
 ```
 

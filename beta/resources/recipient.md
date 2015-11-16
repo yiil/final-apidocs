@@ -16,9 +16,7 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "emailAddress": {
-    "@odata.type": "microsoft.graph.emailaddress"
-  }
+  "emailAddress": {"@odata.type": "microsoft.graph.emailAddress"}
 }
 
 ```

@@ -8,10 +8,10 @@ The following **scopes** are required to execute this API:
 ```http
 PATCH /servicePrincipals/<objectId>
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
@@ -21,17 +21,14 @@ In the request body, supply the values for relevant fields that should be update
 |accountEnabled|Boolean|                **true** if the service principal account is enabled; otherwise, **false**.            |
 |appDisplayName|String|The display name exposed by the associated application.|
 |appId|String|The unique identifier for the associated application (its **appId** property).|
-|appOwnerTenantId|Guid|            |
 |appRoleAssignmentRequired|Boolean|Specifies whether an **AppRoleAssignment** to a user or group is required before Azure AD will issue a user or access token to the application.                            **Notes**: Requires version 1.5 or newer, not nullable.            |
 |appRoles|AppRole|The application roles exposed by the associated application. For more information see the **appRoles** property definition on the [Application] entity                            **Notes**: Requires version 1.5 or newer, not nullable.            |
-|deletionTimestamp|DateTimeOffset||
 |displayName|String|The display name for the service principal.|
 |errorUrl|String|            |
 |homepage|String|The URL to the homepage of the associated   application.|
 |keyCredentials|KeyCredential|The collection of key credentials associated with the service principal.                            **Notes**: not nullable.            |
 |logoutUrl|String|            |
 |oauth2Permissions|OAuth2Permission|The OAuth 2.0 permissions exposed by the associated application. For more information see the **oauth2Permissions** property definition on the [Application] entity.                            **Notes**: Requires version 1.5 or newer, not nullable.            |
-|objectType|String|A string that identifies the object type. For service principals the value is always “ServicePrincipal”. Inherited from [DirectoryObject].|
 |passwordCredentials|PasswordCredential|The collection of password credentials associated with the service principal.                            **Notes**: not nullable.            |
 |preferredTokenSigningKeyThumbprint|String|Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.                            **Notes**: Requires version 1.5 or newer.            |
 |publisherName|String|The display name of the tenant in which the associated application is specified.|
@@ -50,162 +47,59 @@ Here is an example of the request.
   "name": "update_serviceprincipal"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/servicePrincipals/<objectId>
+PATCH https://graph.microsoft.com/v1.0/servicePrincipals/<id>
 Content-type: application/json
-Content-length: 1942
+Content-length: 391
 
 {
   "accountEnabled": true,
+  "addIns": [
+    {
+      "id": "id-value",
+      "type": "type-value",
+      "properties": [
+        {
+          "key": "key-value",
+          "value": "value-value"
+        }
+      ]
+    }
+  ],
   "appDisplayName": "appDisplayName-value",
   "appId": "appId-value",
-  "appOwnerTenantId": "appOwnerTenantId-value",
-  "appRoleAssignmentRequired": true,
-  "appRoles": [
-    {
-      "allowedMemberTypes": [
-        "allowedMemberTypes-value"
-      ],
-      "description": "description-value",
-      "displayName": "displayName-value",
-      "id": "id-value",
-      "isEnabled": true,
-      "value": "value-value"
-    }
-  ],
-  "displayName": "displayName-value",
-  "errorUrl": "errorUrl-value",
-  "homepage": "homepage-value",
-  "keyCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "type": "type-value",
-      "usage": "usage-value",
-      "value": "value-value"
-    }
-  ],
-  "logoutUrl": "logoutUrl-value",
-  "oauth2Permissions": [
-    {
-      "adminConsentDescription": "adminConsentDescription-value",
-      "adminConsentDisplayName": "adminConsentDisplayName-value",
-      "id": "id-value",
-      "isEnabled": true,
-      "type": "type-value",
-      "userConsentDescription": "userConsentDescription-value",
-      "userConsentDisplayName": "userConsentDisplayName-value",
-      "value": "value-value"
-    }
-  ],
-  "passwordCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "value": "value-value"
-    }
-  ],
-  "preferredTokenSigningKeyThumbprint": "preferredTokenSigningKeyThumbprint-value",
-  "publisherName": "publisherName-value",
-  "replyUrls": [
-    "replyUrls-value"
-  ],
-  "samlMetadataUrl": "samlMetadataUrl-value",
-  "servicePrincipalNames": [
-    "servicePrincipalNames-value"
-  ],
-  "tags": [
-    "tags-value"
-  ],
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "appOwnerOrganizationId": "appOwnerOrganizationId-value",
+  "appRoleAssignmentRequired": true
 }
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.serviceprincipal"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 1942
+Content-length: 391
 
 {
   "accountEnabled": true,
+  "addIns": [
+    {
+      "id": "id-value",
+      "type": "type-value",
+      "properties": [
+        {
+          "key": "key-value",
+          "value": "value-value"
+        }
+      ]
+    }
+  ],
   "appDisplayName": "appDisplayName-value",
   "appId": "appId-value",
-  "appOwnerTenantId": "appOwnerTenantId-value",
-  "appRoleAssignmentRequired": true,
-  "appRoles": [
-    {
-      "allowedMemberTypes": [
-        "allowedMemberTypes-value"
-      ],
-      "description": "description-value",
-      "displayName": "displayName-value",
-      "id": "id-value",
-      "isEnabled": true,
-      "value": "value-value"
-    }
-  ],
-  "displayName": "displayName-value",
-  "errorUrl": "errorUrl-value",
-  "homepage": "homepage-value",
-  "keyCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "type": "type-value",
-      "usage": "usage-value",
-      "value": "value-value"
-    }
-  ],
-  "logoutUrl": "logoutUrl-value",
-  "oauth2Permissions": [
-    {
-      "adminConsentDescription": "adminConsentDescription-value",
-      "adminConsentDisplayName": "adminConsentDisplayName-value",
-      "id": "id-value",
-      "isEnabled": true,
-      "type": "type-value",
-      "userConsentDescription": "userConsentDescription-value",
-      "userConsentDisplayName": "userConsentDisplayName-value",
-      "value": "value-value"
-    }
-  ],
-  "passwordCredentials": [
-    {
-      "customKeyIdentifier": "customKeyIdentifier-value",
-      "endDate": "datetime-value",
-      "keyId": "keyId-value",
-      "startDate": "datetime-value",
-      "value": "value-value"
-    }
-  ],
-  "preferredTokenSigningKeyThumbprint": "preferredTokenSigningKeyThumbprint-value",
-  "publisherName": "publisherName-value",
-  "replyUrls": [
-    "replyUrls-value"
-  ],
-  "samlMetadataUrl": "samlMetadataUrl-value",
-  "servicePrincipalNames": [
-    "servicePrincipalNames-value"
-  ],
-  "tags": [
-    "tags-value"
-  ],
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "appOwnerOrganizationId": "appOwnerOrganizationId-value",
+  "appRoleAssignmentRequired": true
 }
 ```
 

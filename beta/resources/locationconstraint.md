@@ -17,11 +17,7 @@ Here is a JSON representation of the resource
 ```json
 {
   "isRequired": true,
-  "locations": [
-    {
-      "@odata.type": "microsoft.graph.location"
-    }
-  ],
+  "locations": [{"@odata.type": "microsoft.graph.location"}],
   "suggestLocation": true
 }
 

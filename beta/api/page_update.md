@@ -12,7 +12,7 @@ PATCH /users/<mail>/notes/pages/<id>
 PATCH /users/<objectId>/notes/pages/<id>
 PATCH /groups/<objectId>/notes/pages/<id>
 ```
-### Optional request headers
+### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
 | Authorization  | string  | `Bearer <token>` A valid OAuth token provided to the app based on the user credentials and the user having authorized access. |
@@ -31,34 +31,52 @@ Here is an example of the request.
   "name": "update_page"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/users/<objectId>/notes/pages/<id>
-Content-Type: application/json
-Content-Length: 391
+PATCH https://graph.microsoft.com/v1.0/me/notes/pages/<id>
+Content-type: application/json
+Content-length: 312
 
-[
-   {
-    'target':'#para-id',
-    'action':'insert',
-    'position':'before',
-    'content':'<img src="image-url-or-part-name" alt="image-alt-text" />'
-  }, 
-  {
-    'target':'#list-id',
-    'action':'append',
-    'content':'<li>new-page-content</li>'
-  }
-]
+{
+  "title": "title-value",
+  "createdByAppId": "createdByAppId-value",
+  "links": {
+    "oneNoteClientUrl": {
+      "href": "href-value"
+    },
+    "oneNoteWebUrl": {
+      "href": "href-value"
+    }
+  },
+  "contentUrl": "contentUrl-value",
+  "content": "content-value",
+  "lastModifiedTime": "datetime-value"
+}
 ```
-
 ##### Response
-Here is an example of the response. No JSON data is returned for a PATCH request.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.page"
 } -->
 ```http
-HTTP/1.1 204 No Content
+Content-type: application/json
+Content-length: 312
+
+{
+  "title": "title-value",
+  "createdByAppId": "createdByAppId-value",
+  "links": {
+    "oneNoteClientUrl": {
+      "href": "href-value"
+    },
+    "oneNoteWebUrl": {
+      "href": "href-value"
+    }
+  },
+  "contentUrl": "contentUrl-value",
+  "content": "content-value",
+  "lastModifiedTime": "datetime-value"
+}
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

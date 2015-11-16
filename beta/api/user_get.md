@@ -11,11 +11,12 @@ GET /drive/root/createdByUser
 GET /drive/root/lastModifiedByUser
 ```
 ### Optional query parameters
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
 Do not supply a request body for this method.
@@ -29,19 +30,18 @@ Here is an example of the request.
   "name": "get_user"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/users/<objectId>
+GET https://graph.microsoft.com/v1.0/me
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.user"
 } -->
 ```http
-HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 2708
+Content-length: 491
 
 {
   "accountEnabled": true,
@@ -55,94 +55,17 @@ Content-length: 2708
   ],
   "assignedPlans": [
     {
-      "assignedTimestamp": "datetime-value",
+      "assignedDateTime": "datetime-value",
       "capabilityStatus": "capabilityStatus-value",
       "service": "service-value",
       "servicePlanId": "servicePlanId-value"
     }
   ],
+  "businessPhones": [
+    "businessPhones-value"
+  ],
   "city": "city-value",
-  "country": "country-value",
-  "department": "department-value",
-  "dirSyncEnabled": true,
-  "displayName": "displayName-value",
-  "facsimileTelephoneNumber": "facsimileTelephoneNumber-value",
-  "givenName": "givenName-value",
-  "immutableId": "immutableId-value",
-  "jobTitle": "jobTitle-value",
-  "lastDirSyncTime": "datetime-value",
-  "mail": "mail-value",
-  "mailNickname": "mailNickname-value",
-  "mobile": "mobile-value",
-  "onPremisesSecurityIdentifier": "onPremisesSecurityIdentifier-value",
-  "otherMails": [
-    "otherMails-value"
-  ],
-  "passwordPolicies": "passwordPolicies-value",
-  "passwordProfile": {
-    "password": "password-value",
-    "forceChangePasswordNextLogin": true
-  },
-  "physicalDeliveryOfficeName": "physicalDeliveryOfficeName-value",
-  "postalCode": "postalCode-value",
-  "preferredLanguage": "preferredLanguage-value",
-  "provisionedPlans": [
-    {
-      "capabilityStatus": "capabilityStatus-value",
-      "provisioningStatus": "provisioningStatus-value",
-      "service": "service-value"
-    }
-  ],
-  "provisioningErrors": [
-    {
-      "errorDetail": "errorDetail-value",
-      "resolved": true,
-      "service": "service-value",
-      "timestamp": "datetime-value"
-    }
-  ],
-  "proxyAddresses": [
-    "proxyAddresses-value"
-  ],
-  "sipProxyAddress": "sipProxyAddress-value",
-  "state": "state-value",
-  "streetAddress": "streetAddress-value",
-  "surname": "surname-value",
-  "telephoneNumber": "telephoneNumber-value",
-  "thumbnailPhoto": "thumbnailPhoto-value",
-  "usageLocation": "usageLocation-value",
-  "userPrincipalName": "userPrincipalName-value",
-  "userType": "userType-value",
-  "emailAddress": "emailAddress-value",
-  "mailboxGuid": "mailboxGuid-value",
-  "aboutMe": "aboutMe-value",
-  "alias": "alias-value",
-  "birthday": "datetime-value",
-  "hireDate": "datetime-value",
-  "interests": [
-    "interests-value"
-  ],
-  "mySite": "mySite-value",
-  "pastProjects": [
-    "pastProjects-value"
-  ],
-  "preferredName": "preferredName-value",
-  "principalName": "principalName-value",
-  "responsibilities": [
-    "responsibilities-value"
-  ],
-  "schools": [
-    "schools-value"
-  ],
-  "skills": [
-    "skills-value"
-  ],
-  "tags": [
-    "tags-value"
-  ],
-  "objectType": "objectType-value",
-  "objectId": "objectId-value",
-  "deletionTimestamp": "datetime-value"
+  "companyName": "companyName-value"
 }
 ```
 

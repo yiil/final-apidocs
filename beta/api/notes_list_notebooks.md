@@ -13,15 +13,7 @@ GET /users/<objectId>/notes/notebooks
 GET /groups/<objectId>/notes/notebooks
 ```
 ### Optional query parameters
-|Name|Value|Description|
-|:---------------|:--------|:-------|
-|$count|none|The count of related entities to return in the result set.|
-|$expand|string|Comma-separated list of relationships to expand and include in the response. Valid values for notebooks are `sections` and `sectionGroups`. |
-|$filter|string|Filter string that lets you filter the response based on a set of criteria.|
-|$orderby|string|Comma-separated list of properties that are used to sort the order of items in the response collection. The default is `name asc`.|
-|$select|string|Comma-separated list of properties to include in the response.|
-|$skip|int|The number of items to skip in the result set.|
-|$top|int|The number of items to return in the result set.|
+This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
 ### Request headers
 | Name       | Type | Description|
@@ -41,29 +33,26 @@ Here is an example of the request.
   "name": "get_notebooks"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/users/<objectId>/notes/notebooks
-Authorization: Bearer <token>
-Accept: application/json
+GET https://graph.microsoft.com/v1.0/me/notes/notebooks
 ```
 ##### Response
-Here is an example of the response.
+Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
-  "truncated": false,
+  "truncated": true,
   "@odata.type": "microsoft.graph.notebook",
   "isCollection": true
 } -->
 ```http
-HTTP/1.1 200 OK
-Content-Type: application/json
-Content-Length: 625
-...
+Content-type: application/json
+Content-length: 369
 
 {
   "value": [
     {
       "isDefault": true,
-      "userRole": "userRole-value",
+      "userRole": {
+      },
       "isShared": true,
       "sectionsUrl": "sectionsUrl-value",
       "sectionGroupsUrl": "sectionGroupsUrl-value",
@@ -74,14 +63,7 @@ Content-Length: 625
         "oneNoteWebUrl": {
           "href": "href-value"
         }
-      },
-      "name": "name-value",
-      "createdBy": "createdBy-value",
-      "lastModifiedBy": "lastModifiedBy-value",
-      "lastModifiedTime": "datetime-value",
-      "id": "id-value",
-      "self": "self-value",
-      "createdTime": "datetime-value"
+      }
     }
   ]
 }

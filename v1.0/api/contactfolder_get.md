@@ -2,11 +2,12 @@
 
 Retrieve the properties and relationships of contactfolder object.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API: Contacts.ReadWrite, Contacts.Read
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /users/<id>/contactFolders/<id>
+GET /users/me/contactFolders/<id>
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

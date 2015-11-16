@@ -7,7 +7,7 @@ One of the following **scopes** is required to execute this API: _Calendars.Read
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /users/<id>/calendar/calendarView
-GET /groups/<objectId>/calendar/calendarView
+GET /groups/<id>/calendar/calendarView
 GET /drive/root/createdByUser/calendar/calendarView
 ```
 ### Optional query parameters

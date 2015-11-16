@@ -7,7 +7,7 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /users/<id>/events/<id>/Microsoft.Graph.decline
-POST /groups/<objectId>/events/<id>/Microsoft.Graph.decline
+POST /groups/<id>/events/<id>/Microsoft.Graph.decline
 POST /users/<id>/calendarView/<id>/Microsoft.Graph.decline
 
 ```

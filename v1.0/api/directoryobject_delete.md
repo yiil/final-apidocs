@@ -9,8 +9,8 @@ One of the following **scopes** is required to execute this API: _Directory.Acce
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /users/<id>/manager
-DELETE /directoryObjects/<objectId>
-DELETE /contacts/<objectId>/manager
+DELETE /directoryObjects/<id>
+DELETE /contacts/<id>/manager
 
 ```
 ### Request headers

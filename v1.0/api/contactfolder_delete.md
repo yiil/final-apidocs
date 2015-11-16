@@ -7,6 +7,8 @@ One of the following **scopes** is required to execute this API: Contacts.ReadWr
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /users/<id>/contactFolders/<id>
+DELETE /users/me/contactFolders/<id>
+DELETE /users/<userPrincipalName>/contactFolders/<id>
 
 ```
 ### Request headers

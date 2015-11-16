@@ -1,6 +1,6 @@
 # directoryRole resource type
 
-Represents an Azure AD directory role. Azure AD directory roles are also known as *administrator roles*. For more information about directory (administrator) roles, see [Assigning administrator roles in Azure AD](http://azure.microsoft.com/documentation/articles/active-directory-assign-admin-roles/). With the Microsoft Graph, you can assign users to directory roles to grant them the permissions of the target role. To read a directory role or update its members, it must first be activated in the tenant. Only the Company Administrators directory role is activated by default. To activate other available directory roles you send a POST request with the ID of the [directoryRoleTemplate](directoryroletemplate.md) on which the directory role is based. Inherits from [DirectoryObject](directoryobject.md). 
+Represents an Azure AD directory role. Azure AD directory roles are also known as *administrator roles*. For more information about directory (administrator) roles, see [Assigning administrator roles in Azure AD](http://azure.microsoft.com/documentation/articles/active-directory-assign-admin-roles/). With the Microsoft Graph, you can assign users to directory roles to grant them the permissions of the target role. To read a directory role or update its members, it must first be activated in the tenant. Only the Company Administrators directory role is activated by default. To activate other available directory roles you send a POST request with the ID of the [directoryRoleTemplate](directoryroletemplate.md) on which the directory role is based. Inherits from [directoryObject](directoryobject.md). 
 
 
 
@@ -9,8 +9,8 @@ Represents an Azure AD directory role. Azure AD directory roles are also known a
 | Method       | Return Type  |Description|
 |:---------------|:--------|:----------|
 |[Get directoryRole](../api/directoryrole_get.md) | [directoryRole](directoryrole.md) |Read properties and relationships of directoryRole object.|
-|[Create member](../api/directoryrole_post_members.md) |[DirectoryObject](directoryobject.md)| Add a user to the directory role by posting to the members navigation property.|
-|[List members](../api/directoryrole_list_members.md) |[DirectoryObject](directoryobject.md) collection| Get the users that are members of the directory role from the members navigation property.|
+|[Create member](../api/directoryrole_post_members.md) |[directoryObject](directoryobject.md)| Add a user to the directory role by posting to the members navigation property.|
+|[List members](../api/directoryrole_list_members.md) |[directoryObject](directoryobject.md) collection| Get the users that are members of the directory role from the members navigation property.|
 
 
 ### Properties
@@ -18,13 +18,13 @@ Represents an Azure AD directory role. Azure AD directory roles are also known a
 |:---------------|:--------|:----------|
 |description|String|The description for the directory role. Read-only. |
 |displayName|String|The display name for the directory role. Read-only. |
-|id|String|The unique identifier for the directory role. Inherited from [DirectoryObject](directoryobject.md). Key, Not nullable, Read-only.|
-|roleTemplateId|String| The **id** of the [DirectoryRoleTemplate](directoryroletemplate.md) that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. |
+|id|String|The unique identifier for the directory role. Inherited from [directoryObject](directoryobject.md). Key, Not nullable, Read-only.|
+|roleTemplateId|String| The **id** of the [directoryRoleTemplate](directoryroletemplate.md) that this role is based on. The property must be specified when activating a directory role in a tenant with a POST operation. After the directory role has been activated, the property is read only. |
 
 ### Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|members|[DirectoryObject](directoryobject.md) collection|Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.|
+|members|[directoryObject](directoryobject.md) collection|Users that are members of this directory role. HTTP Methods: GET, POST, DELETE. Read-only. Nullable.|
 
 
 ### JSON representation

@@ -16,18 +16,18 @@ Here is a JSON representation of the resource.
 
 ```json
 {
-  "height": 1024,
-  "id": "string (identifier)",
-  "width": 1024
+  "id": "240X240",
+  "height": 240,
+  "width": 240
 }
 
 ```
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|height|int32||
-|id|string| Read-only.|
-|width|int32||
+|id|string|Read-only.|
+|height|int32|The height of the photo. Read-only.|
+|width|int32|The width of the photo. Read-only.|
 
 ### Relationships
 None
@@ -37,9 +37,9 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[Get profilePhoto](../api/profilephoto_get.md) | [profilePhoto](profilephoto.md) |Read properties and relationships of profilePhoto object.|
-|[Update](../api/profilephoto_update.md) | [profilePhoto](profilephoto.md)	|Update profilePhoto object. |
-|[Delete](../api/profilephoto_delete.md) | None |Delete profilePhoto object. |
+|[Get profilePhoto](../api/profilephoto_get.md) | [profilePhoto](profilephoto.md) |Read the photo and properties of **profilePhoto**. |
+|[Update](../api/profilephoto_update.md) | [profilePhoto](profilephoto.md)  |Update the photo. |
+|[Delete](../api/profilephoto_delete.md) | None |Delete the photo. |
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

@@ -105,7 +105,7 @@ Here is a JSON representation of the resource
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |extensions|[Extension](extension.md) collection| Read-only. Nullable.|
-|photo|[Photo](photo.md)| Optional contact picture. You can get or set a photo for a contact.|
+|photo|[Photo](profilephoto.md)| Optional contact picture. You can get or set a photo for a contact.|
 
 ### Methods
 

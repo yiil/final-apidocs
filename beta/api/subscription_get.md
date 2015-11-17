@@ -2,7 +2,7 @@
 
 Retrieve the properties and relationships of a subscription.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes**, depending on the target resource, are required to execute this API: *Mail.Read*, *Calendars.Read*, or *Contacts.Read* 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http

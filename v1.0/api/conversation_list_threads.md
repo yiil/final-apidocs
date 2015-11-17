@@ -3,12 +3,12 @@
 Retrieve a list of conversationthread objects.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+*Group.ReadWrite.All; Group.Read.All*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /groups/<objectId>/conversations/<id>/threads
 GET /users/<id>/joinedGroups/<objectId>/conversations/<id>/threads
-GET /drive/root/createdByUser/joinedGroups/<objectId>/conversations/<id>/threads
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

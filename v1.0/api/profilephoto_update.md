@@ -1,6 +1,6 @@
 # Update profilephoto
 
-Update the photo for a **user**, **group** or a **contact**.
+Update the photo for signed-in **user**, **group** or a **contact**.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 One of the following **scopes** is required to execute this API for: 
@@ -40,7 +40,7 @@ Here is an example of the request.
   "name": "update_profilephoto"
 }-->
 ```http
-PATCH https://graph.microsoft.com/beta/me/photo/$value
+PATCH https://graph.microsoft.com/v1.0/me/photo/$value
 Content-type: image/jpeg
 
 Binary data for the image

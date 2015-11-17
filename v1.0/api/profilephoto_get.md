@@ -1,12 +1,11 @@
-# Get profilePhoto
+# Get photo
 
 Read the photo and properties of profilePhoto object.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
 One of the following **scopes** is required to execute this API for: 
 * Profile photo of signed-in **user** - *User.Read; User.ReadBasic.All; User.Read.All; User.ReadWrite.All; User.Read*
 * Profile photo of a **group** - *Group.Read.All; Group.ReadWrite.All* 
-* Photo of a **contact** - *Contacts.Read; Contacts.ReadWrite*
+* Photo of a **contact** - *Contacts.Read; Contacts.ReadWrite* 
 ### HTTP request to get the photo
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -41,8 +40,10 @@ This method supports the [OData Query Parameters](http://graph.microsoft.io/docs
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+| Authorization  | string  | Bearer <token>. Required. |
 
+### Request body
+Do not supply a request body for this method.
 ### Response for getting the photo
 If successful, this method returns a `200 OK` response code and binary data of the requested photo.  If no photo exists, the operation returns `404 Not Found`.
 ### Response for getting the metadata of the photo
@@ -55,7 +56,7 @@ Here is an example of the request.
   "name": "get_photo"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/users/<id>/photo
+GET https://graph.microsoft.com/v1.0/users/<id>/photo
 ```
 ##### Response
 Here is an example of the response.
@@ -80,7 +81,7 @@ Content-length: 53
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Get profilePhoto",
+  "description": "Get photo",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

@@ -207,11 +207,9 @@ Here is a JSON representation of the resource
 |[List people](../api/user_list_people.md) |[Person](person.md) collection| Get a Person object collection.|
 |[Create photo](../api/user_post_photos.md) |[Photo](photo.md)| Create a new photo by posting to the photos collection.|
 |[List photos](../api/user_list_photos.md) |[Photo](photo.md) collection| Get a photo object collection.|
-|[Create plan](../api/user_post_plans.md) |[plan](plan.md)| Create a new plan by posting to the plans collection.|
 |[List plans](../api/user_list_plans.md) |[plan](plan.md) collection| Get a plan object collection.|
 |[Create registeredDevice](../api/user_post_registereddevices.md) |[DirectoryObject](directoryobject.md)| Create a new registeredDevice by posting to the registeredDevices collection.|
 |[List registeredDevices](../api/user_list_registereddevices.md) |[DirectoryObject](directoryobject.md) collection| Get a registeredDevice object collection.|
-|[Create task](../api/user_post_tasks.md) |[task](task.md)| Create a new task by posting to the tasks collection.|
 |[List tasks](../api/user_list_tasks.md) |[task](task.md) collection| Get a task object collection.|
 |[Create trendingAround](../api/user_post_trendingaround.md) |[item](item.md)| Create a new trendingAround by posting to the trendingAround collection.|
 |[List trendingAround](../api/user_list_trendingaround.md) |[item](item.md) collection| Get a trendingAround object collection.|

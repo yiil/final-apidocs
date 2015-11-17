@@ -1,6 +1,6 @@
 # externalReference resource type
 
-The ExternalReference resource represents the metadata of a reference (attachments such as file, URL) in Planner. It is the value of key-value pairs in the [externalReferenceCollection](externalreferencecollection.md).
+The ExternalReference resource represents the metadata of a reference (attachments such as file, URL). It is the value of property-value pairs in the [externalReferenceCollection](externalreferencecollection.md).
 
 ### JSON representation
 

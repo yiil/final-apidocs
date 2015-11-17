@@ -1,20 +1,21 @@
 # Create MailFolder
 
-Use this API to create a new MailFolder.
+Use this API to create a new child mailfolder.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+*Mail.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+POST /me/mailFolders/<id>/childFolders
 POST /users/<id>/mailFolders/<id>/childFolders
-POST /drive/root/createdByUser/mailFolders/<id>/childFolders
-POST /drive/root/lastModifiedByUser/mailFolders/<id>/childFolders
-
+POST /users/<userPrincipalName>/mailFolders/<id>/childFolders
 ```
 ### Request headers
-| Name       | Type | Description|
-|:---------------|:--------|:----------|
-| Authorization  | string  | Bearer <token>. Required. |
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer <token>. Required.  |
+| Content-Type  | application/json. Required.  |
 
 ### Request body
 In the request body, supply a JSON representation of [MailFolder](../resources/mailfolder.md) object.

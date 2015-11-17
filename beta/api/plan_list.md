@@ -36,7 +36,6 @@ Here is an example of the request.
   "name": "get_plans"
 }-->
 ```http
-<<<<<<< HEAD
 GET https://graph.microsoft.com/beta/plans?$filter=owner eq '400723e1-102b-43aa-aba9-f35524827084'
 ```
 ##### Response

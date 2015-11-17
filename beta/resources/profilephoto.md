@@ -1,5 +1,5 @@
 # profilePhoto resource type
-
+A profile photo of a user, group or an Outlook contact. It's binary data not encoded in base-64.
 
 
 ### JSON representation
@@ -22,12 +22,15 @@ Here is a JSON representation of the resource.
 }
 
 ```
+
+
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |id|string|Read-only.|
 |height|int32|The height of the photo. Read-only.|
 |width|int32|The width of the photo. Read-only.|
+
 
 ### Relationships
 None

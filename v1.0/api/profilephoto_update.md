@@ -25,7 +25,7 @@ PATCH /users/<userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>/
 | Header       | Value |
 |:---------------|:--------|
 | Authorization  | Bearer <token>. Required.  |
-| Content-Type  | image/jpeg  |
+| Content-Type  | image/jpeg. Required.  |
 
 ### Request body
 In the request body, include the binary data of the photo in the request body.

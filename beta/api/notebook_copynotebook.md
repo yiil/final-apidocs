@@ -1,6 +1,8 @@
 # notebook: copyNotebook
 Copies a notebook to the Notebooks folder in the destination Documents library. The folder is created if it doesn't exist.
 
+For Copy operations, you follow an asynchronous calling pattern:  First call the Copy action, and then poll the operation endpoint for the result.
+
 ### Prerequisites
 One of the following **scopes** is required to execute this API:   
 Notes.ReadWrite.CreatedByApp, Notes.ReadWrite, or Notes.ReadWrite.All 
@@ -19,7 +21,7 @@ POST /groups/<objectId>/notes/notebooks/<id>/copyNotebook
 | Content-Type | string | `application/json` |
 
 ### Request body
-In the request body, provide a JSON object with the following parameters.
+In the request body, provide a JSON object that contains the parameters that your operation needs. It's okay to send an empty body if none are needed.
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
@@ -28,7 +30,7 @@ In the request body, provide a JSON object with the following parameters.
 
 
 ### Response
-If successful, this method returns a `202 Accepted` response code.
+If successful, this method returns a `202 Accepted` response code and an `Operation-Location` header. Poll the Operation-Location endpoint to [get the status of the copy operation](notesoperation_get.md).
 
 ### Example
 Here is an example of how to call this API.
@@ -45,27 +47,19 @@ Content-length: 108
 
 {
   "groupId": "groupId-value",
-  "renameAs": "renameAs-value",
-  "notebookFolder": "notebookFolder-value"
+  "renameAs": "renameAs-value"
 }
 ```
 
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response.
 <!-- {
   "blockType": "response",
   "truncated": true,
   "@odata.type": "microsoft.graph.copystatusmodel"
 } -->
 ```http
-Content-type: application/json
-Content-length: 89
-
-{
-  "id": "id-value",
-  "status": "status-value",
-  "createdDateTime": "datetime-value"
-}
+HTTP/1.1 202 Accepted
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

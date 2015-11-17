@@ -24,7 +24,7 @@ In the request body, supply a name for the section group.
 Within the same hierarchy level, section group names must be unique. The name cannot contain more than 50 characters or contain the following characters:  ?*\/:<>|&#''%~
 
 ### Response
-If successful, this method returns `201, Created` response code and a [sectionGroup](../resources/sectiongroup.md) object in the response body.
+If successful, this method returns `201 Created` response code and a [sectionGroup](../resources/sectiongroup.md) object in the response body.
 
 ### Example
 ##### Request
@@ -36,25 +36,15 @@ Here is an example of the request.
 ```http
 POST https://graph.microsoft.com/v1.0/me/notes/notebooks/<id>/sectionGroups
 Content-type: application/json
-Content-length: 305
+Content-length: 30
 
 {
-  "sectionsUrl": "sectionsUrl-value",
-  "sectionGroupsUrl": "sectionGroupsUrl-value",
-  "name": "name-value",
-  "createdBy": "createdBy-value",
-  "createdByIdentity": {
-    "user": {
-      "id": "id-value",
-      "displayName": "displayName-value"
-    }
-  },
-  "lastModifiedBy": "lastModifiedBy-value"
+  "name": "Section group name"
 }
 ```
-In the request body, supply a JSON representation of [sectionGroup](../resources/sectiongroup.md) object.
+
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. Note: The response object shown here is truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
   "truncated": true,

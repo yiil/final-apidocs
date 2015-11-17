@@ -15,7 +15,11 @@ GET /users/<id>/contactfolders/<contactFolderId>/contacts/<id>
 GET /users/<userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>
 ```
 ### Optional query parameters
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+|Name|Value|Description|
+|:---------------|:--------|:-------|
+|$expand|string|Comma-separated list of relationships to expand and include in the response. See relationships table of [contact](../resources/contact.md) object for supported names. |
+|$select|string|Comma-separated list of properties to include in the response.|
+
 ### Request headers
 | Header       | Value |
 |:---------------|:--------|
@@ -44,15 +48,61 @@ Here is an example of the response. Note: The response object shown here may be 
 } -->
 ```http
 Content-type: application/json
-Content-length: 210
+Content-length: 1977
 
 {
-  "parentFolderId": "parentFolderId-value",
-  "birthday": "datetime-value",
-  "fileAs": "fileAs-value",
-  "displayName": "displayName-value",
-  "givenName": "givenName-value",
-  "initials": "initials-value"
+  "id": "AAMkAGI2THk0AAA=",
+  "createdDateTime": "2014-10-19T23:08:24Z",
+  "lastModifiedDateTime": "2014-10-19T23:08:24Z",
+  "changeKey": "EQAAABYAAACd9nJ/tVysQos2hTfspaWRAAADTIa4",
+  "categories": [],
+  "parentFolderId": "AAMkAGI2AAEOAAA=",
+  "birthday": "1974-07-22",
+  "fileAs": "Fort, Garth",
+  "displayName": "Garth Fort",
+  "givenName": "Garth",
+  "initials": "G.F.",
+  "middleName": null,
+  "nickName": "Garth",
+  "surname": "Fort",
+  "title": null,
+  "yomiGivenName": null,
+  "yomiSurname": null,
+  "yomiCompanyName": null,
+  "generation": null,
+  "emailAddresses": [
+    {
+      "name": "Garth",
+      "address": "garth@a830edad9050849NDA1.onmicrosoft.com"
+    }
+  ],
+  "imAddresses": [
+    "sip:garthf@a830edad9050849nda1.onmicrosoft.com"
+  ],
+  "jobTitle": "Web Marketing Manager",
+  "companyName": "Contoso, Inc.",
+  "department": "Sales & Marketing",
+  "officeLocation": "20/1101",
+  "profession": null,
+  "businessHomePage": "http://www.contoso.com",
+  "assistantName": null,
+  "manager": null,
+  "homePhones": [],
+  "businessPhones": [
+    "+1 918 555 0101"
+  ],
+  "homeAddress": {},
+  "businessAddress": {
+      "street": "10 Contoso Way",
+      "city": "Redmond",
+      "state": "WA",
+      "countryOrRegion": "USA",
+      "postalCode": "98075"  
+  },
+  "otherAddress": {},
+  "spouseName": null,
+  "personalNotes": null,
+  "children": []
 }
 ```
 

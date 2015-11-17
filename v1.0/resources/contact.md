@@ -57,7 +57,7 @@ A contact is an item in Outlook where you can organize and save information abou
 ### Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|photo|[Photo](photo.md)| Optional contact picture. You can get or set a photo for a contact.|
+|photo|[Photo](profilephoto.md)| Optional contact picture. You can get or set a photo for a contact.|
 
 
 
@@ -100,7 +100,7 @@ Here is a JSON representation of the resource
   "lastModifiedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
   "manager": "string",
   "middleName": "string",
-  "mobilePhone1": "string",
+  "mobilePhone": "string",
   "nickName": "string",
   "officeLocation": "string",
   "otherAddress": {"@odata.type": "microsoft.graph.physicalAddress"},

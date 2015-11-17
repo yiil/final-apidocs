@@ -3,18 +3,22 @@
 Delete contact.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
+*Contacts.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-DELETE /users/<objectId>/contacts/<id>
-DELETE /drive/root/createdByUser/contacts/<id>
-DELETE /drive/root/lastModifiedByUser/contacts/<id>
+DELETE /me/contacts/<id>
+DELETE /users/<id>/contacts/<id>
+DELETE /users/<userPrincipalName>/contacts/<id>
+DELETE /me/contactFolders/<contactFolderId>/contacts/<id>
+DELETE /users/<id>/contactFolders/<contactFolderId>/contacts/<id>
+DELETE /users/<userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>
 
 ```
 ### Request headers
-| Name       | Type | Description|
-|:---------------|:--------|:----------|
-| Authorization  | string  | Bearer <token>. Required. |
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer <token>. Required.  |
 
 ### Request body
 Do not supply a request body for this method.
@@ -31,7 +35,7 @@ Here is an example of the request.
   "name": "delete_contact"
 }-->
 ```http
-DELETE https://graph.microsoft.com/v1.0/me/contacts/<id>
+DELETE https://graph.microsoft.com/beta/me/contacts/<id>
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
@@ -40,6 +44,7 @@ Here is an example of the response. Note: The response object shown here may be 
   "truncated": true
 } -->
 ```http
+HTTP/1.1 204 No Content
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

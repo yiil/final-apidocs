@@ -42,9 +42,9 @@ Content-type: application/json
 Content-length: 104
 
 {
-  "parentFolderId": "parentFolderId-value",
-  "displayName": "displayName-value",
-  "id": "id-value"
+  "displayName": "Finance",
+  "id": "AAMkAGI2TKI5AAA=",
+  "parentFolderId": "AAMkAGI2AAEOAAA="
 }
 ```
 

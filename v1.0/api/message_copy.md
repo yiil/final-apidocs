@@ -15,6 +15,7 @@ POST /drive/root/lastModifiedByUser/messages/<id>/Microsoft.Graph.copy
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
 | Authorization  | string  | Bearer <token>. Required. |
+| Content-Type | string  | Nature of the data in the body of an entity. Required. |
 
 ### Request body
 In the request body, provide a JSON object with the following parameters.

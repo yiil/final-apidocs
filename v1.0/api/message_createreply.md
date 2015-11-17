@@ -15,6 +15,7 @@ POST /drive/root/lastModifiedByUser/messages/<id>/Microsoft.Graph.createReply
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
 | Authorization  | string  | Bearer <token>. Required. |
+| Content-Type | string  | Nature of the data in the body of an entity. Required. |
 
 ### Request body
 
@@ -31,6 +32,12 @@ Here is an example of the request.
 }-->
 ```http
 POST https://graph.microsoft.com/v1.0/me/messages/<id>/createReply
+Content-type: application/json
+Content-length: 248
+
+{
+  "comment": "comment-value"
+}
 ```
 
 ##### Response

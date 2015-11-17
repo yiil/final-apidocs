@@ -33,9 +33,10 @@ Here is an example of the request.
 }-->
 ```http
 DELETE https://graph.microsoft.com/beta/plans/<id>
+If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
 ```
 ##### Response
-Here is an example of the response. 
+Here is an example of the response.
 <!-- {
   "blockType": "response",
   "truncated": true

@@ -44,7 +44,8 @@ Here is an example of the request.
 ```http
 PATCH https://graph.microsoft.com/beta/plans/<id>/details
 Content-type: application/json
-Content-length: 305
+Content-length: 381
+If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
 
 {
   "sharedWith": {
@@ -53,29 +54,19 @@ Content-length: 305
   "category1Description": "category1Description-value",
   "category2Description": "category2Description-value",
   "category3Description": "category3Description-value",
-  "category4Description": "category4Description-value"
+  "category4Description": "category4Description-value",
+  "category5Description": "category5Description-value"
 }
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response.
 <!-- {
   "blockType": "response",
   "truncated": true,
   "@odata.type": "microsoft.graph.plandetails"
 } -->
 ```http
-Content-type: application/json
-Content-length: 305
-
-{
-  "sharedWith": {
-  },
-  "category0Description": "category0Description-value",
-  "category1Description": "category1Description-value",
-  "category2Description": "category2Description-value",
-  "category3Description": "category3Description-value",
-  "category4Description": "category4Description-value"
-}
+HTTP/1.1 204 No Content
 ```
 To get the updated object, use the `Prefer` header. See Request Headers above.
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

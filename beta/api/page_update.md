@@ -19,7 +19,7 @@ PATCH /groups/<objectId>/notes/pages/<id>
 | Content-Type | string | `application/json` |
 
 ### Request body
-In the request body, supply an array of [patchContentCommand](../resources/patchcontentcommand.md) objects that represent the changes to the page. For more information and examples, see <a href="https://msdn.microsoft.com/en-us/office/office365/howto/onenote-update-page">Update OneNote pages</a>.
+In the request body, supply an array of [patchContentCommand](../resources/patchcontentcommand.md) objects that represent the changes to the page. For more information and examples, see <a href="https://msdn.microsoft.com/office/office365/howto/onenote-update-page">Update OneNote pages</a>.
 
 ### Response
 If successful, this method returns a `204 No Content` response code.  No JSON data is returned for a PATCH request.
@@ -35,48 +35,29 @@ PATCH https://graph.microsoft.com/beta/me/notes/pages/<id>
 Content-type: application/json
 Content-length: 312
 
-{
-  "title": "title-value",
-  "createdByAppId": "createdByAppId-value",
-  "links": {
-    "oneNoteClientUrl": {
-      "href": "href-value"
-    },
-    "oneNoteWebUrl": {
-      "href": "href-value"
-    }
-  },
-  "contentUrl": "contentUrl-value",
-  "content": "content-value",
-  "lastModifiedTime": "datetime-value"
-}
+[
+   {
+    'target':'#para-id',
+    'action':'insert',
+    'position':'before',
+    'content':'<img src="image-url-or-part-name" alt="image-alt-text" />'
+  }, 
+  {
+    'target':'#list-id',
+    'action':'append',
+    'content':'<li>new-page-content</li>'
+  }
+]
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
   "truncated": true,
   "@odata.type": "microsoft.graph.page"
 } -->
 ```http
-Content-type: application/json
-Content-length: 312
-
-{
-  "title": "title-value",
-  "createdByAppId": "createdByAppId-value",
-  "links": {
-    "oneNoteClientUrl": {
-      "href": "href-value"
-    },
-    "oneNoteWebUrl": {
-      "href": "href-value"
-    }
-  },
-  "contentUrl": "contentUrl-value",
-  "content": "content-value",
-  "lastModifiedTime": "datetime-value"
-}
+HTTP/1.1 204 No Content
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

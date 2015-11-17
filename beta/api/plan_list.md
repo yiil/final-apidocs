@@ -15,7 +15,9 @@ Group.ReadWrite.All AND Tasks.ReadWrite
 GET /plans
 ```
 ### Optional query parameters
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+|Name|Value|Description|
+|:---------------|:--------|:-------|
+|$filter|string|Only filtering based on the `owner` property is supported. |
 
 ### Request headers
 | Name       | Type | Description|
@@ -34,10 +36,10 @@ Here is an example of the request.
   "name": "get_plans"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/plans
+GET https://graph.microsoft.com/beta/plans?$filter=owner eq '400723e1-102b-43aa-aba9-f35524827084'
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -45,6 +47,7 @@ Here is an example of the response. Note: The response object shown here may be 
   "isCollection": true
 } -->
 ```http
+HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 153
 

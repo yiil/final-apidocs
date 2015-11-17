@@ -2,7 +2,10 @@
 
 Retrieve a list of drive objects.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes** is required to execute this API: 
+
+  * Files.Read
+ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -28,17 +31,18 @@ Here is an example of the request.
   "name": "get_drives"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/drives
+GET https://graph.microsoft.com/v1.0/drives
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response.
 <!-- {
   "blockType": "response",
-  "truncated": true,
+  "truncated": false,
   "@odata.type": "microsoft.graph.drive",
   "isCollection": true
 } -->
 ```http
+HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 579
 

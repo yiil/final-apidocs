@@ -15,9 +15,7 @@ For example, if an item behaves as a [folder](folder.md), it will have the **fol
 | [List thumbnails](../api/item_list_thumbnails.md)    | [thumbnailSet](thumbnailset.md) collection | Get a thumbnailSet object collection.                                                  |
 | [update](../api/item_update.md)                      | [driveitem](driveitem.md)                            | Update item object.                                                                    |
 | [delete](../api/item_delete.md)                      | None                                       | Delete item object.                                                                    |
-| [copy](../api/item_copy.md)                          | [driveitem](driveitem.md)                            | Copy an item to another location in the drive.                                         |
 | [createLink](../api/item_createlink.md)              | [permission](permission.md)                | Create a sharing link to allow users to access the content without signing in.         |
-| [invite](../api/item_invite.md)                      | [permission](permission.md) collection     | Invite users to access the item by adding permissions and sending them a notification. |
 | [search](../api/item_search.md)                      | [driveitem](driveitem.md) collection                 | Search for items matching a query.                                                     |
 
 ### Properties
@@ -70,7 +68,6 @@ Instance attributes are properties with special behaviors. This properties are t
 |lastModifiedByUser|[user](user.md)| Identity of the user, device, and application which last modified the item. Read-only.|
 |permissions|[permission](permission.md) collection| The set of permissions for the item. Read-only. Nullable.|
 |thumbnails|[thumbnailSet](thumbnailset.md) collection|Collection containing [ThumbnailSet](thumbnailSet.md) objects associated with the item. For more info, see [getting thumbnails](../items/thumbnails.md). Read-only. Nullable.|
-|versions|[driveitem](driveitem.md) collection|A list of items containing the previous versions. Read-only. Nullable.|
 
 
 **Note:** In OneDrive for Business, the cTag property is not returned, if the item is a folder.
@@ -86,8 +83,7 @@ Here is a JSON representation of the resource.
     "createdByUser",
     "lastModifiedByUser",
     "permissions",
-    "thumbnails",
-    "versions"
+    "thumbnails"
   ],
   "@odata.type": "microsoft.graph.item"
 }-->
@@ -111,7 +107,6 @@ Here is a JSON representation of the resource.
   "lastModifiedDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
   "location": {"@odata.type": "microsoft.graph.geoCoordinates"},
   "name": "string",
-  "openWith": {"@odata.type": "microsoft.graph.openWithSet"},
   "parentReference": {"@odata.type": "microsoft.graph.itemReference"},
   "photo": {"@odata.type": "microsoft.graph.photo"},
   "searchResult": {"@odata.type": "microsoft.graph.searchResult"},

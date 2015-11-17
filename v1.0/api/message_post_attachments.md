@@ -62,10 +62,10 @@ In the request body, supply a JSON representation of [attachment](../resources/a
 Here is an example of the response.
 <!-- {
   "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.attachment"
+  "truncated": true
 } -->
 ```http
+HTTP 200 OK
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

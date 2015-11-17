@@ -46,7 +46,6 @@ Here is a JSON representation of the resource.
   "optionalProperties": [
     "items",
     "root",
-    "shared",
     "special"
   ],
   "@odata.type": "microsoft.graph.drive"

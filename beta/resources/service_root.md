@@ -37,6 +37,8 @@
 |[List SiteCollection](../api/sitecollection_list.md) | [SiteCollection](sitecollection.md) collection |Get siteCollection object collection. |
 |[Create SubscribedSku](../api/subscribedsku_post_subscribedskus.md) |[SubscribedSku](subscribedsku.md)| Create a new SubscribedSku by posting to the subscribedSkus collection.|
 |[List SubscribedSku](../api/subscribedsku_list.md) | [SubscribedSku](subscribedsku.md) collection |Get subscribedSku object collection. |
+|[Create subscription](../api/subscription_post_subscriptions.md) |[subscription](subscription.md)| Create a new subscription by posting to the subscriptions collection.|
+|[List subscription](../api/subscription_list.md) | [subscription](subscription.md) collection |Get subscription object collection. |
 |[Create task](../api/task_post_tasks.md) |[task](task.md)| Create a new task by posting to the tasks collection.|
 |[List task](../api/task_list.md) | [task](task.md) collection |Get task object collection. |
 |[Create TenantDetail](../api/tenantdetail_post_tenantdetails.md) |[TenantDetail](tenantdetail.md)| Create a new TenantDetail by posting to the tenantDetails collection.|

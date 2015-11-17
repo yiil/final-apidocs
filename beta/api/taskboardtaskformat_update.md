@@ -40,27 +40,21 @@ Here is an example of the request.
 PATCH https://graph.microsoft.com/beta/tasks/<id>/bucketTaskBoardFormat
 Content-type: application/json
 Content-length: 36
+If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
 
 {
   "orderHint": "orderHint-value"
 }
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
   "truncated": true,
   "@odata.type": "microsoft.graph.taskboardtaskformat"
 } -->
 ```http
-Content-type: application/json
-Content-length: 80
-
-{
-  "type": "type-value",
-  "orderHint": "orderHint-value",
-  "id": "id-value"
-}
+HTTP/1.1 204 No Content
 ```
 To get the updated object, use the `Prefer` header. See Request Headers above.
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

@@ -1,8 +1,12 @@
 # Delete permission
 
-Delete permission.
+Delete a permission. Only permissions that are not inherited can be deleted. The inheritedFrom property must be null. 
+Applications can only delete permissions they have created.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes** is required to execute this API: 
+
+  * Files.ReadWrite
+ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -11,10 +15,13 @@ DELETE /drive/items/<id>/permissions/<id>
 DELETE /drives/<id>/root/permissions/<id>
 
 ```
+
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
+| if-match  | string  | If this request header is included and the eTag (or cTag) provided does not match the current tag on the item, a `412 Precondition Failed` response is returned and the item will not be deleted.|
 | Authorization  | string  | Bearer <token>. Required. |
+
 
 ### Request body
 Do not supply a request body for this method.
@@ -31,15 +38,16 @@ Here is an example of the request.
   "name": "delete_permission"
 }-->
 ```http
-DELETE https://graph.microsoft.com/beta/drive/root/permissions/<id>
+DELETE https://graph.microsoft.com/v1.0/drive/root/permissions/<id>
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response.
 <!-- {
   "blockType": "response",
-  "truncated": true
+  "truncated": false
 } -->
 ```http
+HTTP/1.1 204 No Content
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

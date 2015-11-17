@@ -2,13 +2,17 @@
 
 Retrieve the properties and relationships of drive object.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes** is required to execute this API: 
+
+  * Files.Read
+ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /drive
 GET /drives/<id>
-GET /users/<objectId>/drive
+GET /users/<id>/drive
+GET /groups/<id>/drive
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
@@ -20,6 +24,7 @@ This method supports the [OData Query Parameters](http://graph.microsoft.io/docs
 
 ### Request body
 Do not supply a request body for this method.
+
 ### Response
 If successful, this method returns a `200 OK` response code and [drive](../resources/drive.md) object in the response body.
 ### Example
@@ -30,16 +35,17 @@ Here is an example of the request.
   "name": "get_drive"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/drive
+GET https://graph.microsoft.com/v1.0/drive
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response.
 <!-- {
   "blockType": "response",
-  "truncated": true,
+  "truncated": false,
   "@odata.type": "microsoft.graph.drive"
 } -->
 ```http
+HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 458
 

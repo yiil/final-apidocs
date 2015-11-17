@@ -22,14 +22,14 @@ creating the extension in:
 <!-- { "blockType": "ignored" } -->
 
 ```http
-PATCH /me/messages/<id>/extensions/<eId>
-PATCH /users/<objectId>/messages/<id>/extensions/<eId>
+PATCH /me/messages/<id>/extensions/<extensionId>
+PATCH /users/<id>/messages/<id>/extensions/<extensionId>
 
-PATCH /me/events/<id>/extensions/<eId>
-PATCH /users/<objectId>/events/<id>/extensions/<eId>
+PATCH /me/events/<id>/extensions/<extensionId>
+PATCH /users/<id>/events/<id>/extensions/<extensionId>
 
-PATCH /me/contacts/<id>/extensions/<eId>
-PATCH /users/<objectId>/contacts/<id>/extensions/<eId>
+PATCH /me/contacts/<id>/extensions/<extensionId>
+PATCH /users/<id>/contacts/<id>/extensions/<extensionId>
 ```
 
 
@@ -37,9 +37,8 @@ PATCH /users/<objectId>/contacts/<id>/extensions/<eId>
 |**Parameter**|**Type**|**Description**|
 |:-----|:-----|:-----|
 |_URL parameters_|
-|id|string|A unique identifier for an instance of a resource (message, event, or contact). Required.|
-|eId|string|This can be an extension name which is a unique text identifier for an extension, or a fully qualified name which concatenates the extension type and unique text identifier. The fully qualified name is returned in the `Id` property when you create the extension. Required.|
-|objectId|string|A unique identifier for the signed-in user. Required.|
+|id|string|A unique identifier for an instance of the corresponding collection. Required.|
+|extensionId|string|This can be an extension name which is a unique text identifier for an extension, or a fully qualified name which concatenates the extension type and unique text identifier. The fully qualified name is returned in the `id` property when you create the extension. Required.|
 
 
 ### Request headers
@@ -56,7 +55,7 @@ following required name-value pairs, and any custom data to change or add to tha
 | Name       | Value |
 |:---------------|:----------|
 | @odata.type | Microsoft.Graph.OpenTypeExtension |
-| ExtensionName | %unique_string% |
+| extensionName | %unique_string% |
 
 
 ### Response
@@ -74,43 +73,43 @@ Each of the following 2 examples updates an extension represented by the followi
 
 ```http
 {
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/Messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/Extensions/$entity",
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions/$entity",
     "@odata.type": "#Microsoft.Graph.OpenTypeExtension",
-    "@odata.id": "https://graph.microsoft.com/beta/Users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/Messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions
+    "@odata.id": "https://graph.microsoft.com/beta/users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions
 ('Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')",
-    "ExtensionName": "Com.Contoso.Referral",
-    "Id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral",
-    "CompanyName": "Wingtip Toys",
-    "DealValue": 500050,
-    "ExpirationDate": "2015-12-03T10:00:00Z"
+    "extensionName": "Com.Contoso.Referral",
+    "id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral",
+    "companyName": "Wingtip Toys",
+    "dealValue": 500050,
+    "expirationDate": "2015-12-03T10:00:00Z"
 }
 ```
  
 The first example references the extension by its name:
 
 ```http
-PATCH https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/Extensions('Com.Contoso.Referral')
+PATCH https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions('Com.Contoso.Referral')
 ```
 
 The second example references the extension by its fully qualified name:
 
 ```http
-PATCH https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/Extensions('Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')
+PATCH https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions('Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')
 ```
 
 You can use either example request and the following request body to update the [original extension](#originalExample) by:
-- Changing `CompanyName` from `Wingtip Toys` to `Wingtip Toys (USA)`
-- Changing `DealValue` from `500050` to `500100`
-- Adding new data as the custom property `Updated`
+- Changing `companyName` from `Wingtip Toys` to `Wingtip Toys (USA)`
+- Changing `dealValue` from `500050` to `500100`
+- Adding new data as the custom property `updated`
 
 ```http
 {
     "@odata.type": "Microsoft.Graph.OpenTypeExtension",
-    "ExtensionName": "Com.Contoso.Referral",
-    "CompanyName": "Wingtip Toys (USA)",
-    "DealValue": "500100",
-    "ExpirationDate": "2015-12-03T10:00:00.000Z",
-    "Updated": "2015-10-29T11:00:00.000Z"
+    "extensionName": "Com.Contoso.Referral",
+    "companyName": "Wingtip Toys (USA)",
+    "dealValue": "500100",
+    "expirationDate": "2015-12-03T10:00:00.000Z",
+    "updated": "2015-10-29T11:00:00.000Z"
 } 
 ```
 
@@ -133,16 +132,16 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/Messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/Extensions/$entity",
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions/$entity",
     "@odata.type": "#Microsoft.Graph.OpenTypeExtension",
-    "@odata.id": "https://graph.microsoft.com/beta/Users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/Messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions
+    "@odata.id": "https://graph.microsoft.com/beta/users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions
 ('Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')",
-    "Id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral",
-    "ExtensionName": "Com.Contoso.Referral",
-    "CompanyName": "Wingtip Toys (USA)",
-    "DealValue": 500100,
-    "ExpirationDate": "2015-12-03T10:00:00Z",
-    "Updated": "2015-10-29T11:00:00.000Z"
+    "id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral",
+    "extensionName": "Com.Contoso.Referral",
+    "companyName": "Wingtip Toys (USA)",
+    "dealValue": 500100,
+    "expirationDate": "2015-12-03T10:00:00Z",
+    "updated": "2015-10-29T11:00:00.000Z"
 }
 ```
 

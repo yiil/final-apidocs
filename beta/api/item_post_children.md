@@ -1,8 +1,11 @@
-# Create children
+# Create an item in a collection
 
-Use this API to create a new children.
+Use this API to create a new item in a collection.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes** is required to execute this API: 
+
+  * Files.ReadWrite
+ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -11,17 +14,19 @@ POST /drive/items/<id>/children
 POST /drives/<id>/root/children
 
 ```
+
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
 | Authorization  | string  | Bearer <token>. Required. |
 
+
 ### Request body
-In the request body, supply a JSON representation of [item](../resources/item.md) object.
+In the request body, supply a JSON representation of [item](../resources/driveitem.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [item](../resources/item.md) object in the response body.
+If successful, this method returns `201, Created` response code and [item](../resources/driveitem.md) object in the response body.
 
 ### Example
 ##### Request
@@ -31,9 +36,9 @@ Here is an example of the request.
   "name": "create_item_from_item"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/drive/root
+POST https://graph.microsoft.com/v1.0/drive/root
 ```
-In the request body, supply a JSON representation of [item](../resources/item.md) object.
+In the request body, supply a JSON representation of [item](../resources/driveitem.md) object.
 ##### Response
 Here is an example of the response.
 <!-- {
@@ -134,28 +139,6 @@ Content-length: 3179
     "altitude": 99,
     "latitude": 99,
     "longitude": 99
-  },
-  "openWith": {
-    "web": {
-      "app": {
-        "displayName": "displayName-value",
-        "id": "id-value"
-      },
-      "viewUrl": "viewUrl-value",
-      "editUrl": "editUrl-value",
-      "viewPostParameters": "viewPostParameters-value",
-      "editPostParameters": "editPostParameters-value"
-    },
-    "webEmbedded": {
-      "app": {
-        "displayName": "displayName-value",
-        "id": "id-value"
-      },
-      "viewUrl": "viewUrl-value",
-      "editUrl": "editUrl-value",
-      "viewPostParameters": "viewPostParameters-value",
-      "editPostParameters": "editPostParameters-value"
-    }
   },
   "photo": {
     "height": 99,

@@ -10,7 +10,7 @@ You can get an extension returned in one of two ways:
 the extension can be in a user's message, event, or contact, or a group event.
  
 - Get the resource instance expanded with the extension in the REST response. To do this, 
-use the `$expand` parameter, and specify a `$filter` on the **Id** property against the extension name
+use the `$expand` parameter, and specify a `$filter` on the **id** property against the extension name
 or fully qualified name. The extension can be in a user's message, event, or contact, but not 
 in a group event. 
 
@@ -28,22 +28,22 @@ getting the extension from:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /me/messages/<id>/extensions/<eId>
-GET /users/<objectId>/messages/<id>/extensions/<eId>
-GET /me/messages/<id>?$expand=Extensions($filter=Id eq 'eId')
-GET /users/<objectId>?$expand=Extensions($filter=Id eq 'eId')
+GET /me/messages/<id>/extensions/<extensionId>
+GET /users/<id>/messages/<id>/extensions/<extensionId>
+GET /me/messages/<id>?$expand=extensions($filter=id eq '<extensionId>')
+GET /users/<id>?$expand=extensions($filter=id eq '<extensionId>')
 
-GET /me/events/<id>/extensions/<eId>
-GET /users/<objectId>/events/<id>/extensions/<eId>
-GET /me/events/<id>?$expand=Extensions($filter=Id eq 'eId')
-GET /users/<objectId>?$expand=Extensions($filter=Id eq 'eId')
+GET /me/events/<id>/extensions/<extensionId>
+GET /users/<id>/events/<id>/extensions/<extensionId>
+GET /me/events/<id>?$expand=extensions($filter=id eq '<extensionId>')
+GET /users/<id>?$expand=extensions($filter=id eq '<extensionId>')
 
-GET /me/contacts/<id>/extensions/<eId>
-GET /users/<objectId>/contacts/<id>/extensions/<eId>
-GET /me/contacts/<id>?$expand=Extensions($filter=Id eq 'eId')
-GET /users/<objectId>?$expand=Extensions($filter=Id eq 'eId')
+GET /me/contacts/<id>/extensions/<extensionId>
+GET /users/<id>/contacts/<id>/extensions/<extensionId>
+GET /me/contacts/<id>?$expand=extensions($filter=id eq '<extensionId>')
+GET /users/<id>?$expand=extensions($filter=id eq '<extensionId>')
 
-GET /groups/<gId>/events/<id>/extensions/<eId>
+GET /groups/<id>/events/<id>/extensions/<extensionId>
 
 ```
 
@@ -51,10 +51,8 @@ GET /groups/<gId>/events/<id>/extensions/<eId>
 |**Parameter**|**Type**|**Description**|
 |:-----|:-----|:-----|
 |_URL parameters_|
-|id|string|A unique identifier for an instance of a resource (message, event, or contact). Required.|
-|eId|string|This can be an extension name which is a unique text identifier for an extension, or a fully qualified name which concatenates the extension type and unique text identifier. The fully qualified name is returned in the `Id` property when you create the extension. Required.|
-|objectId|string|A unique identifier for the signed-in user. Required.|
-|gId|string|A unique group ID. Required.|
+|id|string|A unique identifier for an object in the corresponding collection. Required.|
+|extensionId|string|This can be an extension name which is a unique text identifier for an extension, or a fully qualified name which concatenates the extension type and unique text identifier. The fully qualified name is returned in the `id` property when you create the extension. Required.|
 
 
 ### Optional query parameters
@@ -98,10 +96,10 @@ GET https://graph.microsoft.com/beta/groups('f5480dfd-7d77-4d0b-ba2e-3391953cc74
 ```
 
 The fourth example gets and expands the specified message by including the extension returned from a filter. 
-The filter returns the extension that has its `Id` matching a fully qualified name.
+The filter returns the extension that has its `id` matching a fully qualified name.
 
 ```
-GET https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')?$expand=Extensions($filter=Id%20eq%20'Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')
+GET https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')?$expand=extensions($filter=id%20eq%20'Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')
 ```
 
 
@@ -117,15 +115,15 @@ HTTP/1.1 200 OK
 Content-type: application/json
 
 {
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/Messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/Extensions/$entity",
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions/$entity",
     "@odata.type": "#Microsoft.Graph.OpenTypeExtension",
-    "@odata.id": "https://graph.microsoft.com/beta/Users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/Messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions
+    "@odata.id": "https://graph.microsoft.com/beta/users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions
 ('Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')",
-    "ExtensionName": "Com.Contoso.Referral",
-    "Id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral",
-    "CompanyName": "Wingtip Toys",
-    "DealValue": 500050,
-    "ExpirationDate": "2015-12-03T10:00:00Z"
+    "extensionName": "Com.Contoso.Referral",
+    "id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral",
+    "companyName": "Wingtip Toys",
+    "dealValue": 500050,
+    "expirationDate": "2015-12-03T10:00:00Z"
 }
 ```
 
@@ -135,13 +133,13 @@ Here is the response from the third example request.
 
 ```
 {
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#groups('f5480dfd-7d77-4d0b-ba2e-3391953cc74a')/Events('AAMkADVl7IsAAA%3D')/Extensions/$entity",
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#groups('f5480dfd-7d77-4d0b-ba2e-3391953cc74a')/events('AAMkADVl7IsAAA%3D')/extensions/$entity",
     "@odata.type": "#Microsoft.Graph.OpenTypeExtension",
-    "Id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Deal",
-    "ExtensionName": "Com.Contoso.Deal",
-    "CompanyName": "Alpine Skis",
-    "DealValue": 1010100,
-    "ExpirationDate": "2015-07-03T13:04:00Z"
+    "id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Deal",
+    "extensionName": "Com.Contoso.Deal",
+    "companyName": "Alpine Skis",
+    "dealValue": 1010100,
+    "expirationDate": "2015-07-03T13:04:00Z"
 }
 ```
 
@@ -151,72 +149,69 @@ And here is the response from the fourth example request.
 
 ```
 {
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/Messages/$entity",
-    "@odata.id": "https://graph.microsoft.com/beta/Users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/Messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')",
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/messages/$entity",
+    "@odata.id": "https://graph.microsoft.com/beta/users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')",
     "@odata.etag": "W/\"CQAAABYAAACY4MQpaFz9SbqUDe4+bs88AABNsWMM\"",
-    "Id": "AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===",
-    "ChangeKey": "CQAAABYAAACY4MQpaFz9SbqUDe4+bs88AABNsWMM",
-    "Categories": [
+    "id": "AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===",
+    "changeKey": "CQAAABYAAACY4MQpaFz9SbqUDe4+bs88AABNsWMM",
+    "categories": [
     ],
-    "CreateDateTime": "2015-06-19T02:03:31Z",
-    "LastModifiedDateTime": "2015-08-13T02:28:00Z",
-    "Subject": "Attached is the requested info",
-    "BodyPreview": "See the images attached.",
-    "Body": {
-        "ContentType": "HTML",
-        "Content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<style type=\"text/css\" style=\"display:none;\"><!-- P {margin-top:0;margin-bottom:0;} --></style>\r\n</head>\r\n<body dir=\"ltr\">\r\n<div id=\"divtagdefaultwrapper\" style=\"font-size:12pt;color:#000000;background-color:#FFFFFF;font-family:Calibri,Arial,Helvetica,sans-serif;\">\r\n<p>See the images attached. <br>\r\n</p>\r\n</div>\r\n</body>\r\n</html>\r\n"
+    "createDateTime": "2015-06-19T02:03:31Z",
+    "lastModifiedDateTime": "2015-08-13T02:28:00Z",
+    "subject": "Attached is the requested info",
+    "bodyPreview": "See the images attached.",
+    "body": {
+        "contentType": "HTML",
+        "content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r\n<style type=\"text/css\" style=\"display:none;\"><!-- P {margin-top:0;margin-bottom:0;} --></style>\r\n</head>\r\n<body dir=\"ltr\">\r\n<div id=\"divtagdefaultwrapper\" style=\"font-size:12pt;color:#000000;background-color:#FFFFFF;font-family:Calibri,Arial,Helvetica,sans-serif;\">\r\n<p>See the images attached. <br>\r\n</p>\r\n</div>\r\n</body>\r\n</html>\r\n"
     },
-    "Importance": "Normal",
-    "HasAttachments": true,
-    "ParentFolderId": "AQMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===QAAAA==",
-    "From": {
-        "EmailAddress": {
-            "Address": "desmond@contoso.com",
-            "Name": "Desmond Raley"
+    "importance": "Normal",
+    "hasAttachments": true,
+    "parentFolderId": "AQMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===QAAAA==",
+    "from": {
+        "emailAddress": {
+            "address": "desmond@contoso.com",
+            "name": "Desmond Raley"
         }
     },
-    "Sender": {
-        "EmailAddress": {
-            "Address": "desmond@contoso.com",
-            "Name": "Desmond Raley"
+    "sender": {
+        "emailAddress": {
+            "address": "desmond@contoso.com",
+            "name": "Desmond Raley"
         }
     },
-    "ToRecipients": [
+    "toRecipients": [
         {
-            "EmailAddress": {
-                "Address": "wendy@contoso.com",
-                "Name": "Wendy Molina"
+            "emailAddress": {
+                "address": "wendy@contoso.com",
+                "name": "Wendy Molina"
             }
         }
     ],
-    "CcRecipients": [
+    "ccRecipients": [
     ],
-    "BccRecipients": [
+    "bccRecipients": [
     ],
-    "ReplyTo": [
+    "replyTo": [
     ],
-    "ConversationId": "AAQkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===mivdTmQ=",
-    "ReceivedDateTime": "2015-06-19T02:05:04Z",
-    "SentDateTime": "2015-06-19T02:04:59Z",
-    "IsDeliveryReceiptRequested": false,
-    "IsReadReceiptRequested": false,
-    "IsDraft": false,
-    "IsRead": true,
-    "WebLink": "https://outlook.office.com/owa/?ItemID=AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===%2FNJTqt5NqHlVnKVBwCY4MQpaFz9SbqUDe4%2Bbs88AAAAAAEJAACY4MQpaFz9SbqUDe4%2Bbs88AAApA4JMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
-    "MentionedMe": null,
-    "Mentioned": [
-    ],
-    "InferenceClassification": "Focused",
-    "Extensions@odata.context": "https://graph.microsoft.com/beta/$metadata#Users('desmond40contoso.com')/Messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/Extensions", 
-    "Extensions": [ 
+    "conversationId": "AAQkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===mivdTmQ=",
+    "receivedDateTime": "2015-06-19T02:05:04Z",
+    "sentDateTime": "2015-06-19T02:04:59Z",
+    "isDeliveryReceiptRequested": false,
+    "isReadReceiptRequested": false,
+    "isDraft": false,
+    "isRead": true,
+    "webLink": "https://outlook.office.com/owa/?ItemID=AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===%2FNJTqt5NqHlVnKVBwCY4MQpaFz9SbqUDe4%2Bbs88AAAAAAEJAACY4MQpaFz9SbqUDe4%2Bbs88AAApA4JMAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "inferenceClassification": "Focused",
+    "extensions@odata.context": "https://graph.microsoft.com/beta/$metadata#users('desmond40contoso.com')/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions", 
+    "extensions": [ 
       { 
         "@odata.type": "#Microsoft.Graph.OpenTypeExtension",
-        "@odata.id": "https://graph.microsoft.com/beta/Users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/Messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions('Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')",
-        "ExtensionName": "Com.Contoso.Referral",
-        "Id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral",
-        "CompanyName": "Wingtip Toys",
-        "DealValue": 500050,
-        "ExpirationDate": "2015-12-03T10:00:00Z"
+        "@odata.id": "https://graph.microsoft.com/beta/users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions('Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')",
+        "extensionName": "Com.Contoso.Referral",
+        "id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral",
+        "companyName": "Wingtip Toys",
+        "dealValue": 500050,
+        "expirationDate": "2015-12-03T10:00:00Z"
       }
      ]
 }

@@ -29,34 +29,52 @@ If successful, this method returns `201 Created` response code and the new [page
 ### Example
 ##### Request
 Here is an example of the request.
+
 <!-- {
   "blockType": "request",
   "name": "create_page_from_section"
 }-->
 ```http
 POST https://graph.microsoft.com/beta/me/notes/sections/<id>/pages
-Content-type: application/json
 Content-length: 312
+Content-type: multipart/form-data; boundary=MyPartBoundary198374
 
-{
-  "title": "title-value",
-  "createdByAppId": "createdByAppId-value",
-  "links": {
-    "oneNoteClientUrl": {
-      "href": "href-value"
-    },
-    "oneNoteWebUrl": {
-      "href": "href-value"
-    }
-  },
-  "contentUrl": "contentUrl-value",
-  "content": "content-value",
-  "lastModifiedTime": "datetime-value"
-}
+--MyPartBoundary198374
+Content-Disposition:form-data; name="Presentation"
+Content-Type:text/html
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>A page with <i>rendered</i> images and an <b>attached</b> file</title>
+    <meta name="created" content="2015-07-22T09:00:00-08:00" />
+  </head>
+  <body>
+    <p>Here's an image from an online source:</p>
+    <img src="http://..." alt="an image on the page" width="500" />
+    <p>Here's an image uploaded as binary data:</p>
+    <img src="name:imageBlock1" alt="an image on the page" width="300" />
+    <p>Here's a file attachment:</p>
+    <object data-attachment="FileName.pdf" data="name:fileBlock1" type="application/pdf" />
+  </body>
+</html>
+
+--MyPartBoundary198374
+Content-Disposition:form-data; name="imageBlock1"
+Content-Type:image/jpeg
+
+... binary image data ...
+
+--MyPartBoundary198374
+Content-Disposition:form-data; name="fileBlock1"
+Content-Type:application/pdf
+
+... binary file data ...
+
+--MyPartBoundary198374--
 ```
-In the request body, supply a JSON representation of [page](../resources/page.md) object.
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. Note: The response object shown here is truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
   "truncated": true,

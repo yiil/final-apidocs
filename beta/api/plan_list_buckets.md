@@ -12,7 +12,7 @@ Group.ReadWrite.All AND Tasks.ReadWrite
 GET /plans/<id>/buckets
 ```
 ### Optional query parameters
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+None
 
 ### Request headers
 | Name       | Type | Description|
@@ -34,7 +34,7 @@ Here is an example of the request.
 GET https://graph.microsoft.com/beta/plans/<id>/buckets
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -42,6 +42,7 @@ Here is an example of the response. Note: The response object shown here may be 
   "isCollection": true
 } -->
 ```http
+HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 153
 

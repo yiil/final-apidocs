@@ -24,9 +24,9 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "identityProvider": "string",
-  "key": "binary",
-  "type": 1024
+  "identityProvider": null,
+  "key": "AQI=",
+  "type": 5
 }
 
 ```

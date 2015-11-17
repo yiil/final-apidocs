@@ -1,6 +1,6 @@
 # openTypeExtension resource type
 
-
+An OData v4 open type which allows you to specify custom data in instances of supported resources at runtime. 
 
 ### JSON representation
 
@@ -16,16 +16,16 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "extensionName": "string",
-  "id": "string (identifier)"
+  "extensionName": "String",
+  "id": "String (identifier)"
 }
 
 ```
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|extensionName|String||
-|id|String| Read-only.|
+|extensionName|String|A unique text identifier for an open type data extension. Required.|
+|id|String| A fully qualified identifier that concatenates the extension type with the **extensionName**. Read-only.|
 
 ### Relationships
 None
@@ -35,7 +35,8 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[Get openTypeExtension](../api/opentypeextension_get.md) | [openTypeExtension](opentypeextension.md) |Read properties and relationships of openTypeExtension object.|
+|[Create](../api/opentypeextension_create.md) | [openTypeExtension](opentypeextension.md), or [message](../resources/message.md), [event](../resources/event.md), or [contact](../resources/contact.md) that contains an openTypeExtension object. | Create an openTypeExtension object in an existing or new resource instance.| 
+|[Get](../api/opentypeextension_get.md) | [openTypeExtension](opentypeextension.md) |Read properties and relationships of openTypeExtension object.|
 |[Update](../api/opentypeextension_update.md) | [openTypeExtension](opentypeextension.md)	|Update openTypeExtension object. |
 |[Delete](../api/opentypeextension_delete.md) | None |Delete openTypeExtension object. |
 

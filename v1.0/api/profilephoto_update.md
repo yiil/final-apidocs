@@ -11,15 +11,12 @@ One of the following **scopes** is required to execute this API for:
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /me/photo/$value
-PATCH /users/<id>/photo/$value
-PATCH /users/<userPrincipalName>/photo/$value
+PATCH /users/<id | userPrincipalName>/photo/$value
 PATCH /groups/<objectId>/photo/$value
 PATCH /me/contacts/<id>/photo/$value
-PATCH /users/<id>/contacts/<id>/photo/$value
-PATCH /users/<userPrincipalName>/contacts/<id>/photo/$value
+PATCH /users/<id | userPrincipalName>/contacts/<id>/photo/$value
 PATCH /me/contactfolders/<contactFolderId>/contacts/<id>/photo/$value
-PATCH /users/<id>/contactfolders/<contactFolderId>/contacts/<id>/photo/$value
-PATCH /users/<userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>/photo/$value
+PATCH /users/<id | userPrincipalName>/contactfolders/<contactFolderId>/contacts/<id>/photo/$value
 ```
 ### Request headers
 | Header       | Value |

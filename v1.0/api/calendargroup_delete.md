@@ -8,11 +8,9 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /me/calendarGroup
-DELETE /users/<id>/calendarGroup
-DELETE /users/<userPrincipalName>/calendarGroup
+DELETE /users/<id | userPrincipalName>/calendarGroup
 DELETE /me/calendarGroups/<id>
-DELETE /users/<id>/calendarGroups/<id>
-DELETE /users/<userPrincipalName>/calendarGroups/<id>
+DELETE /users/<id | userPrincipalName>/calendarGroups/<id>
 ```
 ### Request headers
 | Name       | Type | Description|

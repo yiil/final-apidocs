@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /users/<id>/mailFolders/<id>
+GET /users/<id | userPrincipalName>/mailFolders/<id>
 GET /drive/root/createdByUser/mailFolders/<id>
 GET /drive/root/lastModifiedByUser/mailFolders/<id>
 ```

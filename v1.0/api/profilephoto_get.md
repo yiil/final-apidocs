@@ -10,29 +10,23 @@ One of the following **scopes** is required to execute this API for:
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/photo/$value
-GET /users/<id>/photo/$value
-GET /users/<userPrincipalName>/photo/$value
+GET /users/<id | userPrincipalName>/photo/$value
 GET /groups/<objectId>/photo/$value
 GET /me/contacts/<id>/photo/$value
-GET /users/<id>/contacts/<id>/photo/$value
-GET /users/<userPrincipalName>/contacts/<id>/photo/$value
+GET /users/<id | userPrincipalName>/contacts/<id>/photo/$value
 GET /me/contactfolders/<contactFolderId>/contacts/<id>/photo/$value
-GET /users/<id>/contactfolders/<contactFolderId>/contacts/<id>/photo/$value
-GET /users/<userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>/photo/$value
+GET /users/<id | userPrincipalName>/contactfolders/<contactFolderId>/contacts/<id>/photo/$value
 ```
 ### HTTP request to get the metadata of the photo
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/photo
-GET /users/<id>/photo
-GET /users/<userPrincipalName>/photo
+GET /users/<id | userPrincipalName>/photo
 GET /groups/<objectId>/photo
 GET /me/contacts/<id>/photo
-GET /users/<id>/contacts/<id>/photo
-GET /users/<userPrincipalName>/contacts/<id>/photo
+GET /users/<id | userPrincipalName>/contacts/<id>/photo
 GET /me/contactfolders/<contactFolderId>/contacts/<id>/photo
-GET /users/<id>/contactfolders/<contactFolderId>/contacts/<id>/photo
-GET /users/<userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>/photo
+GET /users/<id | userPrincipalName>/contactfolders/<contactFolderId>/contacts/<id>/photo
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
@@ -56,7 +50,7 @@ Here is an example of the request.
   "name": "get_photo"
 }-->
 ```http
-GET https://graph.microsoft.com/v1.0/users/<id>/photo
+GET https://graph.microsoft.com/v1.0/users/<id | userPrincipalName>/photo
 ```
 ##### Response
 Here is an example of the response.

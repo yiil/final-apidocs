@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-PATCH /users/<id>/photo
+PATCH /users/<id | userPrincipalName>/photo
 PATCH /groups/<id>/photo
 PATCH /drive/root/createdByUser/photo
 ```
@@ -33,7 +33,7 @@ Here is an example of the request.
   "name": "update_photo"
 }-->
 ```http
-PATCH https://graph.microsoft.com/v1.0/users/<id>/photo
+PATCH https://graph.microsoft.com/v1.0/users/<id | userPrincipalName>/photo
 Content-type: application/json
 Content-length: 53
 

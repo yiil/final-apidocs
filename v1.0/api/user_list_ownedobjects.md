@@ -8,8 +8,7 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /users/<id>/ownedObjects
-GET /users/<userPrincipalName>/ownedObjects
+GET /users/<id | userPrincipalName>/ownedObjects
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

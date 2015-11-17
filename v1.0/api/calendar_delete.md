@@ -8,19 +8,15 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /me/calendar
-DELETE /users/<id>/calendar
+DELETE /users/<id | userPrincipalName>/calendar
 DELETE /groups/<id>/calendar
 DELETE /drive/root/createdByUser/calendar
-DELETE /users/<userPrincipalName>/calendar
 DELETE /me/calendars/<id>
-DELETE /users/<id>/calendars/<id>
-DELETE /users/<userPrincipalName>/calendars/<id>
+DELETE /users/<id | userPrincipalName>/calendars/<id>
 DELETE /me/calendarGroup/calendars/<id>
-DELETE /users/<id>/calendarGroup/calendars/<id>
-DELETE /users/<userPrincipalName>/calendarGroup/calendars/<id>
+DELETE /users/<id | userPrincipalName>/calendarGroup/calendars/<id>
 DELETE /me/calendarGroups/<id>/calendars/<id>
-DELETE /users/<id>/calendarGroups/<id>/calendars/<id>
-DELETE /users/<userPrincipalName>/calendarGroups/<id>/calendars/<id>
+DELETE /users/<id | userPrincipalName>/calendarGroups/<id>/calendars/<id>
 DELETE /groups/<objectId>/calendar
 ```
 ### Request headers

@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API: Contacts.ReadWr
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /users/<id>/contactFolders/<id>
+GET /users/<id | userPrincipalName>/contactFolders/<id>
 GET /users/me/contactFolders/<id>
 ```
 ### Optional query parameters

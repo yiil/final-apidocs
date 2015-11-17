@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API: _Mail.Read_
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /users/<id>/messages/<id>/attachments
+GET /users/<id | userPrincipalName>/messages/<id>/attachments
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

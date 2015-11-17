@@ -7,7 +7,6 @@ A profile photo of a user, group or an Outlook contact. It's binary data not enc
 |:---------------|:--------|:----------|
 |[Get profilePhoto](../api/profilephoto_get.md) | [profilePhoto](profilephoto.md) |Read the photo and properties of **profilePhoto**. |
 |[Update](../api/profilephoto_update.md) | [profilePhoto](profilephoto.md)  |Update the photo. |
-|[Delete](../api/profilephoto_delete.md) | None |Delete the photo. |
 
 
 ### Properties

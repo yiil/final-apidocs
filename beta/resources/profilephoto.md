@@ -39,7 +39,6 @@ None
 |:---------------|:--------|:----------|
 |[Get profilePhoto](../api/profilephoto_get.md) | [profilePhoto](profilephoto.md) |Read the photo and properties of **profilePhoto**. |
 |[Update](../api/profilephoto_update.md) | [profilePhoto](profilephoto.md)  |Update the photo. |
-|[Delete](../api/profilephoto_delete.md) | None |Delete the photo. |
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

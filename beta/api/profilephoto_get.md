@@ -1,6 +1,6 @@
 # Get profilePhoto
 
-Retrieve the properties and relationships of profilephoto object.
+Read the photo and properties of profilePhoto object.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 One of the following **scopes** is required to execute this API for: 

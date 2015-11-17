@@ -1,8 +1,8 @@
 # Get subscription
 
-Retrieve the properties and relationships of subscription object.
+Retrieve the properties and relationships of a subscription.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes**, depending on the target resource, are required to execute this API: *Mail.Read*, *Calendars.Read*, or *Contacts.Read* 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -43,12 +43,12 @@ Content-type: application/json
 Content-length: 252
 
 {
-  "subscriptionId": "subscriptionId-value",
-  "resource": "resource-value",
-  "changeType": "changeType-value",
-  "clientState": "clientState-value",
-  "notificationUrl": "notificationUrl-value",
-  "subscriptionExpirationDateTime": "datetime-value"
+  "subscriptionId":"7f105c7d-2dc5-4530-97cd-4e7ae6534c07",
+  "resource":"me/messages",
+  "changeType":"Created",
+  "clientState":"subscription-identifier",
+  "notificationUrl":"https://webhook.azurewebsites.net/api/send/myNotifyClient",
+  "subscriptionExpirationDateTime":"2015-11-20T18:23:45.9356913Z"
 }
 ```
 

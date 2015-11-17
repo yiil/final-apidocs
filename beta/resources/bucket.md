@@ -26,7 +26,7 @@ Here is a JSON representation of the resource
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|id|String| Read-only. Id of the bucket. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer) is done on the service.|
+|id|String| Read-only. Id of the bucket. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer.md) is done on the service.|
 |name|String| Name of the bucket. |
 |orderHint|String| Used to set the relative order of the buckets in the task board view. Consider three buckets in the order of: `'E'`, `'F'`, `'G'`. To make `'F'` the first bucket, set its `'orderHint'` to smaller than that of `'x'`. The comparison is an ordinal string comparison.|
 |planId|String| Plan id to which the bucket belongs. |

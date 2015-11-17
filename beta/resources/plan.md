@@ -32,7 +32,7 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |createdBy|String|Read-only. User id by which the plan is created.|
-|id|String| Read-only. Id of the plan. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer) is done on the service. |
+|id|String| Read-only. Id of the plan. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer.md) is done on the service. |
 |owner|String| Group `id` by which the plan is owned. Once set, this can only be updated by the owner.|
 |title|String| Required. Title of the plan. This is usually set the name of the group owning the plan.|
 

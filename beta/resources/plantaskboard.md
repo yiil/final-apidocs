@@ -24,7 +24,7 @@ Here is a JSON representation of the resource
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|id|String| Read-only. Id of the plan. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer) is done on the service. |
+|id|String| Read-only. Id of the plan. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer.md) is done on the service. |
 |type|String| Read-only. Used to set the type of task board view in which this object is used to render. Possible values are: `progress`, `assignedTo`, `bucket`.|
 
 ### Relationships

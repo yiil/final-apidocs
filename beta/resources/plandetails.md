@@ -36,7 +36,7 @@ Here is a JSON representation of the resource
 |category3Description|String| Description of the category (or label) that can be applied to the task. |
 |category4Description|String| Description of the category (or label) that can be applied to the task. |
 |category5Description|String| Description of the category (or label) that can be applied to the task. |
-|id|String| Read-only. Id of the plan. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer) is done on the service.|
+|id|String| Read-only. Id of the plan. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer.md) is done on the service.|
 |sharedWith|[userIdCollection](useridcollection.md)| List of user ids that this plan is shared with. If you are leveraging Office 365 Groups, use the Groups API to manage group membership to share the [group's](group.md) plan. You can also add existing members of the group to this collection though it is not required for them to access the plan owned by the group. |
 
 ### Relationships

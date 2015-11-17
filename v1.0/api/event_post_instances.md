@@ -2,7 +2,7 @@
 
 Use this API to create a new Event.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API: _Calendars.ReadWrite_
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -15,6 +15,7 @@ POST /users/<id>/calendarView/<id>/instances
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
 | Authorization  | string  | Bearer <token>. Required. |
+| Content-Type | string  | Nature of the data in the body of an entity. Required. |
 
 ### Request body
 In the request body, supply a JSON representation of [Event](../resources/event.md) object.

@@ -9,7 +9,6 @@ A file (such as a text file or Word document) attached to a message or event. Th
 | Method       | Return Type  |Description|
 |:---------------|:--------|:----------|
 |[Get fileAttachment](../api/fileattachment_get.md) | [fileAttachment](fileattachment.md) |Read properties and relationships of fileAttachment object.|
-|[Update](../api/fileattachment_update.md) | [fileAttachment](fileattachment.md)  |Update fileAttachment object. |
 |[Delete](../api/fileattachment_delete.md) | None |Delete fileAttachment object. |
 
 

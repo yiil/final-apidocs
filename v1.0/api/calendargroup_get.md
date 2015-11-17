@@ -2,13 +2,17 @@
 
 Retrieve the properties and relationships of calendar group object.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: _Calendars.Read_
+One of the following **scopes** is required to execute this API: 
+*Calendars.Read*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+GET /me/calendarGroup
+GET /users/<id>/calendarGroup
+GET /users/<userPrincipalName>/calendarGroup
+GET /me/calendarGroups/<id>
 GET /users/<id>/calendarGroups/<id>
-GET /drive/root/createdByUser/calendarGroups/<id>
-GET /drive/root/lastModifiedByUser/calendarGroups/<id>
+GET /users/<userPrincipalName>/calendarGroups/<id>
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

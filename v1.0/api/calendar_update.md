@@ -2,13 +2,26 @@
 
 Update the properties of calendar object.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: _Calendars.ReadWrite_
+One of the following **scopes** is required to execute this API: 
+*Calendars.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+PATCH /me/calendar
 PATCH /users/<id>/calendar
 PATCH /groups/<id>/calendar
 PATCH /drive/root/createdByUser/calendar
+PATCH /users/<userPrincipalName>/calendar
+PATCH /me/calendars/<id>
+PATCH /users/<id>/calendars/<id>
+PATCH /users/<userPrincipalName>/calendars/<id>
+PATCH /me/calendarGroup/calendars/<id>
+PATCH /users/<id>/calendarGroup/calendars/<id>
+PATCH /users/<userPrincipalName>/calendarGroup/calendars/<id>
+PATCH /me/calendarGroups/<id>/calendars/<id>
+PATCH /users/<id>/calendarGroups/<id>/calendars/<id>
+PATCH /users/<userPrincipalName>/calendarGroups/<id>/calendars/<id>
+PATCH /groups/<objectId>/calendar
 ```
 ### Request headers
 | Name       | Type | Description|
@@ -21,7 +34,7 @@ In the request body, supply the values for relevant fields that should be update
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |changeKey|String|Identifies the version of the calendar object. Every time the calendar is changed, ChangeKey  changes as well. This allows Exchange to apply changes to the correct version of the object.|
-|color|String|Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: LightBlue=0, LightGreen=1, LightOrange=2, LightGray=3, LightYellow=4, LightTeal=5, LightPink=6, LightBrown=7, LightRed=8, MaxColor=9, Auto=-1  Possible values are: `LightBlue`, `LightGreen`, `LightOrange`, `LightGray`, `LightYellow`, `LightTeal`, `LightPink`, `LightBrown`, `LightRed`, `MaxColor`, `Auto`.|
+|color|String|Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: LightBlue=0, LightGreen=1, LightOrange=2, LightGray=3, LightYellow=4, LightTeal=5, LightPink=6, LightBrown=7, LightRed=8, MaxColor=9, Auto=-1|
 |name|String|The calendar name.|
 
 ### Response
@@ -36,13 +49,12 @@ Here is an example of the request.
 ```http
 PATCH https://graph.microsoft.com/v1.0/me/calendar
 Content-type: application/json
-Content-length: 78
+Content-length: 48
 
 {
   "name": "name-value",
   "color": {
-  },
-  "changeKey": "changeKey-value"
+  }
 }
 ```
 ##### Response

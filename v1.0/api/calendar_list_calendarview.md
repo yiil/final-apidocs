@@ -2,13 +2,27 @@
 
 Retrieve a list of event objects.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: _Calendars.Read_
+One of the following **scopes** is required to execute this API: 
+*Calendars.Read*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /users/<id>/calendar/calendarView
 GET /groups/<id>/calendar/calendarView
 GET /drive/root/createdByUser/calendar/calendarView
+GET /me/calendar/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /users/<id>/calendar/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /users/<userPrincipalName>/calendar/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /me/calendars/<id>/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /users/<id>/calendars/<id>/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /users/<userPrincipalName>/calendars/<id>/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /me/calendarGroup/calendars/<id>/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /users/<id>/calendarGroup/calendars/<id>/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /users/<userPrincipalName>/calendarGroup/calendars/<id>/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /me/calendarGroups/<id>/calendars/<id>/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /users/<id>/calendarGroups/<id>/calendars/<id>/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /users/<userPrincipalName>/calendarGroups/<id>/calendars/<id>/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
+GET /groups/<objectId>/calendar/calendarView?startDateTime={start_datetime}&endDateTime={end_datetime}
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

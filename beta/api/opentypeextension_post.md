@@ -28,15 +28,15 @@ see the corresponding topics for creating a [message](../api/user_post_messages.
 
 ```http
 POST /me/messages
-POST /users/<objectId>/messages
+POST /users/<id>/messages
 
 POST /me/events
-POST /users/<objectId>/events
+POST /users/<id>/events
 
 POST /me/contacts
-POST /users/<objectId>/contacts
+POST /users/<id>/contacts
 
-POST /groups/<gId>/events
+POST /groups/<id>/events
 
 ```
 
@@ -45,15 +45,15 @@ request, and include the extension in the request body.
 
 ```http
 POST /me/messages/<id>/extensions
-POST /users/<objectId>/messages/<id>/extensions
+POST /users/<id>/messages/<id>/extensions
 
 POST /me/events/<id>/extensions
-POST /users/<objectId>/events/<id>/extensions
+POST /users/<id>/events/<id>/extensions
 
 POST /me/contacts/<id>/extensions
-POST /users/<objectId>/contacts/<id>/extensions
+POST /users/<id>/contacts/<id>/extensions
 
-POST /groups/<gId>/events/<id>/extensions
+POST /groups/<id>/events/<id>/extensions
 ```
 
 
@@ -61,9 +61,7 @@ POST /groups/<gId>/events/<id>/extensions
 |**Parameter**|**Type**|**Description**|
 |:-----|:-----|:-----|
 |_URL parameters_|
-|id|string|A unique identifier for an instance of a resource (message, event, or contact). Required.|
-|objectId|string|A unique identifier for the signed-in user. Required.|
-|gId|string|A unique group ID. Required.|
+|id|string|A unique identifier for an object in the corresponding collection. Required.|
 
 
 ### Request headers
@@ -80,7 +78,7 @@ name-value pairs, and any additional custom data:
 | Name       | Value |
 |:---------------|:----------|
 | @odata.type | Microsoft.Graph.OpenTypeExtension |
-| ExtensionName | %unique_string% |
+| extensionName | %unique_string% |
 
 When creating an extension in a new resource instance, in addition to the **openTypeExtension** object, 
 provide a JSON representation of that resource instance ([message](../resources/message.md), 
@@ -104,35 +102,35 @@ just the **openTypeExtension** object.
 ##### Request
 
 The first example creates a message and an extension in the same call. The request body includes the following:
-- The **Subject**, **Body**, and **ToRecipients** properties typical of a new message. 
+- The **subject**, **body**, and **toRecipients** properties typical of a new message. 
 - And for the extension:
   - The type `Microsoft.Graph.OpenTypeExtension`. 
   - The extension name "Com.Contoso.Referral". 
-  - Additional data to be stored as 3 custom properties in the JSON payload: `CompanyName`, `ExpirationDate`, and `DealValue`.  
+  - Additional data to be stored as 3 custom properties in the JSON payload: `companyName`, `expirationDate`, and `dealValue`.  
 
 ```http
 POST https://graph.microsoft.com/beta/me/messages
 
 {
-  "Subject": "Annual review",
-  "Body": {
-    "ContentType": "HTML",
-    "Content": "You should be proud!"
+  "subject": "Annual review",
+  "body": {
+    "contentType": "HTML",
+    "content": "You should be proud!"
   },
-  "ToRecipients": [
+  "toRecipients": [
     {
-      "EmailAddress": {
-        "Address": "rufus@contoso.com"
+      "emailAddress": {
+        "address": "rufus@contoso.com"
       }
     }
   ],
-  "Extensions": [
+  "extensions": [
     {
       "@odata.type": "Microsoft.Graph.OpenTypeExtension",
-      "ExtensionName": "Com.Contoso.Referral",
-      "CompanyName": "Wingtip Toys",
-      "ExpirationDate": "2015-12-30T11:00:00.000Z",
-      "DealValue": 10000
+      "extensionName": "Com.Contoso.Referral",
+      "companyName": "Wingtip Toys",
+      "expirationDate": "2015-12-30T11:00:00.000Z",
+      "dealValue": 10000
     }
   ]
 }
@@ -144,17 +142,17 @@ The second example creates an extension in the specified message. The request bo
 extension:
 - The type `Microsoft.Graph.OpenTypeExtension`. 
 - The extension name "Com.Contoso.Referral".
-- Additional data to be stored as 3 custom properties in the JSON payload: `CompanyName`, `DealValue`, and `ExpirationDate`.  
+- Additional data to be stored as 3 custom properties in the JSON payload: `companyName`, `dealValue`, and `expirationDate`.  
  
 ```http
 POST https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions
 
 { 
   "@odata.type" : "Microsoft.Graph.OpenTypeExtension", 
-  "ExtensionName" : "Com.Contoso.Referral", 
-  "CompanyName" : "Wingtip Toys", 
-  "DealValue" : 500050, 
-  "ExpirationDate" : "2015-12-03T10:00:00.000Z" 
+  "extensionName" : "Com.Contoso.Referral", 
+  "companyName" : "Wingtip Toys", 
+  "dealValue" : 500050, 
+  "expirationDate" : "2015-12-03T10:00:00.000Z" 
 } 
 ```
 
@@ -164,17 +162,17 @@ The third example creates an extension in the specified group event. The request
 extension:
 - The type `Microsoft.Graph.OpenTypeExtension`. 
 - The extension name "Com.Contoso.Deal".
-- Additional data to be stored as 3 custom properties in the JSON payload: `CompanyName`, `DealValue`, and `ExpirationDate`.  
+- Additional data to be stored as 3 custom properties in the JSON payload: `companyName`, `dealValue`, and `expirationDate`.  
   
 ```http
 POST /groups('f5480dfd-7d77-4d0b-ba2e-3391953cc74a')/events('AAMkADVl17IsAAA=')/extensions 
 
 {
   "@odata.type" : "Microsoft.Graph.OpenTypeExtension",
-  "ExtensionName" : "Com.Contoso.Deal",
-  "CompanyName" : "Alpine Skis",
-  "DealValue" : 1010100,
-  "ExpirationDate" : "2015-07-03T13:04:00.000Z"
+  "extensionName" : "Com.Contoso.Deal",
+  "companyName" : "Alpine Skis",
+  "dealValue" : 1010100,
+  "expirationDate" : "2015-07-03T13:04:00.000Z"
 }
 ```
 
@@ -185,8 +183,8 @@ POST /groups('f5480dfd-7d77-4d0b-ba2e-3391953cc74a')/events('AAMkADVl17IsAAA=')/
 
 Here is the response for the first example request. The response body includes properties of the new message, 
 and the following for the new extension:
-- The **Id** property with the fully qualified name of `Microsoft.Graph.OpenTypeExtension.Com.Contoso.Referral`. 
-- The default property **ExtensionName** specified in the request.
+- The **id** property with the fully qualified name of `Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral`. 
+- The default property **extensionName** specified in the request.
 - The custom data specified in the request stored as 3 custom properties.
 
 ```http
@@ -194,63 +192,61 @@ HTTP/1.1 201 OK
 Content-type: application/json
 
 {
-  "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/Messages/$entity",
-  "@odata.id": "https://graph.microsoft.com/beta/Users('ddfc984d-b826-40d7-b48b-57002df800e5@1717f226-49d1-4d0c-9d74-709fad664b77')/Messages
+  "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/messages/$entity",
+  "@odata.id": "https://graph.microsoft.com/beta/users('ddfc984d-b826-40d7-b48b-57002df800e5@1717f226-49d1-4d0c-9d74-709fad664b77')/messages
 ('AAMkAGEbs88AAB84uLuAAA=')",
   "@odata.etag": "W/\"CQAAABYAAACY4MQpaFz9SbqUDe4+bs88AAB88LOj\"",
-  "Id": "AAMkAGEbs88AAB84uLuAAA=",
-  "CreatedDateTime": "2015-10-30T03:03:43Z",
-  "LastModifiedDateTime": "2015-10-30T03:03:43Z",
-  "ChangeKey": "CQAAABYAAACY4MQpaFz9SbqUDe4+bs88AAB88LOj",
-  "Categories": [ ],
-  "ReceivedDateTime": "2015-10-30T03:03:43Z",
-  "SentDateTime": "2015-10-30T03:03:43Z",
-  "HasAttachments": false,
-  "Subject": "Annual review",
-  "Body": {
-    "ContentType": "HTML",
-    "Content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r
+  "id": "AAMkAGEbs88AAB84uLuAAA=",
+  "createdDateTime": "2015-10-30T03:03:43Z",
+  "lastModifiedDateTime": "2015-10-30T03:03:43Z",
+  "changeKey": "CQAAABYAAACY4MQpaFz9SbqUDe4+bs88AAB88LOj",
+  "categories": [ ],
+  "receivedDateTime": "2015-10-30T03:03:43Z",
+  "sentDateTime": "2015-10-30T03:03:43Z",
+  "hasAttachments": false,
+  "subject": "Annual review",
+  "body": {
+    "contentType": "HTML",
+    "content": "<html>\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\r
 \n<meta content=\"text/html; charset=us-ascii\">\r\n</head>\r\n<body>\r\nYou should be proud!\r\n</body>\r
 \n</html>\r\n"
   },
-  "BodyPreview": "You should be proud!",
-  "Importance": "Normal",
-  "ParentFolderId": "AQMkAGEwAAAIBDwAAAA==",
-  "Sender": null,
-  "From": null,
-  "ToRecipients": [
+  "bodyPreview": "You should be proud!",
+  "importance": "Normal",
+  "parentFolderId": "AQMkAGEwAAAIBDwAAAA==",
+  "sender": null,
+  "from": null,
+  "toRecipients": [
     {
-      "EmailAddress": {
-        "Address": "rufus@contoso.com",
-        "Name": "John Doe"
+      "emailAddress": {
+        "address": "rufus@contoso.com",
+        "name": "John Doe"
       }
     }
   ],
-  "CcRecipients": [ ],
-  "BccRecipients": [ ],
-  "ReplyTo": [ ],
-  "ConversationId": "AAQkAGEFGugh3SVdMzzc=",
-  "IsDeliveryReceiptRequested": false,
-  "IsReadReceiptRequested": false,
-  "IsRead": true,
-  "IsDraft": true,
-  "WebLink": "https://outlook.office.com/owa/?
+  "ccRecipients": [ ],
+  "bccRecipients": [ ],
+  "replyTo": [ ],
+  "conversationId": "AAQkAGEFGugh3SVdMzzc=",
+  "isDeliveryReceiptRequested": false,
+  "isReadReceiptRequested": false,
+  "isRead": true,
+  "isDraft": true,
+  "webLink": "https://outlook.office.com/owa/?
 ItemID=AAMkAGEbs88AAB84uLuAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
-  "MentionedMe": null,
-  "Mentioned": [ ],
-  "InferenceClassification": "Focused",
-  "Extensions@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/Messages
-('AAMkAGEbs88AAB84uLuAAA%3D')/Extensions",
-  "Extensions": [
+  "inferenceClassification": "Focused",
+  "extensions@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/messages
+('AAMkAGEbs88AAB84uLuAAA%3D')/extensions",
+  "extensions": [
     {
       "@odata.type": "#Microsoft.Graph.OpenTypeExtension",
-      "@odata.id": "https://graph.microsoft.com/beta/Users('ddfc984d-b826-40d7-b48b-57002df800e5@1717f226-49d1-4d0c-9d74-709fad664b77')/Messages
-('AAMkAGEbs88AAB84uLuAAA=')/extensions('Microsoft.Graph.OpenTypeExtension.Com.Contoso.Referral')",
-      "Id": "Microsoft.Graph.OpenTypeExtension.Com.Contoso.Referral",
-      "ExtensionName": "Com.Contoso.Referral",
-      "CompanyName": "Wingtip Toys",
-      "ExpirationDate": "2015-12-30T11:00:00.000Z",
-      "DealValue": 10000
+      "@odata.id": "https://graph.microsoft.com/beta/users('ddfc984d-b826-40d7-b48b-57002df800e5@1717f226-49d1-4d0c-9d74-709fad664b77')/messages
+('AAMkAGEbs88AAB84uLuAAA=')/extensions('Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')",
+      "id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral",
+      "extensionName": "Com.Contoso.Referral",
+      "companyName": "Wingtip Toys",
+      "expirationDate": "2015-12-30T11:00:00.000Z",
+      "dealValue": 10000
     }
   ]
 }
@@ -259,8 +255,8 @@ ItemID=AAMkAGEbs88AAB84uLuAAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
 ****
 
 Here is the response for the second example request. The response body includes the following for the new extension:
-- The default property **ExtensionName**.
-- The **Id** property with the fully qualified name of `Microsoft.Graph.OpenTypeExtension.Com.Contoso.Referral`. 
+- The default property **extensionName**.
+- The **id** property with the fully qualified name of `Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral`. 
 - The custom data to be stored.  
 
 ```http
@@ -268,15 +264,15 @@ HTTP/1.1 201 OK
 Content-type: application/json
 
 {
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/Messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/Extensions/$entity",
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#Me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions/$entity",
     "@odata.type": "#Microsoft.Graph.OpenTypeExtension",
-    "@odata.id": "https://graph.microsoft.com/beta/Users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/Messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions
-('Microsoft.Graph.OpenTypeExtension.Com.Contoso.Referral')",
-    "ExtensionName": "Com.Contoso.Referral",
-    "Id": "Microsoft.Graph.OpenTypeExtension.Com.Contoso.Referral",
-    "CompanyName": "Wingtip Toys",
-    "DealValue": 500050,
-    "ExpirationDate": "2015-12-03T10:00:00.000Z"
+    "@odata.id": "https://graph.microsoft.com/beta/users('ddfc984d-b826-40d7-b48b-57002df85e00@1717f226-49d1-4d0c-9d74-709fad6677b4')/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions
+('Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral')",
+    "extensionName": "Com.Contoso.Referral",
+    "id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Referral",
+    "companyName": "Wingtip Toys",
+    "dealValue": 500050,
+    "expirationDate": "2015-12-03T10:00:00.000Z"
 }
 ```
 
@@ -286,13 +282,13 @@ Here is the response from the third example request.
 
 ```
 {
-    "@odata.context": "https://graph.microsoft.com/beta/$metadata#groups('f5480dfd-7d77-4d0b-ba2e-3391953cc74a')/Events('AAMkADVl7IsAAA%3D')/Extensions/$entity",
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#groups('f5480dfd-7d77-4d0b-ba2e-3391953cc74a')/events('AAMkADVl7IsAAA%3D')/extensions/$entity",
     "@odata.type": "#Microsoft.Graph.OpenTypeExtension",
-    "Id": "Microsoft.Graph.OpenTypeExtension.Com.Contoso.Deal",
-    "ExtensionName": "Com.Contoso.Deal",
-    "CompanyName": "Alpine Skis",
-    "DealValue": 1010100,
-    "ExpirationDate": "2015-07-03T13:04:00Z"
+    "id": "Microsoft.OutlookServices.OpenTypeExtension.Com.Contoso.Deal",
+    "extensionName": "Com.Contoso.Deal",
+    "companyName": "Alpine Skis",
+    "dealValue": 1010100,
+    "expirationDate": "2015-07-03T13:04:00Z"
 }
 ```
 

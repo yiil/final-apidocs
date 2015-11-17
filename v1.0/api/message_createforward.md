@@ -20,7 +20,7 @@ POST /drive/root/lastModifiedByUser/messages/<id>/Microsoft.Graph.createForward
 ### Request body
 
 ### Response
-If successful, this method returns `200, OK` response code and [Message](../resources/message.md) object in the response body.
+If successful, this method returns `201, Created` response code and [Message](../resources/message.md) object in the response body.
 
 ### Example
 Here is an example of how to call this API.
@@ -40,12 +40,12 @@ Content-length: 248
   "toRecipients": [
     {
       "emailAddress": {
-        "address": "emailAddress-value"
+        "address": "address-value"
       }
     },
     {
       "emailAddress": {
-        "address": "EmailAddress-value"
+        "address": "address-value"
       }
     }
   ]

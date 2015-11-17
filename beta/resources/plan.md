@@ -32,8 +32,8 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |createdBy|String|Read-only. User id by which the plan is created.|
-|id|String| Read-only. Id of the plan.|
-|owner|String| Group `objectId` by which the plan is owned. Once set, this can only be updated by the owner.|
+|id|String| Read-only. Id of the plan. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer) is done on the service. |
+|owner|String| Group `id` by which the plan is owned. Once set, this can only be updated by the owner.|
 |title|String| Required. Title of the plan. This is usually set the name of the group owning the plan.|
 
 ### Relationships
@@ -53,8 +53,8 @@ Here is a JSON representation of the resource
 |[Get plan](../api/plan_get.md) | [plan](plan.md) |Read properties and relationships of plan object.|
 |[List buckets](../api/plan_list_buckets.md) |[bucket](bucket.md) collection| Get a bucket object collection.|
 |[List tasks](../api/plan_list_tasks.md) |[task](task.md) collection| Get a task object collection. |
-|[Create plan](../api/plan_post_plans.md) | None | Create a new plan. |
-|[Update plan](../api/plan_update.md) | [plan](plan.md)	|Update plan object. |
+|[Create plan](../api/plan_post_plans.md) | [plan](plan.md) | Create a new plan. |
+|[Update plan](../api/plan_update.md) | None	|Update plan object. |
 |[Delete plan](../api/plan_delete.md) | None |Delete plan object. |
 |[List plans](../api/plan_list.md) | [plan](plan.md) collection | Get a plan object collection. |
 

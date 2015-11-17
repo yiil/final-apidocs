@@ -26,7 +26,7 @@ Here is a JSON representation of the resource
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|id|String| Read-only. Id of the bucket.|
+|id|String| Read-only. Id of the bucket. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer) is done on the service.|
 |name|String| Name of the bucket. |
 |orderHint|String| Used to set the relative order of the buckets in the task board view. Consider three buckets in the order of: `'E'`, `'F'`, `'G'`. To make `'F'` the first bucket, set its `'orderHint'` to smaller than that of `'x'`. The comparison is an ordinal string comparison.|
 |planId|String| Plan id to which the bucket belongs. |
@@ -42,8 +42,8 @@ Here is a JSON representation of the resource
 |:---------------|:--------|:----------|
 |[Get bucket](../api/bucket_get.md) | [bucket](bucket.md) |Read properties and relationships of bucket object.|
 |[List tasks](../api/bucket_list_tasks.md) |[task](task.md) collection| Get a task object collection.|
-|[Create bucket](../api/bucket_post_buckets.md) | None | Create a new bucket object. |
-|[Update bucket](../api/bucket_update.md) | [bucket](bucket.md)	|Update bucket object. |
+|[Create bucket](../api/bucket_post_buckets.md) | [bucket](bucket.md)	| Create a new bucket object. |
+|[Update bucket](../api/bucket_update.md) | None |Update bucket object. |
 |[Delete bucket](../api/bucket_delete.md) | None |Delete bucket object. |
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

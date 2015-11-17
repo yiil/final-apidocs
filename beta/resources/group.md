@@ -94,7 +94,7 @@ Here is a JSON representation of the resource
 |owners|[DirectoryObject](directoryobject.md) collection|The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Requires version 2013-11-08 or newer. Inherited from [DirectoryObject].            HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) The owners of the group. The owners are a set of non-admin users who are allowed to modify this object. Requires version 2013-11-08 or newer. Inherited from [DirectoryObject].            HTTP Methods: GET (supported for all groups), POST (supported for security groups and mail-enabled security groups), DELETE (supported only for security groups) Read-only. Nullable.|
 |photo|[Photo](photo.md)| Read-only.|
 |photos|[Photo](photo.md) collection| Read-only. Nullable.|
-|plans|[plan](plan.md) collection| Read-only. Nullable. Plans owned by the group. |
+|plans|[plan](plan.md) collection| Read-only. Nullable. Plans owned by the group. A group can own no more than one plan. |
 |rejectedSenders|[DirectoryObject](directoryobject.md) collection| Read-only. Nullable.|
 |threads|[ConversationThread](conversationthread.md) collection| Read-only. Nullable.|
 

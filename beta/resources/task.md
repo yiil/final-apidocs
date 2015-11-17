@@ -56,7 +56,7 @@ Here is a JSON representation of the resource
 |createdDateTime|DateTimeOffset|Read-only. Date and time at which the task is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
 |dueDateTime|DateTimeOffset|Date and time at which the task is due. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
 |hasDescription|Boolean|Read-only. Value is `true` if the details object of the task has a non-empty description and `false` otherwise.|
-|id|String|Read-only. Id of the task.|
+|id|String|Read-only. Id of the task. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer) is done on the service. |
 |orderHint|String|Used to set the relative order of tasks in a list view. Consider three tasks in the order of: `'X'`, `'Y'`, `'Z'`. To move `'Y'` to the top, set its `orderHint` to smaller than that of `'X'`. The comparison is an ordinal string comparison.|
 |percentComplete|Int32|Percentage of task completion. When set to `100`, the task is considered completed. |
 |planId|String|Plan id to which the task belongs. Once set, this cannot be updated. |
@@ -77,8 +77,8 @@ Here is a JSON representation of the resource
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get task](../api/task_get.md) | [task](task.md) |Read properties and relationships of task object.|
-|[Create task](../api/task_post_tasks.md) | None | Create a new task object. |
-|[Update task](../api/task_update.md) | [task](task.md)	|Update task object. |
+|[Create task](../api/task_post_tasks.md) | [task](task.md) | Create a new task object. |
+|[Update task](../api/task_update.md) | None	|Update task object. |
 |[Delete task](../api/task_delete.md) | None |Delete task object. |
 |[List tasks](../api/task_list.md) | [task](task.md) collection | Get a task object collection. |
 

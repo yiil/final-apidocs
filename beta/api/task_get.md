@@ -13,7 +13,7 @@ GET /tasks/<id>
 
 ```
 ### Optional query parameters
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+None
 
 ### Request headers
 | Name       | Type | Description|
@@ -32,18 +32,20 @@ Here is an example of the request.
   "name": "get_task"
 }-->
 ```http
-GET https://graph.microsoft.com/v1.0/tasks/<id>
+GET https://graph.microsoft.com/beta/tasks/<id>
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
   "truncated": true,
   "@odata.type": "microsoft.graph.task"
 } -->
 ```http
+HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 192
+Content-length: 663
+ETag: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
 
 {
   "createdBy": "createdBy-value",
@@ -51,7 +53,21 @@ Content-length: 192
   "planId": "planId-value",
   "bucketId": "bucketId-value",
   "title": "title-value",
-  "orderHint": "orderHint-value"
+  "orderHint": "orderHint-value",
+  "assigneePriority": "assigneePriority-value",
+  "percentComplete": 99,
+  "startDateTime": "datetime-value",
+  "assignedDateTime": "datetime-value",
+  "createdDateTime": "datetime-value",
+  "assignedBy": "assignedBy-value",
+  "dueDateTime": "datetime-value",
+  "hasDescription": true,
+  "previewType": "previewType-value",
+  "completedDateTime": "datetime-value",
+  "appliedCategories": {
+  },
+  "conversationThreadId": "conversationThreadId-value",
+  "id": "id-value"
 }
 ```
 

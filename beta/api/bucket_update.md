@@ -37,26 +37,10 @@ Here is an example of the request.
   "name": "update_bucket"
 }-->
 ```http
-PATCH https://graph.microsoft.com/v1.0/buckets/<id>
-Content-type: application/json
-Content-length: 88
-
-{
-  "name": "name-value",
-  "planId": "planId-value",
-  "orderHint": "orderHint-value"
-}
-```
-##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
-<!-- {
-  "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.bucket"
-} -->
-```http
+PATCH https://graph.microsoft.com/beta/buckets/<id>
 Content-type: application/json
 Content-length: 108
+If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
 
 {
   "name": "name-value",
@@ -64,6 +48,16 @@ Content-length: 108
   "orderHint": "orderHint-value",
   "id": "id-value"
 }
+```
+##### Response
+Here is an example of the response. 
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.bucket"
+} -->
+```http
+HTTP/1.1 204 No Content
 ```
 To get the updated object, use the `Prefer` header. See Request Headers above.
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

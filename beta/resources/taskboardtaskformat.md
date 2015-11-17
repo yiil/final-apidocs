@@ -25,7 +25,7 @@ Here is a JSON representation of the resource
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|id|String| Read-only. Id of the task. |
+|id|String| Read-only. Id of the task. It is 28 characters long and case sensitive. [Format validation](tasks_identifiers_disclaimer) is done on the service. |
 |orderHint|String| Used to set the relative order of tasks in the vertical on the task board view. Consider three tasks in the order of: `'O'`, `'P'`, `'Q'`. To move `'P'` to the top of the vertical, set its `'orderHint'` to smaller than that of `'O'`. The comparison is an ordinal string comparison.|
 |type|String| Read-only. Used to set the type of task board view in which this object is used to render the task. Possible values are: `progress`, `assignedTo`, `bucket`. |
 
@@ -38,7 +38,7 @@ None
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get taskBoardTaskFormat](../api/taskboardtaskformat_get.md) | [taskBoardTaskFormat](taskboardtaskformat.md) |Read properties and relationships of taskBoardTaskFormat object.|
-|[Update taskBoardTaskFormat](../api/taskboardtaskformat_update.md) | [taskBoardTaskFormat](taskboardtaskformat.md)	|Update taskBoardTaskFormat object. |
+|[Update taskBoardTaskFormat](../api/taskboardtaskformat_update.md) | None	|Update taskBoardTaskFormat object. |
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

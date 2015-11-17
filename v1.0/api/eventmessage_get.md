@@ -2,11 +2,14 @@
 
 Retrieve the properties and relationships of eventmessage object.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API: _Mail.Read_ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /users/<id>/messages/<id>
+GET /drive/root/createdByUser/messages/<id>
+GET /drive/root/lastModifiedByUser/messages/<id>
+
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
@@ -27,7 +30,7 @@ Here is an example of the request.
   "name": "get_eventmessage"
 }-->
 ```http
-
+GET https://graph.microsoft.com/v1.0/me/messages/<id>
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
@@ -50,7 +53,8 @@ Content-length: 248
     },
     "content": "content-value"
   },
-  "bodyPreview": "bodyPreview-value"
+  "bodyPreview": "bodyPreview-value",
+  "meetingMessageType": "meetingMessageType-value"
 }
 ```
 

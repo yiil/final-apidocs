@@ -2,7 +2,7 @@
 
 Retrieve a list of attachment objects.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API: _Mail.Read_ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -27,7 +27,7 @@ Here is an example of the request.
   "name": "get_attachments"
 }-->
 ```http
-/attachments
+GET https://graph.microsoft.com/v1.0/me/messages/<id>/attachments
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
@@ -44,12 +44,17 @@ Content-length: 215
 {
   "value": [
     {
-      "lastModifiedDateTime": "datetime-value",
-      "name": "name-value",
+      "@odata.type": "#Microsoft.OutlookServices.FileAttachment",
       "contentType": "contentType-value",
-      "size": 99,
-      "isInline": true,
-      "id": "id-value"
+      "contentLocation": "contentLocation-value",
+      "contentBytes": "contentBytes-value",
+      "contentId": "null",
+      "lastModifiedDateTime": "datetime-value",
+      "id": "id-value",
+      "isInline": false,
+      "isContactPhoto": false,
+      "name": "name-value",
+      "size": 99
     }
   ]
 }

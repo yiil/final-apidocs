@@ -2,7 +2,12 @@
 
 Delete attachment.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API:
+
+* If accessing attachments in Messages: _Mail.ReadWrite_
+* If accessing attachments in Events: _Calendars.ReadWrite_
+* If accessing attachments in Posts: _Groups.Read_
+ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -34,7 +39,7 @@ Here is an example of the request.
 DELETE https://graph.microsoft.com/v1.0/me/events/<id>/attachments/<id>
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response.
 <!-- {
   "blockType": "response",
   "truncated": true

@@ -2,7 +2,7 @@
 
 Use this API to create a new Attachment.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API: _Groups.ReadWrite_ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -31,16 +31,29 @@ Here is an example of the request.
   "name": "create_attachment_from_post"
 }-->
 ```http
+Creating file attachment 
 POST https://graph.microsoft.com/v1.0/groups/<id>/threads/<id>/posts/<id>/attachments
 Content-type: application/json
 Content-length: 142
 
 {
-  "lastModifiedDateTime": "datetime-value",
+  "@odata.type": "#Microsoft.OutlookServices.FileAttachment",
   "name": "name-value",
   "contentType": "contentType-value",
-  "size": 99,
-  "isInline": true
+  "isInline": false,
+  "contentLocation": "contentLocation-value",
+  "contentBytes": "contentBytes-value"
+}
+
+Creating item attachment
+POST https://graph.microsoft.com/v1.0/groups/<id>/threads/<id>/posts/<id>/attachments
+Content-type: application/json
+Content-length: 100
+
+{
+  "@odata.type": "#Microsoft.OutlookServices.ItemAttachment",
+  "name": "name-value",
+  "item": "message or event entity"
 }
 ```
 In the request body, supply a JSON representation of [attachment](../resources/attachment.md) object.

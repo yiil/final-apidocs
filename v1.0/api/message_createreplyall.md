@@ -2,7 +2,7 @@
 
 
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API: _Mail.Send_
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -15,11 +15,12 @@ POST /drive/root/lastModifiedByUser/messages/<id>/Microsoft.Graph.createReplyAll
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
 | Authorization  | string  | Bearer <token>. Required. |
+| Content-Type | string  | Nature of the data in the body of an entity. Required. |
 
 ### Request body
 
 ### Response
-If successful, this method returns `200, OK` response code and [Message](../resources/message.md) object in the response body.
+If successful, this method returns `201, Created` response code and [Message](../resources/message.md) object in the response body.
 
 ### Example
 Here is an example of how to call this API.
@@ -31,6 +32,12 @@ Here is an example of the request.
 }-->
 ```http
 POST https://graph.microsoft.com/v1.0/me/messages/<id>/createReplyAll
+Content-type: application/json
+Content-length: 248
+
+{
+  "comment": "comment-value"
+}
 ```
 
 ##### Response

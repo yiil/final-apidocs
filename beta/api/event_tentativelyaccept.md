@@ -36,7 +36,7 @@ Here is an example of the request.
   "name": "event_tentativelyaccept"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/events/<id>/tentativelyAccept
+POST https://graph.microsoft.com/beta/me/events/<id>/tentativelyAccept
 Content-type: application/json
 Content-length: 56
 

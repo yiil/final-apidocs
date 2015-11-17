@@ -31,7 +31,7 @@ Here is an example of the request.
   "name": "create_extension_from_message"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/messages/<id>/extensions
+POST https://graph.microsoft.com/beta/me/messages/<id>/extensions
 Content-type: application/json
 Content-length: 3
 

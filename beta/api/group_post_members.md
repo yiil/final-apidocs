@@ -31,7 +31,7 @@ Here is an example of the request.
   "name": "create_directoryobject_from_group"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/groups/<id>/members
+POST https://graph.microsoft.com/beta/groups/<id>/members
 Content-type: application/json
 Content-length: 30
 

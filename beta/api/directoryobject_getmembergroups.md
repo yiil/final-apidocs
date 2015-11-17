@@ -35,7 +35,7 @@ Here is an example of the request.
   "name": "directoryobject_getmembergroups"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/manager/getMemberGroups
+POST https://graph.microsoft.com/beta/me/manager/getMemberGroups
 Content-type: application/json
 Content-length: 33
 

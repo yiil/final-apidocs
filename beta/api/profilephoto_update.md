@@ -1,30 +1,37 @@
 # Update profilephoto
 
-Update the properties of profilephoto object.
+Update the photo for a **user**, **group** or a **contact**.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
-### HTTP request
+One of the following **scopes** is required to execute this API for: 
+* Profile photo of signed-in **user** - *User.ReadWrite.All; User.ReadWrite*
+* Profile photo of a **group** - *Group.ReadWrite.All* 
+* Photo of a **contact** - *Contacts.ReadWrite*
+### HTTP request to update the photo
 <!-- { "blockType": "ignored" } -->
 ```http
-PATCH /me/photo
-PATCH /users/<id>/photo
-PATCH /groups/<id>/photo
+PATCH /me/photo/$value
+PATCH /users/<id>/photo/$value
+PATCH /users/<userPrincipalName>/photo/$value
+PATCH /groups/<objectId>/photo/$value
+PATCH /me/contacts/<id>/photo/$value
+PATCH /users/<id>/contacts/<id>/photo/$value
+PATCH /users/<userPrincipalName>/contacts/<id>/photo/$value
+PATCH /me/contactfolders/<contactFolderId>/contacts/<id>/photo/$value
+PATCH /users/<id>/contactfolders/<contactFolderId>/contacts/<id>/photo/$value
+PATCH /users/<userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>/photo/$value
 ```
-### Optional request headers
-| Name       | Type | Description|
-|:-----------|:------|:----------|
-| X-Sample-Header  | string  | Sample HTTP header. Update accordingly or remove if not needed|
+### Request headers
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer <token>. Required.  |
+| Content-Type  | image/jpeg  |
 
 ### Request body
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
-
-| Property	   | Type	|Description|
-|:---------------|:--------|:----------|
-|height|int32||
-|width|int32||
+In the request body, include the binary data of the photo in the request body.
 
 ### Response
-If successful, this method returns a `200 OK` response code and updated [profilePhoto](../resources/profilephoto.md) object in the response body.
+If successful, this method returns a `200 OK` response code.
 ### Example
 ##### Request
 Here is an example of the request.
@@ -33,14 +40,11 @@ Here is an example of the request.
   "name": "update_profilephoto"
 }-->
 ```http
-PATCH https://graph.microsoft.com/v1.0/me/photo
-Content-type: application/json
-Content-length: 33
+PATCH https://graph.microsoft.com/beta/me/photo/$value
+Content-type: image/jpeg
 
-{
-  "height": 99,
-  "width": 99
-}
+Binary data for the image
+
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
@@ -50,14 +54,7 @@ Here is an example of the response. Note: The response object shown here may be 
   "@odata.type": "microsoft.graph.profilephoto"
 } -->
 ```http
-Content-type: application/json
-Content-length: 53
-
-{
-  "height": 99,
-  "width": 99,
-  "id": "id-value"
-}
+HTTP/1.1 200 OK
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

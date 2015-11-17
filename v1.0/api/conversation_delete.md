@@ -3,13 +3,12 @@
 Delete conversation.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+*Group.ReadWrite.All*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /groups/<id>/conversations/<id>
-DELETE /users/<id>/joinedGroups/<id>/conversations/<id>
-DELETE /drive/root/createdByUser/joinedGroups/<id>/conversations/<id>
-
+DELETE /groups/<objectId>/conversations/<id>
 ```
 ### Request headers
 | Name       | Type | Description|

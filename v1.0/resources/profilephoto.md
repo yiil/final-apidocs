@@ -1,21 +1,20 @@
 # profilePhoto resource type
-
+A profile photo of a user, group or an Outlook contact. It's binary data not encoded in base-64.
 
 ### Methods
 
 | Method       | Return Type  |Description|
 |:---------------|:--------|:----------|
-|[Get profilePhoto](../api/profilephoto_get.md) | [profilePhoto](profilephoto.md) |Read properties and relationships of profilePhoto object.|
-|[Update](../api/profilephoto_update.md) | [profilePhoto](profilephoto.md)  |Update profilePhoto object. |
-|[Delete](../api/profilephoto_delete.md) | None |Delete profilePhoto object. |
+|[Get profilePhoto](../api/profilephoto_get.md) | [profilePhoto](profilephoto.md) |Read the photo and properties of **profilePhoto**. |
+|[Update](../api/profilephoto_update.md) | [profilePhoto](profilephoto.md)  |Update the photo. |
 
 
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|height|int32||
-|id|string| Read-only.|
-|width|int32||
+|id|string|Read-only.|
+|height|int32|The height of the photo. Read-only.|
+|width|int32|The width of the photo. Read-only.|
 
 ### Relationships
 None
@@ -36,9 +35,9 @@ Here is a JSON representation of the resource.
 
 ```json
 {
-  "height": 1024,
-  "id": "string (identifier)",
-  "width": 1024
+  "id": "240X240",
+  "height": 240,
+  "width": 240
 }
 
 ```

@@ -39,7 +39,7 @@ Here is an example of the request.
   "name": "section_copytonotebook"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/notes/sections/<id>/copyToNotebook
+POST https://graph.microsoft.com/beta/me/notes/sections/<id>/copyToNotebook
 Content-type: application/json
 Content-length: 84
 

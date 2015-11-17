@@ -29,7 +29,7 @@ Here is an example of the request.
   "name": "create_device_from_devices"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/devices
+POST https://graph.microsoft.com/beta/devices
 Content-type: application/json
 Content-length: 364
 

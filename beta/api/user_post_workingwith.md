@@ -31,7 +31,7 @@ Here is an example of the request.
   "name": "create_user_from_user"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/workingWith
+POST https://graph.microsoft.com/beta/me/workingWith
 Content-type: application/json
 Content-length: 551
 

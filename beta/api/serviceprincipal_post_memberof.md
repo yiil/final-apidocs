@@ -29,7 +29,7 @@ Here is an example of the request.
   "name": "create_directoryobject_from_serviceprincipal"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/servicePrincipals/<id>/memberOf
+POST https://graph.microsoft.com/beta/servicePrincipals/<id>/memberOf
 Content-type: application/json
 Content-length: 30
 

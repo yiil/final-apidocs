@@ -20,8 +20,8 @@ Represents an Azure Active Directory tenant. Only the read and update operations
 |deletionTimestamp|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
 |dirSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default).|
 |displayName|String|The display name for the tenant.|
-|marketingNotificationEmails|String collection| Not nullable.            |
 |id|String|The unique identifier for the tenant. Inherited from [directoryObject](directoryobject.md). Key. Not nullable. Read-only.|
+|marketingNotificationEmails|String collection| Not nullable.            |
 |objectType|String|A string that identifies the object type. For tenants the value is always “Company”. |
 |postalCode|String|            |
 |preferredLanguage|String|            |

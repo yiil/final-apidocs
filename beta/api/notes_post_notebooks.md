@@ -35,7 +35,7 @@ Here is an example of the request.
   "name": "create_notebook_from_notes"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/notes/notebooks
+POST https://graph.microsoft.com/beta/me/notes/notebooks
 Content-type: application/json
 Content-length: 284
 

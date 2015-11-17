@@ -3,18 +3,22 @@
 Use this API to create a new Contact.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
+*Contacts.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /users/<objectId>/contacts
-POST /drive/root/createdByUser/contacts
-POST /drive/root/lastModifiedByUser/contacts
-
+POST /me/contacts
+POST /users/<id>/contacts
+POST /users/<userPrincipalName>/contacts
+POST /me/contactFolders/<contactFolderId>/contacts
+POST /users/<id>/contactFolders/<contactFolderId>/contacts
+POST /users/<userPrincipalName>/contactFolders/<contactFolderId>/contacts
 ```
 ### Request headers
-| Name       | Type | Description|
-|:---------------|:--------|:----------|
-| Authorization  | string  | Bearer <token>. Required. |
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer <token>. Required.  |
+| Content-Type  | application/json  |
 
 ### Request body
 In the request body, supply a JSON representation of [Contact](../resources/contact.md) object.
@@ -31,20 +35,26 @@ Here is an example of the request.
   "name": "create_contact_from_user"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/contacts
+POST https://graph.microsoft.com/beta/me/contacts
 Content-type: application/json
 Content-length: 210
 
 {
-  "parentFolderId": "parentFolderId-value",
-  "birthday": "datetime-value",
-  "fileAs": "fileAs-value",
-  "displayName": "displayName-value",
-  "givenName": "givenName-value",
-  "initials": "initials-value"
+  "givenName": "Pavel",
+  "surname": "Bansky",
+  "emailAddresses": [
+    {
+      "address": "pavelb@fabrikam.onmicrosoft.com",
+      "name": "Pavel Bansky"
+    }
+  ],
+  "businessPhones": [
+    "+1 732 555 0102"
+  ]
 }
 ```
 In the request body, supply a JSON representation of [contact](../resources/contact.md) object.
+
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
@@ -53,16 +63,16 @@ Here is an example of the response. Note: The response object shown here may be 
   "@odata.type": "microsoft.graph.contact"
 } -->
 ```http
+HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 210
 
 {
-  "parentFolderId": "parentFolderId-value",
-  "birthday": "datetime-value",
-  "fileAs": "fileAs-value",
-  "displayName": "displayName-value",
-  "givenName": "givenName-value",
-  "initials": "initials-value"
+  "id": "id-value"
+  "createdDateTime": "2015-11-09T02:14:32Z",
+  "lastModifiedDateTime": "2015-11-09T02:14:32Z",
+  ...
+   "displayName": "Pavel Bansky",
+  ...
 }
 ```
 

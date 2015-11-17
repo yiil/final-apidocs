@@ -31,7 +31,7 @@ Here is an example of the request.
   "name": "create_attachment_from_message"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/messages/<id>/attachments
+POST https://graph.microsoft.com/beta/me/messages/<id>/attachments
 Content-type: application/json
 Content-length: 142
 

@@ -32,7 +32,7 @@ Here is an example of the request.
   "name": "create_bucket_from_buckets"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/buckets
+POST https://graph.microsoft.com/beta/buckets
 Content-type: application/json
 Content-length: 88
 

@@ -32,7 +32,7 @@ Here is an example of the request.
   "name": "update_directoryrole"
 }-->
 ```http
-PATCH https://graph.microsoft.com/v1.0/directoryRoles/<id>
+PATCH https://graph.microsoft.com/beta/directoryRoles/<id>
 Content-type: application/json
 Content-length: 122
 

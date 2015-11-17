@@ -32,7 +32,7 @@ Here is an example of the request.
   "name": "create_plan_from_plans"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/plans
+POST https://graph.microsoft.com/beta/plans
 Content-type: application/json
 Content-length: 88
 

@@ -29,7 +29,7 @@ Here is an example of the request.
   "name": "create_directoryobject_from_device"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/devices/<id>/registeredOwners
+POST https://graph.microsoft.com/beta/devices/<id>/registeredOwners
 Content-type: application/json
 Content-length: 30
 

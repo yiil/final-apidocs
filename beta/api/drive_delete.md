@@ -31,7 +31,7 @@ Here is an example of the request.
   "name": "delete_drive"
 }-->
 ```http
-DELETE https://graph.microsoft.com/v1.0/drive
+DELETE https://graph.microsoft.com/beta/drive
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.

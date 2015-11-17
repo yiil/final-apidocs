@@ -29,7 +29,7 @@ Here is an example of the request.
   "name": "create_group_from_groups"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/groups
+POST https://graph.microsoft.com/beta/groups
 Content-type: application/json
 Content-length: 244
 

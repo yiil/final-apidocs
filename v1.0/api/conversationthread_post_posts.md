@@ -8,7 +8,6 @@ One of the following **scopes** is required to execute this API:
 ```http
 POST /groups/<id>/threads/<id>/posts
 POST /groups/<id>/conversations/<id>/threads/<id>/posts
-POST /users/<id>/joinedGroups/<id>/threads/<id>/posts
 
 ```
 ### Request headers

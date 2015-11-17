@@ -72,13 +72,13 @@ GET /groups/<gId>/events/<id>/extensions/<eId>
 ### Request body
 Do not supply a request body for this method.
 ### Response
-If successful, this method returns a `200 OK` response code and [extension](../resources/extension.md) object in the response body.
+If successful, this method returns a `200 OK` response code and [openTypeExtension](../resources/opentypeextension.md) object in the response body.
 ### Example
 ##### Request
 The first example references an extension by its name and gets the extension in the specified message. 
 <!-- {
   "blockType": "request",
-  "name": "get_extension"
+  "name": "get_opentypeextension"
 }-->
 ```http
 GET https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions('Com.Contoso.Referral')
@@ -110,7 +110,7 @@ Here is the response from the first two example requests.
 <!-- {
   "blockType": "response",
   "truncated": false,
-  "@odata.type": "microsoft.graph.extension"
+  "@odata.type": "microsoft.graph.opentypeextension"
 } -->
 ```http
 HTTP/1.1 200 OK
@@ -226,7 +226,7 @@ And here is the response from the fourth example request.
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Get extension",
+  "description": "Get openTypeExtension",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

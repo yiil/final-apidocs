@@ -122,6 +122,12 @@ You can use either example request and the following request body to update the 
 
 Here is the response for either the first or second example request.
 
+<!-- {  
+  "blockType": "response",  
+  "truncated": true,  
+  "@odata.type": "microsoft.graph.opentypeextension"  
+} --> 
+
 ```http
 HTTP/1.1 200 OK
 Content-type: application/json
@@ -147,7 +153,7 @@ Content-type: application/json
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create extension",
+  "description": "Update opentypeextension",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

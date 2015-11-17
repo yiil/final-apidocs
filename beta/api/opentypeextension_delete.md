@@ -60,7 +60,7 @@ If successful, this method returns `204, No Content` response code. It does not 
 The first example references an extension by its name and deletes the extension in the specified message.
 <!-- {
   "blockType": "request",
-  "name": "delete_extension"
+  "name": "delete_opentypeextension"
 }-->
 ```http
 DELETE https://graph.microsoft.com/beta/me/messages('AAMkAGE1M2IyNGNmLTI5MTktNDUyZi1iOTVl===')/extensions('Com.Contoso.Referral')
@@ -88,7 +88,7 @@ HTTP/1.1 204 No Content
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Delete extension",
+  "description": "Delete opentypeextension",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

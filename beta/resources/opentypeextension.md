@@ -16,8 +16,8 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "extensionName": "String-value",
-  "id": "String-value (identifier)"
+  "extensionName": "String",
+  "id": "String (identifier)"
 }
 
 ```

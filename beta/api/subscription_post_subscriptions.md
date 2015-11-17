@@ -1,8 +1,8 @@
 # Create subscription
 
-Use this API to create a new subscription.
+Subscribes a listener application to receive notifications when mail, calendar events, or contacts change.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes**, depending on the target resource, are required to execute this API: *Mail.Read*, *Calendars.Read*, or *Contacts.Read* 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 
@@ -35,11 +35,10 @@ Content-type: application/json
 Content-length: 208
 
 {
-  "resource": "resource-value",
-  "changeType": "changeType-value",
-  "clientState": "clientState-value",
-  "notificationUrl": "notificationUrl-value",
-  "subscriptionExpirationDateTime": "datetime-value"
+   "changeType": "Created",
+   "notificationURL": "https://webhook.azurewebsites.net/api/send/myNotifyClient",
+   "clientState": "subscription-identifier",  
+   "resource": "me/messages"
 }
 ```
 In the request body, supply a JSON representation of [subscription](../resources/subscription.md) object.
@@ -56,12 +55,13 @@ Content-type: application/json
 Content-length: 252
 
 {
-  "subscriptionId": "subscriptionId-value",
-  "resource": "resource-value",
-  "changeType": "changeType-value",
-  "clientState": "clientState-value",
-  "notificationUrl": "notificationUrl-value",
-  "subscriptionExpirationDateTime": "datetime-value"
+  "@odata.context":"https://graph.microsoft.com/beta/$metadata#subscriptions/$entity",
+  "subscriptionId":"7f105c7d-2dc5-4530-97cd-4e7ae6534c07",
+  "resource":"me/messages",
+  "changeType":"Created",
+  "clientState":"subscription-identifier",
+  "notificationUrl":"https://webhook.azurewebsites.net/api/send/myNotifyClient",
+  "subscriptionExpirationDateTime":"2015-11-20T18:23:45.9356913Z"
 }
 ```
 

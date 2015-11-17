@@ -8,19 +8,15 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/calendar/events
-POST /users/<id>/calendar/events
+POST /users/<id | userPrincipalName>/calendar/events
 POST /groups/<id>/calendar/events
 POST /drive/root/createdByUser/calendar/events
-POST /users/<userPrincipalName>/calendar/events
 POST /me/calendars/<id>/events
-POST /users/<id>/calendars/<id>/events
-POST /users/<userPrincipalName>/calendars/<id>/events
+POST /users/<id | userPrincipalName>/calendars/<id>/events
 POST /me/calendarGroup/calendars/<id>/events
-POST /users/<id>/calendarGroup/calendars/<id>/events
-POST /users/<userPrincipalName>/calendarGroup/calendars/<id>/events
+POST /users/<id | userPrincipalName>/calendarGroup/calendars/<id>/events
 POST /me/calendarGroups/<id>/calendars/<id>/events
-POST /users/<id>/calendarGroups/<id>/calendars/<id>/events
-POST /users/<userPrincipalName>/calendarGroups/<id>/calendars/<id>/events
+POST /users/<id | userPrincipalName>/calendarGroups/<id>/calendars/<id>/events
 POST /groups/<objectId>/calendar/events
 ```
 ### Request headers

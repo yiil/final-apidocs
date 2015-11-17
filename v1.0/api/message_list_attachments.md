@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API: _Mail.Read_
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /users/<id>/messages/<id>/attachments
+GET /users/<id | userPrincipalName>/messages/<id>/attachments
 GET /drive/root/createdByUser/messages/<id>/attachments
 GET /drive/root/lastModifiedByUser/messages/<id>/attachments
 ```

@@ -8,11 +8,9 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /me/contacts/<id>
-PATCH /users/<id>/contacts/<id>
-PATCH /users/<userPrincipalName>/contacts/<id>
-PATCH /me/contactFolders/<id>/contacts/<id>
-PATCH /users/<id>/contactFolders/<id>/contacts/<id>
-PATCH /users/<userPrincipalName>/contactFolders/<id>/contacts/<id>
+PATCH /users/<id | userPrincipalName>/contacts/<id>
+PATCH /me/contactFolders/<contactFolderId>/contacts/<id>
+PATCH /users/<id | userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>
 ```
 ### Request headers
 | Header       | Value |

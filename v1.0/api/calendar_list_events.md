@@ -7,20 +7,16 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /users/<id>/calendar/events
+GET /users/<id | userPrincipalName>/calendar/events
 GET /groups/<id>/calendar/events
 GET /drive/root/createdByUser/calendar/events
 GET /me/calendar/events
-GET /users/<userPrincipalName>/calendar/events
 GET /me/calendars/<id>/events
-GET /users/<id>/calendars/<id>/events
-GET /users/<userPrincipalName>/calendars/<id>/events
+GET /users/<id | userPrincipalName>/calendars/<id>/events
 GET /me/calendarGroup/calendars/<id>/events
-GET /users/<id>/calendarGroup/calendars/<id>/events
-GET /users/<userPrincipalName>/calendarGroup/calendars/<id>/events
+GET /users/<id | userPrincipalName>/calendarGroup/calendars/<id>/events
 GET /me/calendarGroups/<id>/calendars/<id>/events
-GET /users/<id>/calendarGroups/<id>/calendars/<id>/events
-GET /users/<userPrincipalName>/calendarGroups/<id>/calendars/<id>/events
+GET /users/<id | userPrincipalName>/calendarGroups/<id>/calendars/<id>/events
 GET /groups/<objectId>/calendar/events
 ```
 ### Optional query parameters

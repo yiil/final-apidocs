@@ -7,11 +7,9 @@ One of the following **scopes** is required to execute this API: _Calendars.Read
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/calendarGroup/calendars
-POST /users/<id>/calendarGroup/calendars
-POST /users/<userPrincipalName>/calendarGroup/calendars
+POST /users/<id | userPrincipalName>/calendarGroup/calendars
 POST /me/calendarGroups/<id>/calendars
-POST /users/<id>/calendarGroups/<id>/calendars
-POST /users/<userPrincipalName>/calendarGroups/<id>/calendars
+POST /users/<id | userPrincipalName>/calendarGroups/<id>/calendars
 ```
 ### Request headers
 | Name       | Type | Description|

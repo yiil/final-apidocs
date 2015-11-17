@@ -7,11 +7,9 @@ One of the following **scopes** is required to execute this API: _Calendars.Read
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /me/calendarGroup
-PATCH /users/<id>/calendarGroup
-PATCH /users/<userPrincipalName>/calendarGroup
+PATCH /users/<id | userPrincipalName>/calendarGroup
 PATCH /me/calendarGroups/<id>
-PATCH /users/<id>/calendarGroups/<id>
-PATCH /users/<userPrincipalName>/calendarGroups/<id>
+PATCH /users/<id | userPrincipalName>/calendarGroups/<id>
 ```
 ### Request headers
 | Name       | Type | Description|

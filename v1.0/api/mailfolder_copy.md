@@ -9,8 +9,7 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 POST /me/mailFolders/<id>/copy
-POST /users/<id>/mailFolders/<id>/copy
-POST /users/<userPrincipalName>/mailFolders/<id>/copy
+POST /users/<id | userPrincipalName>/mailFolders/<id>/Microsoft.Graph.copy
 ```
 ### Request headers
 | Header       | Value |

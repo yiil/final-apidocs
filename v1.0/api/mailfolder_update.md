@@ -8,8 +8,7 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /me/mailFolders/<id>
-PATCH /users/<id>/mailFolders/<id>
-PATCH /users/<userPrincipalName>/mailFolders/<id>
+PATCH /users/<id | userPrincipalName>/mailFolders/<id>
 ```
 ### Request headers
 | Header       | Value |

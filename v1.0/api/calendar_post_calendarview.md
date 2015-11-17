@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API: _Calendars.Read
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /users/<id>/calendar/calendarView
+POST /users/<id | userPrincipalName>/calendar/calendarView
 POST /groups/<id>/calendar/calendarView
 POST /drive/root/createdByUser/calendar/calendarView
 

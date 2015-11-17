@@ -7,8 +7,7 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /users/<id>/calendars
-POST /users/<userPrincipalName>/calendars
+POST /users/<id | userPrincipalName>/calendars
 ```
 ### Request headers
 | Header       | Value |

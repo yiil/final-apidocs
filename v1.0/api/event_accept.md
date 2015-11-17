@@ -6,9 +6,9 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /users/<id>/events/<id>/Microsoft.Graph.accept
+POST /users/<id | userPrincipalName>/events/<id>/Microsoft.Graph.accept
 POST /groups/<id>/events/<id>/Microsoft.Graph.accept
-POST /users/<id>/calendarView/<id>/Microsoft.Graph.accept
+POST /users/<id | userPrincipalName>/calendarView/<id>/Microsoft.Graph.accept
 
 ```
 ### Request headers

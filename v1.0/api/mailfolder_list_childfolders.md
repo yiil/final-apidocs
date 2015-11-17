@@ -8,8 +8,7 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/mailFolders/<id>/childFolders
-GET /users/<id>/mailFolders/<id>/childFolders
-GET /users/<userPrincipalName>/mailFolders/<id>/childFolders
+GET /users/<id | userPrincipalName>/mailFolders/<id>/childFolders
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

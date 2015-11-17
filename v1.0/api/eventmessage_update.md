@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API: _Mail.ReadWrite
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-PATCH /users/<id>/messages/<id>
+PATCH /users/<id | userPrincipalName>/messages/<id>
 PATCH /drive/root/createdByUser/messages/<id>
 PATCH /drive/root/lastModifiedByUser/messages/<id>
 ```

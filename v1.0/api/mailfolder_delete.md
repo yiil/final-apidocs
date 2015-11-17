@@ -8,8 +8,7 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /me/mailFolders/<id>
-DELETE /users/<id>/mailFolders/<id>
-DELETE /users/<userPrincipalName>/mailFolders/<id>/
+DELETE /users/<id | userPrincipalName>/mailFolders/<id>
 ```
 ### Request headers
 | Name       | Type | Description|

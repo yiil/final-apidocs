@@ -8,7 +8,7 @@ One of the following **scopes** is required to execute this API:
 ```http
 POST /groups/<id>/threads/<id>/posts/<id>/Microsoft.Graph.forward
 POST /groups/<id>/conversations/<id>/threads/<id>/posts/<id>/Microsoft.Graph.forward
-POST /users/<id>/joinedGroups/<id>/threads/<id>/posts/<id>/Microsoft.Graph.forward
+POST /users/<id | userPrincipalName>/joinedGroups/<id>/threads/<id>/posts/<id>/Microsoft.Graph.forward
 
 ```
 ### Request headers

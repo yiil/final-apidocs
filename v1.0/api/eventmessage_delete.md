@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API: _Mail.ReadWrite
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-DELETE /users/<id>/messages/<id>
+DELETE /users/<id | userPrincipalName>/messages/<id>
 DELETE /drive/root/createdByUser/messages/<id>
 DELETE /drive/root/lastModifiedByUser/messages/<id>
 

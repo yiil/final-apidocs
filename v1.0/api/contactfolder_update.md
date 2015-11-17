@@ -3,17 +3,18 @@
 Update the properties of contactfolder object.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
-*Contacts.Read; Contacts.ReadWrite*
+*Contacts.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-PATCH /users/<id | userPrincipalName>/contactFolders/<id>
 PATCH /me/contactFolders/<id>
+PATCH /users/<id | userPrincipalName>/contactFolders/<id>
 ```
 ### Request headers
-| Name       | Type | Description|
-|:-----------|:------|:----------|
-| Authorization  | string  | Bearer <token>. Required. |
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer <token>. Required.  |
+| Content-Type  | application/json. Required.  |
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.

@@ -3,12 +3,12 @@
 Retrieve the properties and relationships of mailfolder object.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+*Mail.Read; Mail.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+GET /me/mailFolders/<id>
 GET /users/<id | userPrincipalName>/mailFolders/<id>
-GET /drive/root/createdByUser/mailFolders/<id>
-GET /drive/root/lastModifiedByUser/mailFolders/<id>
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

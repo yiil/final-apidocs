@@ -3,18 +3,19 @@
 Use this API to create a new Contact.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+*Contacts.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+POST /me/contactFolders/<id>/contacts
 POST /users/<id | userPrincipalName>/contactFolders/<id>/contacts
-POST /drive/root/createdByUser/contactFolders/<id>/contacts
-POST /drive/root/lastModifiedByUser/contactFolders/<id>/contacts
-
 ```
 ### Request headers
-| Name       | Type | Description|
-|:---------------|:--------|:----------|
-| Authorization  | string  | Bearer <token>. Required. |
+### Request headers
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer <token>. Required.  |
+| Content-Type  | application/json. Required.  |
 
 ### Request body
 In the request body, supply a JSON representation of [Contact](../resources/contact.md) object.

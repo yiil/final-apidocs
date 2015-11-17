@@ -3,18 +3,18 @@
 Use this API to create a new ContactFolder.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+*Contacts.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+POST /me/contactFolders/<id>/childFolders
 POST /users/<id | userPrincipalName>/contactFolders/<id>/childFolders
-POST /drive/root/createdByUser/contactFolders/<id>/childFolders
-POST /drive/root/lastModifiedByUser/contactFolders/<id>/childFolders
-
 ```
 ### Request headers
-| Name       | Type | Description|
-|:---------------|:--------|:----------|
-| Authorization  | string  | Bearer <token>. Required. |
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer <token>. Required.  |
+| Content-Type  | application/json. Required.  |
 
 ### Request body
 In the request body, supply a JSON representation of [ContactFolder](../resources/contactfolder.md) object.
@@ -36,7 +36,6 @@ Content-type: application/json
 Content-length: 84
 
 {
-  "parentFolderId": "parentFolderId-value",
   "displayName": "displayName-value"
 }
 ```

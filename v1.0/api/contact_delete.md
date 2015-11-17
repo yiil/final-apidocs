@@ -11,7 +11,6 @@ DELETE /me/contacts/<id>
 DELETE /users/<id | userPrincipalName>/contacts/<id>
 DELETE /me/contactFolders/<contactFolderId>/contacts/<id>
 DELETE /users/<id | userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>
-
 ```
 ### Request headers
 | Header       | Value |

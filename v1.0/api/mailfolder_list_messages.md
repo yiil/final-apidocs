@@ -1,14 +1,14 @@
 # List messages
 
-Retrieve a list of message objects.
+Retrieve list of messages in a mailfolder object.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+*Mail.Read; Mail.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+GET /me/mailFolders/<id>/messages
 GET /users/<id | userPrincipalName>/mailFolders/<id>/messages
-GET /drive/root/createdByUser/mailFolders/<id>/messages
-GET /drive/root/lastModifiedByUser/mailFolders/<id>/messages
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

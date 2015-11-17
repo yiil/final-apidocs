@@ -2,12 +2,13 @@
 
 Retrieve the properties and relationships of contactfolder object.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: Contacts.ReadWrite, Contacts.Read
+One of the following **scopes** is required to execute this API: 
+*Contacts.ReadWrite; Contacts.Read*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /users/<id | userPrincipalName>/contactFolders/<id>
 GET /users/me/contactFolders/<id>
+GET /users/<id | userPrincipalName>/contactFolders/<id>
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
@@ -42,9 +43,9 @@ Content-type: application/json
 Content-length: 104
 
 {
-  "parentFolderId": "parentFolderId-value",
-  "displayName": "displayName-value",
-  "id": "id-value"
+  "displayName": "Finance",
+  "id": "AAMkAGI2TKI5AAA=",
+  "parentFolderId": "AAMkAGI2AAEOAAA="
 }
 ```
 

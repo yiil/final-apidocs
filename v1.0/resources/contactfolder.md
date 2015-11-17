@@ -44,9 +44,9 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "displayName": "string",
-  "id": "string (identifier)",
-  "parentFolderId": "string"
+  "displayName": "Finance",
+  "id": "AAMkAGI2TKI5AAA=",
+  "parentFolderId": "AAMkAGI2AAEOAAA="
 }
 
 ```

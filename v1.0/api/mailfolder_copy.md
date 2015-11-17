@@ -1,27 +1,28 @@
 # mailFolder: copy
 
+Copy a mailfolder and its contents to another mailfolder.
 
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+*Mail.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+POST /me/mailFolders/<id>/copy
 POST /users/<id | userPrincipalName>/mailFolders/<id>/Microsoft.Graph.copy
-POST /drive/root/createdByUser/mailFolders/<id>/Microsoft.Graph.copy
-POST /drive/root/lastModifiedByUser/mailFolders/<id>/Microsoft.Graph.copy
-
 ```
 ### Request headers
-| Name       | Type | Description|
-|:---------------|:--------|:----------|
-| Authorization  | string  | Bearer <token>. Required. |
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer <token>. Required.  |
+| Content-Type  | application/json. Required.  |
 
 ### Request body
 In the request body, provide a JSON object with the following parameters.
 
 | Parameter	   | Type	|Description|
 |:---------------|:--------|:----------|
-|destinationId|String||
+|destinationId|String|The folder ID, or the *Inbox*, *Drafts*, *SentItems*, or *DeletedItems* well-known folder name.|
 
 ### Response
 If successful, this method returns `200, OK` response code and [MailFolder](../resources/mailfolder.md) object in the response body.

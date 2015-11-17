@@ -2,12 +2,15 @@
 
 Retrieve the properties and relationships of photo object.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes** is required to execute this API: 
+
+  * Files.Read
+ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /users/<objectId>/photo
-GET /groups/<objectId>/photo
+GET /users/<id>/photo
+GET /groups/<id>/photo
 GET /drive/root/createdByUser/photo
 ```
 ### Optional query parameters
@@ -30,7 +33,7 @@ Here is an example of the request.
   "name": "get_photo"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/users/<objectId>/photo
+GET https://graph.microsoft.com/v1.0/users/<id>/photo
 ```
 ##### Response
 Here is an example of the response.

@@ -2,7 +2,10 @@
 
 Use this API to create a new permission.
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes** is required to execute this API: 
+
+  * Files.ReadWrite
+ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -11,13 +14,14 @@ POST /drive/items/<id>/permissions
 POST /drives/<id>/root/permissions
 
 ```
+
 ### Request headers
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
 | Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
-In the request body, supply a JSON representation of [permission](../resources/permission.md) object.
+In the request body, supply a JSON representation of the [permission](../resources/permission.md) object.
 
 
 ### Response
@@ -31,9 +35,9 @@ Here is an example of the request.
   "name": "create_permission_from_item"
 }-->
 ```http
-POST https://graph.microsoft.com/beta/drive/root
+POST https://graph.microsoft.com/v1.0/drive/root
 ```
-In the request body, supply a JSON representation of [permission](../resources/permission.md) object.
+In the request body, supply a JSON representation of the [permission](../resources/permission.md) object.
 ##### Response
 Here is an example of the response.
 <!-- {
@@ -82,8 +86,7 @@ Content-length: 762
   },
   "roles": [
     "roles-value"
-  ],
-  "shareId": "shareId-value"
+  ]
 }
 ```
 

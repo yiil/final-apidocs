@@ -16,8 +16,6 @@
 |[Create group](../api/group_post_groups.md) |[group](group.md)| Create a new group by posting to the groups collection.|
 |[List group](../api/group_list.md) | [group](group.md) collection |Get group object collection. |
 |[List organization](../api/organization_list.md) | [organization](organization.md) collection |Get organization object collection. |
-|[Create share](../api/share_post_shares.md) |[share](share.md)| Create a new share by posting to the shares collection.|
-|[List share](../api/share_list.md) | [share](share.md) collection |Get share object collection. |
 |[List subscribedSku](../api/subscribedsku_list.md) | [subscribedSku](subscribedsku.md) collection |Get subscribedSku object collection. |
 |[Create user](../api/user_post_users.md) |[user](user.md)| Create a new user by posting to the users collection.|
 |[List user](../api/user_list.md) | [user](user.md) collection |Get user object collection. |

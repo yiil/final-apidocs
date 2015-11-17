@@ -102,7 +102,6 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "accessType": {"@odata.type": "microsoft.graph.groupAccessType"},
   "allowExternalSenders": true,
   "autoSubscribeNewMembers": true,
   "description": "string",

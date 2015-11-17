@@ -1,8 +1,14 @@
 # Get thumbnailSet
 
-Retrieve the properties and relationships of thumbnailset object.
+Retrieve the properties and relationships of a [thumbnailSet](../resources/thumbnailset.md) object.
+
+For more info, see [List thumbnails](item_list_thumbnails.md).
+
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes** is required to execute this API: 
+
+  * Files.Read
+ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -17,6 +23,7 @@ This method supports the [OData Query Parameters](http://graph.microsoft.io/docs
 | Name       | Type | Description|
 |:-----------|:------|:----------|
 | Authorization  | string  | Bearer <token>. Required. |
+
 
 ### Request body
 Do not supply a request body for this method.
@@ -33,13 +40,14 @@ Here is an example of the request.
 GET https://graph.microsoft.com/beta/drive/root/thumbnails/<id>
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response.
 <!-- {
   "blockType": "response",
-  "truncated": true,
+  "truncated": false,
   "@odata.type": "microsoft.graph.thumbnailset"
 } -->
 ```http
+HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 456
 

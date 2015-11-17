@@ -1,6 +1,27 @@
 # audio resource type
 
+The **Audio** resource groups audio-related data on an item into a single structure.
 
+### Properties
+
+| Property          | Type    | Description                                                          |
+|:------------------|:--------|:---------------------------------------------------------------------|
+| album             | string  | The title of the album for this audio file.                          |
+| albumArtist       | string  | The artist named on the album for the audio file.                    |
+| artist            | string  | The performing artist for the audio file.                            |
+| bitrate           | string  | Bitrate expressed in kbps.                                           |
+| composers         | string  | The name of the composer of the audio file.                          |
+| copyright         | string  | Copyright information for the audio file.                            |
+| disc              | number  | The number of the disc this audio file came from.                    |
+| discCount         | number  | The total number of discs in this album.                             |
+| duration          | number  | Duration of the audio file, expressed in milliseconds                |
+| genre             | string  | The genre of this audio file.                                        |
+| hasDrm            | boolean | Indicates if the file is protected with digital rights management.   |
+| isVariableBitrate | boolean | Indicates if the file is encoded with a variable bitrate.            |
+| title             | string  | The title of the audio file.                                         |
+| track             | number  | The number of the track on the original disc for this audio file.    |
+| trackCount        | number  | The total number of tracks on the original disc for this audio file. |
+| year              | number  | The year the audio file was recorded.                                |
 
 ### JSON representation
 
@@ -13,7 +34,6 @@ Here is a JSON representation of the resource
   ],
   "@odata.type": "microsoft.graph.audio"
 }-->
-
 ```json
 {
   "album": "string",
@@ -35,25 +55,7 @@ Here is a JSON representation of the resource
 }
 
 ```
-### Properties
-| Property	   | Type	|Description|
-|:---------------|:--------|:----------|
-|album|String||
-|albumArtist|String||
-|artist|String||
-|bitrate|Int64||
-|composers|String||
-|copyright|String||
-|disc|Int16||
-|discCount|Int16||
-|duration|Int64||
-|genre|String||
-|hasDrm|Boolean||
-|isVariableBitrate|Boolean||
-|title|String||
-|track|Int32||
-|trackCount|Int32||
-|year|Int32||
+
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

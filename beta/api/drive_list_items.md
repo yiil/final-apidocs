@@ -1,15 +1,16 @@
 # List items
 
-Retrieve a list of item objects.
+Retrieve a list of driveitem objects.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /drive/items
+GET /me/drive/items
 GET /drives/<id>/items
-GET /users/<objectId>/drive/items
 ```
+
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
@@ -18,10 +19,11 @@ This method supports the [OData Query Parameters](http://graph.microsoft.io/docs
 |:-----------|:------|:----------|
 | Authorization  | string  | Bearer <token>. Required. |
 
+
 ### Request body
 Do not supply a request body for this method.
 ### Response
-If successful, this method returns a `200 OK` response code and collection of [item](../resources/item.md) objects in the response body.
+If successful, this method returns a `200 OK` response code and collection of [driveItem](../resources/driveitem.md) objects in the response body.
 ### Example
 ##### Request
 Here is an example of the request.
@@ -30,7 +32,7 @@ Here is an example of the request.
   "name": "get_items"
 }-->
 ```http
-GET https://graph.microsoft.com/beta/drive/items
+GET https://graph.microsoft.com/v1.0/drive/items
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
@@ -41,6 +43,7 @@ Here is an example of the response. Note: The response object shown here may be 
   "isCollection": true
 } -->
 ```http
+HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 550
 

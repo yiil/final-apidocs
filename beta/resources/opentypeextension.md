@@ -1,6 +1,15 @@
 # openTypeExtension resource type
 
-An OData v4 open type which allows you to specify custom data in instances of supported resources at runtime. 
+An **openTypeExtension** is an OData v4 open type which allows you to specify at runtime custom data in instances of resources 
+defined in the Entity Data Model. This saves you time in defining new entity types just for this purpose.
+
+You can create data extensions in a message, event, or contact in the signed-in user's
+mailbox, or in an event in a group calendar of an organization. In the individual-user context, the user's 
+account can be in Office 365 or a Microsoft account (Hotmail.com, Live.com, MSN.com, Outlook.com and Passport.com).
+
+The **extensionName** property is the only pre-defined, writable property for all extensions. One way to help make 
+sure extension names are unique is to use a reverse domain name system (DNS) method that is dependent on 
+_your own domain_, for example, `Com.Contoso.Contact`. Do not use the Microsoft domain in an extension name.
 
 ### JSON representation
 
@@ -35,7 +44,7 @@ None
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[Create](../api/opentypeextension_create.md) | [openTypeExtension](opentypeextension.md), or [message](../resources/message.md), [event](../resources/event.md), or [contact](../resources/contact.md) that contains an openTypeExtension object. | Create an openTypeExtension object in an existing or new resource instance.| 
+|[Post](../api/opentypeextension_post.md) | [openTypeExtension](opentypeextension.md), or [message](../resources/message.md), [event](../resources/event.md), or [contact](../resources/contact.md) that contains an openTypeExtension object. | Create an openTypeExtension object in an existing or new resource instance.| 
 |[Get](../api/opentypeextension_get.md) | [openTypeExtension](opentypeextension.md) |Read properties and relationships of openTypeExtension object.|
 |[Update](../api/opentypeextension_update.md) | [openTypeExtension](opentypeextension.md)	|Update openTypeExtension object. |
 |[Delete](../api/opentypeextension_delete.md) | None |Delete openTypeExtension object. |

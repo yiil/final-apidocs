@@ -32,7 +32,7 @@ Here is an example of the request.
 DELETE https://graph.microsoft.com/beta/me/notes/pages/<id>
 ```
 ##### Response
-Here is an example of the response. 
+Here is an example of the response.
 <!-- {
   "blockType": "response",
   "truncated": true

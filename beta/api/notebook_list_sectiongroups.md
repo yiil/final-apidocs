@@ -15,6 +15,10 @@ GET /groups/<objectId>/notes/notebooks/<id>/sectionGroups
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
+The default sort order is `name asc`.
+
+The default query expands `parentNotebook` and selects its `id`, `name`, and `self` properties. Valid `expand` values for section groups are `sections`, `sectionGroups`, `parentNotebook`, and `parentSectionGroup`.
+
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
@@ -36,7 +40,7 @@ Here is an example of the request.
 GET https://graph.microsoft.com/beta/me/notes/notebooks/<id>/sectionGroups
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. Note: The response object shown here is truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
   "truncated": true,

@@ -36,11 +36,7 @@ Here is an example of the request.
   "name": "get_tasks"
 }-->
 ```http
-<<<<<<< HEAD
-GET https://graph.microsoft.com/beta/tasks
-=======
 GET https://graph.microsoft.com/beta/tasks?$filter=createdBy eq 'me'
->>>>>>> a8201adbee3d2cba01cf716d025404d5f7942fc7
 ```
 ##### Response
 Here is an example of the response. 

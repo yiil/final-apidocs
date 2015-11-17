@@ -70,7 +70,6 @@ Instance attributes are properties with special behaviors. This properties are t
 |lastModifiedByUser|[user](user.md)| Identity of the user, device, and application which last modified the item. Read-only.|
 |permissions|[permission](permission.md) collection| The set of permissions for the item. Read-only. Nullable.|
 |thumbnails|[thumbnailSet](thumbnailset.md) collection|Collection containing [ThumbnailSet](thumbnailSet.md) objects associated with the item. For more info, see [getting thumbnails](../items/thumbnails.md). Read-only. Nullable.|
-|versions|[driveitem](driveitem.md) collection|A list of items containing the previous versions. Read-only. Nullable.|
 
 
 **Note:** In OneDrive for Business, the cTag property is not returned, if the item is a folder.
@@ -86,8 +85,7 @@ Here is a JSON representation of the resource.
     "createdByUser",
     "lastModifiedByUser",
     "permissions",
-    "thumbnails",
-    "versions"
+    "thumbnails"
   ],
   "@odata.type": "microsoft.graph.item"
 }-->
@@ -115,7 +113,6 @@ Here is a JSON representation of the resource.
   "parentReference": {"@odata.type": "microsoft.graph.itemReference"},
   "photo": {"@odata.type": "microsoft.graph.photo"},
   "searchResult": {"@odata.type": "microsoft.graph.searchResult"},
-  "shared": {"@odata.type": "microsoft.graph.shared"},
   "size": 1024,
   "specialFolder": {"@odata.type": "microsoft.graph.specialFolder"},
   "video": {"@odata.type": "microsoft.graph.video"},

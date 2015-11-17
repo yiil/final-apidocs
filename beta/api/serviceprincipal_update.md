@@ -22,13 +22,13 @@ In the request body, supply the values for relevant fields that should be update
 |appDisplayName|String|The display name exposed by the associated application.|
 |appId|String|The unique identifier for the associated application (its **appId** property).|
 |appRoleAssignmentRequired|Boolean|Specifies whether an **AppRoleAssignment** to a user or group is required before Azure AD will issue a user or access token to the application.                            **Notes**: Requires version 1.5 or newer, not nullable.            |
-|appRoles|AppRole|The application roles exposed by the associated application. For more information see the **appRoles** property definition on the [Application] entity                            **Notes**: Requires version 1.5 or newer, not nullable.            |
+|appRoles|AppRole|The application roles exposed by the associated application. For more information see the **appRoles** property definition on the [application] entity                            **Notes**: Requires version 1.5 or newer, not nullable.            |
 |displayName|String|The display name for the service principal.|
 |errorUrl|String|            |
 |homepage|String|The URL to the homepage of the associated   application.|
 |keyCredentials|KeyCredential|The collection of key credentials associated with the service principal.                            **Notes**: not nullable.            |
 |logoutUrl|String|            |
-|oauth2Permissions|OAuth2Permission|The OAuth 2.0 permissions exposed by the associated application. For more information see the **oauth2Permissions** property definition on the [Application] entity.                            **Notes**: Requires version 1.5 or newer, not nullable.            |
+|oauth2Permissions|oAuth2Permission|The OAuth 2.0 permissions exposed by the associated application. For more information see the **oauth2Permissions** property definition on the [application] entity.                            **Notes**: Requires version 1.5 or newer, not nullable.            |
 |passwordCredentials|PasswordCredential|The collection of password credentials associated with the service principal.                            **Notes**: not nullable.            |
 |preferredTokenSigningKeyThumbprint|String|Reserved for internal use only. Do not write or otherwise rely on this property. May be removed in future versions.                            **Notes**: Requires version 1.5 or newer.            |
 |publisherName|String|The display name of the tenant in which the associated application is specified.|

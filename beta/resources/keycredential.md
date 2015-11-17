@@ -1,6 +1,6 @@
 # keyCredential resource type
 
-Contains a key credential associated with an application or a service principal. The **keyCredentials** property of the [Application] and [ServicePrincipal] entities is a collection of **KeyCredential**.
+Contains a key credential associated with an application or a service principal. The **keyCredentials** property of the [application](application.md) and [servicePrincipal](serviceprincipal.md) entities is a collection of **KeyCredential**.
 
 
 ### JSON representation

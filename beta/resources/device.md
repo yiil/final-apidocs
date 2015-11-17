@@ -1,6 +1,6 @@
 # device resource type
 
-Represents a device registered in the directory. Inherits from [DirectoryObject].
+Represents a device registered in the directory. Inherits from [directoryObject}.
 
 
 ### JSON representation
@@ -53,23 +53,23 @@ Here is a JSON representation of the resource
 |onPremisesSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default).|
 |displayName|String|The display name for the device.|
 |onPremisesLastSyncDateTime|DateTimeOffset|The last time at which the object was synced with the on-premises directory.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|id|String|The unique identifier for the device. Inherited from [DirectoryObject].                            **Notes: key**, immutable, not nullable, unique             Read-only.|
+|id|String|The unique identifier for the device. Inherited from [directoryObject}.                            **Notes: key**, immutable, not nullable, unique             Read-only.|
 
 ### Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|registeredOwners|[DirectoryObject](directoryobject.md) collection|Users that are registered owners of the device. Read-only. Nullable.|
-|registeredUsers|[DirectoryObject](directoryobject.md) collection|Users that are registered users of the device. Read-only. Nullable.|
+|registeredOwners|[directoryObject}(directoryobject.md) collection|Users that are registered owners of the device. Read-only. Nullable.|
+|registeredUsers|[directoryObject}(directoryobject.md) collection|Users that are registered users of the device. Read-only. Nullable.|
 
 ### Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get device](../api/device_get.md) | [device](device.md) |Read properties and relationships of device object.|
-|[Create registeredOwner](../api/device_post_registeredowners.md) |[DirectoryObject](directoryobject.md)| Create a new registeredOwner by posting to the registeredOwners collection.|
-|[List registeredOwners](../api/device_list_registeredowners.md) |[DirectoryObject](directoryobject.md) collection| Get a registeredOwner object collection.|
-|[Create registeredUser](../api/device_post_registeredusers.md) |[DirectoryObject](directoryobject.md)| Create a new registeredUser by posting to the registeredUsers collection.|
-|[List registeredUsers](../api/device_list_registeredusers.md) |[DirectoryObject](directoryobject.md) collection| Get a registeredUser object collection.|
+|[Create registeredOwner](../api/device_post_registeredowners.md) |[directoryObject}(directoryobject.md)| Create a new registeredOwner by posting to the registeredOwners collection.|
+|[List registeredOwners](../api/device_list_registeredowners.md) |[directoryObject}(directoryobject.md) collection| Get a registeredOwner object collection.|
+|[Create registeredUser](../api/device_post_registeredusers.md) |[directoryObject}(directoryobject.md)| Create a new registeredUser by posting to the registeredUsers collection.|
+|[List registeredUsers](../api/device_list_registeredusers.md) |[directoryObject}(directoryobject.md) collection| Get a registeredUser object collection.|
 |[Update](../api/device_update.md) | [device](device.md)	|Update device object. |
 |[Delete](../api/device_delete.md) | None |Delete device object. |
 |[checkMemberGroups](../api/device_checkmembergroups.md)|String collection||

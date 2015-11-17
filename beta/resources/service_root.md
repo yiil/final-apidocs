@@ -5,8 +5,8 @@
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[Create Application](../api/application_post_applications.md) |[Application](application.md)| Create a new Application by posting to the applications collection.|
-|[List Application](../api/application_list.md) | [Application](application.md) collection |Get application object collection. |
+|[Create Application](../api/application_post_applications.md) |[application](application.md)| Create a new Application by posting to the applications collection.|
+|[List Application](../api/application_list.md) | [application](application.md) collection |Get application object collection. |
 |[Create bucket](../api/bucket_post_buckets.md) |[bucket](bucket.md)| Create a new bucket by posting to the buckets collection.|
 |[List bucket](../api/bucket_list.md) | [bucket](bucket.md) collection |Get bucket object collection. |
 |[Create OrgContact](../api/orgcontact_post_contacts.md) |[OrgContact](orgcontact.md)| Create a new OrgContact by posting to the contacts collection.|
@@ -15,8 +15,8 @@
 |[List DeviceConfiguration](../api/deviceconfiguration_list.md) | [DeviceConfiguration](deviceconfiguration.md) collection |Get deviceConfiguration object collection. |
 |[Create Device](../api/device_post_devices.md) |[Device](device.md)| Create a new Device by posting to the devices collection.|
 |[List Device](../api/device_list.md) | [Device](device.md) collection |Get device object collection. |
-|[Create DirectoryObject](../api/directoryobject_post_directoryobjects.md) |[DirectoryObject](directoryobject.md)| Create a new DirectoryObject by posting to the directoryObjects collection.|
-|[List DirectoryObject](../api/directoryobject_list.md) | [DirectoryObject](directoryobject.md) collection |Get directoryObject object collection. |
+|[Create DirectoryObject](../api/directoryobject_post_directoryobjects.md) |[directoryObject}(directoryobject.md)| Create a new DirectoryObject by posting to the directoryObjects collection.|
+|[List DirectoryObject](../api/directoryobject_list.md) | [directoryObject}(directoryobject.md) collection |Get directoryObject object collection. |
 |[Create DirectoryRole](../api/directoryrole_post_directoryroles.md) |[DirectoryRole](directoryrole.md)| Create a new DirectoryRole by posting to the directoryRoles collection.|
 |[List DirectoryRole](../api/directoryrole_list.md) | [DirectoryRole](directoryrole.md) collection |Get directoryRole object collection. |
 |[Create DirectoryRoleTemplate](../api/directoryroletemplate_post_directoryroletemplates.md) |[DirectoryRoleTemplate](directoryroletemplate.md)| Create a new DirectoryRoleTemplate by posting to the directoryRoleTemplates collection.|
@@ -25,12 +25,12 @@
 |[List drive](../api/drive_list.md) | [drive](drive.md) collection |Get drive object collection. |
 |[Create Group](../api/group_post_groups.md) |[Group](group.md)| Create a new Group by posting to the groups collection.|
 |[List Group](../api/group_list.md) | [Group](group.md) collection |Get group object collection. |
-|[Create OAuth2PermissionGrant](../api/oauth2permissiongrant_post_oauth2permissiongrants.md) |[OAuth2PermissionGrant](oauth2permissiongrant.md)| Create a new OAuth2PermissionGrant by posting to the oauth2PermissionGrants collection.|
-|[List OAuth2PermissionGrant](../api/oauth2permissiongrant_list.md) | [OAuth2PermissionGrant](oauth2permissiongrant.md) collection |Get oAuth2PermissionGrant object collection. |
+|[Create oAuth2PermissionGrant](../api/oauth2permissiongrant_post_oauth2permissiongrants.md) |[oAuth2PermissionGrant](oauth2permissiongrant.md)| Create a new oAuth2PermissionGrant by posting to the oauth2PermissionGrants collection.|
+|[List oAuth2PermissionGrant](../api/oauth2permissiongrant_list.md) | [oAuth2PermissionGrant](oauth2permissiongrant.md) collection |Get oAuth2PermissionGrant object collection. |
 |[Create plan](../api/plan_post_plans.md) |[plan](plan.md)| Create a new plan by posting to the plans collection.|
 |[List plan](../api/plan_list.md) | [plan](plan.md) collection |Get plan object collection. |
-|[Create ServicePrincipal](../api/serviceprincipal_post_serviceprincipals.md) |[ServicePrincipal](serviceprincipal.md)| Create a new ServicePrincipal by posting to the servicePrincipals collection.|
-|[List ServicePrincipal](../api/serviceprincipal_list.md) | [ServicePrincipal](serviceprincipal.md) collection |Get servicePrincipal object collection. |
+|[Create ServicePrincipal](../api/serviceprincipal_post_serviceprincipals.md) |[servicePrincipal](serviceprincipal.md)| Create a new ServicePrincipal by posting to the servicePrincipals collection.|
+|[List ServicePrincipal](../api/serviceprincipal_list.md) | [servicePrincipal](serviceprincipal.md) collection |Get servicePrincipal object collection. |
 |[Create share](../api/share_post_shares.md) |[share](share.md)| Create a new share by posting to the shares collection.|
 |[List share](../api/share_list.md) | [share](share.md) collection |Get share object collection. |
 |[Create SiteCollection](../api/sitecollection_post_sitecollections.md) |[SiteCollection](sitecollection.md)| Create a new SiteCollection by posting to the siteCollections collection.|

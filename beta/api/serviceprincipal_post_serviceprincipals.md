@@ -15,11 +15,11 @@ POST /plans
 | Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
-In the request body, supply a JSON representation of [ServicePrincipal](../resources/serviceprincipal.md) object.
+In the request body, supply a JSON representation of [servicePrincipal](../resources/serviceprincipal.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [ServicePrincipal](../resources/serviceprincipal.md) object in the response body.
+If successful, this method returns `201, Created` response code and [servicePrincipal](../resources/serviceprincipal.md) object in the response body.
 
 ### Example
 ##### Request

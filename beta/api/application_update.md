@@ -32,7 +32,7 @@ In the request body, supply the values for relevant fields that should be update
 |mainLogo|Stream|The main logo for the application.                              **Notes:** not nullable|
 |oauth2AllowImplicitFlow|Boolean|Specifies whether this web application can request OAuth2.0 implicit flow tokens. The default is **false**.                              **Notes**: Requires version 1.5, not nullable.|
 |oauth2AllowUrlPathMatching|Boolean|Specifies whether, as part of OAuth 2.0 token requests, Azure AD will allow path matching of the redirect URI against the application's **replyUrls**. The default is **false**.                              **Notes**: Requires version 1.5, not nullable.|
-|oauth2Permissions|OAuth2Permission|The collection of OAuth 2.0 permission scopes that the web API (resource) application exposes to client applications. These permission scopes may be granted to client applications during consent.                              **Notes**: Requires version 1.5, not nullable.|
+|oauth2Permissions|oAuth2Permission|The collection of OAuth 2.0 permission scopes that the web API (resource) application exposes to client applications. These permission scopes may be granted to client applications during consent.                              **Notes**: Requires version 1.5, not nullable.|
 |oauth2RequirePostResponse|Boolean||
 |passwordCredentials|PasswordCredential|The collection of password credentials associated with the application.                              **Notes:** not nullable|
 |publicClient|Boolean|Specifies whether this application is a public client (such as an installed application running on a mobile device).  Default is **false**.|

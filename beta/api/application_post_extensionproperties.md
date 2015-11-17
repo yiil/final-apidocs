@@ -1,6 +1,6 @@
-# Create ExtensionProperty
+# Create extensionProperty
 
-Use this API to create a new ExtensionProperty.
+Use this API to create a new extensionProperty.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request
@@ -15,11 +15,11 @@ POST /applications/<objectId>/extensionProperties
 | Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
-In the request body, supply a JSON representation of [ExtensionProperty](../resources/extensionproperty.md) object.
+In the request body, supply a JSON representation of [extensionProperty](../resources/extensionproperty.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [ExtensionProperty](../resources/extensionproperty.md) object in the response body.
+If successful, this method returns `201, Created` response code and [extensionProperty](../resources/extensionproperty.md) object in the response body.
 
 ### Example
 ##### Request
@@ -75,7 +75,7 @@ Content-length: 253
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create ExtensionProperty",
+  "description": "Create extensionProperty",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

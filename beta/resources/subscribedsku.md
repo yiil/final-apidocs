@@ -1,6 +1,6 @@
 # subscribedSku resource type
 
-Only the read operation is supported on subscribed SKUs; create, update, and delete are not supported. Query filter expressions are not supported. Inherits from [DirectoryObject].
+Only the read operation is supported on subscribed SKUs; create, update, and delete are not supported. Query filter expressions are not supported. Inherits from [directoryObject}.
 
 
 ### JSON representation

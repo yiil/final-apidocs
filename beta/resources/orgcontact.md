@@ -67,19 +67,19 @@ Here is a JSON representation of the resource
 ### Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|directReports|[DirectoryObject](directoryobject.md) collection| Read-only. Nullable.|
-|manager|[DirectoryObject](directoryobject.md)| Read-only.|
-|memberOf|[DirectoryObject](directoryobject.md) collection| Read-only. Nullable.|
+|directReports|[directoryObject}(directoryobject.md) collection| Read-only. Nullable.|
+|manager|[directoryObject}(directoryobject.md)| Read-only.|
+|memberOf|[directoryObject}(directoryobject.md) collection| Read-only. Nullable.|
 
 ### Methods
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
 |[Get orgContact](../api/orgcontact_get.md) | [orgContact](orgcontact.md) |Read properties and relationships of orgContact object.|
-|[Create directReport](../api/orgcontact_post_directreports.md) |[DirectoryObject](directoryobject.md)| Create a new directReport by posting to the directReports collection.|
-|[List directReports](../api/orgcontact_list_directreports.md) |[DirectoryObject](directoryobject.md) collection| Get a directReport object collection.|
-|[Create memberOf](../api/orgcontact_post_memberof.md) |[DirectoryObject](directoryobject.md)| Create a new memberOf by posting to the memberOf collection.|
-|[List memberOf](../api/orgcontact_list_memberof.md) |[DirectoryObject](directoryobject.md) collection| Get a memberOf object collection.|
+|[Create directReport](../api/orgcontact_post_directreports.md) |[directoryObject}(directoryobject.md)| Create a new directReport by posting to the directReports collection.|
+|[List directReports](../api/orgcontact_list_directreports.md) |[directoryObject}(directoryobject.md) collection| Get a directReport object collection.|
+|[Create memberOf](../api/orgcontact_post_memberof.md) |[directoryObject}(directoryobject.md)| Create a new memberOf by posting to the memberOf collection.|
+|[List memberOf](../api/orgcontact_list_memberof.md) |[directoryObject}(directoryobject.md) collection| Get a memberOf object collection.|
 |[Update](../api/orgcontact_update.md) | [orgContact](orgcontact.md)	|Update orgContact object. |
 |[Delete](../api/orgcontact_delete.md) | None |Delete orgContact object. |
 |[checkMemberGroups](../api/orgcontact_checkmembergroups.md)|String collection||

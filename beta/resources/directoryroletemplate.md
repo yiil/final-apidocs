@@ -28,7 +28,7 @@ Here is a JSON representation of the resource
 |:---------------|:--------|:----------|
 |description|String|The description to set for the directory role.|
 |displayName|String|The display name to set for the directory role.|
-|id|String|The unique identifier for the template. Inherited from [DirectoryObject]. In version 1.5 and later, you specify the **objectId** of the directory role template for the **roleTemplateId** property in the POST request activate a [DirectoryRole] in a tenant.                             **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
+|id|String|The unique identifier for the template. Inherited from [directoryObject}. In version 1.5 and later, you specify the **objectId** of the directory role template for the **roleTemplateId** property in the POST request activate a [DirectoryRole] in a tenant.                             **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
 
 ### Relationships
 None

@@ -1,6 +1,6 @@
-# Create OAuth2PermissionGrant
+# Create oAuth2PermissionGrant
 
-Use this API to create a new OAuth2PermissionGrant.
+Use this API to create a new oAuth2PermissionGrant.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 ### HTTP request
@@ -17,11 +17,11 @@ POST /drive/root/lastModifiedByUser/oauth2PermissionGrants
 | Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
-In the request body, supply a JSON representation of [OAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object.
+In the request body, supply a JSON representation of [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [OAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object in the response body.
+If successful, this method returns `201, Created` response code and [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object in the response body.
 
 ### Example
 ##### Request
@@ -33,7 +33,7 @@ Here is an example of the request.
 ```http
 POST https://graph.microsoft.com/beta/users/<objectId>
 ```
-In the request body, supply a JSON representation of [OAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object.
+In the request body, supply a JSON representation of [oAuth2PermissionGrant](../resources/oauth2permissiongrant.md) object.
 ##### Response
 Here is an example of the response.
 <!-- {
@@ -62,7 +62,7 @@ Content-length: 271
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create OAuth2PermissionGrant",
+  "description": "Create oAuth2PermissionGrant",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

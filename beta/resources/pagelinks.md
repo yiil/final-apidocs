@@ -4,7 +4,7 @@ Links for opening a OneNote page.
 
 ### JSON representation
 
-Here is a JSON representation of the resource
+Here is a JSON representation of the resource.
 
 <!-- {
   "blockType": "resource",
@@ -24,7 +24,7 @@ Here is a JSON representation of the resource
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|oneNoteClientUrl|[externalLink](externallink.md)|Opens the page in the OneNote native client if it 's installed.|
+|oneNoteClientUrl|[externalLink](externallink.md)|Opens the page in the OneNote native client if it's installed.|
 |oneNoteWebUrl|[externalLink](externallink.md)|Opens the page in OneNote Online.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

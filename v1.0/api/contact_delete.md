@@ -10,9 +10,9 @@ One of the following **scopes** is required to execute this API:
 DELETE /me/contacts/<id>
 DELETE /users/<id>/contacts/<id>
 DELETE /users/<userPrincipalName>/contacts/<id>
-DELETE /me/contactFolders/<contactFolderId>/contacts/<id>
-DELETE /users/<id>/contactFolders/<contactFolderId>/contacts/<id>
-DELETE /users/<userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>
+DELETE /me/contactFolders/<id>/contacts/<id>
+DELETE /users/<id>/contactFolders/<id>/contacts/<id>
+DELETE /users/<userPrincipalName>/contactFolders/<id>/contacts/<id>
 
 ```
 ### Request headers

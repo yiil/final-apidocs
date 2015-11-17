@@ -16,9 +16,9 @@ A profile photo of a user, group or an Outlook contact. It's binary data not enc
 |height|int32|The height of the photo. Read-only.|
 |width|int32|The width of the photo. Read-only.|
 
+
 ### Relationships
 None
-
 
 
 ### JSON representation

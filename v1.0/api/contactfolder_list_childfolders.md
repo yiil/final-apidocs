@@ -2,13 +2,14 @@
 
 Retrieve a list of contactfolder objects.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: Contacts.Read; Contacts.ReadWrite
+One of the following **scopes** is required to execute this API: 
+*Contacts.Read; Contacts.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+GET /me/contactFolders/<id>/childFolders
 GET /users/<id>/contactFolders/<id>/childFolders
 GET /users/<userPrincipalName>/contactFolders/<id>/childFolders
-GET /me/contactFolders/<id>/childFolders
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

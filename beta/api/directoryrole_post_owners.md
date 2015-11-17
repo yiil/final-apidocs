@@ -15,11 +15,11 @@ POST /directoryRoles/<objectId>/owners
 | Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
-In the request body, supply a JSON representation of [DirectoryObject](../resources/directoryobject.md) object.
+In the request body, supply a JSON representation of [directoryObject}(../resources/directoryobject.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [DirectoryObject](../resources/directoryobject.md) object in the response body.
+If successful, this method returns `201, Created` response code and [directoryObject}(../resources/directoryobject.md) object in the response body.
 
 ### Example
 ##### Request
@@ -31,7 +31,7 @@ Here is an example of the request.
 ```http
 POST https://graph.microsoft.com/beta/directoryRoles/<objectId>
 ```
-In the request body, supply a JSON representation of [DirectoryObject](../resources/directoryobject.md) object.
+In the request body, supply a JSON representation of [directoryObject}(../resources/directoryobject.md) object.
 ##### Response
 Here is an example of the response.
 <!-- {

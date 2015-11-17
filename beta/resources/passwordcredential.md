@@ -1,6 +1,6 @@
 # passwordCredential resource type
 
-Contains a password credential associated with an application or a service principal. The **passwordCredentials** property of the [ServicePrincipal] entity and of the [Application] entity is a collection of **PasswordCredential**.
+Contains a password credential associated with an application or a service principal. The **passwordCredentials** property of the [servicePrincipal](serviceprincipal.md) entity and of the [application] entity is a collection of **PasswordCredential**.
 
 
 ### JSON representation

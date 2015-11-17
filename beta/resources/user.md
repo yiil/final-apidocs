@@ -1,6 +1,6 @@
 # user resource type
 
-Represents an Azure AD user account. Inherits from [DirectoryObject].
+Represents an Azure AD user account. Inherits from [directoryObject}.
 
 
 ### JSON representation
@@ -113,7 +113,7 @@ Here is a JSON representation of the resource
 |mailNickname|String|The mail alias for the user. This property must be specified when a user is created. The mail alias for the user. This property must be specified when a user is created.|
 |mobilePhone|String|The primary cellular telephone number for the user. The primary cellular telephone number for the user.|
 |mySite|String||
-|id|String|The unique identifier for the user. Inherited from [DirectoryObject].                            **Notes**: **key**, immutable, not nullable, unique.             The unique identifier for the user. Inherited from [DirectoryObject].                            **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
+|id|String|The unique identifier for the user. Inherited from [directoryObject}.                            **Notes**: **key**, immutable, not nullable, unique.             The unique identifier for the user. Inherited from [directoryObject}.                            **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
 |onPremisesSecurityIdentifier|String|Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud.                            **Notes**: Requires version 1.5 or newer.             Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud.                            **Notes**: Requires version 1.5 or newer.            |
 |passwordPolicies|String|Specifies password policies for the user. This value is an enumeration with one possible value being “DisableStrongPassword”, which allows weaker passwords than the default policy to be specified. “DisablePasswordExpiration” can also be specified. The two may be specified together; for example: "DisablePasswordExpiration, DisableStrongPassword". Specifies password policies for the user. This value is an enumeration with one possible value being “DisableStrongPassword”, which allows weaker passwords than the default policy to be specified. “DisablePasswordExpiration” can also be specified. The two may be specified together; for example: "DisablePasswordExpiration, DisableStrongPassword".|
 |passwordProfile|[PasswordProfile](passwordprofile.md)|Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created.            The password in the profile must satisfy minimum requirements as specified by the **passwordPolicies** property. By default, a strong password is required. For information about the constraints that must be satisfied for a strong password, see **Password policy** under [Change your password](http://onlinehelp.microsoft.com/office365-enterprises/ff637578.aspx) in the Microsoft Office 365 help pages.  Specifies the password profile for the user. The profile contains the user’s password. This property is required when a user is created.            The password in the profile must satisfy minimum requirements as specified by the **passwordPolicies** property. By default, a strong password is required. For information about the constraints that must be satisfied for a strong password, see **Password policy** under [Change your password](http://onlinehelp.microsoft.com/office365-enterprises/ff637578.aspx) in the Microsoft Office 365 help pages. |
@@ -144,24 +144,24 @@ Here is a JSON representation of the resource
 |calendars|[Calendar](calendar.md) collection|The user's calendars. Navigation property. The user's calendars. Navigation property. Read-only. Nullable.|
 |contactFolders|[ContactFolder](contactfolder.md) collection|The user's contacts folders. Navigation property. The user's contacts folders. Navigation property. Read-only. Nullable.|
 |contacts|[Contact](contact.md) collection|The user's contacts. Navigation property. The user's contacts. Navigation property. Read-only. Nullable.|
-|createdObjects|[DirectoryObject](directoryobject.md) collection|Directory objects that were created by the user. Requires version 2013-11-08 or newer. Directory objects that were created by the user. Requires version 2013-11-08 or newer. Read-only. Nullable.|
-|directReports|[DirectoryObject](directoryobject.md) collection|The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Inherited from [DirectoryObject].            HTTP Methods: GET The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Inherited from [DirectoryObject].            HTTP Methods: GET Read-only. Nullable.|
+|createdObjects|[directoryObject}(directoryobject.md) collection|Directory objects that were created by the user. Requires version 2013-11-08 or newer. Directory objects that were created by the user. Requires version 2013-11-08 or newer. Read-only. Nullable.|
+|directReports|[directoryObject}(directoryobject.md) collection|The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Inherited from [directoryObject}.            HTTP Methods: GET The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Inherited from [directoryObject}.            HTTP Methods: GET Read-only. Nullable.|
 |drive|[drive](drive.md)| Read-only.|
 |events|[Event](event.md) collection|The user's events. Default is to show Events under the Default Calendar. Navigation property. The user's events. Default is to show Events under the Default Calendar. Navigation property. Read-only. Nullable.|
 |inferenceClassification|[InferenceClassification](inferenceclassification.md)| Read-only.|
 |joinedGroups|[Group](group.md) collection| Read-only. Nullable.|
 |mailFolders|[MailFolder](mailfolder.md) collection| Read-only. Nullable.|
-|manager|[DirectoryObject](directoryobject.md)|The user or contact that is this user’s manager. Inherited from [DirectoryObject].            HTTP Methods: GET, PUT, DELETE The user or contact that is this user’s manager. Inherited from [DirectoryObject].            HTTP Methods: GET, PUT, DELETE Read-only.|
-|memberOf|[DirectoryObject](directoryobject.md) collection|The groups and directory roles that the user is a member of. Inherited from [DirectoryObject].            HTTP Methods: GET The groups and directory roles that the user is a member of. Inherited from [DirectoryObject].            HTTP Methods: GET Read-only. Nullable.|
+|manager|[directoryObject}(directoryobject.md)|The user or contact that is this user’s manager. Inherited from [directoryObject}.            HTTP Methods: GET, PUT, DELETE The user or contact that is this user’s manager. Inherited from [directoryObject}.            HTTP Methods: GET, PUT, DELETE Read-only.|
+|memberOf|[directoryObject}(directoryobject.md) collection|The groups and directory roles that the user is a member of. Inherited from [directoryObject}.            HTTP Methods: GET The groups and directory roles that the user is a member of. Inherited from [directoryObject}.            HTTP Methods: GET Read-only. Nullable.|
 |messages|[Message](message.md) collection|The messages in a mailbox or folder. Navigation property. The messages in a mailbox or folder. Navigation property. Read-only. Nullable.|
 |notes|[Notes](notes.md)| Read-only.|
-|ownedDevices|[DirectoryObject](directoryobject.md) collection|Devices that are owned by the user. Devices that are owned by the user. Read-only. Nullable.|
-|ownedObjects|[DirectoryObject](directoryobject.md) collection|Directory objects that are owned by the user. Requires version 2013-11-08 or newer. Directory objects that are owned by the user. Requires version 2013-11-08 or newer. Read-only. Nullable.|
+|ownedDevices|[directoryObject}(directoryobject.md) collection|Devices that are owned by the user. Devices that are owned by the user. Read-only. Nullable.|
+|ownedObjects|[directoryObject}(directoryobject.md) collection|Directory objects that are owned by the user. Requires version 2013-11-08 or newer. Directory objects that are owned by the user. Requires version 2013-11-08 or newer. Read-only. Nullable.|
 |people|[Person](person.md) collection| Read-only. Nullable.|
 |photo|[Photo](photo.md)| Read-only.|
 |photos|[Photo](photo.md) collection| Read-only. Nullable.|
 |plans|[plan](plan.md) collection| Read-only. Nullable. Plans shared with the user. |
-|registeredDevices|[DirectoryObject](directoryobject.md) collection|Devices that are registered for the user. Devices that are registered for the user. Read-only. Nullable.|
+|registeredDevices|[directoryObject}(directoryobject.md) collection|Devices that are registered for the user. Devices that are registered for the user. Read-only. Nullable.|
 |tasks|[task](task.md) collection| Read-only. Nullable. Tasks assigned to the user. |
 |trendingAround|[item](item.md) collection| Read-only. Nullable.|
 |workingWith|[User](user.md) collection| Read-only. Nullable.|
@@ -183,33 +183,33 @@ Here is a JSON representation of the resource
 |[List contactFolders](../api/user_list_contactfolders.md) |[ContactFolder](contactfolder.md) collection| Get a ContactFolder object collection.|
 |[Create Contact](../api/user_post_contacts.md) |[Contact](contact.md)| Create a new Contact by posting to the contacts collection.|
 |[List contacts](../api/user_list_contacts.md) |[Contact](contact.md) collection| Get a Contact object collection.|
-|[Create createdObject](../api/user_post_createdobjects.md) |[DirectoryObject](directoryobject.md)| Create a new createdObject by posting to the createdObjects collection.|
-|[List createdObjects](../api/user_list_createdobjects.md) |[DirectoryObject](directoryobject.md) collection| Get a createdObject object collection.|
-|[Create directReport](../api/user_post_directreports.md) |[DirectoryObject](directoryobject.md)| Create a new directReport by posting to the directReports collection.|
-|[List directReports](../api/user_list_directreports.md) |[DirectoryObject](directoryobject.md) collection| Get a directReport object collection.|
+|[Create createdObject](../api/user_post_createdobjects.md) |[directoryObject}(directoryobject.md)| Create a new createdObject by posting to the createdObjects collection.|
+|[List createdObjects](../api/user_list_createdobjects.md) |[directoryObject}(directoryobject.md) collection| Get a createdObject object collection.|
+|[Create directReport](../api/user_post_directreports.md) |[directoryObject}(directoryobject.md)| Create a new directReport by posting to the directReports collection.|
+|[List directReports](../api/user_list_directreports.md) |[directoryObject}(directoryobject.md) collection| Get a directReport object collection.|
 |[Create Event](../api/user_post_events.md) |[Event](event.md)| Create a new Event by posting to the events collection.|
 |[List events](../api/user_list_events.md) |[Event](event.md) collection| Get a Event object collection.|
 |[Create Group](../api/user_post_joinedgroups.md) |[Group](group.md)| Create a new Group by posting to the joinedGroups collection.|
 |[List joinedGroups](../api/user_list_joinedgroups.md) |[Group](group.md) collection| Get a Group object collection.|
 |[Create MailFolder](../api/user_post_mailfolders.md) |[MailFolder](mailfolder.md)| Create a new MailFolder by posting to the mailFolders collection.|
 |[List mailFolders](../api/user_list_mailfolders.md) |[MailFolder](mailfolder.md) collection| Get a MailFolder object collection.|
-|[Create memberOf](../api/user_post_memberof.md) |[DirectoryObject](directoryobject.md)| Create a new memberOf by posting to the memberOf collection.|
-|[List memberOf](../api/user_list_memberof.md) |[DirectoryObject](directoryobject.md) collection| Get a memberOf object collection.|
+|[Create memberOf](../api/user_post_memberof.md) |[directoryObject}(directoryobject.md)| Create a new memberOf by posting to the memberOf collection.|
+|[List memberOf](../api/user_list_memberof.md) |[directoryObject}(directoryobject.md) collection| Get a memberOf object collection.|
 |[Create Message](../api/user_post_messages.md) |[Message](message.md)| Create a new Message by posting to the messages collection.|
 |[List messages](../api/user_list_messages.md) |[Message](message.md) collection| Get a Message object collection.|
-|[Create OAuth2PermissionGrant](../api/user_post_oauth2permissiongrants.md) |[OAuth2PermissionGrant](oauth2permissiongrant.md)| Create a new OAuth2PermissionGrant by posting to the oauth2PermissionGrants collection.|
-|[List oauth2PermissionGrants](../api/user_list_oauth2permissiongrants.md) |[OAuth2PermissionGrant](oauth2permissiongrant.md) collection| Get a OAuth2PermissionGrant object collection.|
-|[Create ownedDevice](../api/user_post_owneddevices.md) |[DirectoryObject](directoryobject.md)| Create a new ownedDevice by posting to the ownedDevices collection.|
-|[List ownedDevices](../api/user_list_owneddevices.md) |[DirectoryObject](directoryobject.md) collection| Get a ownedDevice object collection.|
-|[Create ownedObject](../api/user_post_ownedobjects.md) |[DirectoryObject](directoryobject.md)| Create a new ownedObject by posting to the ownedObjects collection.|
-|[List ownedObjects](../api/user_list_ownedobjects.md) |[DirectoryObject](directoryobject.md) collection| Get a ownedObject object collection.|
+|[Create oAuth2PermissionGrant](../api/user_post_oauth2permissiongrants.md) |[oAuth2PermissionGrant](oauth2permissiongrant.md)| Create a new oAuth2PermissionGrant by posting to the oauth2PermissionGrants collection.|
+|[List oauth2PermissionGrants](../api/user_list_oauth2permissiongrants.md) |[oAuth2PermissionGrant](oauth2permissiongrant.md) collection| Get a oAuth2PermissionGrant object collection.|
+|[Create ownedDevice](../api/user_post_owneddevices.md) |[directoryObject}(directoryobject.md)| Create a new ownedDevice by posting to the ownedDevices collection.|
+|[List ownedDevices](../api/user_list_owneddevices.md) |[directoryObject}(directoryobject.md) collection| Get a ownedDevice object collection.|
+|[Create ownedObject](../api/user_post_ownedobjects.md) |[directoryObject}(directoryobject.md)| Create a new ownedObject by posting to the ownedObjects collection.|
+|[List ownedObjects](../api/user_list_ownedobjects.md) |[directoryObject}(directoryobject.md) collection| Get a ownedObject object collection.|
 |[Create Person](../api/user_post_people.md) |[Person](person.md)| Create a new Person by posting to the people collection.|
 |[List people](../api/user_list_people.md) |[Person](person.md) collection| Get a Person object collection.|
 |[Create photo](../api/user_post_photos.md) |[Photo](photo.md)| Create a new photo by posting to the photos collection.|
 |[List photos](../api/user_list_photos.md) |[Photo](photo.md) collection| Get a photo object collection.|
 |[List plans](../api/user_list_plans.md) |[plan](plan.md) collection| Get a plan object collection.|
-|[Create registeredDevice](../api/user_post_registereddevices.md) |[DirectoryObject](directoryobject.md)| Create a new registeredDevice by posting to the registeredDevices collection.|
-|[List registeredDevices](../api/user_list_registereddevices.md) |[DirectoryObject](directoryobject.md) collection| Get a registeredDevice object collection.|
+|[Create registeredDevice](../api/user_post_registereddevices.md) |[directoryObject}(directoryobject.md)| Create a new registeredDevice by posting to the registeredDevices collection.|
+|[List registeredDevices](../api/user_list_registereddevices.md) |[directoryObject}(directoryobject.md) collection| Get a registeredDevice object collection.|
 |[List tasks](../api/user_list_tasks.md) |[task](task.md) collection| Get a task object collection.|
 |[Create trendingAround](../api/user_post_trendingaround.md) |[item](item.md)| Create a new trendingAround by posting to the trendingAround collection.|
 |[List trendingAround](../api/user_list_trendingaround.md) |[item](item.md) collection| Get a trendingAround object collection.|

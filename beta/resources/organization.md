@@ -51,8 +51,8 @@ Here is a JSON representation of the resource
 |dirSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default).|
 |displayName|String|The display name for the tenant.|
 |marketingNotificationEmails|String collection|                                        **Notes**: not nullable.            |
-|objectId|String|The unique identifier for the tenant. Inherited from [DirectoryObject].                            **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
-|objectType|String|A string that identifies the object type. For tenants the value is always “Company”. Inherited from [DirectoryObject].|
+|objectId|String|The unique identifier for the tenant. Inherited from [directoryObject}.                            **Notes**: **key**, immutable, not nullable, unique.             Read-only.|
+|objectType|String|A string that identifies the object type. For tenants the value is always “Company”. Inherited from [directoryObject}.|
 |postalCode|String|            |
 |preferredLanguage|String|            |
 |provisionedPlans|[ProvisionedPlan](provisionedplan.md) collection|                                        **Notes**: not nullable.            |

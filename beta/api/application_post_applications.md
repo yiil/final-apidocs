@@ -15,11 +15,11 @@ The following **scopes** are required to execute this API:
 | Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
-In the request body, supply a JSON representation of [Application](../resources/application.md) object.
+In the request body, supply a JSON representation of [application](../resources/application.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [Application](../resources/application.md) object in the response body.
+If successful, this method returns `201, Created` response code and [application](../resources/application.md) object in the response body.
 
 ### Example
 ##### Request

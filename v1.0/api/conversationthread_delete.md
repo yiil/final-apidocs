@@ -6,9 +6,8 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-DELETE /groups/<objectId>/threads/<id>
-DELETE /groups/<objectId>/conversations/<id>/threads/<id>
-DELETE /users/<id>/joinedGroups/<objectId>/threads/<id>
+DELETE /groups/<id>/threads/<id>
+DELETE /groups/<id>/conversations/<id>/threads/<id>
 
 ```
 ### Request headers

@@ -10,7 +10,7 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /users/<id>/photo
-GET /groups/<objectId>/photo
+GET /groups/<id>/photo
 GET /drive/root/createdByUser/photo
 ```
 ### Optional query parameters

@@ -1,12 +1,12 @@
 # Get organization
 
-Retrieve the properties and relationships of organization object.
+Retrieve the properties and relationships of currently authenticated organization.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /organization/<objectId>
+GET /organization
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
@@ -27,7 +27,7 @@ Here is an example of the request.
   "name": "get_organization"
 }-->
 ```http
-GET https://graph.microsoft.com/v1.0/organization/<id>
+GET https://graph.microsoft.com/v1.0/organization
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.

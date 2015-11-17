@@ -7,7 +7,7 @@ One of the following **scopes** is required to execute this API: _Calendars.Read
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /users/<id>/calendar
-PATCH /groups/<objectId>/calendar
+PATCH /groups/<id>/calendar
 PATCH /drive/root/createdByUser/calendar
 ```
 ### Request headers

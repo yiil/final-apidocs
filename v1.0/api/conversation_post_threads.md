@@ -6,9 +6,7 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /groups/<objectId>/conversations/<id>/threads
-POST /users/<id>/joinedGroups/<objectId>/conversations/<id>/threads
-POST /drive/root/createdByUser/joinedGroups/<objectId>/conversations/<id>/threads
+POST /groups/<id>/conversations/<id>/threads
 
 ```
 ### Request headers

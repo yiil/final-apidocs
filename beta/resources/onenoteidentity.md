@@ -1,5 +1,10 @@
 # oneNoteIdentity resource type
 
+**Support coming soon**
+
+The OneNoteIdentity type represents an identity of a _user_.
+
+In future, this type will be merged with [Identity](identity.md)
 
 
 ### JSON representation
@@ -24,8 +29,8 @@ Here is a JSON representation of the resource.
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|displayName|string||
-|id|string||
+|displayName|string|The identity's display name.|
+|id|string|Unique identifier for the identity.|
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

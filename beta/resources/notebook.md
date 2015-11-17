@@ -18,13 +18,11 @@ Here is a JSON representation of the resource
 ```json
 {
   "createdBy": "string",
-  "createdByIdentity": {"@odata.type": "microsoft.graph.oneNoteIdentitySet"},
   "createdTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
   "id": "string (identifier)",
   "isDefault": true,
   "isShared": true,
   "lastModifiedBy": "string",
-  "lastModifiedByIdentity": {"@odata.type": "microsoft.graph.oneNoteIdentitySet"},
   "lastModifiedTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
   "links": {"@odata.type": "microsoft.graph.notebookLinks"},
   "name": "string",
@@ -39,13 +37,11 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |createdBy|String|The user who created the notebook. Read-only.|
-|createdByIdentity|[OneNoteIdentitySet](onenoteidentityset.md)|The identity that created the notebook. Read-only.|
 |createdTime|DateTimeOffset|The date and time when the notebook was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
 |id|String|The unique identifier of the notebook. Read-only.|
 |isDefault|Boolean|Indicates whether this is the user's default notebook. Read-only.|
 |isShared|Boolean|Indicates whether the notebook is shared. If true, the contents of the notebook can be seen by people other than the owner. Read-only.|
 |lastModifiedBy|String|The user who last modified the notebook. Read-only.|
-|lastModifiedByIdentity|[OneNoteIdentitySet](onenoteidentityset.md)|The identity that last modified the notebook. Read-only.|
 |lastModifiedTime|DateTimeOffset|The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
 |links|[NotebookLinks](notebooklinks.md)|Links for opening the notebook. The `oneNoteClientURL` link opens the notebook in the OneNote native client if it's installed. The `oneNoteWebURL` link opens the notebook in OneNote Online.|
 |name|String|The name of the notebook.|

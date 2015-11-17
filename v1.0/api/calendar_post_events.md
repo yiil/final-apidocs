@@ -2,14 +2,24 @@
 
 Use this API to create a new Event.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: _Calendars.ReadWrite_
+One of the following **scopes** is required to execute this API: 
+*Calendars.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+POST /me/calendar/events
 POST /users/<id>/calendar/events
+POST /users/<userPrincipalName>/calendar/events
+POST /me/calendars/<id>/events
+POST /users/<id>/calendars/<id>/events
+POST /users/<userPrincipalName>/calendars/<id>/events
+POST /me/calendarGroup/calendars/<id>/events
+POST /users/<id>/calendarGroup/calendars/<id>/events
+POST /users/<userPrincipalName>/calendarGroup/calendars/<id>/events
+POST /me/calendarGroups/<id>/calendars/<id>/events
+POST /users/<id>/calendarGroups/<id>/calendars/<id>/events
+POST /users/<userPrincipalName>/calendarGroups/<id>/calendars/<id>/events
 POST /groups/<objectId>/calendar/events
-POST /drive/root/createdByUser/calendar/events
-
 ```
 ### Request headers
 | Name       | Type | Description|

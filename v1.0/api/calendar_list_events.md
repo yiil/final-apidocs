@@ -2,13 +2,23 @@
 
 Retrieve a list of event objects.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: _Calendars.Read_
+One of the following **scopes** is required to execute this API: 
+*Calendars.Read*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /users/<id>/calendar/events
+GET /me/calendar/events
+GET /users/<userPrincipalName>/calendar/events
+GET /me/calendars/<id>/events
+GET /users/<id>/calendars/<id>/events
+GET /users/<userPrincipalName>/calendars/<id>/events
+GET /me/calendarGroup/calendars/<id>/events
+GET /users/<id>/calendarGroup/calendars/<id>/events
+GET /users/<userPrincipalName>/calendarGroup/calendars/<id>/events
+GET /me/calendarGroups/<id>/calendars/<id>/events
+GET /users/<id>/calendarGroups/<id>/calendars/<id>/events
+GET /users/<userPrincipalName>/calendarGroups/<id>/calendars/<id>/events
 GET /groups/<objectId>/calendar/events
-GET /drive/root/createdByUser/calendar/events
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

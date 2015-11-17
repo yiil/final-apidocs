@@ -121,7 +121,6 @@ Here is a JSON representation of the resource
 |[List owners](../api/group_list_owners.md) |[DirectoryObject](directoryobject.md) collection| Get a owner object collection.|
 |[Create photo](../api/group_post_photos.md) |[Photo](photo.md)| Create a new photo by posting to the photos collection.|
 |[List photos](../api/group_list_photos.md) |[Photo](photo.md) collection| Get a photo object collection.|
-|[Create plan](../api/group_post_plans.md) |[plan](plan.md)| Create a new plan by posting to the plans collection.|
 |[List plans](../api/group_list_plans.md) |[plan](plan.md) collection| Get a plan object collection.|
 |[Create rejectedSender](../api/group_post_rejectedsenders.md) |[DirectoryObject](directoryobject.md)| Create a new rejectedSender by posting to the rejectedSenders collection.|
 |[List rejectedSenders](../api/group_list_rejectedsenders.md) |[DirectoryObject](directoryobject.md) collection| Get a rejectedSender object collection.|

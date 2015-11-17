@@ -2,7 +2,7 @@
 
 Update the properties of message object.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API: _Mail.ReadWrite_ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -14,37 +14,25 @@ PATCH /drive/root/lastModifiedByUser/messages/<id>
 | Name       | Type | Description|
 |:-----------|:------|:----------|
 | Authorization  | string  | Bearer <token>. Required. |
-
+| Content-Type | string  | Nature of the data in the body of an entity. Required. |
 ### Request body
-In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
+In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed. Writable/Updatable properties are 
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|bccRecipients|Recipient||
-|body|ItemBody||
-|bodyPreview|String||
+|bccRecipients|Recipient|Updatable only if IsDraft = true|
 |categories|String||
-|ccRecipients|Recipient||
-|changeKey|String||
-|conversationId|String||
-|createdDateTime|DateTimeOffset||
-|from|Recipient||
-|hasAttachments|Boolean||
+|ccRecipients|Recipient|Updatable only if IsDraft = true|
+|from|Recipient|Updatable only if IsDraft = true|
 |importance|String| Possible values are: `Low`, `Normal`, `High`.|
-|isDeliveryReceiptRequested|Boolean||
-|isDraft|Boolean||
 |isRead|Boolean||
+|replyTo|Recipient|Updatable only if IsDraft = true|
+|sender|Recipient|Updatable only if IsDraft = true|
+|toRecipients|Recipient|Updatable only if IsDraft = true|
+|body|ItemBody|Updatable only if IsDraft = true|
+|isDeliveryReceiptRequested|Boolean||
 |isReadReceiptRequested|Boolean||
-|lastModifiedDateTime|DateTimeOffset||
-|parentFolderId|String||
-|receivedDateTime|DateTimeOffset||
-|replyTo|Recipient||
-|sender|Recipient||
-|sentDateTime|DateTimeOffset||
-|subject|String||
-|toRecipients|Recipient||
-|uniqueBody|ItemBody||
-|webLink|String||
+|subject|String|Updatable only if IsDraft = true|
 
 ### Response
 If successful, this method returns a `200 OK` response code and updated [message](../resources/message.md) object in the response body.
@@ -61,16 +49,12 @@ Content-type: application/json
 Content-length: 248
 
 {
-  "receivedDateTime": "datetime-value",
-  "sentDateTime": "datetime-value",
-  "hasAttachments": true,
   "subject": "subject-value",
   "body": {
     "contentType": {
     },
     "content": "content-value"
-  },
-  "bodyPreview": "bodyPreview-value"
+  }
 }
 ```
 ##### Response

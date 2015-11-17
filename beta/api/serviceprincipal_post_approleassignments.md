@@ -29,7 +29,7 @@ Here is an example of the request.
   "name": "create_approleassignment_from_serviceprincipal"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/servicePrincipals/<id>/appRoleAssignments
+POST https://graph.microsoft.com/beta/servicePrincipals/<id>/appRoleAssignments
 Content-type: application/json
 Content-length: 233
 

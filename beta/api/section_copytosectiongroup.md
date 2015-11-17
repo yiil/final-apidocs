@@ -43,7 +43,7 @@ Here is an example of the request.
   "name": "section_copytosectiongroup"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/notes/sections/<id>/copyToSectionGroup
+POST https://graph.microsoft.com/beta/me/notes/sections/<id>/copyToSectionGroup
 Content-type: application/json
 Content-length: 84
 

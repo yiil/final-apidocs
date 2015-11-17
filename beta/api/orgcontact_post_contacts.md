@@ -29,7 +29,7 @@ Here is an example of the request.
   "name": "create_orgcontact_from_contacts"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/contacts
+POST https://graph.microsoft.com/beta/contacts
 Content-type: application/json
 Content-length: 260
 

@@ -31,7 +31,7 @@ Here is an example of the request.
   "name": "create_event_from_group"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/groups/<id>/events
+POST https://graph.microsoft.com/beta/groups/<id>/events
 Content-type: application/json
 Content-length: 285
 

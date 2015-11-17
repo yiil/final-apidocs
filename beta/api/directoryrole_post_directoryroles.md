@@ -29,7 +29,7 @@ Here is an example of the request.
   "name": "create_directoryrole_from_directoryroles"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/directoryRoles
+POST https://graph.microsoft.com/beta/directoryRoles
 Content-type: application/json
 Content-length: 153
 

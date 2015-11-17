@@ -32,7 +32,7 @@ Here is an example of the request.
   "name": "delete_plan"
 }-->
 ```http
-DELETE https://graph.microsoft.com/v1.0/plans/<id>
+DELETE https://graph.microsoft.com/beta/plans/<id>
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.

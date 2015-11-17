@@ -29,7 +29,7 @@ Here is an example of the request.
   "name": "create_driveitem_from_share"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/shares/<id>/items
+POST https://graph.microsoft.com/beta/shares/<id>/items
 Content-type: application/json
 Content-length: 504
 

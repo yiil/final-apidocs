@@ -35,7 +35,7 @@ Here is an example of the request.
   "name": "message_reply"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/messages/<id>/reply
+POST https://graph.microsoft.com/beta/me/messages/<id>/reply
 Content-type: application/json
 Content-length: 32
 

@@ -29,7 +29,7 @@ Here is an example of the request.
   "name": "create_subscribedsku_from_subscribedskus"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/subscribedSkus
+POST https://graph.microsoft.com/beta/subscribedSkus
 Content-type: application/json
 Content-length: 408
 

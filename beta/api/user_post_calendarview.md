@@ -31,7 +31,7 @@ Here is an example of the request.
   "name": "create_event_from_user"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/calendarView
+POST https://graph.microsoft.com/beta/me/calendarView
 Content-type: application/json
 Content-length: 285
 

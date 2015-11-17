@@ -34,7 +34,7 @@ Here is an example of the request.
   "name": "create_sectiongroup_from_sectiongroup"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/notes/sectionGroups/<id>/sectionGroups
+POST https://graph.microsoft.com/beta/me/notes/sectionGroups/<id>/sectionGroups
 Content-type: application/json
 Content-length: 305
 

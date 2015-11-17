@@ -33,7 +33,7 @@ Here is an example of the request.
   "name": "directoryroletemplate_getmembergroups"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/directoryRoleTemplates/<id>/getMemberGroups
+POST https://graph.microsoft.com/beta/directoryRoleTemplates/<id>/getMemberGroups
 Content-type: application/json
 Content-length: 33
 

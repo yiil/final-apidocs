@@ -35,7 +35,7 @@ Here is an example of the request.
   "name": "create_contact_from_user"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/contacts
+POST https://graph.microsoft.com/beta/me/contacts
 Content-type: application/json
 Content-length: 210
 

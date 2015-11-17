@@ -36,7 +36,7 @@ Here is an example of the request.
   "name": "message_forward"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/messages/<id>/forward
+POST https://graph.microsoft.com/beta/me/messages/<id>/forward
 Content-type: application/json
 Content-length: 166
 

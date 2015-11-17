@@ -43,7 +43,7 @@ Here is an example of the request.
   "name": "update_post"
 }-->
 ```http
-PATCH https://graph.microsoft.com/v1.0/groups/<id>/threads/<id>/posts/<id>
+PATCH https://graph.microsoft.com/beta/groups/<id>/threads/<id>/posts/<id>
 Content-type: application/json
 Content-length: 414
 

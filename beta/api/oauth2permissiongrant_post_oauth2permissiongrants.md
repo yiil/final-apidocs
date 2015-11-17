@@ -29,7 +29,7 @@ Here is an example of the request.
   "name": "create_oauth2permissiongrant_from_oauth2permissiongrants"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/oauth2PermissionGrants
+POST https://graph.microsoft.com/beta/oauth2PermissionGrants
 Content-type: application/json
 Content-length: 180
 

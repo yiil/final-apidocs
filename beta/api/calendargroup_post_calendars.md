@@ -31,7 +31,7 @@ Here is an example of the request.
   "name": "create_calendar_from_calendargroup"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/calendarGroups/<id>/calendars
+POST https://graph.microsoft.com/beta/me/calendarGroups/<id>/calendars
 Content-type: application/json
 Content-length: 78
 

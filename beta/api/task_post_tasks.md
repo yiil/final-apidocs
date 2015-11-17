@@ -32,12 +32,11 @@ Here is an example of the request.
   "name": "create_task_from_tasks"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/tasks
+POST https://graph.microsoft.com/beta/tasks
 Content-type: application/json
 Content-length: 192
 
 {
-  "createdBy": "createdBy-value",
   "assignedTo": "assignedTo-value",
   "planId": "planId-value",
   "bucketId": "bucketId-value",
@@ -47,23 +46,39 @@ Content-length: 192
 ```
 In the request body, supply a JSON representation of [task](../resources/task.md) object.
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
   "truncated": true,
   "@odata.type": "microsoft.graph.task"
 } -->
 ```http
+HTTP/1.1 201 Created
 Content-type: application/json
-Content-length: 192
+Content-length: 663
 
 {
+  @odata.etag: "W/\"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn\"",
   "createdBy": "createdBy-value",
   "assignedTo": "assignedTo-value",
   "planId": "planId-value",
   "bucketId": "bucketId-value",
   "title": "title-value",
-  "orderHint": "orderHint-value"
+  "orderHint": "orderHint-value",
+  "assigneePriority": "assigneePriority-value",
+  "percentComplete": 99,
+  "startDateTime": "datetime-value",
+  "assignedDateTime": "datetime-value",
+  "createdDateTime": "datetime-value",
+  "assignedBy": "assignedBy-value",
+  "dueDateTime": "datetime-value",
+  "hasDescription": true,
+  "previewType": "previewType-value",
+  "completedDateTime": "datetime-value",
+  "appliedCategories": {
+  },
+  "conversationThreadId": "conversationThreadId-value",
+  "id": "id-value"
 }
 ```
 

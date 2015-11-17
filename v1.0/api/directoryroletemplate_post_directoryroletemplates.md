@@ -1,6 +1,6 @@
-# Create DirectoryRoleTemplate
+# Create directoryRoleTemplate
 
-Use this API to create a new DirectoryRoleTemplate.
+Use this API to create a new directoryRoleTemplate.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
 ### HTTP request
@@ -15,11 +15,11 @@ POST /directoryRoles
 | Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
-In the request body, supply a JSON representation of [DirectoryRoleTemplate](../resources/directoryroletemplate.md) object.
+In the request body, supply a JSON representation of [directoryRoleTemplate](../resources/directoryroletemplate.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [DirectoryRoleTemplate](../resources/directoryroletemplate.md) object in the response body.
+If successful, this method returns `201, Created` response code and [directoryRoleTemplate](../resources/directoryroletemplate.md) object in the response body.
 
 ### Example
 ##### Request
@@ -65,7 +65,7 @@ Content-length: 137
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create DirectoryRoleTemplate",
+  "description": "Create directoryRoleTemplate",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

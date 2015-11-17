@@ -31,7 +31,7 @@ Here is an example of the request.
   "name": "create_post_from_conversationthread"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/groups/<id>/threads/<id>/posts
+POST https://graph.microsoft.com/beta/groups/<id>/threads/<id>/posts
 Content-type: application/json
 Content-length: 414
 

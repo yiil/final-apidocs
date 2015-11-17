@@ -1,13 +1,13 @@
-# Create DirectoryRole
+# Create directoryRole
 
-Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. Only the Company Administrators  and the implicit Users directory roles are activated by default. To access and assign members to another directory role, you must first activate it with its corresponding directory role template ([DirectoryRoleTemplate](directoryroletemplate.md)).
+Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. Only the Company Administrators  and the implicit Users directory roles are activated by default. To access and assign members to another directory role, you must first activate it with its corresponding directory role template ([directoryRoleTemplate](directoryroletemplate.md)).
 
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /directoryObjects
+POST /directoryRoles
 
 ```
 ### Request headers
@@ -16,17 +16,17 @@ POST /directoryObjects
 | Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
-In the request body, supply a JSON representation of [DirectoryRole](../resources/directoryrole.md) object.
+In the request body, supply a JSON representation of [directoryRole](../resources/directoryrole.md) object.
 
 The following table shows the properties that are required when you activate a directory role.
 
 |Required parameter | Type | Description|
 |:---------|:---------|:---------|
-|roleTemplateId | string | The ID of the [DirectoryRoleTemplate](directoryroletemplate.md) that the role is based on. This is the only property that may be specified in the request.|
+|roleTemplateId | string | The ID of the [directoryRoleTemplate](directoryroletemplate.md) that the role is based on. This is the only property that may be specified in the request.|
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [DirectoryRole](../resources/directoryrole.md) object in the response body.
+If successful, this method returns `201, Created` response code and [directoryRole](../resources/directoryrole.md) object in the response body.
 
 ### Example
 ##### Request
@@ -74,7 +74,7 @@ Content-length: 175
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create DirectoryRole",
+  "description": "Create directoryRole",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

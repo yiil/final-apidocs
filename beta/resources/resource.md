@@ -33,7 +33,7 @@ In the page HTML, an `img` tag includes endpoints for the original image resourc
     data-fullres-src-type="media-type" ... />
 ```
 
-An `object` tag (that represents files such as PDF, DOCX, and PNG) includes the endpoint for the file resource in the `data` attribute:
+An `object` tag (which represents files such as PDF, DOCX, and PNG) includes the endpoint for the file resource in the `data` attribute:
 
 ```
 <object
@@ -43,10 +43,10 @@ An `object` tag (that represents files such as PDF, DOCX, and PNG) includes the 
 ```
 
 ### Properties
-None
+None.
 
 ### Relationships
-None
+None.
 
 
 ### Methods

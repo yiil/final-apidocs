@@ -31,7 +31,7 @@ Here is an example of the request.
   "name": "create_profilephoto_from_group"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/groups/<id>/photos
+POST https://graph.microsoft.com/beta/groups/<id>/photos
 Content-type: application/json
 Content-length: 33
 

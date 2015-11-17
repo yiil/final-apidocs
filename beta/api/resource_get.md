@@ -22,6 +22,8 @@ GET /groups/<objectId>/notes/resources/<id>
 Do not supply a request body for this method.
 ### Response
 If successful, this method returns a `200 OK` response code and the image or file binary data in the response body. 
+
+Note: Images won't render directly in a browser because they require authorization to retrieve them, like the rest of the page content.
 ### Example
 ##### Request
 Here is an example of the request.
@@ -30,25 +32,19 @@ Here is an example of the request.
   "name": "get_resource"
 }-->
 ```http
-GET https://graph.microsoft.com/v1.0/me/notes/resources/<id>
+GET https://graph.microsoft.com/beta/me/notes/resources/<id>
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
   "truncated": true,
   "@odata.type": "microsoft.graph.resource"
 } -->
 ```http
-Content-type: application/json
-Content-length: 112
+HTTP/1.1 200 OK
 
-{
-  "id": "id-value",
-  "self": "self-value",
-  "content": "content-value",
-  "contentUrl": "contentUrl-value"
-}
+...binary data...
 ```
 <!-- {
   "blockType": "response",

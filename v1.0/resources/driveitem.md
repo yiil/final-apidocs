@@ -15,9 +15,7 @@ For example, if an item behaves as a [folder](folder.md), it will have the **fol
 | [List thumbnails](../api/item_list_thumbnails.md)    | [thumbnailSet](thumbnailset.md) collection | Get a thumbnailSet object collection.                                                  |
 | [update](../api/item_update.md)                      | [driveitem](driveitem.md)                            | Update item object.                                                                    |
 | [delete](../api/item_delete.md)                      | None                                       | Delete item object.                                                                    |
-| [copy](../api/item_copy.md)                          | [driveitem](driveitem.md)                            | Copy an item to another location in the drive.                                         |
 | [createLink](../api/item_createlink.md)              | [permission](permission.md)                | Create a sharing link to allow users to access the content without signing in.         |
-| [invite](../api/item_invite.md)                      | [permission](permission.md) collection     | Invite users to access the item by adding permissions and sending them a notification. |
 | [search](../api/item_search.md)                      | [driveitem](driveitem.md) collection                 | Search for items matching a query.                                                     |
 
 ### Properties

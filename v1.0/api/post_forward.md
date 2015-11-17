@@ -6,9 +6,9 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /groups/<objectId>/threads/<id>/posts/<id>/Microsoft.Graph.forward
-POST /groups/<objectId>/conversations/<id>/threads/<id>/posts/<id>/Microsoft.Graph.forward
-POST /users/<id>/joinedGroups/<objectId>/threads/<id>/posts/<id>/Microsoft.Graph.forward
+POST /groups/<id>/threads/<id>/posts/<id>/Microsoft.Graph.forward
+POST /groups/<id>/conversations/<id>/threads/<id>/posts/<id>/Microsoft.Graph.forward
+POST /users/<id>/joinedGroups/<id>/threads/<id>/posts/<id>/Microsoft.Graph.forward
 
 ```
 ### Request headers
@@ -54,13 +54,14 @@ Content-length: 166
 ```
 
 ##### Response
+##### Response
 Here is an example of the response. 
 <!-- {
   "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.none"
+  "truncated": true
 } -->
 ```http
+HTTP/1.1 200 OK
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

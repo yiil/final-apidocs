@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-PATCH /groups/<objectId>
+PATCH /groups/<id>
 ```
 ### Request headers
 | Name       | Type | Description|
@@ -18,7 +18,6 @@ In the request body, supply the values for relevant fields that should be update
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|accessType|String| Possible values are: `None`, `Private`, `Secret`, `Public`.|
 |allowExternalSenders|Boolean||
 |autoSubscribeNewMembers|Boolean||
 |description|String|An optional description for the group. |

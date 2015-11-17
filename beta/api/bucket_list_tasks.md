@@ -12,7 +12,7 @@ Group.ReadWrite.All AND Tasks.ReadWrite
 GET /buckets/<id>/tasks
 ```
 ### Optional query parameters
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+None
 
 ### Request headers
 | Name       | Type | Description|
@@ -31,10 +31,10 @@ Here is an example of the request.
   "name": "get_tasks"
 }-->
 ```http
-GET https://graph.microsoft.com/v1.0/buckets/<id>/tasks
+GET https://graph.microsoft.com/beta/buckets/<id>/tasks
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -42,8 +42,9 @@ Here is an example of the response. Note: The response object shown here may be 
   "isCollection": true
 } -->
 ```http
+HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 245
+Content-length: 772
 
 {
   "value": [
@@ -53,7 +54,21 @@ Content-length: 245
       "planId": "planId-value",
       "bucketId": "bucketId-value",
       "title": "title-value",
-      "orderHint": "orderHint-value"
+      "orderHint": "orderHint-value",
+      "assigneePriority": "assigneePriority-value",
+      "percentComplete": 99,
+      "startDateTime": "datetime-value",
+      "assignedDateTime": "datetime-value",
+      "createdDateTime": "datetime-value",
+      "assignedBy": "assignedBy-value",
+      "dueDateTime": "datetime-value",
+      "hasDescription": true,
+      "previewType": "previewType-value",
+      "completedDateTime": "datetime-value",
+      "appliedCategories": {
+      },
+      "conversationThreadId": "conversationThreadId-value",
+      "id": "id-value"
     }
   ]
 }

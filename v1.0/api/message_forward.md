@@ -2,7 +2,7 @@
 
 
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API: _Mail.Send_
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -15,6 +15,7 @@ POST /drive/root/lastModifiedByUser/messages/<id>/Microsoft.Graph.forward
 | Name       | Type | Description|
 |:---------------|:--------|:----------|
 | Authorization  | string  | Bearer <token>. Required. |
+| Content-Type | string  | Nature of the data in the body of an entity. Required. |
 
 ### Request body
 In the request body, provide a JSON object with the following parameters.
@@ -25,7 +26,7 @@ In the request body, provide a JSON object with the following parameters.
 |toRecipients|Recipient||
 
 ### Response
-If successful, this method returns `200, OK` response code. It does not return anything in the response body.
+If successful, this method returns `202, Accepted` response code. It does not return anything in the response body.
 
 ### Example
 Here is an example of how to call this API.
@@ -54,13 +55,14 @@ Content-length: 166
 ```
 
 ##### Response
+##### Response
 Here is an example of the response. 
 <!-- {
   "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.none"
+  "truncated": true
 } -->
 ```http
+HTTP/1.1 200 OK
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

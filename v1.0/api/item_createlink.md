@@ -31,6 +31,9 @@ In the request body, you define the type of sharing link. A `view` link allows t
 | Name   | Type   | Description                                                          |
 |:-------|:-------|:---------------------------------------------------------------------|
 | _type_ | String | The type of link to create. Possible values are `view` or `edit`. |
+| _scope_ | String | Scope of the link. |
+
+
 
 ### Response
 
@@ -59,7 +62,8 @@ POST /drive/root:/{item-path}:/Microsoft.Graph.createLink
 Content-type: application/json
 
 {
-  "type": "type-value"
+  "type": "type-value",
+  "scope": "scope-value"
 }
 ```
 

@@ -3,12 +3,12 @@
 Update the properties of contactfolder object.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+*Contacts.Read; Contacts.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /users/<id>/contactFolders/<id>
-PATCH /drive/root/createdByUser/contactFolders/<id>
-PATCH /drive/root/lastModifiedByUser/contactFolders/<id>
+PATCH /me/contactFolders/<id>
 ```
 ### Request headers
 | Name       | Type | Description|

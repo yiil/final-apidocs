@@ -40,30 +40,10 @@ Here is an example of the request.
   "name": "update_taskdetails"
 }-->
 ```http
-PATCH https://graph.microsoft.com/v1.0/tasks/<id>/details
-Content-type: application/json
-Content-length: 161
-
-{
-  "description": "description-value",
-  "previewType": "previewType-value",
-  "completedBy": "completedBy-value",
-  "references": {
-  },
-  "checklist": {
-  }
-}
-```
-##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
-<!-- {
-  "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.taskdetails"
-} -->
-```http
+PATCH https://graph.microsoft.com/beta/tasks/<id>/details
 Content-type: application/json
 Content-length: 181
+If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
 
 {
   "description": "description-value",
@@ -75,6 +55,16 @@ Content-length: 181
   },
   "id": "id-value"
 }
+```
+##### Response
+Here is an example of the response. 
+<!-- {
+  "blockType": "response",
+  "truncated": true,
+  "@odata.type": "microsoft.graph.taskdetails"
+} -->
+```http
+HTTP/1.1 204 No Content
 ```
 To get the updated object, use the `Prefer` header. See Request Headers above.
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

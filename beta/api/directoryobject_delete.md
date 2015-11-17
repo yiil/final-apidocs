@@ -6,9 +6,7 @@ The following **scopes** are required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-DELETE /users/<objectId>/manager
-DELETE /directoryObjects/<objectId>
-DELETE /contacts/<objectId>/manager
+DELETE /directoryObjects/<id>
 
 ```
 ### Request headers
@@ -31,15 +29,16 @@ Here is an example of the request.
   "name": "delete_directoryobject"
 }-->
 ```http
-DELETE https://graph.microsoft.com/v1.0/me/manager
+DELETE https://graph.microsoft.com/beta/me/manager
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
   "truncated": true
 } -->
 ```http
+HTTP/1.1 204 No Content
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

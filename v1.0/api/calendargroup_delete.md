@@ -2,14 +2,17 @@
 
 Delete a calendar group.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: _Calendars.ReadWrite_
+One of the following **scopes** is required to execute this API: 
+*Calendars.ReadWrite*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+DELETE /me/calendarGroup
+DELETE /users/<id>/calendarGroup
+DELETE /users/<userPrincipalName>/calendarGroup
+DELETE /me/calendarGroups/<id>
 DELETE /users/<id>/calendarGroups/<id>
-DELETE /drive/root/createdByUser/calendarGroups/<id>
-DELETE /drive/root/lastModifiedByUser/calendarGroups/<id>
-
+DELETE /users/<userPrincipalName>/calendarGroups/<id>
 ```
 ### Request headers
 | Name       | Type | Description|
@@ -40,6 +43,7 @@ Here is an example of the response. Note: The response object shown here may be 
   "truncated": true
 } -->
 ```http
+Status code: 204
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

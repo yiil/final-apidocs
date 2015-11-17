@@ -7,7 +7,7 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /groups/<objectId>/members
+POST /groups/<id>/members
 ```
 ### Request headers
 | Name       | Type | Description|
@@ -15,11 +15,11 @@ POST /groups/<objectId>/members
 | Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
-In the request body, supply a JSON representation of [DirectoryObject](../resources/directoryobject.md) object.
+In the request body, supply a JSON representation of [directoryObject](../resources/directoryobject.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [DirectoryObject](../resources/directoryobject.md) object in the response body.
+If successful, this method returns `201, Created` response code and [directoryObject](../resources/directoryobject.md) object in the response body.
 
 ### Example
 ##### Request

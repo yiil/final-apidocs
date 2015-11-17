@@ -34,27 +34,16 @@ Here is an example of the request.
   "name": "create_section_from_notebook"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/notes/notebooks/<id>/sections
+POST https://graph.microsoft.com/beta/me/notes/notebooks/<id>/sections
 Content-type: application/json
-Content-length: 272
+Content-length: 27
 
 {
-  "isDefault": true,
-  "pagesUrl": "pagesUrl-value",
-  "name": "name-value",
-  "createdBy": "createdBy-value",
-  "createdByIdentity": {
-    "user": {
-      "id": "id-value",
-      "displayName": "displayName-value"
-    }
-  },
-  "lastModifiedBy": "lastModifiedBy-value"
+  "name": "Section name"
 }
 ```
-In the request body, supply a JSON representation of [section](../resources/section.md) object.
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. Note: The response object shown here is truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
   "truncated": true,

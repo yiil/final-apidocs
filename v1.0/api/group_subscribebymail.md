@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /groups/<objectId>/Microsoft.Graph.subscribeByMail
+POST /groups/<id>/Microsoft.Graph.subscribeByMail
 ```
 ### Request headers
 | Name       | Type | Description|
@@ -31,13 +31,14 @@ POST https://graph.microsoft.com/v1.0/groups/<id>/subscribeByMail
 ```
 
 ##### Response
+##### Response
 Here is an example of the response. 
 <!-- {
   "blockType": "response",
-  "truncated": true,
-  "@odata.type": "microsoft.graph.none"
+  "truncated": true
 } -->
 ```http
+HTTP/1.1 200 OK
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

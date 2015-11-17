@@ -1,10 +1,18 @@
 # file resource type
 
+The **file** resource groups file-related data items into a single structure.
+
+
+### Properties
+| Property | Type                          | Description                                                                                                                                 |
+|:--------------|:------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| hashes    | [HashesType](hashes_facet.md) | Hashes of the file's binary content, if available.                                                                                          |
+| mimeType  | string                        | The MIME type for the file. This is determined by logic on the server and might not be the value provided when the file was uploaded. |
 
 
 ### JSON representation
 
-Here is a JSON representation of the resource
+Here is a JSON representation of the resource.
 
 <!-- {
   "blockType": "resource",
@@ -21,11 +29,6 @@ Here is a JSON representation of the resource
 }
 
 ```
-### Properties
-| Property	   | Type	|Description|
-|:---------------|:--------|:----------|
-|hashes|[hashes](hashes.md)||
-|mimeType|String||
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79
 2015-10-25 14:57:30 UTC -->

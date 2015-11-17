@@ -1,8 +1,11 @@
 # Update permission
 
-Update the properties of permission object.
+Update the properties of an existing permission object. Only the roles property can be modified. 
 ### Prerequisites
-The following **scopes** are required to execute this API: 
+One of the following **scopes** is required to execute this API: 
+
+  * Files.ReadWrite
+ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -10,22 +13,21 @@ PATCH /drive/root/permissions/<id>
 PATCH /drive/items/<id>/permissions/<id>
 PATCH /drives/<id>/root/permissions/<id>
 ```
+
 ### Request headers
 | Name       | Type | Description|
-|:-----------|:------|:----------|
+|:---------------|:--------|:----------|
+| if-match  | string  | If this request header is included and the eTag (or cTag) provided does not match the current tag on the item, a `412 Precondition Failed` response is returned and the item will not be deleted.|
 | Authorization  | string  | Bearer <token>. Required. |
+
+
 
 ### Request body
 In the request body, supply the values for relevant fields that should be updated. Existing properties that are not included in the request body will maintain their previous values or be recalculated based on changes to other property values. For best performance you shouldn't include existing values that haven't changed.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|grantedTo|identitySet||
-|inheritedFrom|itemReference||
-|invitation|sharingInvitation||
-|link|sharingLink||
-|roles|String||
-|shareId|String||
+|roles|String|An array of permission types.|
 
 ### Response
 If successful, this method returns a `200 OK` response code and updated [permission](../resources/permission.md) object in the response body.
@@ -39,7 +41,7 @@ Here is an example of the request.
 ```http
 PATCH https://graph.microsoft.com/v1.0/drive/root/permissions/<id>
 Content-type: application/json
-Content-length: 712
+Content-length: 762
 
 {
   "grantedTo": {
@@ -56,6 +58,7 @@ Content-length: 712
       "id": "id-value"
     }
   },
+  "id": "id-value",
   "invitation": {
     "email": "email-value",
     "redeemedBy": "redeemedBy-value",
@@ -80,15 +83,16 @@ Content-length: 712
 }
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response.
 <!-- {
   "blockType": "response",
-  "truncated": true,
+  "truncated": false,
   "@odata.type": "microsoft.graph.permission"
 } -->
 ```http
+HTTP/1.1 200 OK
 Content-type: application/json
-Content-length: 732
+Content-length: 762
 
 {
   "grantedTo": {

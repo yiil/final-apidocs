@@ -34,7 +34,7 @@ Here is an example of the request.
   "name": "update_extensionproperty"
 }-->
 ```http
-PATCH https://graph.microsoft.com/v1.0/applications/<id>/extensionProperties/<id>
+PATCH https://graph.microsoft.com/beta/applications/<id>/extensionProperties/<id>
 Content-type: application/json
 Content-length: 188
 

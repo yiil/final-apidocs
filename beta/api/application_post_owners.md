@@ -29,7 +29,7 @@ Here is an example of the request.
   "name": "create_directoryobject_from_application"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/applications/<id>/owners
+POST https://graph.microsoft.com/beta/applications/<id>/owners
 Content-type: application/json
 Content-length: 30
 

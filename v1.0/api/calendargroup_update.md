@@ -6,9 +6,12 @@ One of the following **scopes** is required to execute this API: _Calendars.Read
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+PATCH /me/calendarGroup
+PATCH /users/<id>/calendarGroup
+PATCH /users/<userPrincipalName>/calendarGroup
+PATCH /me/calendarGroups/<id>
 PATCH /users/<id>/calendarGroups/<id>
-PATCH /drive/root/createdByUser/calendarGroups/<id>
-PATCH /drive/root/lastModifiedByUser/calendarGroups/<id>
+PATCH /users/<userPrincipalName>/calendarGroups/<id>
 ```
 ### Request headers
 | Name       | Type | Description|
@@ -20,9 +23,9 @@ In the request body, supply the values for relevant fields that should be update
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
+|name|String|The group name.|
 |changeKey|String|Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object.|
 |classId|Guid|The class identifier.|
-|name|String|The group name.|
 
 ### Response
 If successful, this method returns a `200 OK` response code and updated [calendarGroup](../resources/calendargroup.md) object in the response body.
@@ -36,12 +39,10 @@ Here is an example of the request.
 ```http
 PATCH https://graph.microsoft.com/v1.0/me/calendarGroups/<id>
 Content-type: application/json
-Content-length: 90
+Content-length: 30
 
 {
-  "name": "name-value",
-  "classId": "classId-value",
-  "changeKey": "changeKey-value"
+  "name": "name-value"
 }
 ```
 ##### Response

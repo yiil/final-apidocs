@@ -33,7 +33,7 @@ Here is an example of the request.
   "name": "extensionproperty_checkmembergroups"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/applications/<id>/extensionProperties/<id>/checkMemberGroups
+POST https://graph.microsoft.com/beta/applications/<id>/extensionProperties/<id>/checkMemberGroups
 Content-type: application/json
 Content-length: 44
 

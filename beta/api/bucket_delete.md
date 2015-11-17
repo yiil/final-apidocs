@@ -33,15 +33,18 @@ Here is an example of the request.
   "name": "delete_bucket"
 }-->
 ```http
-DELETE https://graph.microsoft.com/v1.0/buckets/<id>
+DELETE https://graph.microsoft.com/beta/buckets/<id>
+If-Match: W/"JzEtMDAwMDAwMDAwMDAwMDAwOC8yMDE1LTEwLTIyVDE4OjExOjU2LjExMzU1NDYrMDA6MDAn"
+
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
   "truncated": true
 } -->
 ```http
+HTTP/1.1 204 No Content
 ```
 
 <!-- uuid: 8fcb5dbc-d5aa-4681-8e31-b001d5168d79

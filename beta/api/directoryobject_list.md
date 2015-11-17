@@ -28,7 +28,7 @@ Here is an example of the request.
   "name": "get_directoryobjects"
 }-->
 ```http
-GET https://graph.microsoft.com/v1.0/directoryObjects
+GET https://graph.microsoft.com/beta/directoryObjects
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.

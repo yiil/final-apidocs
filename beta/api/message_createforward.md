@@ -30,7 +30,7 @@ Here is an example of the request.
   "name": "message_createforward"
 }-->
 ```http
-POST https://graph.microsoft.com/v1.0/me/messages/<id>/createForward
+POST https://graph.microsoft.com/beta/me/messages/<id>/createForward
 ```
 
 ##### Response

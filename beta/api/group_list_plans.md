@@ -1,6 +1,6 @@
 # List plans
 
-Retrieve a list of plan objects owned by the group. Today, a group can own no more than one plan.
+Retrieve a list of [plan](../resources/plan.md) objects owned by the group. Today, a group can own no more than one plan.
 ### Prerequisites
 The following **scopes** are required to execute this API: 
 
@@ -9,10 +9,10 @@ Groups.ReadWrite.All AND Tasks.ReadWrite
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /groups/<objectId>/plans
+GET /groups/<id>/plans
 ```
 ### Optional query parameters
-This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
+None
 
 ### Request headers
 | Name       | Type | Description|
@@ -31,10 +31,10 @@ Here is an example of the request.
   "name": "get_plans"
 }-->
 ```http
-GET https://graph.microsoft.com/v1.0/groups/<id>/plans
+GET https://graph.microsoft.com/beta/groups/<id>/plans
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. 
 <!-- {
   "blockType": "response",
   "truncated": true,
@@ -42,6 +42,7 @@ Here is an example of the response. Note: The response object shown here may be 
   "isCollection": true
 } -->
 ```http
+HTTP/1.1 200 OK
 Content-type: application/json
 Content-length: 153
 

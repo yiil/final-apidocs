@@ -4,7 +4,7 @@ A section group in a OneNote notebook. Section groups can contain sections and s
 
 ### JSON representation
 
-Here is a JSON representation of the resource
+Here is a JSON representation of the resource.
 
 <!-- {
   "blockType": "resource",
@@ -37,9 +37,11 @@ Here is a JSON representation of the resource
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |createdBy|String|The user who created the section group. Read-only.|
+|createdByIdentity|[OneNoteIdentitySet](onenoteidentityset.md)|The identity that created the section group. Read-only.|
 |createdTime|DateTimeOffset|The date and time when the section group was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
 |id|String|The unique identifier of the section group. Read-only.|
 |lastModifiedBy|String|The user who last modified the section group. Read-only.| 
+|lastModifiedByIdentity|[OneNoteIdentitySet](onenoteidentityset.md)|The identity that last modified the section group. Read-only.|
 |lastModifiedTime|DateTimeOffset|The date and time when the section group was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
 |name|String|The name of the section group.|
 |sectionGroupsUrl|String|The URL for the `sectionGroups` navigation property, which returns all the section groups in the section group. Read-only.| 
@@ -58,9 +60,9 @@ Here is a JSON representation of the resource
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[Get sectionGroup](../api/sectiongroup_get.md) | [SectionGroup](sectiongroup.md) |Read the properties and relationships of the section group.|
-|[Create sectionGroup](../api/sectiongroup_post_sectiongroups.md) |[SectionGroup](sectiongroup.md)| Create a section group by posting to the sectionGroups collection in the specified section group.|
-|[List sectionGroups](../api/sectiongroup_list_sectiongroups.md) |[SectionGroup](sectiongroup.md) collection| Get collection of section groups in the specified section group.|
+|[Get section group](../api/sectiongroup_get.md) | [SectionGroup](sectiongroup.md) |Read the properties and relationships of the section group.|
+|[Create section group](../api/sectiongroup_post_sectiongroups.md) |[SectionGroup](sectiongroup.md)| Create a section group by posting to the sectionGroups collection in the specified section group.|
+|[List section groups](../api/sectiongroup_list_sectiongroups.md) |[SectionGroup](sectiongroup.md) collection| Get collection of section groups in the specified section group.|
 |[Create section](../api/sectiongroup_post_sections.md) |[Section](section.md)| Create a section by posting to the sections collection in the specified section group.|
 |[List sections](../api/sectiongroup_list_sections.md) |[Section](section.md) collection| Get a collection of sections in the specified section group.|
 

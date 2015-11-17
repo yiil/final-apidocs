@@ -3,13 +3,12 @@
 Use this API to create a new thread.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+*Group.ReadWrite.All;*
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+POST /groups/<id>/conversations/<id>/threads
 POST /groups/<objectId>/conversations/<id>/threads
-POST /users/<id>/joinedGroups/<objectId>/conversations/<id>/threads
-POST /drive/root/createdByUser/joinedGroups/<objectId>/conversations/<id>/threads
-
 ```
 ### Request headers
 | Name       | Type | Description|

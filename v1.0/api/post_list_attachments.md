@@ -2,13 +2,13 @@
 
 Retrieve a list of attachment objects.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API: _Groups.Read_ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /groups/<objectId>/threads/<id>/posts/<id>/attachments
-GET /groups/<objectId>/conversations/<id>/threads/<id>/posts/<id>/attachments
-GET /users/<id>/joinedGroups/<objectId>/threads/<id>/posts/<id>/attachments
+GET /groups/<id>/threads/<id>/posts/<id>/attachments
+GET /groups/<id>/conversations/<id>/threads/<id>/posts/<id>/attachments
+GET /users/<id>/joinedGroups/<id>/threads/<id>/posts/<id>/attachments
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
@@ -46,12 +46,17 @@ Content-length: 215
 {
   "value": [
     {
-      "lastModifiedDateTime": "datetime-value",
-      "name": "name-value",
+      "@odata.type": "#Microsoft.OutlookServices.FileAttachment",
       "contentType": "contentType-value",
-      "size": 99,
-      "isInline": true,
-      "id": "id-value"
+      "contentLocation": "contentLocation-value",
+      "contentBytes": "contentBytes-value",
+      "contentId": "null",
+      "lastModifiedDateTime": "datetime-value",
+      "id": "id-value",
+      "isInline": false,
+      "isContactPhoto": false,
+      "name": "name-value",
+      "size": 99
     }
   ]
 }

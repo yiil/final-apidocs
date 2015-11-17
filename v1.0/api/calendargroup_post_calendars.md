@@ -6,10 +6,12 @@ One of the following **scopes** is required to execute this API: _Calendars.Read
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
+POST /me/calendarGroup/calendars
+POST /users/<id>/calendarGroup/calendars
+POST /users/<userPrincipalName>/calendarGroup/calendars
+POST /me/calendarGroups/<id>/calendars
 POST /users/<id>/calendarGroups/<id>/calendars
-POST /drive/root/createdByUser/calendarGroups/<id>/calendars
-POST /drive/root/lastModifiedByUser/calendarGroups/<id>/calendars
-
+POST /users/<userPrincipalName>/calendarGroups/<id>/calendars
 ```
 ### Request headers
 | Name       | Type | Description|
@@ -38,8 +40,7 @@ Content-length: 78
 {
   "name": "name-value",
   "color": {
-  },
-  "changeKey": "changeKey-value"
+  }
 }
 ```
 In the request body, supply a JSON representation of [calendar](../resources/calendar.md) object.

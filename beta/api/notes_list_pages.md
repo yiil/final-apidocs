@@ -15,6 +15,10 @@ GET /groups/<objectId>/notes/pages
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 
+The default query for pages returns the top 20 pages ordered by `lastModifiedTime desc`. If the default query returns more than 20 pages, the response contains an `@odata.nextLink` that you can use to page through the result set. The maximum number of pages returned for a `top` request is 100.
+
+The default response expands `parentSection` and selects the section's `id`, `name`, and `self` properties. Valid `expand` values for pages are `parentNotebook` and `parentSection`.
+
 ### Request headers
 | Name       | Type | Description|
 |:-----------|:------|:----------|
@@ -33,10 +37,10 @@ Here is an example of the request.
   "name": "get_pages"
 }-->
 ```http
-GET https://graph.microsoft.com/v1.0/me/notes/pages
+GET https://graph.microsoft.com/beta/me/notes/pages
 ```
 ##### Response
-Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
+Here is an example of the response. Note: The response object shown here is truncated for brevity. All of the properties will be returned from an actual call.
 <!-- {
   "blockType": "response",
   "truncated": true,

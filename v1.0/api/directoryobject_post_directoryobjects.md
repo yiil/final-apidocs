@@ -1,6 +1,6 @@
-# Create DirectoryObject
+# Create directoryObject
 
-Use this API to create a new DirectoryObject.
+Use this API to create a new directoryObject.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
 ### HTTP request
@@ -15,11 +15,11 @@ POST /directoryObjects
 | Authorization  | string  | Bearer <token>. Required. |
 
 ### Request body
-In the request body, supply a JSON representation of [DirectoryObject](../resources/directoryobject.md) object.
+In the request body, supply a JSON representation of [directoryObject](../resources/directoryobject.md) object.
 
 
 ### Response
-If successful, this method returns `201, Created` response code and [DirectoryObject](../resources/directoryobject.md) object in the response body.
+If successful, this method returns `201, Created` response code and [directoryObject](../resources/directoryobject.md) object in the response body.
 
 ### Example
 ##### Request
@@ -61,7 +61,7 @@ Content-length: 51
 2015-10-25 14:57:30 UTC -->
 <!-- {
   "type": "#page.annotation",
-  "description": "Create DirectoryObject",
+  "description": "Create directoryObject",
   "keywords": "",
   "section": "documentation",
   "tocPath": ""

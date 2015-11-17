@@ -2,11 +2,17 @@
 
 Retrieve the properties and relationships of referenceattachment object.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API:
+
+* If accessing attachments in Messages: _Mail.Read_
+* If accessing attachments in Events: _Calendars.Read_
+ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-
+GET /users/<id>/events/<id>/attachments/<id>
+GET /groups/<objectId>/events/<id>/attachments/<id>
+GET /users/<id>/messages/<id>/attachments/<id>
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
@@ -27,7 +33,7 @@ Here is an example of the request.
   "name": "get_referenceattachment"
 }-->
 ```http
-
+GET https://graph.microsoft.com/v1.0/me/events/<id>/attachments/<id>
 ```
 ##### Response
 Here is an example of the response. Note: The response object shown here may be truncated for brevity. All of the properties will be returned from an actual call.
@@ -38,15 +44,27 @@ Here is an example of the response. Note: The response object shown here may be 
 } -->
 ```http
 Content-type: application/json
-Content-length: 162
+Content-length: 215
 
 {
-  "lastModifiedDateTime": "datetime-value",
-  "name": "name-value",
-  "contentType": "contentType-value",
-  "size": 99,
-  "isInline": true,
-  "id": "id-value"
+  "value": [
+    {
+      "@odata.type": "#Microsoft.OutlookServices.ReferenceAttachment",
+      "contentType": "contentType-value",
+      "lastModifiedDateTime": "datetime-value",
+      "id": "id-value",
+      "isInline": false,
+      "name": "name-value",
+      "size": 99,
+      "SourceUrl": "ReferenceAttachmentProviders-value",
+      "ProviderType": "ThumbnailURL-value",
+      "ThumbnailUrl": "ThumbnailURL-value",
+      "PreviewUrl": "PreviewURL-value",
+      "Permission": "ReferenceAttachmentPermissions-value",
+      "IsFolder": "False"
+
+    }
+  ]
 }
 ```
 

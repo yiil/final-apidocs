@@ -7,7 +7,6 @@
 | Method       | Return Type  |Description|
 |:---------------|:--------|:----------|
 |[Get attachment](../api/attachment_get.md) | [attachment](attachment.md) |Read properties and relationships of attachment object.|
-|[Update](../api/attachment_update.md) | [attachment](attachment.md)  |Update attachment object. |
 |[Delete](../api/attachment_delete.md) | None |Delete attachment object. |
 
 

@@ -19,16 +19,16 @@ deleting the extension from:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-DELETE /me/messages/<id>/extensions/<eId>
-DELETE /users/<objectId>/messages/<id>/extensions/<eId>
+DELETE /me/messages/<id>/extensions/<extensionId>
+DELETE /users/<id>/messages/<id>/extensions/<extensionId>
 
-DELETE /me/events/<id>/extensions/<eId>
-DELETE /users/<objectId>/events/<id>/extensions/<eId>
+DELETE /me/events/<id>/extensions/<extensionId>
+DELETE /users/<id>/events/<id>/extensions/<extensionId>
 
-DELETE /me/contacts/<id>/extensions/<eId>
-DELETE /users/<objectId>/contacts/<id>/extensions/<eId>
+DELETE /me/contacts/<id>/extensions/<extensionId>
+DELETE /users/<id>/contacts/<id>/extensions/<extensionId>
 
-DELETE /groups/<gId>/events/<id>/extensions/<eId>
+DELETE /groups/<id>/events/<id>/extensions/<extensionId>
 
 ```
 
@@ -36,10 +36,8 @@ DELETE /groups/<gId>/events/<id>/extensions/<eId>
 |**Parameter**|**Type**|**Description**|
 |:-----|:-----|:-----|
 |_URL parameters_|
-|id|string|A unique identifier for an instance of a resource (message, event, or contact). Required.|
-|eId|string|This can be an extension name which is a unique text identifier for the extension, or a fully qualified name which concatenates the extension type and unique text identifier. The fully qualified name is returned in the `Id` property when you create the extension. Required.|
-|objectId|string|A unique identifier for the signed-in user. Required.|
-|gId|string|A unique group ID. Required.|
+|id|string|A unique identifier for an instance in the corresponding collection. Required.|
+|extensionId|string|This can be an extension name which is a unique text identifier for the extension, or a fully qualified name which concatenates the extension type and unique text identifier. The fully qualified name is returned in the `id` property when you create the extension. Required.|
 
 
 ### Request headers

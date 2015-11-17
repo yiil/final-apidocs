@@ -2,7 +2,7 @@
 
 Retrieve the properties and relationships of event object.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API: _Calendars.Read_
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http

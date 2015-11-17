@@ -2,7 +2,7 @@
 
 Update the properties of event object.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API: _Calendars.ReadWrite_
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http

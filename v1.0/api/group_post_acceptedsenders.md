@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /groups/<objectId>/acceptedSenders
+POST /groups/<id>/acceptedSenders
 ```
 ### Request headers
 | Name       | Type | Description|

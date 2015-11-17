@@ -10,7 +10,7 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /users/<id>/photo
-DELETE /groups/<objectId>/photo
+DELETE /groups/<id>/photo
 DELETE /drive/root/createdByUser/photo
 
 ```

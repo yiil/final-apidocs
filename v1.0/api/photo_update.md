@@ -7,7 +7,7 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /users/<id>/photo
-PATCH /groups/<objectId>/photo
+PATCH /groups/<id>/photo
 PATCH /drive/root/createdByUser/photo
 ```
 

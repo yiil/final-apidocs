@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /devices/<objectId>/registeredUsers
+POST /devices/<id>/registeredUsers
 
 ```
 ### Request headers

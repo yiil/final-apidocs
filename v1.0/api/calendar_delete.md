@@ -7,7 +7,7 @@ One of the following **scopes** is required to execute this API: _Calendars.Read
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /users/<id>/calendar
-DELETE /groups/<objectId>/calendar
+DELETE /groups/<id>/calendar
 DELETE /drive/root/createdByUser/calendar
 
 ```

@@ -102,7 +102,7 @@ Content-length: 1647
     }
   ],
   "objectType": "objectType-value",
-  "objectId": "objectId-value",
+  "id": "id-value",
   "deletionTimestamp": "datetime-value"
 }
 ```

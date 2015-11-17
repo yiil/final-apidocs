@@ -2,7 +2,7 @@
 
 Update the properties of message object.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: _Mail.ReadWrite_  
+One of the following **scopes** is required to execute this API: _Mail.ReadWrite_ 
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http

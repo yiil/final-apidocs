@@ -6,7 +6,7 @@ One of the following **scopes** is required to execute this API: _Mail.ReadWrite
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /users/<id>/messages/<id>/attachments
+POST /users/<id | userPrincipalName>/messages/<id>/attachments
 POST /drive/root/createdByUser/messages/<id>/attachments
 POST /drive/root/lastModifiedByUser/messages/<id>/attachments
 

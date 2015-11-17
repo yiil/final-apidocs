@@ -8,11 +8,9 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/calendarGroup
-GET /users/<id>/calendarGroup
-GET /users/<userPrincipalName>/calendarGroup
+GET /users/<id | userPrincipalName>/calendarGroup
 GET /me/calendarGroups/<id>
-GET /users/<id>/calendarGroups/<id>
-GET /users/<userPrincipalName>/calendarGroups/<id>
+GET /users/<id | userPrincipalName>/calendarGroups/<id>
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

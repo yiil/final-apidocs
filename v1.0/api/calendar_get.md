@@ -8,19 +8,15 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/calendar
-GET /users/<id>/calendar
+GET /users/<id | userPrincipalName>/calendar
 GET /groups/<id>/calendar
 GET /drive/root/createdByUser/calendar
-GET /users/<userPrincipalName>/calendar
 GET /me/calendars/<id>
-GET /users/<id>/calendars/<id>
-GET /users/<userPrincipalName>/calendars/<id>
+GET /users/<id | userPrincipalName>/calendars/<id>
 GET /me/calendarGroup/calendars/<id>
-GET /users/<id>/calendarGroup/calendars/<id>
-GET /users/<userPrincipalName>/calendarGroup/calendars/<id>
+GET /users/<id | userPrincipalName>/calendarGroup/calendars/<id>
 GET /me/calendarGroups/<id>/calendars/<id>
-GET /users/<id>/calendarGroups/<id>/calendars/<id>
-GET /users/<userPrincipalName>/calendarGroups/<id>/calendars/<id>
+GET /users/<id | userPrincipalName>/calendarGroups/<id>/calendars/<id>
 GET /groups/<objectId>/calendar
 ```
 ### Optional query parameters

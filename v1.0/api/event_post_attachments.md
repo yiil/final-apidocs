@@ -6,9 +6,9 @@ One of the following **scopes** is required to execute this API: _Calendars.Read
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-POST /users/<id>/events/<id>/attachments
+POST /users/<id | userPrincipalName>/events/<id>/attachments
 POST /groups/<id>/events/<id>/attachments
-POST /users/<id>/calendarView/<id>/attachments
+POST /users/<id | userPrincipalName>/calendarView/<id>/attachments
 
 ```
 ### Request headers

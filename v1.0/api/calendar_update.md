@@ -8,19 +8,15 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 PATCH /me/calendar
-PATCH /users/<id>/calendar
+PATCH /users/<id | userPrincipalName>/calendar
 PATCH /groups/<id>/calendar
 PATCH /drive/root/createdByUser/calendar
-PATCH /users/<userPrincipalName>/calendar
 PATCH /me/calendars/<id>
-PATCH /users/<id>/calendars/<id>
-PATCH /users/<userPrincipalName>/calendars/<id>
+PATCH /users/<id | userPrincipalName>/calendars/<id>
 PATCH /me/calendarGroup/calendars/<id>
-PATCH /users/<id>/calendarGroup/calendars/<id>
-PATCH /users/<userPrincipalName>/calendarGroup/calendars/<id>
+PATCH /users/<id | userPrincipalName>/calendarGroup/calendars/<id>
 PATCH /me/calendarGroups/<id>/calendars/<id>
-PATCH /users/<id>/calendarGroups/<id>/calendars/<id>
-PATCH /users/<userPrincipalName>/calendarGroups/<id>/calendars/<id>
+PATCH /users/<id | userPrincipalName>/calendarGroups/<id>/calendars/<id>
 PATCH /groups/<objectId>/calendar
 ```
 ### Request headers

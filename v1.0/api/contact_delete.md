@@ -8,12 +8,9 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 DELETE /me/contacts/<id>
-DELETE /users/<id>/contacts/<id>
-DELETE /users/<userPrincipalName>/contacts/<id>
-DELETE /me/contactFolders/<id>/contacts/<id>
-DELETE /users/<id>/contactFolders/<id>/contacts/<id>
-DELETE /users/<userPrincipalName>/contactFolders/<id>/contacts/<id>
-
+DELETE /users/<id | userPrincipalName>/contacts/<id>
+DELETE /me/contactFolders/<contactFolderId>/contacts/<id>
+DELETE /users/<id | userPrincipalName>/contactFolders/<contactFolderId>/contacts/<id>
 ```
 ### Request headers
 | Header       | Value |

@@ -7,11 +7,9 @@ One of the following **scopes** is required to execute this API: _Calendars.Read
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/calendarGroup/calendars
-GET /users/<id>/calendarGroup/calendars
-GET /users/<userPrincipalName>/calendarGroup/calendars
+GET /users/<id | userPrincipalName>/calendarGroup/calendars
 GET /me/calendarGroups/<id>/calendars
-GET /users/<id>/calendarGroups/<id>/calendars
-GET /users/<userPrincipalName>/calendarGroups/<id>/calendars
+GET /users/<id | userPrincipalName>/calendarGroups/<id>/calendars
 ```
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.

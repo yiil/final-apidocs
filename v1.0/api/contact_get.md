@@ -8,11 +8,9 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /me/contacts/<id>
-GET /users/<id>/contacts/<id>
-GET /users/<userPrincipalName>/contacts/<id>
-GET /me/contactfolders/<id>/contacts/<id>
-GET /users/<id>/contactfolders/<id>/contacts/<id>
-GET /users/<userPrincipalName>/contactFolders/<id>/contacts/<id>
+GET /users/<id | userPrincipalName>/contacts/<id>
+GET /me/contactfolders/<contactFolderId>/contacts/<id>
+GET /users/<id | userPrincipalName>/contactfolders/<contactFolderId>/contacts/<id>
 ```
 ### Optional query parameters
 |Name|Value|Description|

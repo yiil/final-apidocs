@@ -10,9 +10,9 @@ One of the following **scopes** is required to execute this API:
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
-GET /users/<id>/events/<id>/attachments/<id>
+GET /users/<id | userPrincipalName>/events/<id>/attachments/<id>
 GET /groups/<objectId>/events/<id>/attachments/<id>
-GET /users/<id>/messages/<id>/attachments/<id>
+GET /users/<id | userPrincipalName>/messages/<id>/attachments/<id>
 
 ```
 ### Optional query parameters

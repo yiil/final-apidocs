@@ -11,7 +11,7 @@ One of the following **scopes** is required to execute this API:
 ```http
 POST /drive/items
 POST /drives/<id>/items
-POST /users/<id>/drive/items
+POST /users/<id | userPrincipalName>/drive/items
 
 ```
 

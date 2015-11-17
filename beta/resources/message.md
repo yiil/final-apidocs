@@ -50,38 +50,53 @@ Here is a JSON representation of the resource
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|bccRecipients|[Recipient](recipient.md) collection||
-|body|[ItemBody](itembody.md)||
-|bodyPreview|String||
-|categories|String collection||
-|ccRecipients|[Recipient](recipient.md) collection||
-|changeKey|String||
-|conversationId|String||
-|createdDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|from|[Recipient](recipient.md)||
-|hasAttachments|Boolean||
-|id|String| Read-only.|
-|importance|String| Possible values are: `Low`, `Normal`, `High`.|
+|bccRecipients|[recipient](recipient.md) collection|The Bcc: recipients for the message.|
+|body|[itemBody](itembody.md)|The body of the message.|
+|bodyPreview|String|The first 255 characters of the message body.|
+|categories|String collection|The categories associated with the message.|
+|ccRecipients|[recipient](recipient.md) collection|The Cc: recipients for the message.|
+|changeKey|String|The version of the message.|
+|conversationId|String|The ID of the conversation the email belongs to.|
+|createdDateTime|DateTimeOffset|The date and time the message was created.|
+|from|[recipient](recipient.md)|The mailbox owner and sender of the message.|
+|hasAttachments|Boolean|Indicates whether the message has attachments.|
+|id|String||
+|importance|String| The importance of the message: `Low`, `Normal`, `High`.|
 |inferenceClassification|String| Possible values are: `Focused`, `Other`.|
-|isDeliveryReceiptRequested|Boolean||
-|isDraft|Boolean||
-|isRead|Boolean||
-|isReadReceiptRequested|Boolean||
-|lastModifiedDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|parentFolderId|String||
-|receivedDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|replyTo|[Recipient](recipient.md) collection||
-|sender|[Recipient](recipient.md)||
-|sentDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|subject|String||
-|toRecipients|[Recipient](recipient.md) collection||
-|uniqueBody|[ItemBody](itembody.md)||
-|webLink|String||
+|isDeliveryReceiptRequested|Boolean|Indicates whether a read receipt is requested for the message.|
+|isDraft|Boolean|Indicates whether the message is a draft. A message is a draft if it hasn't been sent yet.|
+|isRead|Boolean|Indicates whether the message has been read.|
+|isReadReceiptRequested|Boolean|Indicates whether a read receipt is requested for the message.|
+|lastModifiedDateTime|DateTimeOffset|The date and time the message was last changed.|
+|parentFolderId|String|The unique identifier for the message's parent mailFolder.|
+|receivedDateTime|DateTimeOffset|The date and time the message was received.|
+|replyTo|[recipient](recipient.md) collection|The email addresses to use when replying.|
+|sender|[recipient](recipient.md)|The account that is actually used to generate the message.|
+|sentDateTime|DateTimeOffset|The date and time the message was sent.|
+|subject|String|The subject of the message.|
+|toRecipients|[recipient](recipient.md) collection|The To: recipients for the message.|
+|uniqueBody|[itemBody](itembody.md)|The part of the body of the message that is unique to the current message.|
+|webLink|String|The URL to open the message in Outlook Web App.<br><br>You can append an ispopout argument to the end of the URL to change how the message is displayed. If ispopout is not present or if it is set to 1, then the message is shown in a popout window. If ispopout is set to 0, then the browser will show the message in the Outlook Web App review pane.<br><br>The message will open in the browser if you are logged in to your mailbox via Outlook Web App. You will be prompted to login if you are not already logged in with the browser.<br><br>This URL can be accessed from within an iFrame.|
+
+**Removing script from the Body property**
+
+The message body can be either HTML or text. If the body is HTML, by default, any potentially unsafe HTML (for example, JavaScript) embedded in the Body property would be removed before the body content is returned in a REST response.
+To get the entire, original HTML content, include the following HTTP request header:
+```
+Prefer: outlook.allow-unsafe-html
+```
+
+**Setting the From and Sender properties**
+
+When a message is being composed, in most cases, the From and Sender properties represent the same signed-in user, unless either is updated as described in the following scenarios:
+
+- The **From** property can be changed if the Exchange administrator has assigned **SendAs** rights of the mailbox to some other users. The administrator can do this by selecting **Mailbox Permissions** of the mailbox owner in the Azure Management Portal, or by using the Exchange Admin Center or a Windows PowerShell Add-ADPermission cmdlet. Then, you can programmatically set the **From** property to one of these users who have **SendAs** rights for that mailbox.
+- The **Sender** property can be changed if the mailbox owner has delegated one or more users to be able to send messages from that mailbox. The mailbox owner can delegate in Outlook. When a delegate sends a message on behalf of the mailbox owner, the **Sender** property is set to the delegate’s account, and the **From** property remains as the mailbox owner. Programmatically, you can set the **Sender** property to a user who has got delegate right for that mailbox.
 
 ### Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|attachments|[Attachment](attachment.md) collection| Read-only. Nullable.|
+|attachments|[Attachment](attachment.md) collection|The [fileAttachment](fileattachment.md) and [itemAttachment](itemattachment.md) attachments for the message.|
 |extensions|[Extension](extension.md) collection| Read-only. Nullable.|
 
 ### Methods

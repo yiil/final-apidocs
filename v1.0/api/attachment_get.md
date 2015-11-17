@@ -12,7 +12,7 @@ One of the following **scopes** is required to execute this API:
 <!-- { "blockType": "ignored" } -->
 ```http
 GET /users/<id>/events/<id>/attachments/<id>
-GET /groups/<objectId>/events/<id>/attachments/<id>
+GET /groups/<id>/events/<id>/attachments/<id>
 GET /users/<id>/messages/<id>/attachments/<id>
 ```
 ### Optional query parameters

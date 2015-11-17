@@ -4,7 +4,7 @@ A page in a OneNote notebook.
 
 ### JSON representation
 
-Here is a JSON representation of the resource
+Here is a JSON representation of the resource.
 
 <!-- {
   "blockType": "resource",
@@ -40,7 +40,9 @@ Here is a JSON representation of the resource
 |createdTime|DateTimeOffset|The date and time when the page was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
 |id|String|The unique identifier of the page.  Read-only.|
 |lastModifiedTime|DateTimeOffset|The date and time when the page was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
+|level|Int32|The indentation level of the page. Read-only.|
 |links|[PageLinks](pagelinks.md)|Links for opening the page. The `oneNoteClientURL` link opens the page in the OneNote native client if it 's installed. The `oneNoteWebUrl` link opens the page in OneNote Online. Read-only.|
+|order|Int32|The order of the page within its parent section. Read-only.|
 |self|String|The endpoint where you can get details about the page. Read-only.|
 |title|String|The title of the page. |
 

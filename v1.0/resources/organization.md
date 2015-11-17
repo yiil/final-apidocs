@@ -1,6 +1,6 @@
 # organization resource type
 
-Represents an Azure Active Directory tenant. Only the read and update operations are supported on tenants; create and delete are not supported. Inherits from [DirectoryOjbect](directoryobject.md).
+Represents an Azure Active Directory tenant. Only the read and update operations are supported on tenants; create and delete are not supported. Inherits from [directoryObject](directoryobject.md).
 
 ### Methods
 
@@ -21,7 +21,7 @@ Represents an Azure Active Directory tenant. Only the read and update operations
 |dirSyncEnabled|Boolean|**true** if this object is synced from an on-premises directory; **false** if this object was originally synced from an on-premises directory but is no longer synced; **null** if this object has never been synced from an on-premises directory (default).|
 |displayName|String|The display name for the tenant.|
 |marketingNotificationEmails|String collection| Not nullable.            |
-|objectId|String|The unique identifier for the tenant. Inherited from [directoryObject](directoryobject.md). Key. Not nullable. Read-only.|
+|id|String|The unique identifier for the tenant. Inherited from [directoryObject](directoryobject.md). Key. Not nullable. Read-only.|
 |objectType|String|A string that identifies the object type. For tenants the value is always “Company”. |
 |postalCode|String|            |
 |preferredLanguage|String|            |

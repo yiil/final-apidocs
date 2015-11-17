@@ -19,10 +19,10 @@ A group of calendars.
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|changeKey|String|Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object.|
-|classId|Guid|The class identifier.|
-|id|String|The group's unique identifier. Read-only.|
 |name|String|The group name.|
+|changeKey|String|Identifies the version of the calendar group. Every time the calendar group is changed, ChangeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.|
+|classId|Guid|The class identifier. Read-only.|
+|id|String|The group's unique identifier. Read-only.|
 
 ### Relationships
 | Relationship | Type	|Description|

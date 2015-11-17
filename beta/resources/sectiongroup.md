@@ -4,7 +4,7 @@ A section group in a OneNote notebook. Section groups can contain sections and s
 
 ### JSON representation
 
-Here is a JSON representation of the resource
+Here is a JSON representation of the resource.
 
 <!-- {
   "blockType": "resource",
@@ -58,9 +58,9 @@ Here is a JSON representation of the resource
 
 | Method		   | Return Type	|Description|
 |:---------------|:--------|:----------|
-|[Get sectionGroup](../api/sectiongroup_get.md) | [SectionGroup](sectiongroup.md) |Read the properties and relationships of the section group.|
-|[Create sectionGroup](../api/sectiongroup_post_sectiongroups.md) |[SectionGroup](sectiongroup.md)| Create a section group by posting to the sectionGroups collection in the specified section group.|
-|[List sectionGroups](../api/sectiongroup_list_sectiongroups.md) |[SectionGroup](sectiongroup.md) collection| Get collection of section groups in the specified section group.|
+|[Get section group](../api/sectiongroup_get.md) | [SectionGroup](sectiongroup.md) |Read the properties and relationships of the section group.|
+|[Create section group](../api/sectiongroup_post_sectiongroups.md) |[SectionGroup](sectiongroup.md)| Create a section group by posting to the sectionGroups collection in the specified section group.|
+|[List section groups](../api/sectiongroup_list_sectiongroups.md) |[SectionGroup](sectiongroup.md) collection| Get collection of section groups in the specified section group.|
 |[Create section](../api/sectiongroup_post_sections.md) |[Section](section.md)| Create a section by posting to the sections collection in the specified section group.|
 |[List sections](../api/sectiongroup_list_sections.md) |[Section](section.md) collection| Get a collection of sections in the specified section group.|
 

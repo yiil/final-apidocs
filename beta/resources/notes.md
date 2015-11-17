@@ -10,7 +10,7 @@ https://graph.microsoft.com/<version>/<location>/notes/
 
 OneNote support is in preview, so the version is always `beta`. 
 
-Only accessing user and group notebooks are supported. Accessing SharePoint site notebooks is currently not supported. 
+Only user and group notebooks on Office 365 are supported. Accessing consumer notebooks or SharePoint site notebooks is currently not supported. 
 
 **User notebooks** To access personal notebooks on OneDrive or OneDrive for Business, use one of the following service root URLs:
 
@@ -28,7 +28,7 @@ https://graph.microsoft.com/beta/groups/<objectId>/notes/
 
 The following permission scopes provide levels of access to OneNote notebooks. Choosing permission scopes depends both on the location of the notebooks you're targeting and your app's functionality. 
 
-**Scopes for personal notebooks in OneDrive for Business that are owned by the current user (Office 365)**
+**Scopes for personal notebooks in OneDrive for Business that are owned by the current user**
 
 | Scope (enterprise) | Permission in Azure portal | Description |  
 |:-------|:------|:------|  
@@ -37,7 +37,7 @@ The following permission scopes provide levels of access to OneNote notebooks. C
 | Notes.Read | View OneNote notebooks | Can view the contents of your notebooks and sections. Cannot create new pages; modify existing pages; access password protected sections. |  
 | Notes.ReadWrite | View and modify OneNote notebooks | Can view the titles of your notebooks and sections; view and modify all your pages; create new pages. Cannot access password protected sections. |  
 
-**Scopes for personal notebooks shared by other users and group notebooks that the current user can access (Office 365)**
+**Scopes for personal notebooks shared by other users and group notebooks that the current user can access**
 
 | Scope (enterprise) | Permission in Azure portal | Description |  
 |:-------|:------|:------| 
@@ -46,14 +46,14 @@ The following permission scopes provide levels of access to OneNote notebooks. C
 
 **Note:** Accessing SharePoint site notebooks through the Graph API is currently not supported.
 
-**Scopes for groups (Office 365)**
+**Scopes for groups**
 
 If you're accessing group notebooks, you'll need a Groups permission scope to get the group ID. Currently, these permissions require administrator rights, but less restrictive access for a narrower scope will be available soon.
 
 | Scope (enterprise) | Permission in Azure portal | Description |  
 |:-------|:------|:------|  
-| Groups.Read.All | Read all groups | Can read all group properties and memberships; read group calendar and conversations on public groups and groups the signed in user is a member of. |  
-| Groups.ReadWrite.All | Read and write all groups | Can create groups on behalf of the signed-in user and read all group properties and memberships; update group properties and memberships for groups the signed-in user owns; read and write group calendar and conversations on public groups and groups the signed-in user is a member of. |  
+| Group.Read.All | Read all groups | Can read all group properties and memberships; read group calendar and conversations on public groups and groups the signed in user is a member of. |  
+| Group.ReadWrite.All | Read and write all groups | Can create groups on behalf of the signed-in user and read all group properties and memberships; update group properties and memberships for groups the signed-in user owns; read and write group calendar and conversations on public groups and groups the signed-in user is a member of. |  
 
 <!-- {
   "blockType": "resource",
@@ -71,6 +71,7 @@ If you're accessing group notebooks, you'll need a Groups permission scope to ge
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
 |notebooks|[Notebook](notebook.md) collection|The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.|
+|operations|[Operation](notesOperation.md) collection |The status of OneNote operations. Getting an operations collection is not supported, but you can get the status of long-running operations if the `Operation-Location` header is returned in the response. Read-only. Nullable.|
 |pages|[Page](page.md) collection|The pages in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.|
 |resources|[Resource](resource.md) collection |The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can [get the binary content of a specific resource](resource.md). Read-only. Nullable.|
 |sectionGroups|[SectionGroup](sectiongroup.md) collection|The section groups in all OneNote notebooks that are owned by the user or group.  Read-only. Nullable.|

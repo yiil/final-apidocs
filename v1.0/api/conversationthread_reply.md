@@ -8,7 +8,6 @@ One of the following **scopes** is required to execute this API:
 ```http
 POST /groups/<id>/threads/<id>/Microsoft.Graph.reply
 POST /groups/<id>/conversations/<id>/threads/<id>/Microsoft.Graph.reply
-POST /users/<id>/joinedGroups/<id>/threads/<id>/Microsoft.Graph.reply
 
 ```
 ### Request headers

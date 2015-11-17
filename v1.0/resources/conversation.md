@@ -7,8 +7,8 @@ A conversation is a collection of [threads](#ConversationThreadResource). All th
 | Method       | Return Type  |Description|
 |:---------------|:--------|:----------|
 |[Get conversation](../api/conversation_get.md) | [conversation](conversation.md) |Read properties and relationships of conversation object.|
-|[Create thread](../api/conversation_post_threads.md) |[ConversationThread](conversationthread.md)| Create a new thread by posting to the threads collection.|
-|[List threads](../api/conversation_list_threads.md) |[ConversationThread](conversationthread.md) collection| Get a thread object collection.|
+|[Create thread](../api/conversation_post_threads.md) |[conversationThread](conversationthread.md)| Create a new thread by posting to the threads collection.|
+|[List threads](../api/conversation_list_threads.md) |[conversationThread](conversationthread.md) collection| Get a thread object collection.|
 |[Update](../api/conversation_update.md) | [conversation](conversation.md)  |Update conversation object. |
 |[Delete](../api/conversation_delete.md) | None |Delete conversation object. |
 
@@ -16,17 +16,17 @@ A conversation is a collection of [threads](#ConversationThreadResource). All th
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|hasAttachments|Boolean|Indicates whether the Conversation has at least one attachment.|
+|hasAttachments|Boolean|Indicates whether any of the posts within this Conversation has at least one attachment.|
 |id|String|The group's unique identifier. Read-only.|
 |lastDeliveredDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|preview|String||
+|preview|String|A short summary from the body of the latest post in this converstaion.|
 |topic|String|The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.|
 |uniqueSenders|String collection|All the users that sent a message to this Conversation.|
 
 ### Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|threads|[ConversationThread](conversationthread.md) collection|A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.|
+|threads|[conversationThread](conversationthread.md) collection|A collection of all the conversation threads in the conversation. A navigation property. Read-only. Nullable.|
 
 
 ### JSON representation

@@ -3,6 +3,12 @@
 Retrieve the properties and relationships of post object.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+
+* Group.Read 
+* Group.ReadWrite
+* Group.Read.All
+* Group.Readwrite.All
+
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http
@@ -13,9 +19,9 @@ GET /users/<id | userPrincipalName>/joinedGroups/<id>/threads/<id>/posts/<id>
 ### Optional query parameters
 This method supports the [OData Query Parameters](http://graph.microsoft.io/docs/overview/query_parameters) to help customize the response.
 ### Request headers
-| Name       | Type | Description|
-|:-----------|:------|:----------|
-| Authorization  | string  | Bearer <token>. Required. |
+| Header       | Value |
+|:---------------|:--------|
+| Authorization  | Bearer <token>. Required.  |
 
 ### Request body
 Do not supply a request body for this method.
@@ -61,8 +67,7 @@ Content-length: 414
       "name": "name-value",
       "address": "address-value"
     }
-  },
-  "conversationThreadId": "conversationThreadId-value"
+  }
 }
 ```
 

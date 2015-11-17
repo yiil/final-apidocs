@@ -1,4 +1,5 @@
 # conversationThread resource type
+A conversationThread is a collection of [posts](post.md) within this thread. 
 
 ### Methods
 
@@ -9,26 +10,26 @@
 |[List posts](../api/conversationthread_list_posts.md) |[Post](post.md) collection| Get a Post object collection.|
 |[Update](../api/conversationthread_update.md) | [conversationThread](conversationthread.md)  |Update conversationThread object. |
 |[Delete](../api/conversationthread_delete.md) | None |Delete conversationThread object. |
-|[reply](../api/conversationthread_reply.md)|None||
+|[reply](../api/conversationthread_reply.md)|None|Reply to this thread by creating a new Post entity|
 
 
 ### Properties
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|ccRecipients|[Recipient](recipient.md) collection||
-|hasAttachments|Boolean||
 |id|String| Read-only.|
-|isLocked|Boolean||
+|toRecipients|[recipient](recipient.md) collection|The To: recipients for the thread.|
+|ccRecipients|[recipient](recipient.md) collection|The Cc: recipients for the thread.|
+|topic|String|The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated.||
+|hasAttachments|Boolean|Indicates whether any of the posts within this thread has at least one attachment.|
 |lastDeliveredDateTime|DateTimeOffset|The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`|
-|preview|String||
-|toRecipients|[Recipient](recipient.md) collection||
-|topic|String||
-|uniqueSenders|String collection||
+|uniqueSenders|String collection|All the users that sent a message to this thread.|
+|preview|String|A short summary from the body of the latest post in this converstaion.|
+|isLocked|Boolean|Indicates if the thread is locked.|
 
 ### Relationships
 | Relationship | Type	|Description|
 |:---------------|:--------|:----------|
-|posts|[Post](post.md) collection| Read-only. Nullable.|
+|posts|[post](post.md) collection| Read-only. Nullable.|
 
 
 ### JSON representation
@@ -45,15 +46,15 @@ Here is a JSON representation of the resource
 
 ```json
 {
-  "ccRecipients": [{"@odata.type": "microsoft.graph.recipient"}],
-  "hasAttachments": true,
   "id": "string (identifier)",
-  "isLocked": true,
-  "lastDeliveredDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
-  "preview": "string",
   "toRecipients": [{"@odata.type": "microsoft.graph.recipient"}],
+  "ccRecipients": [{"@odata.type": "microsoft.graph.recipient"}],
   "topic": "string",
-  "uniqueSenders": ["string"]
+  "hasAttachments": true,
+  "lastDeliveredDateTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
+  "uniqueSenders": ["string"],
+  "preview": "string",
+  "isLocked": true
 }
 
 ```

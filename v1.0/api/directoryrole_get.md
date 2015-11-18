@@ -2,7 +2,10 @@
 
 Retrieve the properties and relationships of a directoryrole object.
 ### Prerequisites
-One of the following **scopes** is required to execute this API: 
+One of the following **scopes** is required to execute this API:
+
+*Directory.Read.All; Directory.ReadWrite.All*
+
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http

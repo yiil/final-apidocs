@@ -3,6 +3,9 @@
 Retrieve a list of organization objects.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+
+*User.Read; Directory.Read.All; Directory.ReadWrite.All*
+
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http

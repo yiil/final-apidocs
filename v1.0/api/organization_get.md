@@ -3,6 +3,9 @@
 Retrieve the properties and relationships of currently authenticated organization.
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+
+*User.Read; Directory.Read.All; Directory.ReadWrite.All*
+
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http

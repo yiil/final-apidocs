@@ -3,6 +3,9 @@
 List the directory roles that are activated in the tenant. 
 ### Prerequisites
 One of the following **scopes** is required to execute this API: 
+
+*Directory.Read.All; Directory.ReadWrite.All*
+
 ### HTTP request
 <!-- { "blockType": "ignored" } -->
 ```http

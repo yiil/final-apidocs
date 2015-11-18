@@ -1,5 +1,7 @@
 # oneNoteIdentity resource type
 
+**Support coming soon**
+
 The OneNoteIdentity type represents an identity of a _user_.
 
 In future, this type will be merged with [Identity](identity.md)

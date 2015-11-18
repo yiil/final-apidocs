@@ -20,11 +20,9 @@ Here is a JSON representation of the resource.
 ```json
 {
   "createdBy": "string",
-  "createdByIdentity": {"@odata.type": "microsoft.graph.oneNoteIdentitySet"},
   "createdTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
   "id": "string (identifier)",
   "lastModifiedBy": "string",
-  "lastModifiedByIdentity": {"@odata.type": "microsoft.graph.oneNoteIdentitySet"},
   "lastModifiedTime": {"@odata.type": "microsoft.graph.dateTimeOffset"},
   "name": "string",
   "sectionGroupsUrl": "string",
@@ -37,11 +35,9 @@ Here is a JSON representation of the resource.
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
 |createdBy|String|The user who created the section group. Read-only.|
-|createdByIdentity|[OneNoteIdentitySet](onenoteidentityset.md)|The identity that created the section group. Read-only.|
 |createdTime|DateTimeOffset|The date and time when the section group was created. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
 |id|String|The unique identifier of the section group. Read-only.|
 |lastModifiedBy|String|The user who last modified the section group. Read-only.| 
-|lastModifiedByIdentity|[OneNoteIdentitySet](onenoteidentityset.md)|The identity that last modified the section group. Read-only.|
 |lastModifiedTime|DateTimeOffset|The date and time when the section group was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: `'2014-01-01T00:00:00Z'`. Read-only.|
 |name|String|The name of the section group.|
 |sectionGroupsUrl|String|The URL for the `sectionGroups` navigation property, which returns all the section groups in the section group. Read-only.| 

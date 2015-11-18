@@ -10,7 +10,7 @@ https://graph.microsoft.com/<version>/<location>/notes/
 
 OneNote support is in preview, so the version is always `beta`. 
 
-Only user and group notebooks on Office 365 are supported. Accessing consumer notebooks or SharePoint site notebooks is currently not supported. 
+Only user and group notebooks on Office 365 are supported. Accessing consumer notebooks on OneDrive or SharePoint site-hosted notebooks is currently not supported. 
 
 **User notebooks** To access personal notebooks on OneDrive or OneDrive for Business, use one of the following service root URLs:
 

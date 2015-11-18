@@ -1,7 +1,7 @@
 # itemReference resource type
 
 
- The group of data needed to reference a OneDrive item across the service.
+ The data needed to reference a OneDrive item across the service.
  
 
 ### Properties

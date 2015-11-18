@@ -20,6 +20,7 @@ The contents of the request body should be the binary stream of the file to be u
 
 ### Query parameters
 You can use these optional query string parameters to change the behavior of the PUT request:
+
 | Parameter Name             | Value  | Description    |
 |:---------------------------|:-------|:--------------------------|
 | **@name.conflictBehavior** | string | Specify the behavior to use if the file already exists. You can use the values *fail*, *replace*, or *rename*. The default for PUT is *replace*. |

@@ -8,6 +8,8 @@ Contains information about a service plan associated with a subscribed SKU. The 
 |:---------------|:--------|:----------|
 |servicePlanId|Guid|The unique identifier of the service plan.|
 |servicePlanName|String|The name of the service plan.|
+|provisioningStatus|String|The provisioning status of the service plan.|
+|appliesTo|String||
 
 
 ### JSON representation

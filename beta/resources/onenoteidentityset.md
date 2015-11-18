@@ -1,5 +1,7 @@
 # oneNoteIdentitySet resource type
 
+**Support coming soon**
+
 The OneNoteIdentitySet type is a keyed collection of [OneNoteIdentity](onenoteidentity.md) objects.
  It is used to represent a set of identities associated with various events for a _Notebook_, _Section_ or _Page_, such as
  _created by_ or _last modified by_. 

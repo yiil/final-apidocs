@@ -6,10 +6,10 @@ The duration of an event.
 
 | Property	   | Type	|Description|
 |:---------------|:--------|:----------|
-|endDate|String|The end date of the series.|
+|endDate|Date|The end date of the series.|
 |numberOfOccurrences|Int32|How many times to repeat the event.|
-|startDate|String|The start date of the series.|
-|type|String|The recurrence range: `EndDate`, `NoEnd`, `Numbered`.|
+|startDate|Date|The start date of the series.|
+|type|[recurrenceRangeType](recurrenceRangeType.md)|The recurrence range type.|
 
 
 ### JSON representation
